@@ -1,0 +1,65 @@
+workflow: new project / open existing project -> start project with pic and labels
+
+folder:
+    timestamp- ***.***
+    session.json
+
+open session (session as dir):
+    1. from_json - class method
+   [[new, open]]
+    2. if new
+
+           create_new_project
+           [[Proj folder FolderBrowse], [Proj name input] [Image to import file-browse][create exit]]
+           ['dir', 'project_name', 'image_path']
+           TODO: extract window to receive a project to construct the window
+           -> select destination (press): create dir, set cwd,
+            create empty session.json, create graph manager
+            window layout
+       else
+           open_project
+           [pop-up-choose-folder]
+           -> select destination, create graph manager
+
+       -> start with proj with project
+
+how to save?
+    wm cd to dir first
+    then save session.json
+
+
+
+# while True:
+#     event, values = window.read()
+#     # print(event, values)
+#     logging.info(event)
+#     logging.info(values)
+#
+
+#     if event in (sg.WIN_CLOSED, 'Exit'):
+#         break
+#     elif event == '-SAVE-':
+#         filename = sg.popup_get_file('Give the name of the JSON file', save_as=True)
+#         result = []
+#         for position, component_info in components.values():
+#             info = {'name': component_info['-NAME-'], 'type': component_info['-TYPE-'],
+#                     'parent': component_info['-PARENT-'], 'coordinate': (position.center_x, position.center_y)}
+#             result.append(info)
+#             json.dump(result, open(filename, 'w+'), indent=True)
+#
+#
+#     else:
+#         print("unhandled event", event, values)
+
+# TODO:
+# 1. edit select options
+# 2. save session
+#  2.1. {id, name, type, parent, label, text, coordinate: {top_left: {x, y}, bottom_right: {x, y}}}
+#  2.2. labels = [{Label}...]
+#  2.3. sub_event != 'EXIT'
+
+# 3. open session
+#   3.1 Open/Save button
+# 4. export to json
+# 5. import from json
+# 6. make each component editable
