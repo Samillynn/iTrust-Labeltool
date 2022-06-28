@@ -1,7 +1,6 @@
 import logging
 
-import PySimpleGUI as sg
-
+from utils import sg
 logging.basicConfig(level=logging.INFO)
 
 
@@ -58,6 +57,6 @@ class WindowManager:
                             values = self.values
 
                         try:
-                            handler.process(self.event.removeprefix(key), values)
+                            handler.react(self.event.removeprefix(key), values)
                         except TypeError:
-                            handler.process()
+                            handler.react()

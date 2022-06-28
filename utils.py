@@ -1,6 +1,10 @@
-import PIL.Image
 import base64
 import io
+import time
+
+import PIL.Image
+# noinspection PyUnresolvedReferences,PyPep8Naming
+import PySimpleGUI as sg
 
 
 def convert_to_bytes(file_or_bytes, resize=None):
@@ -38,11 +42,8 @@ def get_image_size(filename):
     return PIL.Image.open(filename).size
 
 
-class dotdict(dict):
-    """dot.notation access to dictionary attributes"""
-    __getattr__ = dict.get
-    __setattr__ = dict.__setitem__
-    __delattr__ = dict.__delitem__
+def current_milli_time():
+    return round(time.time() * 1000)
 
 
 class Coordinate:

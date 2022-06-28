@@ -4,9 +4,9 @@ import json
 import logging
 import os
 
-import PySimpleGUI as sg
 
-from utils import Coordinate, get_image_size, convert_to_bytes
+from event_handler import EventHandler
+from utils import sg, Coordinate, get_image_size, convert_to_bytes
 
 logging.basicConfig(level=logging.INFO)
 
@@ -19,7 +19,8 @@ def get_label_info():
                            [sg.Submit(), sg.Exit()]]).read(close=True)
 
 
-class GraphHandler:
+# noinspection PyMethodOverriding
+class GraphHandler(EventHandler):
     DIALOG_OPTIONS = {
         'type': ['Big Tank', 'Small Tank', 'Pump', 'Dosing Pump', 'UV Dechlorinator', 'Filter', 'Other types']
     }
@@ -51,7 +52,7 @@ class GraphHandler:
             label['coordinate'] = Coordinate(top_left, bottom_right)
         return cls(graph, save_to=json_path, image_path=image_path, labels=labels)
 
-    def process(self, event, values):
+    def react(self, event, values):
         x, y = values
 
         # TODO: drag inside existing labels should not trigger any action
