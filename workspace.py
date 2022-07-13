@@ -1,12 +1,12 @@
 import json
+import logging
 import os
 import shutil
 from pathlib import Path
 
-
 from event_handler import EventHandler
 from graph_handler import GraphHandler
-from utils import sg, current_milli_time
+from utils import sg, current_milli_time, Rectangle
 from window_manager import WindowManager
 
 
@@ -58,29 +58,48 @@ class ProjectMenuEH(EventHandler):
         window_manager.run(close=True)
 
 
+def export_eh(event, file_path):
+    labels = json.load(open('session.json', 'r'))['labels']
+    for label in labels:
+        top_left = label.pop('top_left')
+        bottom_right = label.pop('bottom_right')
+        label['coordinate'] = Rectangle(top_left, bottom_right).center
+    json.dump(labels, open(file_path, 'w+'), indent=2)
+
+
+# Show workspace
 def show_workspace(project_path=None):
-    layout = [[sg.Graph(
-        canvas_size=(0, 0),
-        graph_bottom_left=(-1, -1),
-        graph_top_right=(1, 1),
-        key="-GRAPH-",
-        change_submits=True,  # mouse click events
-        background_color='lightblue',
-        drag_submits=True,
-        float_values=True), ],
-        [sg.Text(key='info', size=(60, 1)), sg.B('Export', key='-EXPORT-', file_types=(('JSON file', '*.json'),)),
-         sg.B('New', key='-NEW-'), sg.B('Open', key='-OPEN-')]]
+    layout = [
+        [sg.Graph(
+            canvas_size=(0, 0),
+            graph_bottom_left=(-1, -1),
+            graph_top_right=(1, 1),
+            key="-GRAPH-",
+            change_submits=True,  # mouse click events
+            background_color='lightblue',
+            drag_submits=True,
+            motion_events=True,
+            float_values=True,
+            expand_x=True,
+            expand_y=True)],
+        [sg.Text(key='info', size=(60, 1)), sg.I(visible=False, enable_events=True, key='export-filename'),
+         sg.SaveAs('Export', key='-EXPORT-', file_types=(('JSON file', '*.json'),),
+                   target='export-filename'),
+         sg.B('New', key='-NEW-'), sg.B('Open', key='-OPEN-')]
+    ]
 
     if project_path is not None:
         os.chdir(project_path)
-    window = sg.Window("Workplace", layout, finalize=True, return_keyboard_events=True)
+    window = sg.Window("Workplace", layout, finalize=True, return_keyboard_events=True, resizable=True)
     window_manager = WindowManager(window)
 
     graph_handler = GraphHandler.from_json(graph=window['-GRAPH-'], json_path='session.json')
     window_manager.register_handler('-GRAPH-', graph_handler)
 
+    window_manager.register_handler('', lambda: logging.info(window['-GRAPH-'].get_size()))
     window_manager.register_handler('-NEW-', NewProjectEH())
     window_manager.register_handler('-OPEN-', OpenProjectEH())
+    window_manager.register_handler('export-filename', export_eh)
     window_manager.run()
 
 

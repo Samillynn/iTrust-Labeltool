@@ -1,5 +1,6 @@
 import logging
 
+from event_handler import EventHandler
 from utils import sg
 logging.basicConfig(level=logging.INFO)
 
@@ -36,8 +37,8 @@ class WindowManager:
     def run(self, close=False):
         while True:
             self.event, self.values = self.window.read(close=close)
+            logging.info(f'event: {self.event}, values: {self.values}')
 
-            logging.info(f"event = {self.event} values = {self.values}")
             if self.event in (sg.WIN_X_EVENT, ):
                 if self.win_close_handler is None:
                     self.window.close()
@@ -56,7 +57,15 @@ class WindowManager:
                         except KeyError:
                             values = self.values
 
+                        if isinstance(handler, EventHandler):
+                            callback = handler.react
+                        elif callable(handler):
+                            callback = handler
+                        else:
+                            raise TypeError('Handler is either an EventHandler instance or an callable.')
+
                         try:
-                            handler.react(self.event.removeprefix(key), values)
+                            callback(self.event.removeprefix(key), values)
+
                         except TypeError:
-                            handler.react()
+                            callback()

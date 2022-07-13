@@ -1,0 +1,19 @@
+{
+  "image_path": "1656678175036-screen_shot.jpg",
+  "labels": [
+    {
+      "name": "T-101",
+      "type": "Big Tank",
+      "label": "Raw Water Tank",
+      "text": "",
+      "top_left": [
+        -0.803125,
+        0.4083333333333333
+      ],
+      "bottom_right": [
+        -0.6890624999999999,
+        0.11388888888888948
+      ]
+    }
+  ]
+}

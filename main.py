@@ -1,3 +1,4 @@
-from workspace import ProjectMenuEH
+from workspace import show_workspace, ProjectMenuEH
 
-ProjectMenuEH().react()
+# ProjectMenuEH().react()
+show_workspace('test-project')

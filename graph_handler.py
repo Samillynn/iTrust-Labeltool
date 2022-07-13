@@ -4,9 +4,10 @@ import json
 import logging
 import os
 
-
 from event_handler import EventHandler
-from utils import sg, Coordinate, get_image_size, convert_to_bytes
+from utils import sg, Rectangle, get_image_size, convert_to_bytes, near
+
+# TODO: make end_point/start_point None after each time
 
 logging.basicConfig(level=logging.INFO)
 
@@ -26,19 +27,21 @@ class GraphHandler(EventHandler):
     }
 
     def __init__(self, graph, image_path, labels=None, save_to=None):
+        self.figure_ids = []
+        self.is_new_label = False
+        self.last_point = None
+        self.current_label = None
         self.dragging = False
         self.start_point = None
-        self.end_point = None
+        self.current_point = None
         self.prior_rect = None
         self.save_to = save_to
         self.labels = list(labels) if labels else []
 
         self.image_path = image_path
         self.graph: sg.Graph = graph
-        width, height = get_image_size(image_path)
-        graph.set_size((width, height))
 
-        self.render()
+        self.render(draw_image=True)
 
     @classmethod
     def from_json(cls, graph, json_path):
@@ -49,38 +52,69 @@ class GraphHandler(EventHandler):
         for label in labels:
             top_left = label.pop('top_left')
             bottom_right = label.pop('bottom_right')
-            label['coordinate'] = Coordinate(top_left, bottom_right)
+            label['coordinate'] = Rectangle(top_left, bottom_right)
         return cls(graph, save_to=json_path, image_path=image_path, labels=labels)
 
     def react(self, event, values):
+        self.current_point = values
         x, y = values
 
         # TODO: drag inside existing labels should not trigger any action
+        if event.endswith('+MOVE'):
+            self.process_motion()
+            return
         if not self.dragging:
             self.dragging = True
             self.start_point = (x, y)
+            for label in self.labels:
+                if label["coordinate"].hold(self.start_point) is not None:
+                    self.current_label = label
+                    break
+            else:
+                self.is_new_label = True
+                self.graph.set_cursor("cross")
+                self.current_label = {"coordinate": Rectangle(self.start_point, self.start_point), "name": '',
+                                      "type": '', "label": '', "text": ''}
+                self.current_label["coordinate"].hold(corner_id=Rectangle.TOP_LEFT)
+                self.labels.append(self.current_label)
         else:
-            self.end_point = (x, y)
-
-        if self.prior_rect:
-            self.graph.delete_figure(self.prior_rect)
-        if None not in (self.start_point, self.end_point):
-            self.prior_rect = self.graph.draw_rectangle(self.start_point, self.end_point, line_color='red')
+            self.current_label["coordinate"].drag(x - self.last_point[0], y - self.last_point[1])
 
         if event.endswith('+UP'):
             self.dragging = False
-            if self.start_point == self.end_point:
+            self.current_label["coordinate"].release()
+            if near(self.start_point, self.current_point, 0.005):
+                if self.is_new_label:
+                    self.labels.remove(self.current_label)
                 self.process_click()
-            else:
-                self.process_drag()
+            elif self.is_new_label:
+                self.process_new_label()
+                self.is_new_label = False
+                self.graph.set_cursor("arrow")
 
             if self.save_to is not None:
-                json.dump(self.to_json(), open(self.save_to, 'w+'))
-            self.render()
+                json.dump(self.to_json(), open(self.save_to, 'w+'), indent=2)
+
+        self.last_point = (x, y)
+        self.render()
+
+    def process_motion(self):
+        for label in self.labels:
+            if (corner_id := label["coordinate"].near(self.current_point)) is not None:
+                if corner_id == Rectangle.CENTER:
+                    self.graph.set_cursor("fleur")
+                elif 1 <= corner_id <= 4:
+                    self.graph.set_cursor("cross")
+                else:
+                    raise AssertionError
+                break
+        else:
+            self.graph.set_cursor("arrow")
 
     def process_click(self):
+
         for label in self.labels:
-            if label["coordinate"].is_surrounding(self.end_point):
+            if label["coordinate"].includes(self.current_point):
                 event, values = self.update_label_dialog(label)
                 if event in ['Delete']:
                     self.labels.remove(label)
@@ -93,24 +127,37 @@ class GraphHandler(EventHandler):
                 else:
                     raise AssertionError(event)
 
-    def process_drag(self):
+    def process_new_label(self):
         event, values = self.new_label_dialog()
         if event in ['Submit']:
-            logging.info(f'{self.start_point} {self.end_point}')
-            self.labels.append(
-                values | {"coordinate": Coordinate(self.start_point, self.end_point)})
+            logging.info(f'{self.start_point} {self.current_point}')
+            self.current_label |= values
         elif event in ['Exit', None]:
+            self.labels.remove(self.current_label)
             pass
         else:
             raise AssertionError(event)
 
-    def render(self):
-        self.graph.erase()
-        self.graph.draw_image(data=convert_to_bytes(self.image_path), location=(-1, 1))
+    def render(self, draw_image=False):
+        logging.info('graph rendered')
+        # clear graph for next render
+        if draw_image:
+            self.graph.erase()
+            width, height = get_image_size(self.image_path)
+            self.graph.set_size((width, height))
+            self.graph.draw_image(data=convert_to_bytes(self.image_path), location=(-1, 1))
+        for figure_id in self.figure_ids:
+            self.graph.delete_figure(figure_id)
+        self.figure_ids.clear()
+
         for label in self.labels:
-            self.graph.draw_rectangle(label["coordinate"].top_left, label["coordinate"].bottom_right, line_color='red')
-            self.graph.draw_text(f"{label['name']}\n({label['type']})", location=label["coordinate"].center,
-                                 color='red')
+            figure_id = self.graph.draw_rectangle(label["coordinate"].top_left, label["coordinate"].bottom_right,
+                                                  line_color="black", line_width=3)
+            self.figure_ids.append(figure_id)
+            figure_id = self.graph.draw_text(f"{label['name']}\n{label['type']}\n{label['text']}", location=label["coordinate"].center,
+                                             color='black', font=("Courier New Bold", 10))
+            self.figure_ids.append(figure_id)
+        logging.info(f'graph.size = {self.graph.get_size()}')
 
     def update_label_dialog(self, label):
         layout = self.base_dialog_layout(label)
@@ -140,4 +187,3 @@ class GraphHandler(EventHandler):
             label['top_left'] = coordinate.top_left
             label['bottom_right'] = coordinate.bottom_right
         return {"image_path": self.image_path, "labels": labels}
-
