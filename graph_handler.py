@@ -59,9 +59,8 @@ class GraphHandler(EventHandler):
         self.current_point = values
         x, y = values
 
-        # TODO: drag inside existing labels should not trigger any action
         if event.endswith('+MOVE'):
-            self.process_motion()
+            self.change_cursor_shape_by_cursor_position()
             return
         if not self.dragging:
             self.dragging = True
@@ -98,7 +97,7 @@ class GraphHandler(EventHandler):
         self.last_point = (x, y)
         self.render()
 
-    def process_motion(self):
+    def change_cursor_shape_by_cursor_position(self):
         for label in self.labels:
             if (corner_id := label["coordinate"].near(self.current_point)) is not None:
                 if corner_id == Rectangle.CENTER:

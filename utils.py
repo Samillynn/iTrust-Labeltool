@@ -73,7 +73,6 @@ class Rectangle:
         if self.includes(point):
             return 5
         else:
-            print(f'{point} not near {self}')
             return None
 
     def hold(self, point=None, corner_id=None):
