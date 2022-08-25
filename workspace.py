@@ -91,12 +91,18 @@ def show_workspace(project_path=None):
     if project_path is not None:
         os.chdir(project_path)
     window = sg.Window("Workplace", layout, finalize=True, return_keyboard_events=True, resizable=True)
+    window.bind("<Control-KeyPress>", "CTRL-KeyPress")
+
     window_manager = WindowManager(window)
 
     graph_handler = GraphHandler.from_json(graph=window['-GRAPH-'], json_path='session.json')
-    window_manager.register_handler('-GRAPH-', graph_handler)
 
-    window_manager.register_handler('', lambda: logging.info(window['-GRAPH-'].get_size()))
+
+    window_manager.register_handler('-GRAPH-', graph_handler)
+    window_manager.register_handler('CTRL-KeyPress', graph_handler, keep_prefix=True)
+    window_manager.register_handler('Control_L:989919486', graph_handler, keep_prefix=True)
+    
+    # window_manager.register_handler('', lambda: logging.info(window['-GRAPH-'].get_size()))
     window_manager.register_handler('-NEW-', NewProjectEH())
     window_manager.register_handler('-OPEN-', OpenProjectEH())
     window_manager.register_handler('export-filename', export_eh)

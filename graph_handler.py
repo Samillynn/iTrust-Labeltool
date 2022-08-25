@@ -37,6 +37,7 @@ class GraphHandler(EventHandler):
         self.prior_rect = None
         self.save_to = save_to
         self.labels = list(labels) if labels else []
+        self.is_ctrl_pressed = False
 
         self.image_path = image_path
         self.graph: sg.Graph = graph
@@ -56,6 +57,14 @@ class GraphHandler(EventHandler):
         return cls(graph, save_to=json_path, image_path=image_path, labels=labels)
 
     def react(self, event, values):
+        print(event, values)
+        if event == "CTRL-KeyPress":
+            self.is_ctrl_pressed = True
+            return
+        if event == "Control_L:989919486":
+            self.is_ctrl_pressed = False
+            return
+        print('event', event)
         self.current_point = values
         x, y = values
 
@@ -67,7 +76,12 @@ class GraphHandler(EventHandler):
             self.start_point = (x, y)
             for label in self.labels:
                 if label["coordinate"].hold(self.start_point) is not None:
-                    self.current_label = label
+                    if self.is_ctrl_pressed:
+                        self.current_label = copy.deepcopy(label)
+                        self.current_label["coordinate"].hold(corner_id=Rectangle.CENTER)
+                        self.labels.append(self.current_label)
+                    else:
+                        self.current_label = label
                     break
             else:
                 self.is_new_label = True
