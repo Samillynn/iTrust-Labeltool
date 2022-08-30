@@ -16,23 +16,23 @@ class WindowManager:
         self.win_close_handler = None
         self.handlers = {}
 
-    def _register_single_handler(self, key, handler):
+    def _register_single_handler(self, key, handler, keep_prefix):
         assert isinstance(key, str)
         if key in self.handlers:
-            self.handlers[key].append(handler)
+            self.handlers[key].append((handler, keep_prefix))
         else:
-            self.handlers[key] = [handler]
+            self.handlers[key] = [(handler, keep_prefix)]
 
     def register_x_handler(self, handler):
         self.win_close_handler = handler
 
-    def register_handler(self, key, handler):
+    def register_handler(self, key, handler, keep_prefix=False):
         if isinstance(key, str):
-            self._register_single_handler(key, handler)
+            self._register_single_handler(key, handler, keep_prefix)
         elif isinstance(key, list):
             # TODO: more general types
             for one_key in key:
-                self._register_single_handler(one_key, handler)
+                self._register_single_handler(one_key, handler, keep_prefix)
 
     def run(self, close=False):
         while True:
@@ -51,7 +51,7 @@ class WindowManager:
                 break
             for key, key_handlers in self.handlers.items():
                 if self.event.startswith(key):
-                    for handler in key_handlers:
+                    for handler, keep_prefix in key_handlers:
                         try:
                             values = self.values[key]
                         except KeyError:
@@ -64,8 +64,11 @@ class WindowManager:
                         else:
                             raise TypeError('Handler is either an EventHandler instance or an callable.')
 
+                        event = self.event
+                        if not keep_prefix:
+                            event = event.removeprefix(key)
                         try:
-                            callback(self.event.removeprefix(key), values)
+                            callback(event, values)
 
                         except TypeError:
                             callback()
