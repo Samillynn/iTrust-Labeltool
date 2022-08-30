@@ -92,6 +92,10 @@ def show_workspace(project_path=None):
         os.chdir(project_path)
     window = sg.Window("Workplace", layout, finalize=True, return_keyboard_events=True, resizable=True)
     window.bind("<Control-KeyPress>", "CTRL-KeyPress")
+    window.bind("<Control-equal>", "-GRAPH-+")
+    window.bind("<Control-KeyRelease-equal>", "Release-=")
+    window.bind("<Control-minus>", "-GRAPH--")
+    window.bind("<Control-KeyRelease-minus>", "Release--")
 
     window_manager = WindowManager(window)
 
@@ -102,6 +106,8 @@ def show_workspace(project_path=None):
     window_manager.register_handler('CTRL-KeyPress', graph_handler, keep_prefix=True)
     window_manager.register_handler('Control_L:989919486', graph_handler, keep_prefix=True)
     
+
+
     # window_manager.register_handler('', lambda: logging.info(window['-GRAPH-'].get_size()))
     window_manager.register_handler('-NEW-', NewProjectEH())
     window_manager.register_handler('-OPEN-', OpenProjectEH())
