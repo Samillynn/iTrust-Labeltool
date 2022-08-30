@@ -55,6 +55,7 @@ def main():
 
         if event in ('-MOVE-', '-MOVEALL-'):
             graph.set_cursor(cursor='fleur')          # not yet released method... coming soon!
+
         elif not event.startswith('-GRAPH-'):
             graph.set_cursor(cursor='left_ptr')       # not yet released method... coming soon!
         if event.endswith('+MOVE'):

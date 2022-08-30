@@ -1,0 +1,24 @@
+make graph resizable
+------------------------
+1. extend=True
+2. bind event +RESIZE
+3. register event -> graph_handler.resize_handler
+4. code resize_handler:
+    1. set_size (keep ratio, centered)
+    2. erase everything
+    ?3. redraw image (scaled) -> modify render
+    ?3. refactor to redraw image?
+    4. redraw labels
+
+CursorState
+    __init__
+    hover(x, y) -> switch(x, y) -> diff state(context)
+    mouse_down
+    mouse_up
+    - drag
+    - click
+    - stop_drag
+    - cursor_shape
+    - begin_state
+
+state = state.hover()
