@@ -1,7 +1,6 @@
 import json
-import os
 
-from v2.base_classes import Serializer
+from base_classes import Serializer
 
 
 class DefaultSerializer(Serializer):

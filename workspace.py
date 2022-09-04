@@ -1,12 +1,13 @@
 import json
-import logging
 import os
 import shutil
 from pathlib import Path
 
-from event_handler import EventHandler
-from graph_handler import GraphHandler
+from base_classes import EventHandler
+from graph_handler import GraphHandler, GraphView
 from utils import sg, current_milli_time, Rectangle
+from label import LabelSerializer
+from session_storage import JsonSessionStorage
 from window_manager import WindowManager
 
 
@@ -98,7 +99,32 @@ def show_workspace(project_path=None):
 
     window_manager = WindowManager(window)
 
-    graph_handler = GraphHandler.from_json(graph=window['-GRAPH-'], json_path='session.json')
+    storage = JsonSessionStorage('session.json', LabelSerializer())
+    graph_handler = GraphHandler(graph=window['-GRAPH-'], image_path=storage.image_path, labels=storage.labels)
+    graph_view = GraphView(window['-GRAPH-'])
+
+    def update_graph_view(event, values):
+        if event == 'labels':
+            labels = values
+            graph_view.labels = labels
+
+        elif event == 'image':
+            image = values
+            graph_view.image = image
+
+    def update_graph_storage(event, values):
+        if event == 'labels':
+            labels = values
+            storage.labels = labels
+
+        elif event == 'image':
+            image = values
+            storage.image = image
+
+    graph_handler.register(update_graph_view)
+    graph_handler.register(update_graph_storage)
+    graph_handler.start()
+
     window_manager.register_handler('-GRAPH-', graph_handler)
 
     window_manager.register_handler('-NEW-', NewProjectEH())
@@ -108,4 +134,4 @@ def show_workspace(project_path=None):
 
 
 if __name__ == '__main__':
-    show_workspace('..')
+    show_workspace('')

@@ -4,8 +4,8 @@ import logging
 from base_classes import EventHandler
 from utils import sg, Rectangle, get_image_size, convert_to_bytes
 # TODO: make end_point/start_point None after each time
-from v2.cursor_handler import CursorHandler
-from v2.label import Label
+from cursor_handler import CursorHandler
+from label import Label
 
 logging.basicConfig(level=logging.INFO)
 

@@ -1,5 +1,5 @@
-from v2.base_classes import Serializer
-from v2.utils import Rectangle
+from base_classes import Serializer
+from utils import Rectangle
 
 
 class Label(Rectangle):
