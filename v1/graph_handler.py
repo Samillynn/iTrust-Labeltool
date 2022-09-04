@@ -20,6 +20,38 @@ def get_label_info():
                            [sg.Submit(), sg.Exit()]]).read(close=True)
 
 
+class Image:
+    def __init__(self, path: str = ''):
+        self.path: str = path
+        self._resize: float = 1
+
+    def __repr__(self):
+        return f'{type(self).__name__}({self.path})'
+
+    @property
+    def data(self) -> bytes:
+        if self.path:
+            return convert_to_bytes(self.path, self.size)
+        else:
+            return b''
+
+    @property
+    def resize(self):
+        return self._resize
+
+    @resize.setter
+    def resize(self, value):
+        if value < 0:
+            raise ValueError(f'Resize ratio should be positive: {value}')
+        else:
+            self._resize = value
+
+    @property
+    def size(self) -> tuple[int, int]:
+        width, height = get_image_size(self.path)
+        return int(width * self.resize), int(height * self.resize)
+
+
 # noinspection PyMethodOverriding
 class GraphHandler(EventHandler):
     DIALOG_OPTIONS = {
@@ -38,7 +70,7 @@ class GraphHandler(EventHandler):
         self.save_to = save_to
         self.labels = list(labels) if labels else []
 
-        self.image_path = image_path
+        self.image = Image(image_path)
         self.graph: sg.Graph = graph
 
         self.render(draw_image=True)
@@ -56,6 +88,15 @@ class GraphHandler(EventHandler):
         return cls(graph, save_to=json_path, image_path=image_path, labels=labels)
 
     def react(self, event, values):
+        if event in ['+', '-']:
+            if event == '+':
+                self.image.resize += 0.1
+            elif event == '-':
+                if self.image.resize >= 0.1:
+                    self.image.resize -= 0.1
+            self.render(draw_image=True)
+            return
+
         self.current_point = values
         x, y = values
 
@@ -141,9 +182,8 @@ class GraphHandler(EventHandler):
         # clear graph for next render
         if draw_image:
             self.graph.erase()
-            width, height = get_image_size(self.image_path)
-            self.graph.set_size((width, height))
-            self.graph.draw_image(data=convert_to_bytes(self.image_path), location=(-1, 1))
+            self.graph.set_size(self.image.size)
+            self.graph.draw_image(data=self.image.data, location=(-1, 1))
         for figure_id in self.figure_ids:
             self.graph.delete_figure(figure_id)
         self.figure_ids.clear()
@@ -152,7 +192,8 @@ class GraphHandler(EventHandler):
             figure_id = self.graph.draw_rectangle(label["coordinate"].top_left, label["coordinate"].bottom_right,
                                                   line_color="black", line_width=3)
             self.figure_ids.append(figure_id)
-            figure_id = self.graph.draw_text(f"{label['name']}\n{label['type']}\n{label['text']}", location=label["coordinate"].center,
+            figure_id = self.graph.draw_text(f"{label['name']}\n{label['type']}\n{label['text']}",
+                                             location=label["coordinate"].center,
                                              color='black', font=("Courier New Bold", 10))
             self.figure_ids.append(figure_id)
 
@@ -183,4 +224,4 @@ class GraphHandler(EventHandler):
             coordinate = label.pop('coordinate')
             label['top_left'] = coordinate.top_left
             label['bottom_right'] = coordinate.bottom_right
-        return {"image_path": self.image_path, "labels": labels}
+        return {"image_path": self.image.path, "labels": labels}

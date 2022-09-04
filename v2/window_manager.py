@@ -1,6 +1,6 @@
 import logging
 
-from event_handler import EventHandler
+from base_classes import EventHandler
 from utils import sg
 logging.basicConfig(level=logging.INFO)
 
@@ -16,23 +16,23 @@ class WindowManager:
         self.win_close_handler = None
         self.handlers = {}
 
-    def _register_single_handler(self, key, handler, keep_prefix):
+    def _register_single_handler(self, key, handler):
         assert isinstance(key, str)
         if key in self.handlers:
-            self.handlers[key].append((handler, keep_prefix))
+            self.handlers[key].append(handler)
         else:
-            self.handlers[key] = [(handler, keep_prefix)]
+            self.handlers[key] = [handler]
 
     def register_x_handler(self, handler):
         self.win_close_handler = handler
 
-    def register_handler(self, key, handler, keep_prefix=False):
+    def register_handler(self, key, handler):
         if isinstance(key, str):
-            self._register_single_handler(key, handler, keep_prefix)
+            self._register_single_handler(key, handler)
         elif isinstance(key, list):
             # TODO: more general types
             for one_key in key:
-                self._register_single_handler(one_key, handler, keep_prefix)
+                self._register_single_handler(one_key, handler)
 
     def run(self, close=False):
         while True:
@@ -51,7 +51,7 @@ class WindowManager:
                 break
             for key, key_handlers in self.handlers.items():
                 if self.event.startswith(key):
-                    for handler, keep_prefix in key_handlers:
+                    for handler in key_handlers:
                         try:
                             values = self.values[key]
                         except KeyError:
@@ -64,11 +64,8 @@ class WindowManager:
                         else:
                             raise TypeError('Handler is either an EventHandler instance or an callable.')
 
-                        event = self.event
-                        if not keep_prefix:
-                            event = event.removeprefix(key)
                         try:
-                            callback(event, values)
+                            callback(self.event.removeprefix(key), values)
 
                         except TypeError:
                             callback()

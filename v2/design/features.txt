@@ -1,0 +1,35 @@
+make graph resizable
+------------------------
+1. extend=True
+2. bind event +RESIZE
+3. register event -> graph_handler.resize_handler
+4. code resize_handler:
+    1. set_size (keep ratio, centered)
+    2. erase everything
+    ?3. redraw image (scaled) -> modify render
+    ?3. refactor to redraw image?
+    4. redraw labels
+
+CursorState
+    __init__
+    hover(x, y) -> switch(x, y) -> diff state(context)
+    mouse_down
+    mouse_up
+    - drag
+    - click
+    - stop_drag
+    - cursor_shape
+    - begin_state
+
+state = state.hover()
+
+things need to refactor:
+done 1. move storage out from graph_handler, make a storage class, let GH depends only on image_path and labels
+done 2. make Label a class, instead of a dictionary
+3. decouple the mouse movement logic, make a separate class for mouse logic
+4. decouple the drag action logic
+5. decouple nearby/inside/neither logic (mouse hover)
+6. deal with keyboard states
+done 7. decouple graph view with graph controller
+(all events goes into GC, GC data reflects to GV)
+8. decouple query dialogs from data processing

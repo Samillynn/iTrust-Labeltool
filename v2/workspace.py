@@ -1,12 +1,13 @@
 import json
-import logging
 import os
 import shutil
 from pathlib import Path
 
-from event_handler import EventHandler
-from graph_handler import GraphHandler
+from base_classes import EventHandler
+from graph_handler import GraphHandler, GraphView
 from utils import sg, current_milli_time, Rectangle
+from v2.label import LabelSerializer
+from v2.session_storage import JsonSessionStorage
 from window_manager import WindowManager
 
 
@@ -80,8 +81,8 @@ def show_workspace(project_path=None):
             drag_submits=True,
             motion_events=True,
             float_values=True,
-            expand_x=True,
-            expand_y=True)],
+            expand_x=False,
+            expand_y=False)],
         [sg.Text(key='info', size=(60, 1)), sg.I(visible=False, enable_events=True, key='export-filename'),
          sg.SaveAs('Export', key='-EXPORT-', file_types=(('JSON file', '*.json'),),
                    target='export-filename'),
@@ -91,18 +92,41 @@ def show_workspace(project_path=None):
     if project_path is not None:
         os.chdir(project_path)
     window = sg.Window("Workplace", layout, finalize=True, return_keyboard_events=True, resizable=True)
-    window.bind("<Control-KeyPress>", "CTRL-KeyPress")
+    window.bind("<Control-equal>", "-GRAPH-+")
+    window.bind("<Control-KeyRelease-equal>", "Release-=")
+    window.bind("<Control-minus>", "-GRAPH--")
+    window.bind("<Control-KeyRelease-minus>", "Release--")
 
     window_manager = WindowManager(window)
 
-    graph_handler = GraphHandler.from_json(graph=window['-GRAPH-'], json_path='session.json')
+    storage = JsonSessionStorage('session.json', LabelSerializer())
+    graph_handler = GraphHandler(graph=window['-GRAPH-'], image_path=storage.image_path, labels=storage.labels)
+    graph_view = GraphView(window['-GRAPH-'])
 
+    def update_graph_view(event, values):
+        if event == 'labels':
+            labels = values
+            graph_view.labels = labels
+
+        elif event == 'image':
+            image = values
+            graph_view.image = image
+
+    def update_graph_storage(event, values):
+        if event == 'labels':
+            labels = values
+            storage.labels = labels
+
+        elif event == 'image':
+            image = values
+            storage.image = image
+
+    graph_handler.register(update_graph_view)
+    graph_handler.register(update_graph_storage)
+    graph_handler.start()
 
     window_manager.register_handler('-GRAPH-', graph_handler)
-    window_manager.register_handler('CTRL-KeyPress', graph_handler, keep_prefix=True)
-    window_manager.register_handler('Control_L:989919486', graph_handler, keep_prefix=True)
-    
-    # window_manager.register_handler('', lambda: logging.info(window['-GRAPH-'].get_size()))
+
     window_manager.register_handler('-NEW-', NewProjectEH())
     window_manager.register_handler('-OPEN-', OpenProjectEH())
     window_manager.register_handler('export-filename', export_eh)
@@ -110,4 +134,4 @@ def show_workspace(project_path=None):
 
 
 if __name__ == '__main__':
-    show_workspace('.')
+    show_workspace('..')

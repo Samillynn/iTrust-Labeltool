@@ -80,8 +80,8 @@ def show_workspace(project_path=None):
             drag_submits=True,
             motion_events=True,
             float_values=True,
-            expand_x=True,
-            expand_y=True)],
+            expand_x=False,
+            expand_y=False)],
         [sg.Text(key='info', size=(60, 1)), sg.I(visible=False, enable_events=True, key='export-filename'),
          sg.SaveAs('Export', key='-EXPORT-', file_types=(('JSON file', '*.json'),),
                    target='export-filename'),
@@ -91,6 +91,11 @@ def show_workspace(project_path=None):
     if project_path is not None:
         os.chdir(project_path)
     window = sg.Window("Workplace", layout, finalize=True, return_keyboard_events=True, resizable=True)
+    window.bind("<Control-equal>", "-GRAPH-+")
+    window.bind("<Control-KeyRelease-equal>", "Release-=")
+    window.bind("<Control-minus>", "-GRAPH--")
+    window.bind("<Control-KeyRelease-minus>", "Release--")
+
     window_manager = WindowManager(window)
 
     graph_handler = GraphHandler.from_json(graph=window['-GRAPH-'], json_path='session.json')

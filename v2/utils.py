@@ -51,18 +51,12 @@ def near(p1, p2, threshold):
     return distance < threshold
 
 
-class Point:
-    def __init__(self, coordinate):
-        self.x = coordinate[0]
-        self.y = coordinate[1]
-
-
 class Rectangle:
     CENTER = 5
     TOP_LEFT = 1
     MAX_NEAR_DISTANCE = 0.05
 
-    def __init__(self, start_point, end_point):
+    def __init__(self, start_point=(0, 0), end_point=(0, 0)):
         self.hold_point = None
         self.left, self.top = start_point
         self.right, self.bottom = end_point
@@ -87,7 +81,7 @@ class Rectangle:
         elif point is not None:
             self.hold_point = self.near(point)
         else:
-            raise ValueError('either point or corner_id should be passed to hold.')
+            raise ValueError(f'either point or corner_id should be passed to hold: point={point}, corner_id={corner_id}')
 
         return self.hold_point
 
