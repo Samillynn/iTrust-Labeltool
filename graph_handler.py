@@ -2,58 +2,134 @@
 import logging
 
 from base_classes import EventHandler
-from utils import sg, Rectangle, get_image_size, convert_to_bytes
 # TODO: make end_point/start_point None after each time
 from cursor_handler import CursorHandler
+from image import Image
 from label import Label
+from utils import sg
 
 logging.basicConfig(level=logging.INFO)
 
 
-class Image:
-    def __init__(self, path: str = ''):
-        self.path: str = path
-        self._resize: float = 1
+class DragHandler:
+    def __init__(self, graph_handler):
+        self.graph_handler: GraphHandler = graph_handler
 
-    def __repr__(self):
-        return f'{type(self).__name__}({self.path})'
+    def start(self, position):
+        return False
 
-    @property
-    def data(self) -> bytes:
-        if self.path:
-            return convert_to_bytes(self.path, self.size)
+    def handle(self, displacement):
+        ...
+
+    def stop(self):
+        ...
+
+
+class DragHandlerChain:
+    def __init__(self):
+        self.handlers: list[DragHandler] = []
+        self.active_handler: DragHandler | None = None
+
+    def add_handler(self, handler: DragHandler):
+        self.handlers.append(handler)
+
+    def start(self, position):
+        for handler in self.handlers:
+            if handler.start(position):
+                self.active_handler = handler
+                return True
+        return False
+
+    def handle(self, displacement):
+        assert self.active_handler is not None
+        self.active_handler.handle(displacement)
+
+    def stop(self):
+        assert self.active_handler is not None
+        self.active_handler.stop()
+
+        self.active_handler = None
+
+
+class NewLabelHandler(DragHandler):
+    def __init__(self, graph_handler):
+        self.label = None
+        super().__init__(graph_handler)
+
+    def start(self, position):
+        if self.graph_handler.hovered_label(position) or self.graph_handler.nearby_vertex(position):
+            return False
+
+        self.label = Label(position, position)
+        self.graph_handler.add_label(self.label)
+
+        self.graph_handler.graph.set_cursor("cross")
+        return True
+
+    def handle(self, displacement):
+        self.label.move_vertex('bottom_right', displacement)
+        self.graph_handler.notify_labels()
+
+    def stop(self):
+        self.ask_label_info()
+        self.graph_handler.notify_labels()
+        self.graph_handler.graph.set_cursor('arrow')
+
+        self.label = None
+
+    def ask_label_info(self):
+        event, values = new_label_dialog()
+        if event in ['Submit']:
+            self.label.name = values['name']
+            self.label.category = values['type']
+            self.label.text = values['text']
+        elif event in ['Exit', None]:
+            self.graph_handler.labels.remove(self.label)
+            pass
         else:
-            return b''
+            raise AssertionError(event)
 
-    @property
-    def resize(self):
-        return self._resize
 
-    @resize.setter
-    def resize(self, value):
-        if value < 0:
-            raise ValueError(f'Resize ratio should be positive: {value}')
-        else:
-            self._resize = value
+class MoveLabelHandler(DragHandler):
+    def __init__(self, graph_handler):
+        super().__init__(graph_handler)
+        self.label = None
 
-    @property
-    def size(self) -> tuple[int, int]:
-        width, height = get_image_size(self.path)
-        return int(width * self.resize), int(height * self.resize)
+    def start(self, position):
+        if label := self.graph_handler.hovered_label(position):
+            self.label = label
+            return True
+
+        return False
+
+    def handle(self, displacement):
+        self.label.move(displacement)
+        self.graph_handler.notify_labels()
+
+
+class MoveVertexHandler(DragHandler):
+    def __init__(self, graph_handler):
+        super().__init__(graph_handler)
+        self.label = None
+        self.vertex_name = ''
+
+    def start(self, position):
+        if nearby := self.graph_handler.nearby_vertex(position):
+            self.label, self.vertex_name = nearby
+            return True
+
+        return False
+
+    def handle(self, displacement):
+        self.label.move_vertex(self.vertex_name, displacement)
+        self.graph_handler.notify_labels()
 
 
 # noinspection PyMethodOverriding
 class GraphHandler(EventHandler):
-    DIALOG_OPTIONS = {
-        'type': ['Big Tank', 'Small Tank', 'Pump', 'Dosing Pump', 'UV Dechlorinator', 'Filter', 'Other types']
-    }
 
     def __init__(self, graph, image_path, labels=None):
-        self.is_new_label = False
         self.last_point = None
-        self.current_label = None
-        self.dragging = False
-        self.start_point = None
         self.current_point = None
         self.graph = graph
         self.cursor_handler = CursorHandler()
@@ -62,22 +138,44 @@ class GraphHandler(EventHandler):
         self.image = Image(image_path)
         self.observers = []
 
-    def start(self):
-        self.update_labels()
-        self.update_image()
+        self.drag_chain = DragHandlerChain()
+        self.drag_chain.add_handler(NewLabelHandler(self))
+        self.drag_chain.add_handler(MoveVertexHandler(self))
+        self.drag_chain.add_handler(MoveLabelHandler(self))
 
-    def register(self, observer):
+    def add_label(self, label: Label):
+        self.labels.append(label)
+
+    def start(self):
+        self.notify_labels()
+        self.notify_image()
+
+    def add_observer(self, observer):
         self.observers.append(observer)
 
-    def update(self, event, values):
+    def notify(self, event, values):
         for observer in self.observers:
             observer(event, values)
 
-    def update_labels(self):
-        self.update('labels', self.labels)
+    def nearby_vertex(self, position):
+        for label in self.labels:
+            if vertex_name := label.nearby_vertex(position):
+                return label, vertex_name
 
-    def update_image(self):
-        self.update('image', self.image)
+        return None
+
+    def hovered_label(self, position):
+        for label in self.labels:
+            if label.includes(position):
+                return label
+
+        return None
+
+    def notify_labels(self):
+        self.notify('labels', self.labels)
+
+    def notify_image(self):
+        self.notify('image', self.image)
 
     def handle_cursor(self, event_type, values):
         self.current_point = values
@@ -85,34 +183,15 @@ class GraphHandler(EventHandler):
 
         if event_type == CursorHandler.HOVER:
             self.change_cursor_shape_by_cursor_position()
-
         elif event_type == CursorHandler.CLICK:
             self.process_click()
-            self.update_labels()
-
+            self.notify_labels()
         elif event_type == CursorHandler.DRAG_START:
-            for label in self.labels:
-                if label.hold(self.current_point) is not None:
-                    self.current_label = label
-                    break
-            else:
-                self.is_new_label = True
-                self.graph.set_cursor("cross")
-                self.current_label = Label(self.current_point, self.current_point)
-                self.current_label.hold(corner_id=Rectangle.TOP_LEFT)
-                self.labels.append(self.current_label)
-
+            self.drag_chain.start(self.current_point)
         elif event_type == CursorHandler.DRAG_HANDLE:
-            self.current_label.drag(x - self.last_point[0], y - self.last_point[1])
-            self.update_labels()
-
+            self.drag_chain.handle((x - self.last_point[0], y - self.last_point[1]))
         elif event_type == CursorHandler.DRAG_STOP:
-            self.current_label.release()
-            if self.is_new_label:
-                self.process_new_label()
-                self.update_labels()
-                self.is_new_label = False
-                self.graph.set_cursor("arrow")
+            self.drag_chain.stop()
         else:
             raise AssertionError(f'Unsupported cursor event type: {event_type}')
 
@@ -132,66 +211,55 @@ class GraphHandler(EventHandler):
 
     def change_cursor_shape_by_cursor_position(self):
         for label in self.labels:
-            if (corner_id := label.near(self.current_point)) is not None:
-                if corner_id == Rectangle.CENTER:
-                    self.graph.set_cursor("fleur")
-                elif 1 <= corner_id <= 4:
-                    self.graph.set_cursor("cross")
-                else:
-                    raise AssertionError
+            if label.nearby_vertex(self.current_point):
+                self.graph.set_cursor("cross")
+                break
+            elif label.includes(self.current_point):
+                self.graph.set_cursor("fleur")
                 break
         else:
             self.graph.set_cursor("arrow")
 
     def process_click(self):
+        if label := self.hovered_label(self.current_point):
+            event, values = update_label_dialog(label)
+            if event in ['Delete']:
+                self.labels.remove(label)
+            elif event in ['Update']:
+                label.name = values['name']
+                label.category = values['type']
+                label.text = values['text']
+            elif event in ['Cancel', None]:
+                ...
+            else:
+                raise AssertionError(event)
 
-        for label in self.labels:
-            if label.includes(self.current_point):
-                event, values = self.update_label_dialog(label)
-                if event in ['Delete']:
-                    self.labels.remove(label)
-                    break
-                elif event in ['Update']:
-                    label.name = values['name']
-                    label.category = values['type']
-                    label.text = values['text']
-                    break
-                elif event in ['Cancel', None]:
-                    break
-                else:
-                    raise AssertionError(event)
 
-    def process_new_label(self):
-        event, values = self.new_label_dialog()
-        if event in ['Submit']:
-            logging.info(f'{self.start_point} {self.current_point}')
-            self.current_label.name = values['name']
-            self.current_label.category = values['type']
-            self.current_label.text = values['text']
-        elif event in ['Exit', None]:
-            self.labels.remove(self.current_label)
-            pass
-        else:
-            raise AssertionError(event)
+DIALOG_OPTIONS = {
+    'type': ['Big Tank', 'Small Tank', 'Pump', 'Dosing Pump', 'UV Dechlorinator', 'Filter', 'Other types']
+}
 
-    def update_label_dialog(self, label):
-        layout = self.base_dialog_layout(label)
-        layout += [[sg.B('Update'), sg.Cancel(), sg.B('Delete', button_color='red')]]
-        return sg.Window('Update label', layout).read(close=True)
 
-    def new_label_dialog(self):
-        layout = self.base_dialog_layout()
-        layout += [[sg.Submit(), sg.Exit()]]
-        return sg.Window('Create new label', layout).read(close=True)
+def update_label_dialog(label):
+    layout = base_dialog_layout(label)
+    layout += [[sg.B('Update'), sg.Cancel(), sg.B('Delete', button_color='red')]]
+    return sg.Window('Update label', layout).read(close=True)
 
-    def base_dialog_layout(self, label=None):
-        if label is None:
-            label = Label()
-        return [
-            [sg.T('Name'), sg.I(label.name, key='name')],
-            [sg.T('Type'), sg.DD(self.DIALOG_OPTIONS['type'], default_value=label.category, key='type')],
-            [sg.T('Text'), sg.I(label.text, key='text')],
-        ]
+
+def new_label_dialog():
+    layout = base_dialog_layout()
+    layout += [[sg.Submit(), sg.Exit()]]
+    return sg.Window('Create new label', layout).read(close=True)
+
+
+def base_dialog_layout(label=None):
+    if label is None:
+        label = Label()
+    return [
+        [sg.T('Name'), sg.I(label.name, key='name')],
+        [sg.T('Type'), sg.DD(DIALOG_OPTIONS['type'], default_value=label.category, key='type')],
+        [sg.T('Text'), sg.I(label.text, key='text')],
+    ]
 
 
 class GraphView:

@@ -5,7 +5,7 @@ from pathlib import Path
 
 from base_classes import EventHandler
 from graph_handler import GraphHandler, GraphView
-from utils import sg, current_milli_time, Rectangle
+from utils import sg, current_milli_time
 from label import LabelSerializer
 from session_storage import JsonSessionStorage
 from window_manager import WindowManager
@@ -64,7 +64,7 @@ def export_eh(event, file_path):
     for label in labels:
         top_left = label.pop('top_left')
         bottom_right = label.pop('bottom_right')
-        label['coordinate'] = Rectangle(top_left, bottom_right).center
+        # label['coordinate'] = Rectangle(top_left, bottom_right).center
     json.dump(labels, open(file_path, 'w+'), indent=2)
 
 
@@ -121,8 +121,8 @@ def show_workspace(project_path=None):
             image = values
             storage.image = image
 
-    graph_handler.register(update_graph_view)
-    graph_handler.register(update_graph_storage)
+    graph_handler.add_observer(update_graph_view)
+    graph_handler.add_observer(update_graph_storage)
     graph_handler.start()
 
     window_manager.register_handler('-GRAPH-', graph_handler)
