@@ -68,4 +68,6 @@ class WindowManager:
                             callback(self.event.removeprefix(key), values)
 
                         except TypeError:
+                            callback(self.event)
+                        except TypeError:
                             callback()

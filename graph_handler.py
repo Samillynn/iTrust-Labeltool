@@ -1,6 +1,8 @@
 # noinspection PyPep8Naming
+import copy
 import logging
 
+import modifier_key
 from base_classes import EventHandler
 # TODO: make end_point/start_point None after each time
 from cursor_handler import CursorHandler
@@ -125,6 +127,24 @@ class MoveVertexHandler(DragHandler):
         self.graph_handler.notify_labels()
 
 
+class DuplicateLabelHandler(DragHandler):
+    def __init__(self, graph_handler):
+        self.label = None
+        super().__init__(graph_handler)
+
+    def start(self, position):
+        if (label := self.graph_handler.hovered_label(position)) and modifier_key.ctrl:
+            self.label = copy.deepcopy(label)
+            self.graph_handler.add_label(self.label)
+            return True
+
+        return False
+
+    def handle(self, displacement):
+        self.label.move(displacement)
+        self.graph_handler.notify_labels()
+
+
 # noinspection PyMethodOverriding
 class GraphHandler(EventHandler):
 
@@ -139,6 +159,7 @@ class GraphHandler(EventHandler):
         self.observers = []
 
         self.drag_chain = DragHandlerChain()
+        self.drag_chain.add_handler(DuplicateLabelHandler(self))
         self.drag_chain.add_handler(NewLabelHandler(self))
         self.drag_chain.add_handler(MoveVertexHandler(self))
         self.drag_chain.add_handler(MoveLabelHandler(self))

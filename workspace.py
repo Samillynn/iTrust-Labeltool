@@ -3,6 +3,7 @@ import os
 import shutil
 from pathlib import Path
 
+import modifier_key
 from base_classes import EventHandler
 from graph_handler import GraphHandler, GraphView
 from utils import sg, current_milli_time
@@ -92,11 +93,8 @@ def show_workspace(project_path=None):
     if project_path is not None:
         os.chdir(project_path)
     window = sg.Window("Workplace", layout, finalize=True, return_keyboard_events=True, resizable=True)
-    window.bind("<Control-equal>", "-GRAPH-+")
-    window.bind("<Control-KeyRelease-equal>", "Release-=")
-    window.bind("<Control-minus>", "-GRAPH--")
-    window.bind("<Control-KeyRelease-minus>", "Release--")
-
+    window.bind('<Key-Control_L>', 'KeyDown-Control')
+    window.bind('<Key-Control_R>', 'KeyDown-Control')
     window_manager = WindowManager(window)
 
     storage = JsonSessionStorage('session.json', LabelSerializer())
@@ -125,6 +123,7 @@ def show_workspace(project_path=None):
     graph_handler.add_observer(update_graph_storage)
     graph_handler.start()
 
+    window_manager.register_handler('', modifier_key.listen)
     window_manager.register_handler('-GRAPH-', graph_handler)
 
     window_manager.register_handler('-NEW-', NewProjectEH())
