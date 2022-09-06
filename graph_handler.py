@@ -12,6 +12,36 @@ from utils import sg
 
 logging.basicConfig(level=logging.INFO)
 
+class Image:
+    def __init__(self, path: str = ''):
+        self.path: str = path
+        self._resize: float = 1
+
+    def __repr__(self):
+        return f'{type(self).name}({self.path})'
+
+    @property
+    def data(self) -> bytes:
+        if self.path:
+            return convert_to_bytes(self.path, self.size)
+        else:
+            return b''
+
+    @property
+    def resize(self):
+        return self._resize
+
+    @resize.setter
+    def resize(self, value):
+        if value < 0:
+            raise ValueError(f'Resize ratio should be positive: {value}')
+        else:
+            self._resize = value
+
+    @property
+    def size(self) -> tuple[int, int]:
+        width, height = get_image_size(self.path)
+        return int(width * self.resize), int(height * self.resize)
 
 class DragHandler:
     def __init__(self, graph_handler):
@@ -51,7 +81,6 @@ class DragHandlerChain:
         self.active_handler.stop()
 
         self.active_handler = None
-
 
 class NewLabelHandler(DragHandler):
     def __init__(self, graph_handler):
@@ -96,7 +125,6 @@ class NewLabelHandler(DragHandler):
             pass
         else:
             raise AssertionError(event)
-
 
 class MoveLabelHandler(DragHandler):
     def __init__(self, graph_handler):

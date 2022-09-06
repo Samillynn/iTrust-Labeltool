@@ -101,6 +101,12 @@ def show_workspace(project_path=None):
     window = sg.Window("Workplace", layout, finalize=True, return_keyboard_events=True, resizable=True)
     window.bind('<Key-Control_L>', 'KeyDown-Control')
     window.bind('<Key-Control_R>', 'KeyDown-Control')
+
+    window.bind("<Control-equal>", "-GRAPH-+")
+    window.bind("<Control-KeyRelease-equal>", "Release-=")
+    window.bind("<Control-minus>", "-GRAPH--")
+    window.bind("<Control-KeyRelease-minus>", "Release--")
+
     window_manager = WindowManager(window)
 
     storage = JsonSessionStorage('session.json', LabelSerializer())
