@@ -1,6 +1,8 @@
 import json
+from typing import Collection
 
 from base_classes import Serializer
+from label import Label
 
 
 class DefaultSerializer(Serializer):
@@ -34,11 +36,24 @@ class JsonSessionStorage:
     @property
     def labels(self):
         serialized_labels = self.read()['labels']
-        return [self.label_serializer.deserialize(label) for label in serialized_labels]
+        result = []
+        for serialized_label in serialized_labels:
+            label = self.label_serializer.deserialize(serialized_label)
+            result.append(label)
+            if label.databox:
+                result.append(label.databox)
+
+        return result
 
     @labels.setter
-    def labels(self, value):
-        self._labels = [self.label_serializer.serialize(label) for label in value]
+    def labels(self, labels: Collection[Label]):
+        # nest databox into its parent label
+        labels = set(labels)
+        for label in labels.copy():
+            if label.databox:
+                labels.discard(label.databox)
+
+        self._labels = [self.label_serializer.serialize(label) for label in labels]
         self.write()
 
     def read(self):

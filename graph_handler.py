@@ -12,36 +12,6 @@ from utils import sg
 
 logging.basicConfig(level=logging.INFO)
 
-class Image:
-    def __init__(self, path: str = ''):
-        self.path: str = path
-        self._resize: float = 1
-
-    def __repr__(self):
-        return f'{type(self).name}({self.path})'
-
-    @property
-    def data(self) -> bytes:
-        if self.path:
-            return convert_to_bytes(self.path, self.size)
-        else:
-            return b''
-
-    @property
-    def resize(self):
-        return self._resize
-
-    @resize.setter
-    def resize(self, value):
-        if value < 0:
-            raise ValueError(f'Resize ratio should be positive: {value}')
-        else:
-            self._resize = value
-
-    @property
-    def size(self) -> tuple[int, int]:
-        width, height = get_image_size(self.path)
-        return int(width * self.resize), int(height * self.resize)
 
 class DragHandler:
     def __init__(self, graph_handler):
@@ -81,6 +51,7 @@ class DragHandlerChain:
         self.active_handler.stop()
 
         self.active_handler = None
+
 
 class NewLabelHandler(DragHandler):
     def __init__(self, graph_handler):
@@ -125,6 +96,7 @@ class NewLabelHandler(DragHandler):
             pass
         else:
             raise AssertionError(event)
+
 
 class MoveLabelHandler(DragHandler):
     def __init__(self, graph_handler):
@@ -212,7 +184,6 @@ class SelectDataboxHandler(ClickHandler):
         match event:
             case 'Confirm':
                 self.graph_handler.label_to_select_databox.databox = label
-                self.graph_handler.remove_label(label)
                 self.graph_handler.notify_labels()
                 self.graph_handler.label_to_select_databox = None
             case 'Select Again':
@@ -234,12 +205,18 @@ class UpdateLabelHandler(ClickHandler):
     def update_label_dialog(label: Label):
         layout = base_dialog_layout(label)
         layout += [[sg.B('Update'), sg.Cancel(), sg.B('Delete', button_color='red')],
-                   [sg.B(f'{label.databox.name}. Reselect' if label.databox else 'Select Databox', button_color='blue')]
                    ]
+
+        if label.databox:
+            button_hint = f'{label.databox.name}. Reselect'
+            layout += [[sg.B(button_hint, key='Databox', button_color='blue'), sg.B('Remove Databox')]]
+        else:
+            layout += [[sg.B('Select Databox', key='Databox', button_color='blue')]]
+
         return sg.Window('Update label', layout).read(close=True)
 
     def handle(self, position) -> bool:
-        label = self.graph_handler.hovered_label(position)
+        label: Label | None = self.graph_handler.hovered_label(position)
         if not label or self.graph_handler.label_to_select_databox:
             return False
 
@@ -250,9 +227,10 @@ class UpdateLabelHandler(ClickHandler):
             label.name = values['name']
             label.category = values['type']
             label.text = values['text']
-        elif event == 'Select Databox':
+        elif event == 'Databox':
             self.graph_handler.label_to_select_databox = label
-
+        elif event == 'Remove Databox':
+            label.databox = None
         elif event in ['Cancel', None]:
             ...
         else:
@@ -423,9 +401,6 @@ class GraphView:
                                          location=label.center,
                                          color='black', font=("Courier New Bold", 10))
         self.figures.append(figure_id)
-
-        if label.databox:
-            self.draw_label(label.databox)
 
     def draw(self, image=False):
         if image:

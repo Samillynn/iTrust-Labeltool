@@ -38,3 +38,7 @@ requirements - select data frame
 - able to select
 - add color when hover
 - add window to remind it is in select mode
+
+databox:
+view revert to no nested draw
+storage modify
