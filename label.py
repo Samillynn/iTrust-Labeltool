@@ -117,18 +117,29 @@ class Label(Rectangle):
         self.name = name
         self.category = category
         self.text = text
+        self.databox: Label | None = None
 
 
 class LabelSerializer(Serializer):
     def serialize(self, label: Label):
-        return {'name': label.name, 'category': label.category, 'text': label.text, 'top_left': label.top_left,
-                'bottom_right': label.bottom_right}
+        result = {'name': label.name, 'category': label.category, 'text': label.text, 'top_left': label.top_left,
+                  'bottom_right': label.bottom_right}
+        if label.databox:
+            result['databox'] = self.serialize(label.databox)
+
+        return result
 
     def deserialize(self, label_dict):
-        return Label(
+        result = Label(
             start=label_dict['top_left'],
             end=label_dict['bottom_right'],
             name=label_dict['name'],
             category=label_dict['category'],
             text=label_dict['text']
         )
+
+        if label_dict.get('databox'):
+            result.databox = self.deserialize(label_dict['databox'])
+
+        return result
+

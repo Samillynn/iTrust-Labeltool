@@ -17,7 +17,7 @@ class DragHandler:
     def __init__(self, graph_handler):
         self.graph_handler: GraphHandler = graph_handler
 
-    def start(self, position):
+    def start(self, position) -> bool:
         return False
 
     def handle(self, displacement):
@@ -35,7 +35,7 @@ class DragHandlerChain:
     def add_handler(self, handler: DragHandler):
         self.handlers.append(handler)
 
-    def start(self, position):
+    def start(self, position) -> bool:
         for handler in self.handlers:
             if handler.start(position):
                 self.active_handler = handler
@@ -79,8 +79,14 @@ class NewLabelHandler(DragHandler):
 
         self.label = None
 
+    @staticmethod
+    def new_label_dialog():
+        layout = base_dialog_layout()
+        layout += [[sg.Submit(), sg.Exit()]]
+        return sg.Window('Create new label', layout).read(close=True)
+
     def ask_label_info(self):
-        event, values = new_label_dialog()
+        event, values = self.new_label_dialog()
         if event in ['Submit']:
             self.label.name = values['name']
             self.label.category = values['type']
@@ -145,7 +151,89 @@ class DuplicateLabelHandler(DragHandler):
         self.graph_handler.notify_labels()
 
 
-# noinspection PyMethodOverriding
+class ClickHandler:
+    def __init__(self, graph_handler):
+        self.graph_handler: GraphHandler = graph_handler
+
+    def handle(self, position) -> bool:
+        return False
+
+
+class ClickHandlerChain:
+    def __init__(self):
+        self.handlers = []
+
+    def add_handler(self, handler):
+        self.handlers.append(handler)
+
+    def handle(self, value):
+        for handler in self.handlers:
+            if handler.handle(value):
+                return True
+
+        return False
+
+
+class SelectDataboxHandler(ClickHandler):
+    def handle(self, position) -> bool:
+        label = self.graph_handler.hovered_label(position)
+        if not label or not self.graph_handler.label_to_select_databox:
+            return False
+
+        event, values = self.confirm_databox_dialog()
+        match event:
+            case 'Confirm':
+                self.graph_handler.label_to_select_databox.databox = label
+                self.graph_handler.remove_label(label)
+                self.graph_handler.notify_labels()
+                self.graph_handler.label_to_select_databox = None
+            case 'Select Again':
+                ...
+            case 'Cancel' | None:
+                self.graph_handler.label_to_select_databox = None
+            case _:
+                raise AssertionError('Unsupported Event')
+
+    @staticmethod
+    def confirm_databox_dialog():
+        layout = [[sg.B('Confirm'), sg.B('Select Again'), sg.Cancel()]]
+        return sg.Window('confirm Databox?', layout).read(close=True)
+
+
+class UpdateLabelHandler(ClickHandler):
+
+    @staticmethod
+    def update_label_dialog(label: Label):
+        layout = base_dialog_layout(label)
+        layout += [[sg.B('Update'), sg.Cancel(), sg.B('Delete', button_color='red')],
+                   [sg.B(f'{label.databox.name}. Reselect' if label.databox else 'Select Databox', button_color='blue')]
+                   ]
+        return sg.Window('Update label', layout).read(close=True)
+
+    def handle(self, position) -> bool:
+        label = self.graph_handler.hovered_label(position)
+        if not label or self.graph_handler.label_to_select_databox:
+            return False
+
+        event, values = self.update_label_dialog(label)
+        if event in ['Delete']:
+            self.graph_handler.remove_label(label)
+        elif event in ['Update']:
+            label.name = values['name']
+            label.category = values['type']
+            label.text = values['text']
+        elif event == 'Select Databox':
+            self.graph_handler.label_to_select_databox = label
+
+        elif event in ['Cancel', None]:
+            ...
+        else:
+            raise AssertionError(event)
+
+        self.graph_handler.notify_labels()
+        return True
+
+
 class GraphHandler(EventHandler):
 
     def __init__(self, graph, image_path, labels=None):
@@ -158,14 +246,31 @@ class GraphHandler(EventHandler):
         self.image = Image(image_path)
         self.observers = []
 
-        self.drag_chain = DragHandlerChain()
-        self.drag_chain.add_handler(DuplicateLabelHandler(self))
-        self.drag_chain.add_handler(NewLabelHandler(self))
-        self.drag_chain.add_handler(MoveVertexHandler(self))
-        self.drag_chain.add_handler(MoveLabelHandler(self))
+        self.on_drag = None
+        self.init_on_drag()
+
+        self.on_click = None
+        self.init_on_click()
+
+        self.label_to_select_databox = None
+
+    def init_on_drag(self):
+        self.on_drag = DragHandlerChain()
+        self.on_drag.add_handler(DuplicateLabelHandler(self))
+        self.on_drag.add_handler(NewLabelHandler(self))
+        self.on_drag.add_handler(MoveVertexHandler(self))
+        self.on_drag.add_handler(MoveLabelHandler(self))
+
+    def init_on_click(self):
+        self.on_click = ClickHandlerChain()
+        self.on_click.add_handler(UpdateLabelHandler(self))
+        self.on_click.add_handler(SelectDataboxHandler(self))
 
     def add_label(self, label: Label):
         self.labels.append(label)
+
+    def remove_label(self, label: Label):
+        self.labels.remove(label)
 
     def start(self):
         self.notify_labels()
@@ -205,14 +310,13 @@ class GraphHandler(EventHandler):
         if event_type == CursorHandler.HOVER:
             self.change_cursor_shape_by_cursor_position()
         elif event_type == CursorHandler.CLICK:
-            self.process_click()
-            self.notify_labels()
+            self.on_click.handle(self.current_point)
         elif event_type == CursorHandler.DRAG_START:
-            self.drag_chain.start(self.current_point)
+            self.on_drag.start(self.current_point)
         elif event_type == CursorHandler.DRAG_HANDLE:
-            self.drag_chain.handle((x - self.last_point[0], y - self.last_point[1]))
+            self.on_drag.handle((x - self.last_point[0], y - self.last_point[1]))
         elif event_type == CursorHandler.DRAG_STOP:
-            self.drag_chain.stop()
+            self.on_drag.stop()
         else:
             raise AssertionError(f'Unsupported cursor event type: {event_type}')
 
@@ -241,36 +345,10 @@ class GraphHandler(EventHandler):
         else:
             self.graph.set_cursor("arrow")
 
-    def process_click(self):
-        if label := self.hovered_label(self.current_point):
-            event, values = update_label_dialog(label)
-            if event in ['Delete']:
-                self.labels.remove(label)
-            elif event in ['Update']:
-                label.name = values['name']
-                label.category = values['type']
-                label.text = values['text']
-            elif event in ['Cancel', None]:
-                ...
-            else:
-                raise AssertionError(event)
-
 
 DIALOG_OPTIONS = {
     'type': ['Big Tank', 'Small Tank', 'Pump', 'Dosing Pump', 'UV Dechlorinator', 'Filter', 'Other types']
 }
-
-
-def update_label_dialog(label):
-    layout = base_dialog_layout(label)
-    layout += [[sg.B('Update'), sg.Cancel(), sg.B('Delete', button_color='red')]]
-    return sg.Window('Update label', layout).read(close=True)
-
-
-def new_label_dialog():
-    layout = base_dialog_layout()
-    layout += [[sg.Submit(), sg.Exit()]]
-    return sg.Window('Create new label', layout).read(close=True)
 
 
 def base_dialog_layout(label=None):
@@ -286,6 +364,7 @@ def base_dialog_layout(label=None):
 class GraphView:
     def __init__(self, graph):
         self.graph = graph
+
         self._image: Image = Image()
         self._labels: list[Label] = []
         self.figures: list[int] = []
@@ -308,20 +387,27 @@ class GraphView:
         self._labels = labels
         self.draw(image=False)
 
+    def draw_label(self, label):
+        figure_id = self.graph.draw_rectangle(label.top_left, label.bottom_right,
+                                              line_color="black", line_width=3)
+        self.figures.append(figure_id)
+        figure_id = self.graph.draw_text(f"{label.name}\n{label.category}\n{label.text}",
+                                         location=label.center,
+                                         color='black', font=("Courier New Bold", 10))
+        self.figures.append(figure_id)
+
+        if label.databox:
+            self.draw_label(label.databox)
+
     def draw(self, image=False):
         if image:
             self.graph.erase()
             self.graph.set_size(self.image.size)
             self.graph.draw_image(data=self.image.data, location=(-1, 1))
+
         for figure_id in self.figures:
             self.graph.delete_figure(figure_id)
         self.figures.clear()
 
         for label in self.labels:
-            figure_id = self.graph.draw_rectangle(label.top_left, label.bottom_right,
-                                                  line_color="black", line_width=3)
-            self.figures.append(figure_id)
-            figure_id = self.graph.draw_text(f"{label.name}\n{label.category}\n{label.text}",
-                                             location=label.center,
-                                             color='black', font=("Courier New Bold", 10))
-            self.figures.append(figure_id)
+            self.draw_label(label)

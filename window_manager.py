@@ -37,7 +37,7 @@ class WindowManager:
     def run(self, close=False):
         while True:
             self.event, self.values = self.window.read(close=close)
-            logging.info(f'event: {self.event}, values: {self.values}')
+            # logging.info(f'event: {self.event}, values: {self.values}')
 
             if self.event in (sg.WIN_X_EVENT, ):
                 if self.win_close_handler is None:

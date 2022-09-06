@@ -6,9 +6,9 @@ from pathlib import Path
 import modifier_key
 from base_classes import EventHandler
 from graph_handler import GraphHandler, GraphView
-from utils import sg, current_milli_time
-from label import LabelSerializer
+from label import LabelSerializer, Rectangle
 from session_storage import JsonSessionStorage
+from utils import sg, current_milli_time
 from window_manager import WindowManager
 
 
@@ -61,11 +61,17 @@ class ProjectMenuEH(EventHandler):
 
 
 def export_eh(event, file_path):
+    def convert_label(label_dict):
+        top_left = label_dict.pop('top_left')
+        bottom_right = label_dict.pop('bottom_right')
+        label_dict['coordinate'] = Rectangle(top_left, bottom_right).center
+        if label_dict.get('databox'):
+            convert_label(label_dict['databox'])
+            print(label_dict)
+
     labels = json.load(open('session.json', 'r'))['labels']
     for label in labels:
-        top_left = label.pop('top_left')
-        bottom_right = label.pop('bottom_right')
-        # label['coordinate'] = Rectangle(top_left, bottom_right).center
+        convert_label(label)
     json.dump(labels, open(file_path, 'w+'), indent=2)
 
 

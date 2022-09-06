@@ -33,3 +33,8 @@ done 5. decouple nearby/inside/neither logic (mouse hover)
 done 7. decouple graph view with graph controller
 (all events goes into GC, GC data reflects to GV)
 8. decouple query dialogs from data processing
+
+requirements - select data frame
+- able to select
+- add color when hover
+- add window to remind it is in select mode
