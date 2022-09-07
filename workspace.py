@@ -5,8 +5,8 @@ from pathlib import Path
 
 import modifier_key
 from base_classes import EventHandler
-from graph_handler import GraphHandler, GraphView
-from label import LabelSerializer, Rectangle
+from graph.graph_handler import GraphHandler, GraphView
+from graph.label import LabelSerializer, Rectangle, Label
 from session_storage import JsonSessionStorage
 from utils import sg, current_milli_time
 from window_manager import WindowManager

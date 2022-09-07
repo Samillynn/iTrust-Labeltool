@@ -1,6 +1,6 @@
 import unittest
 
-from label import Rectangle
+from graph.label import Rectangle
 
 
 class RectangleTest(unittest.TestCase):

@@ -2,7 +2,7 @@ import json
 from typing import Collection
 
 from base_classes import Serializer
-from label import Label
+from graph.label import Label
 
 
 class DefaultSerializer(Serializer):

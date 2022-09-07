@@ -2,6 +2,36 @@ import base64
 import io
 
 import PIL.Image
+import cv2
+
+
+class CoordinateTransfer:
+    def __init__(self, relative_bottom_left, relative_top_right, absolute_size):
+        self.absolute_size = absolute_size
+        self.bottom_left = relative_bottom_left
+        self.top_right = relative_top_right
+
+    def to_absolute(self, relative_position: tuple[float, float]):
+        x_in, y_in = relative_position
+
+        scale_x = (self.absolute_size[0] - 0) / (self.top_right[0] - self.bottom_left[0])
+        scale_y = (0 - self.absolute_size[1]) / (self.top_right[1] - self.bottom_left[1])
+
+        x_out = 0 + (x_in - self.bottom_left[0]) * scale_x
+        y_out = self.absolute_size[1] + (y_in - self.bottom_left[1]) * scale_y
+
+        return int(x_out), int(y_out)
+
+    def to_relative(self, absolute_position: tuple[int, int]):
+        x_in, y_in = absolute_position
+
+        scale_x = (self.absolute_size[0] - 0) / (self.top_right[0] - self.bottom_left[0])
+        scale_y = (0 - self.absolute_size[1]) / (self.top_right[1] - self.bottom_left[1])
+
+        x_out = x_in / scale_x + self.bottom_left[0]
+        y_out = (y_in - self.absolute_size[1]) / scale_y + self.bottom_left[1]
+
+        return x_out, y_out
 
 
 class Image:
@@ -11,6 +41,9 @@ class Image:
 
     def __repr__(self):
         return f'{type(self).__name__}({self.path})'
+
+    def to_nparray(self):
+        return cv2.imread(self.path)
 
     @property
     def data(self) -> bytes:

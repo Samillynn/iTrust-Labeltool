@@ -42,3 +42,11 @@ requirements - select data frame
 databox:
 view revert to no nested draw
 storage modify
+
+find similar:
+view, algorithm
+
+1. get selected view port by position of label -> CoordinateTransfer
+2. find similar using current image and view port
+3. get similar locations by algo
+4. draw rectangles -> need to convert size to ratio

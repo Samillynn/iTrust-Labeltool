@@ -1,3 +1,5 @@
+from typing import Any
+
 from utils import current_milli_time
 
 
@@ -17,7 +19,7 @@ class CursorHandler:
     def long_mouse_down(self):
         return current_milli_time() - self.mouse_down_time > self.click_threshold
 
-    def handle(self, event, values):
+    def handle(self, event, values) -> list[(int, Any)]:
         if event.endswith('+MOVE'):
             return [(self.HOVER, values)]
 

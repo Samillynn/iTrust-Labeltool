@@ -1,3 +1,5 @@
+import copy
+
 from base_classes import Serializer
 
 
@@ -15,7 +17,7 @@ class Rectangle:
         self.hold_point = None
         self.left, self.top = start_point
         self.right, self.bottom = end_point
-        self._reorder()
+        self.sort()
 
     def __repr__(self):
         return f'{type(self).__name__}({self.top_left}, {self.bottom_right})'
@@ -101,14 +103,19 @@ class Rectangle:
     def center(self):
         return self.center_x, self.center_y
 
-    def _reorder(self):
-        self.left, self.right = sorted((self.left, self.right))
-        self.bottom, self.top = sorted((self.bottom, self.top))
+    # newly created rectangle has its left < right, and bottom < top
+    def sort(self):
+        self.left, self.right = sorted([self.left, self.right])
+        self.bottom, self.top = sorted([self.bottom, self.top])
+
+    def sorted(self):
+        rect = copy.deepcopy(self)
+        rect.sort()
+        return rect
 
     def includes(self, point):
-        left, right = sorted((self.left, self.right))
-        bottom, top = sorted((self.bottom, self.top))
-        return left <= point[0] <= right and bottom <= point[1] <= top
+        sorted_rect = self.sorted()
+        return sorted_rect.left <= point[0] <= sorted_rect.right and sorted_rect.bottom <= point[1] <= sorted_rect.top
 
 
 class Label(Rectangle):
