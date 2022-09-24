@@ -119,11 +119,14 @@ class Rectangle:
 
 
 class Label(Rectangle):
-    def __init__(self, start=(0, 0), end=(0, 0), name='', category='', text=''):
+    def __init__(self, start=(0, 0), end=(0, 0), name='', category='', flip=0, rotation=0.0, parent='', fullname=''):
         super().__init__(start, end)
         self.name = name
+        self.flip = flip
+        self.rotation = rotation
         self.category = category
-        self.text = text
+        self.parent = parent
+        self.fullname = fullname
         self.databox: Label | None = None
         self.next = []
 
@@ -133,7 +136,8 @@ class Label(Rectangle):
 
 class LabelSerializer(Serializer):
     def serialize(self, label: Label):
-        result = {'name': label.name, 'category': label.category, 'text': label.text, 'top_left': label.top_left,
+        result = {'name': label.name, 'category': label.category, 'flip': label.flip, 'rotation': label.rotation,
+                  'parent': label.parent, 'fullname': label.fullname, 'top_left': label.top_left,
                   'bottom_right': label.bottom_right}
         if label.databox:
             result['databox'] = self.serialize(label.databox)
@@ -142,11 +146,14 @@ class LabelSerializer(Serializer):
 
     def deserialize(self, label_dict):
         result = Label(
-            start=label_dict['top_left'],
-            end=label_dict['bottom_right'],
-            name=label_dict['name'],
-            category=label_dict['category'],
-            text=label_dict['text']
+            start=label_dict.get('top_left', None),
+            end=label_dict.get('bottom_right', None),
+            name=label_dict.get('name', ''),
+            category=label_dict.get('category', ''),
+            fullname=label_dict.get('fullname', ''),
+            parent=label_dict.get('parent', ''),
+            flip=label_dict.get('flip', 0),
+            rotation=label_dict.get('rotation', 0)
         )
 
         if label_dict.get('databox'):

@@ -64,9 +64,12 @@ def export_eh(event, file_path):
         top_left = label_dict.pop('top_left')
         bottom_right = label_dict.pop('bottom_right')
         label_dict['coordinate'] = Rectangle(top_left, bottom_right).center
+
         if label_dict.get('databox'):
-            convert_label(label_dict['databox'])
+            label_dict['databox'] = Rectangle(label_dict['databox'].top_left, label_dict['databox'].bottom_right).center
             print(label_dict)
+        else:
+            label_dict['databox'] = []
 
     labels = json.load(open('session.json', 'r'))['labels']
     for label in labels:
