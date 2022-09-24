@@ -147,7 +147,7 @@ class GraphView:
         figure_id = self.graph.draw_rectangle(label.top_left, label.bottom_right,
                                               line_color="black", line_width=3)
         self.figures.append(figure_id)
-        figure_id = self.graph.draw_text(f"{label.name}\n{label.category}\n{label.text}",
+        figure_id = self.graph.draw_text(f"{label.name}\n{label.category}\n{label.fullname}",
                                          location=label.center,
                                          color='black', font=("Courier New Bold", 10))
         self.figures.append(figure_id)
