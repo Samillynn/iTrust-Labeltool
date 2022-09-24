@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING
 
 import modifier_key
 from utils import sg
-from .dialog import base_dialog_layout
+from .dialog import base_dialog_layout, BaseDialog
 from .label import Label
 
 if TYPE_CHECKING:
@@ -78,9 +78,10 @@ class NewLabelHandler(DragHandler):
 
     @staticmethod
     def new_label_dialog():
-        layout = base_dialog_layout()
+        dialog = BaseDialog()
+        layout = dialog.layout()
         layout += [[sg.Submit(), sg.Exit()]]
-        return sg.Window('Create new label', layout).read(close=True)
+        return dialog.read('Create new label', layout)
 
     def ask_label_info(self):
         event, values = self.new_label_dialog()
@@ -88,6 +89,8 @@ class NewLabelHandler(DragHandler):
             self.label.name = values['name']
             self.label.category = values['type']
             self.label.text = values['text']
+            self.label.flip = values['flip']
+            self.label.rotation = values['rotation']
         elif event in ['Exit', None]:
             self.graph_handler.labels.remove(self.label)
             pass

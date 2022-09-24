@@ -1,7 +1,7 @@
 from typing import TYPE_CHECKING
 
 from utils import sg
-from .dialog import base_dialog_layout
+from .dialog import base_dialog_layout, BaseDialog
 from .image import CoordinateTransfer
 from .label import Label
 from .template_matching2 import relative_coord_crop_matching, remove_close_rectangles
@@ -47,7 +47,8 @@ class UpdateLabelHandler(ClickHandler):
 
     @staticmethod
     def update_label_dialog(label: Label):
-        layout = base_dialog_layout(label)
+        dialog = BaseDialog(label)
+        layout = dialog.layout()
         layout += [
             [sg.B('Update'), sg.Cancel(), sg.B('Delete', button_color='red'), sg.B('Find Similar', key='Similar')]
         ]
@@ -58,7 +59,7 @@ class UpdateLabelHandler(ClickHandler):
         else:
             layout += [[sg.B('Select Databox', key='Databox', button_color='blue')]]
 
-        return sg.Window('Update label', layout).read(close=True)
+        return dialog.read('Update Label', layout)
 
     def find_similar_labels(self, label):
         coord = CoordinateTransfer(relative_bottom_left=(-1, -1), relative_top_right=(1, 1),
@@ -81,6 +82,8 @@ class UpdateLabelHandler(ClickHandler):
             label.name = values['name']
             label.category = values['type']
             label.text = values['text']
+            label.rotation = values['rotation']
+            label.flip = values['flip']
         elif event == 'Databox':
             self.graph_handler.label_to_select_databox = label
         elif event == 'Remove Databox':
