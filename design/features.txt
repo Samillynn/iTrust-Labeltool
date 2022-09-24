@@ -1,3 +1,13 @@
+#TODO
+direction, rotation -
+next
+
+#TODO after zoom in/out, find similar does not work properly
+
+Make EventHandler protocol
+make EventChain an EventHandler
+make graph_Handler inheritate EC
+
 make graph resizable
 ------------------------
 1. extend=True
@@ -50,3 +60,10 @@ view, algorithm
 2. find similar using current image and view port
 3. get similar locations by algo
 4. draw rectangles -> need to convert size to ratio
+
+Add undo-redo feature:
+new command: move everything from current node and append new node
+undo -> index --
+redo -> index ++
+undo from first -> nothing
+redo in last -> nothing

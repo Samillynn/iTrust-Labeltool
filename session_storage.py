@@ -1,24 +1,15 @@
 import json
 from typing import Collection
 
-from base_classes import Serializer
-from graph.label import Label
-
-
-class DefaultSerializer(Serializer):
-    def serialize(self, obj):
-        return obj
-
-    def deserialize(self, data):
-        return data
+from graph.label import Label, LabelSerializer
 
 
 class JsonSessionStorage:
-    def __init__(self, path='', label_serializer=None):
+    def __init__(self, path, label_serializer=None):
         self.path = path
 
         if label_serializer is None:
-            label_serializer = DefaultSerializer()
+            label_serializer = LabelSerializer()
         self.label_serializer = label_serializer
 
         self._image_path = self.image_path
@@ -71,4 +62,3 @@ if __name__ == '__main__':
 
     storage.labels = []
     print(storage.labels)
-

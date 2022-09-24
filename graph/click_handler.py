@@ -18,21 +18,6 @@ class ClickHandler:
         return False
 
 
-class ClickHandlerChain:
-    def __init__(self):
-        self.handlers = []
-
-    def add_handler(self, handler):
-        self.handlers.append(handler)
-
-    def handle(self, value):
-        for handler in self.handlers:
-            if handler.handle(value):
-                return True
-
-        return False
-
-
 class SelectDataboxHandler(ClickHandler):
     def handle(self, position) -> bool:
         label = self.graph_handler.hovered_label(position)

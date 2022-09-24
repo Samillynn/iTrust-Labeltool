@@ -1,8 +1,9 @@
 # noinspection PyPep8Naming
 import logging
 
-from base_classes import EventHandler
-from .click_handler import ClickHandlerChain, UpdateLabelHandler, SelectDataboxHandler
+from handler_chain import HandlerChain
+from observer import Observable
+from .click_handler import UpdateLabelHandler, SelectDataboxHandler
 # TODO: make end_point/start_point None after each time
 from .cursor_handler import CursorHandler
 from .drag_handler import DragHandlerChain, DuplicateLabelHandler, NewLabelHandler, MoveVertexHandler, MoveLabelHandler
@@ -12,9 +13,10 @@ from .label import Label
 logging.basicConfig(level=logging.INFO)
 
 
-class GraphHandler(EventHandler):
+class GraphHandler(Observable, HandlerChain):
 
     def __init__(self, graph, image_path, labels=None):
+        super().__init__()
         self.last_point = None
         self.current_point = None
         self.graph = graph
@@ -22,7 +24,6 @@ class GraphHandler(EventHandler):
 
         self.labels = list(labels) if labels else []
         self.image = Image(image_path)
-        self.observers = []
 
         self.on_drag = None
         self.init_on_drag()
@@ -32,6 +33,8 @@ class GraphHandler(EventHandler):
 
         self.label_to_select_databox = None
 
+        self.add_handler(self.handle_cursor)
+
     def init_on_drag(self):
         self.on_drag = DragHandlerChain()
         self.on_drag.add_handler(DuplicateLabelHandler(self))
@@ -40,7 +43,7 @@ class GraphHandler(EventHandler):
         self.on_drag.add_handler(MoveLabelHandler(self))
 
     def init_on_click(self):
-        self.on_click = ClickHandlerChain()
+        self.on_click = HandlerChain()
         self.on_click.add_handler(UpdateLabelHandler(self))
         self.on_click.add_handler(SelectDataboxHandler(self))
 
@@ -53,13 +56,6 @@ class GraphHandler(EventHandler):
     def start(self):
         self.notify_labels()
         self.notify_image()
-
-    def add_observer(self, observer):
-        self.observers.append(observer)
-
-    def notify(self, event, values):
-        for observer in self.observers:
-            observer(event, values)
 
     def nearby_vertex(self, position):
         for label in self.labels:
@@ -81,7 +77,8 @@ class GraphHandler(EventHandler):
     def notify_image(self):
         self.notify('image', self.image)
 
-    def handle_cursor(self, event_type, values):
+    def _handle_cursor(self, event_type, values):
+
         self.current_point = values
         x, y = values
 
@@ -100,17 +97,13 @@ class GraphHandler(EventHandler):
 
         self.last_point = (x, y)
 
-    def react(self, event, values):
-        if event in ['+', '-']:
-            if event == '+':
-                self.image.resize += 0.1
-            elif event == '-':
-                if self.image.resize >= 0.1:
-                    self.image.resize -= 0.1
-            return
+    def handle_cursor(self, event, values):
+        if not event.startswith('-GRAPH-'):
+            return False
 
         for event_type, values in self.cursor_handler.handle(event, values):
-            self.handle_cursor(event_type, values)
+            self._handle_cursor(event_type, values['-GRAPH-'])
+        return True
 
     def change_cursor_shape_by_cursor_position(self):
         for label in self.labels:

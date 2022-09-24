@@ -125,6 +125,10 @@ class Label(Rectangle):
         self.category = category
         self.text = text
         self.databox: Label | None = None
+        self.next = []
+
+    def add_next(self, next_: 'Label'):
+        self.next.append(next_)
 
 
 class LabelSerializer(Serializer):

@@ -1,20 +1,16 @@
-from abc import ABC, abstractmethod
+from typing import Protocol, runtime_checkable
 
 
-class Serializer(ABC):
-    @abstractmethod
-    def serialize(self, obj):
-        ...
+@runtime_checkable
+class Serializer(Protocol):
+    def serialize(self, obj): ...
 
-    @abstractmethod
-    def deserialize(self, data):
-        ...
+    def deserialize(self, data): ...
 
 
-class EventHandler(ABC):
-    @abstractmethod
-    def react(self):
-        ...
+@runtime_checkable
+class EventHandler(Protocol):
+    def handle(self, *args, **kwargs) -> bool: ...
 
 
 class Event:
@@ -26,5 +22,5 @@ class Event:
     def __repr__(self):
         return f'Event{(self.name, self.value, self.target)}'
 
-    def clone(self):
+    def copy(self):
         return self.__class__(self.name, self.value, self.target)
