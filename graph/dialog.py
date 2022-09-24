@@ -10,7 +10,7 @@ class BaseDialog:
     flip_options = FlipDict(
         {'None': 0, 'flip around y axis': 1, 'flip around x axis': 2, 'flip around both x and y axis': 3})
 
-    categories = ['big tank', 'small tank', 'pump', 'dosing pump', 'uv dechlorinator', 'filter', 'other types']
+    categories = ['Big Tank', 'Small Tank', 'Dosing Tank', 'other types']
 
     def __init__(self, label=None):
         self.label = label if label else Label()

@@ -2,6 +2,22 @@
   "image_path": "screen_shot.jpg",
   "labels": [
     {
+      "name": "T-201",
+      "category": "small tank",
+      "flip": 2,
+      "rotation": 90.0,
+      "parent": "Section 1",
+      "fullname": "NaCl Tank",
+      "top_left": [
+        -0.4546875,
+        0.21666666666666656
+      ],
+      "bottom_right": [
+        -0.36875,
+        0.04444444444444451
+      ]
+    },
+    {
       "name": "test",
       "category": "",
       "flip": 0,

@@ -1,74 +1,31 @@
 [
   {
-    "name": "T-101",
-    "category": "",
-    "text": "",
-    "databox": {
-      "name": "FIT-201-Databox",
-      "category": "",
-      "text": "",
-      "coordinate": [
-        -0.51328125,
-        0.44861111111111107
-      ]
-    },
+    "name": "T-201",
+    "category": "small tank",
+    "flip": 2,
+    "rotation": 90.0,
+    "parent": "Section 1",
+    "fullname": "NaCl Tank",
     "coordinate": [
-      -0.73125,
-      0.23611111111111116
-    ]
+      -0.41171875,
+      0.13055555555555554
+    ],
+    "databox": []
   },
   {
-    "name": "T-202",
+    "name": "test",
     "category": "",
-    "text": "",
+    "flip": 0,
+    "rotation": 0,
+    "parent": "3",
+    "fullname": "2",
+    "databox": [
+      -0.5726562500000001,
+      0.30972222222222223
+    ],
     "coordinate": [
-      -0.43046874999999984,
-      0.11944444444444446
-    ]
-  },
-  {
-    "name": "fads",
-    "category": "",
-    "text": "",
-    "databox": {
-      "name": "LIT-301-Databox",
-      "category": "",
-      "text": "",
-      "coordinate": [
-        0.13515624999999987,
-        0.36388888888888904
-      ]
-    },
-    "coordinate": [
-      0.06328125000000018,
-      0.1291666666666666
-    ]
-  },
-  {
-    "name": "",
-    "category": "Dosing Pump",
-    "text": "",
-    "coordinate": [
-      -0.40781249999999997,
-      -0.4777777777777778
-    ]
-  },
-  {
-    "name": "fasd",
-    "category": "",
-    "text": "",
-    "coordinate": [
-      -0.31328125000000007,
-      0.13611111111111096
-    ]
-  },
-  {
-    "name": "T-101",
-    "category": "",
-    "text": "",
-    "coordinate": [
-      0.38125,
-      -0.34999999999999987
+      -0.7546875,
+      0.24722222222222223
     ]
   }
 ]
