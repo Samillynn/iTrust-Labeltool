@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 import modifier_key
 from utils import sg
 from .dialog import base_dialog_layout, BaseDialog
-from .label import Label
+from .label import Label, LabelSerializer
 
 if TYPE_CHECKING:
     from .graph_handler import GraphHandler
@@ -86,11 +86,8 @@ class NewLabelHandler(DragHandler):
     def ask_label_info(self):
         event, values = self.new_label_dialog()
         if event in ['Submit']:
-            self.label.name = values['name']
-            self.label.category = values['type']
-            self.label.text = values['text']
-            self.label.flip = values['flip']
-            self.label.rotation = values['rotation']
+            print(values)
+            self.label.copy_basic_properties(values)
         elif event in ['Exit', None]:
             self.graph_handler.labels.remove(self.label)
             pass

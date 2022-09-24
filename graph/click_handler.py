@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING
 from utils import sg
 from .dialog import base_dialog_layout, BaseDialog
 from .image import CoordinateTransfer
-from .label import Label
+from .label import Label, LabelSerializer
 from .template_matching2 import relative_coord_crop_matching, remove_close_rectangles
 
 if TYPE_CHECKING:
@@ -79,11 +79,8 @@ class UpdateLabelHandler(ClickHandler):
         if event in ['Delete']:
             self.graph_handler.remove_label(label)
         elif event in ['Update']:
-            label.name = values['name']
-            label.category = values['type']
-            label.text = values['text']
-            label.rotation = values['rotation']
-            label.flip = values['flip']
+            print(values)
+            label.copy_basic_properties(values)
         elif event == 'Databox':
             self.graph_handler.label_to_select_databox = label
         elif event == 'Remove Databox':

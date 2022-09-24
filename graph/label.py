@@ -120,15 +120,26 @@ class Rectangle:
 
 class Label(Rectangle):
     def __init__(self, start=(0, 0), end=(0, 0), name='', category='', flip=0, rotation=0.0, parent='', fullname=''):
+        # advanced properties
         super().__init__(start, end)
+        self.databox: Label | None = None
+        self.next = []
+
+        # basic properties
         self.name = name
         self.flip = flip
         self.rotation = rotation
         self.category = category
         self.parent = parent
         self.fullname = fullname
-        self.databox: Label | None = None
-        self.next = []
+
+    def copy_basic_properties(self, label_dict):
+        self.name = label_dict.get('name', '')
+        self.category = label_dict.get('category', '')
+        self.fullname = label_dict.get('fullname', '')
+        self.parent = label_dict.get('parent', '')
+        self.flip = label_dict.get('flip', 0)
+        self.rotation = label_dict.get('rotation', 0)
 
     def add_next(self, next_: 'Label'):
         self.next.append(next_)
@@ -148,13 +159,8 @@ class LabelSerializer(Serializer):
         result = Label(
             start=label_dict.get('top_left', None),
             end=label_dict.get('bottom_right', None),
-            name=label_dict.get('name', ''),
-            category=label_dict.get('category', ''),
-            fullname=label_dict.get('fullname', ''),
-            parent=label_dict.get('parent', ''),
-            flip=label_dict.get('flip', 0),
-            rotation=label_dict.get('rotation', 0)
         )
+        result.copy_basic_properties(label_dict)
 
         if label_dict.get('databox'):
             result.databox = self.deserialize(label_dict['databox'])

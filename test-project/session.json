@@ -1,6 +1,37 @@
 {
   "image_path": "screen_shot.jpg",
   "labels": [
-
+    {
+      "name": "test",
+      "category": "",
+      "flip": 0,
+      "rotation": 0,
+      "parent": "3",
+      "fullname": "2",
+      "top_left": [
+        -0.8171875,
+        0.38055555555555554
+      ],
+      "bottom_right": [
+        -0.6921875,
+        0.11388888888888893
+      ],
+      "databox": {
+        "name": "fdas",
+        "category": "pump",
+        "flip": 1,
+        "rotation": 90.0,
+        "parent": "fda",
+        "fullname": "fad",
+        "top_left": [
+          -0.6265625,
+          0.37777777777777777
+        ],
+        "bottom_right": [
+          -0.51875,
+          0.2416666666666667
+        ]
+      }
+    }
   ]
 }
