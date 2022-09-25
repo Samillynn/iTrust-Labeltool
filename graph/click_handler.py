@@ -1,9 +1,10 @@
 from typing import TYPE_CHECKING
 
-from utils import sg
-from .dialog import base_dialog_layout, BaseDialog
+import PySimpleGUI as sg
+
+from .dialog import BaseDialog
 from .image import CoordinateTransfer
-from .label import Label, LabelSerializer
+from .label import Label
 from .template_matching2 import relative_coord_crop_matching, remove_close_rectangles
 
 if TYPE_CHECKING:
@@ -29,7 +30,7 @@ class SelectDataboxHandler(ClickHandler):
             case 'Confirm':
                 self.graph_handler.label_to_select_databox.databox = label
                 self.graph_handler.notify_labels()
-                self.graph_handler.label_to_select_databox = None
+                self.graph_handler.state = None
             case 'Select Again':
                 ...
             case 'Cancel' | None:
@@ -59,6 +60,8 @@ class UpdateLabelHandler(ClickHandler):
         else:
             layout += [[sg.B('Select Databox', key='Databox', button_color='blue')]]
 
+        layout += [[sg.B('Edit Connections', key='Connection')]]
+
         return dialog.read('Update Label', layout)
 
     def find_similar_labels(self, label):
@@ -72,7 +75,7 @@ class UpdateLabelHandler(ClickHandler):
 
     def handle(self, position) -> bool:
         label: Label | None = self.graph_handler.hovered_label(position)
-        if not label or self.graph_handler.label_to_select_databox:
+        if not label or self.graph_handler.state is not None:
             return False
 
         event, values = self.update_label_dialog(label)
@@ -82,11 +85,15 @@ class UpdateLabelHandler(ClickHandler):
             print(values)
             label.copy_basic_properties(values)
         elif event == 'Databox':
+            self.graph_handler.state = 'select_databox'
             self.graph_handler.label_to_select_databox = label
         elif event == 'Remove Databox':
             label.databox = None
         elif event == 'Similar':
             self.find_similar_labels(label)
+        elif event == 'Connection':
+            edit_connection = EditConnectionHandler(self.graph_handler, label)
+            edit_connection.handle()
         elif event in ['Cancel', None]:
             ...
         else:
@@ -94,3 +101,62 @@ class UpdateLabelHandler(ClickHandler):
 
         self.graph_handler.notify_labels()
         return True
+
+
+class AddConnectionHandler(ClickHandler):
+    def handle(self, position) -> bool:
+        label = self.graph_handler.hovered_label(position)
+        if not label or self.graph_handler.state != 'add_connection':
+            return False
+
+        event, _ = self.confirm_databox_dialog()
+        if event == 'Confirm':
+            self.graph_handler.context['label_to_add_connection'].add_connection(label)
+            self.graph_handler.state = None
+        elif event == 'Select Again':
+            ...
+        elif event in ['Cancel', None]:
+            self.graph_handler.state = None
+
+        return True
+
+    @staticmethod
+    def confirm_databox_dialog():
+        layout = [[sg.B('Confirm'), sg.B('Select Again'), sg.Cancel()]]
+        return sg.Window('confirm connection?', layout).read(close=True)
+
+
+class EditConnectionHandler:
+    def __init__(self, graph_handler, label: Label):
+        self.graph_handler = graph_handler
+        self.label = label
+
+    def hints(self):
+        return {f'{conn.name}/{conn.fullname}': conn for conn in self.label.connections}
+
+    def layout(self):
+        return [
+            [sg.Listbox(values=list(self.hints().keys()), key='select', s=(30, 5), enable_events=True)],
+            [sg.B('Add', key='add'), sg.B('Remove', key='remove'), sg.B('Back', key='back')]
+        ]
+
+    def handle(self) -> None:
+        window = sg.Window('Edit Connections', self.layout())
+        while True:
+            event, values = window.read(close=False)
+            print(event, values)
+            if event == 'add':
+                self.graph_handler.state = 'add_connection'
+                self.graph_handler.context['label_to_add_connection'] = self.label
+                break
+
+            elif event == 'remove':
+                print(values)
+                hint = values['select'][0]
+                self.label.remove_connections(self.hints()[hint])
+                window['select'].update(values=self.hints().keys())
+
+            elif event in ['back', sg.WINDOW_CLOSED]:
+                break
+
+        window.close()

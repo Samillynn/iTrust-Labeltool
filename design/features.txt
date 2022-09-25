@@ -1,6 +1,30 @@
+
 #TODO
-direction, rotation -
-next
+possible to make graph_handler global to reduce passing of args
+
+#TODO
+window, <- Component?
+Component = {extend_layout
+
+two layer?
+
+symmetric/asymmetric of process data returned by window.read()
+
+add something to layout,
+process something when layout returned
+
+add/remove connections
+
+may add multiple connections (should we open the window again?)
+
+may remove multiple ones
+
+def edit_connection() -> [sg.*]
+
+init process to determine the layout -> dynamic layout by multiple processors
+
+call setup_edit_connections in init
+setup-edit-connection add_handler
 
 #TODO after zoom in/out, find similar does not work properly
 

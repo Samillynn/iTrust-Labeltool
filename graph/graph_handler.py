@@ -3,7 +3,7 @@ import logging
 
 from handler_chain import HandlerChain
 from observer import Observable
-from .click_handler import UpdateLabelHandler, SelectDataboxHandler
+from .click_handler import UpdateLabelHandler, SelectDataboxHandler, AddConnectionHandler
 # TODO: make end_point/start_point None after each time
 from .cursor_handler import CursorHandler
 from .drag_handler import DragHandlerChain, DuplicateLabelHandler, NewLabelHandler, MoveVertexHandler, MoveLabelHandler
@@ -31,6 +31,9 @@ class GraphHandler(Observable, HandlerChain):
         self.on_click = None
         self.init_on_click()
 
+        self.state = None
+        self.context = {}
+
         self.label_to_select_databox = None
 
         self.add_handler(self.handle_cursor)
@@ -45,6 +48,7 @@ class GraphHandler(Observable, HandlerChain):
     def init_on_click(self):
         self.on_click = HandlerChain()
         self.on_click.add_handler(UpdateLabelHandler(self))
+        self.on_click.add_handler(AddConnectionHandler(self))
         self.on_click.add_handler(SelectDataboxHandler(self))
 
     def add_label(self, label: Label):

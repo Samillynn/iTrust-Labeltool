@@ -133,6 +133,14 @@ class Label(Rectangle):
         self.parent = parent
         self.fullname = fullname
 
+        self.connections = []
+
+    def add_connection(self, label: 'Label'):
+        self.connections.append(label)
+
+    def remove_connections(self, label: 'Label'):
+        self.connections.remove(label)
+
     def copy_basic_properties(self, label_dict):
         self.name = label_dict.get('name', '')
         self.category = label_dict.get('category', '')
@@ -140,9 +148,6 @@ class Label(Rectangle):
         self.parent = label_dict.get('parent', '')
         self.flip = label_dict.get('flip', 0)
         self.rotation = label_dict.get('rotation', 0)
-
-    def add_next(self, next_: 'Label'):
-        self.next.append(next_)
 
 
 class LabelSerializer(Serializer):
