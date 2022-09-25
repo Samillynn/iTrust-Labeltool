@@ -1,16 +1,16 @@
 import json
 from typing import Collection
 
-from graph.label import Label, LabelSerializer
+from graph.label import Label, LabelSerializer, LabelListSerializer
 
 
 class JsonSessionStorage:
-    def __init__(self, path, label_serializer=None):
+    def __init__(self, path, label_list_serializer=None):
         self.path = path
 
-        if label_serializer is None:
-            label_serializer = LabelSerializer()
-        self.label_serializer = label_serializer
+        if label_list_serializer is None:
+            label_list_serializer = LabelListSerializer()
+        self.label_list_serializer = label_list_serializer
 
         self._image_path = self.image_path
         self._labels = self.labels
@@ -27,24 +27,11 @@ class JsonSessionStorage:
     @property
     def labels(self):
         serialized_labels = self.read()['labels']
-        result = []
-        for serialized_label in serialized_labels:
-            label = self.label_serializer.deserialize(serialized_label)
-            result.append(label)
-            if label.databox:
-                result.append(label.databox)
-
-        return result
+        return self.label_list_serializer.deserialize(serialized_labels)
 
     @labels.setter
     def labels(self, labels: Collection[Label]):
-        # nest databox into its parent label
-        labels = set(labels)
-        for label in labels.copy():
-            if label.databox:
-                labels.discard(label.databox)
-
-        self._labels = [self.label_serializer.serialize(label) for label in labels]
+        self._labels = self.label_list_serializer.serialize(labels)
         self.write()
 
     def read(self):

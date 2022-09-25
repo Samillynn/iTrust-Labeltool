@@ -112,6 +112,7 @@ class AddConnectionHandler(ClickHandler):
         event, _ = self.confirm_databox_dialog()
         if event == 'Confirm':
             self.graph_handler.context['label_to_add_connection'].add_connection(label)
+            self.graph_handler.notify_labels()
             self.graph_handler.state = None
         elif event == 'Select Again':
             ...

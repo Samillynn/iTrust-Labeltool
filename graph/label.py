@@ -1,4 +1,5 @@
 import copy
+from typing import Collection
 
 from base_classes import Serializer
 
@@ -151,16 +152,21 @@ class Label(Rectangle):
 
 
 class LabelSerializer(Serializer):
-    def serialize(self, label: Label):
+    def serialize(self, label: Label) -> dict:
         result = {'name': label.name, 'category': label.category, 'flip': label.flip, 'rotation': label.rotation,
                   'parent': label.parent, 'fullname': label.fullname, 'top_left': label.top_left,
                   'bottom_right': label.bottom_right}
+
+        # save databox
         if label.databox:
             result['databox'] = self.serialize(label.databox)
 
+        # save connections
+        result['connections'] = [self.serialize(conn) for conn in label.connections]
+
         return result
 
-    def deserialize(self, label_dict):
+    def deserialize(self, label_dict: dict) -> Label:
         result = Label(
             start=label_dict.get('top_left', None),
             end=label_dict.get('bottom_right', None),
@@ -170,5 +176,38 @@ class LabelSerializer(Serializer):
         if label_dict.get('databox'):
             result.databox = self.deserialize(label_dict['databox'])
 
+        for conn_dict in label_dict['connections']:
+            print('connected', conn_dict)
+            result.add_connection(self.deserialize(conn_dict))
+
         return result
 
+
+class LabelListSerializer:
+    def __init__(self, label_serializer=None):
+        if label_serializer is None:
+            label_serializer = LabelSerializer()
+
+        self.label_serializer = label_serializer
+
+    def serialize(self, labels: Collection[Label]) -> list[dict]:
+        labels = set(labels)
+        for label in labels.copy():
+            if label.databox:
+                labels.discard(label.databox)
+            for conn in label.connections:
+                labels.discard(conn)
+
+        return [self.label_serializer.serialize(label) for label in labels]
+
+    def deserialize(self, label_dicts: Collection[dict]) -> list[Label]:
+        result = []
+        for label_dict in label_dicts:
+            label = self.label_serializer.deserialize(label_dict)
+            result.append(label)
+            if label.databox:
+                result.append(label.databox)
+            for conn in label.connections:
+                result.append(conn)
+
+        return result
