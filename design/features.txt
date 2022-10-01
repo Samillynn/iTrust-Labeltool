@@ -1,6 +1,11 @@
 
 #TODO
-possible to make graph_handler global to reduce passing of args
+1. possible to make graph_handler global to reduce passing of args
+2. make options easily configurable
+
+3. carry options
+4. choose from a list to add connections
+5. highlight connected
 
 #TODO
 window, <- Component?

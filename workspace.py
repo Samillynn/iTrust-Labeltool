@@ -63,7 +63,10 @@ def export_eh(event, file_path):
     def convert_label(label_dict):
         top_left = label_dict.pop('top_left')
         bottom_right = label_dict.pop('bottom_right')
-        label_dict['coordinate'] = Rectangle(top_left, bottom_right).center
+        rect = Rectangle(top_left, bottom_right)
+        label_dict['coordinate'] = rect.center
+        label_dict['width'] = rect.height
+        label_dict['length'] = rect.width
 
         if label_dict.get('databox'):
             label_dict['databox'] = Rectangle(label_dict['databox'].top_left, label_dict['databox'].bottom_right).center
