@@ -69,7 +69,7 @@ def export_eh(event, file_path):
         label_dict['length'] = rect.width
 
         if label_dict.get('databox'):
-            label_dict['databox'] = Rectangle(label_dict['databox'].top_left, label_dict['databox'].bottom_right).center
+            label_dict['databox'] = Rectangle(label_dict['databox']['top_left'], label_dict['databox']['bottom_right']).center
             print(label_dict)
         else:
             label_dict['databox'] = []
