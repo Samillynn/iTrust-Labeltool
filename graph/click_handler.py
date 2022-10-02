@@ -1,7 +1,6 @@
 from typing import TYPE_CHECKING
 
 import PySimpleGUI as sg
-
 from .dialog import BaseDialog
 from .image import CoordinateTransfer
 from .label import Label
@@ -131,33 +130,64 @@ class EditConnectionHandler:
     def __init__(self, graph_handler, label: Label):
         self.graph_handler = graph_handler
         self.label = label
+        self.window = None
 
-    def hints(self):
-        return {f'{conn.name}/{conn.fullname}': conn for conn in self.label.connections}
+    def selected_labels(self) -> dict[str, Label]:
+        return {f'[{i}]. {conn.name}/{conn.fullname}': conn for i, conn in enumerate(self.label.connections, 1)}
+
+    def unselected_labels(self) -> dict[str, Label]:
+        i = 1
+        result = {}
+        for label in self.graph_handler.labels:
+            if label not in self.selected_labels().values():
+                result[f'[{i}]. {label.name}/{label.fullname}'] = label
+                i += 1
+
+        return result
+
+    def update_ui(self):
+        self.update_selected_ui()
+        self.update_unselected_ui()
+
+    def update_unselected_ui(self):
+        self.window['unselected'].update(values=self.unselected_labels().keys())
+
+    def update_selected_ui(self):
+        self.window['selected'].update(values=self.selected_labels().keys())
 
     def layout(self):
         return [
-            [sg.Listbox(values=list(self.hints().keys()), key='select', s=(30, 5), enable_events=True)],
+            [sg.T('Selected Connections')],
+            [sg.Listbox(values=list(self.selected_labels().keys()), key='selected', s=(30, 5),
+                        enable_events=True)],
+            [sg.T('Unselected Labels')],
+            [sg.Listbox(values=list(self.unselected_labels().keys()), key='unselected', s=(30, 5),
+                        enable_events=True)],
             [sg.B('Add', key='add'), sg.B('Remove', key='remove'), sg.B('Back', key='back')]
         ]
 
     def handle(self) -> None:
-        window = sg.Window('Edit Connections', self.layout())
+
+        self.window = sg.Window('Edit Connections', self.layout())
         while True:
-            event, values = window.read(close=False)
+            event, values = self.window.read(close=False)
             print(event, values)
             if event == 'add':
-                self.graph_handler.state = 'add_connection'
-                self.graph_handler.context['label_to_add_connection'] = self.label
-                break
+                hint = values['unselected'][0]
+                self.label.add_connection(self.unselected_labels()[hint])
+                self.update_ui()
+                # self.graph_handler.state = 'add_connection'
+                # self.graph_handler.context['label_to_add_connection'] = self.label
+                # break
 
             elif event == 'remove':
                 print(values)
-                hint = values['select'][0]
-                self.label.remove_connections(self.hints()[hint])
-                window['select'].update(values=self.hints().keys())
+                hint = values['selected'][0]
+                self.label.remove_connections(self.selected_labels()[hint])
+                self.update_ui()
 
             elif event in ['back', sg.WINDOW_CLOSED]:
                 break
 
-        window.close()
+        print(self.label.connections)
+        self.window.close()
