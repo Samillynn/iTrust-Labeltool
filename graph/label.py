@@ -120,9 +120,19 @@ class Rectangle:
 
 
 class Label(Rectangle):
-    def __init__(self, start=(0, 0), end=(0, 0), name='', category='', flip=0, rotation=0.0, parent='', fullname=''):
+    max_instance_id = 0
+
+    def __init__(self, start=(0, 0), end=(0, 0), name='', category='', flip=0, rotation=0.0, parent='', fullname='', id_=None):
         # advanced properties
         super().__init__(start, end)
+
+        if isinstance(id_, int):
+            self.id = id_
+            self.max_instance_id = max(self.max_instance_id, id_)
+        else:
+            self.max_instance_id += 1
+            self.id = self.max_instance_id
+
         self.databox: Label | None = None
         self.next = []
 
@@ -170,6 +180,7 @@ class LabelSerializer(Serializer):
         result = Label(
             start=label_dict.get('top_left', None),
             end=label_dict.get('bottom_right', None),
+            id_=label_dict.get('id_')
         )
         result.copy_basic_properties(label_dict)
 

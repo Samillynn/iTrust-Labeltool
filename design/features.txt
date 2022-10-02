@@ -1,3 +1,8 @@
+databox, connection using id instead
+
+use __init__ (w/o w id)
+w id -> take max + 1
+w/o => id ++
 
 #TODO
 1. possible to make graph_handler global to reduce passing of args
