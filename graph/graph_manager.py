@@ -1,6 +1,7 @@
 import modifier_key
 from graph.graph_handler import GraphHandler, GraphView
 from graph.label_history import LabelHistory
+from graph.view import GraphView2
 from session_storage import JsonSessionStorage
 
 
@@ -11,7 +12,7 @@ class GraphManager:
         self.handler = GraphHandler(graph=graph, image_path=self.storage.image_path, labels=self.storage.labels)
         self.handler.add_observer(self.update_storage)
 
-        self.view = GraphView(graph)
+        self.view = GraphView2(graph)
         self.handler.add_observer(self.update_view)
 
         # window resize

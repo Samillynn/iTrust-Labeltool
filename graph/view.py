@@ -1,0 +1,142 @@
+import itertools
+from abc import ABC, abstractmethod
+from typing import Iterable
+
+from graph.image import Image
+from graph.label import Label
+
+
+class View(ABC):
+    def __init__(self, graph):
+        self.graph = graph
+        self._enabled = True
+        self.figure_ids = []
+
+    @property
+    def enabled(self):
+        return self._enabled
+
+    @enabled.setter
+    def enabled(self, val):
+        if val is True:
+            self.draw()
+        elif val is False:
+            self.clear()
+        else:
+            raise ValueError(f"{self.__class__.__name__}.enabled can only be True or False, not {val}.")
+
+    def draw(self):
+        self.clear()
+
+        self.figure_ids = list(self._draw())
+        print(f"{type(self).__name__}: draw {self.figure_ids}.")
+        # try:
+        #     figure_ids = iter(fid)
+        # except TypeError:
+        #     raise ValueError(
+        #         f"{type(self).__name__}.draw only takes int or Iterable[int], not {type(fid)}({fid}")
+
+    def clear(self):
+        for fid in self.figure_ids:
+            self.graph.delete_figure(fid)
+        print(f"{type(self).__name__}: erased {self.figure_ids}.")
+
+    @abstractmethod
+    def _draw(self) -> Iterable[int]:
+        ...
+
+
+class AbstractLabelView(View, ABC):
+    def __init__(self, graph):
+        super().__init__(graph)
+        self._labels = []
+
+    @property
+    def labels(self):
+        return self._labels
+
+    @labels.setter
+    def labels(self, val):
+        self._labels = val
+        self.draw()
+
+    def _draw(self) -> Iterable[int]:
+        return list(itertools.chain.from_iterable(self.draw_one(label) for label in self.labels))
+
+    @abstractmethod
+    def draw_one(self, label) -> Iterable[int]:
+        ...
+
+
+class RectangleView(AbstractLabelView):
+    def draw_one(self, label) -> list[int]:
+        return [self.graph.draw_rectangle(label.top_left, label.bottom_right, line_color='black', line_width=3)]
+
+
+class LabelTextView(AbstractLabelView):
+    def draw_one(self, label) -> list[int]:
+        return [self.graph.draw_text(f"{label.name}\n{label.category}\n{label.fullname}",
+                                     location=label.center,
+                                     color='black', font=("Courier New Bold", 10))]
+
+
+class ConnectionView(AbstractLabelView):
+    def draw_one(self, label) -> list[int]:
+        return [self.graph.draw_line(label.center, conn.center)
+                for conn in label.connections]
+
+
+class ImageView(View):
+    def __init__(self, graph):
+        super().__init__(graph)
+        self._image = Image()
+
+    @property
+    def image(self):
+        return self._image
+
+    @image.setter
+    def image(self, image: Image):
+        self._image = image
+        self.draw()
+
+    def _draw(self) -> Iterable[int]:
+        self.graph.set_size(self.image.size)
+        return [self.graph.draw_image(data=self.image.data, location=(-1, 1))]
+
+
+class GraphView2:
+    def __init__(self, graph):
+        self.graph = graph
+        self._image: Image = Image()
+        self._labels: list[Label] = []
+
+        self.label_views = [
+            RectangleView(self.graph),
+            LabelTextView(self.graph),
+            ConnectionView(self.graph),
+        ]
+        self.image_view = ImageView(self.graph)
+
+    @property
+    def image(self):
+        return self._image
+
+    @image.setter
+    def image(self, image: Image):
+        self._image = image
+        self.image_view.image = image
+
+        # assign self.labels to render labels again
+        # otherwise image will hide all labels
+        self.labels = self.labels
+
+    @property
+    def labels(self):
+        return self._labels
+
+    @labels.setter
+    def labels(self, labels: list[Label]):
+        self._labels = labels
+        for view in self.label_views:
+            view.labels = labels

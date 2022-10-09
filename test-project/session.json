@@ -1,6 +1,41 @@
 {
   "image_path": "screen_shot.jpg",
   "labels": [
-
+    {
+      "id": 3,
+      "name": "a",
+      "category": "",
+      "flip": 0,
+      "rotation": 0,
+      "parent": "",
+      "fullname": "",
+      "top_left": [
+        -0.8125,
+        0.4361111111111111
+      ],
+      "bottom_right": [
+        -0.684375,
+        0.050000000000000044
+      ],
+      "connections": []
+    },
+    {
+      "id": 4,
+      "name": "",
+      "category": "",
+      "flip": 0,
+      "rotation": 0,
+      "parent": "",
+      "fullname": "",
+      "top_left": [
+        0.009374999999999911,
+        0.25277777777777777
+      ],
+      "bottom_right": [
+        0.14375000000000004,
+        0.008333333333333304
+      ],
+      "connections": []
+    }
   ]
 }

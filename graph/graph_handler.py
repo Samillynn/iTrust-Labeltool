@@ -156,6 +156,10 @@ class GraphView:
                                          color='black', font=("Courier New Bold", 10))
         self.figures.append(figure_id)
 
+    def draw_line(self, label, conn):
+        figure_id = self.graph.draw_line(label.center, conn.center)
+        self.figures.append(figure_id)
+
     def draw(self, image=False):
         if image:
             self.graph.erase()
@@ -168,3 +172,5 @@ class GraphView:
 
         for label in self.labels:
             self.draw_label(label)
+            for conn in label.connections:
+                self.draw_line(label, conn)

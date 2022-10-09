@@ -108,7 +108,7 @@ class Workspace:
             [sg.Text(key='info', size=(60, 1)), sg.I(visible=False, enable_events=True, key='export-filename'),
              sg.SaveAs('Export', key='-EXPORT-', file_types=(('JSON file', '*.json'),),
                        target='export-filename'),
-             sg.B('New', key='-NEW-'), sg.B('Open', key='-OPEN-')]
+             sg.B('New', key='-NEW-'), sg.B('Open', key='-OPEN-'), sg.B('Show/Hide connections', key='connections')]
         ]
 
 

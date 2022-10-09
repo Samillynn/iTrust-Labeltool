@@ -1,3 +1,18 @@
+font drawer, has property disabled
+label drawer
+image drawer
+connection drawer
+draw_one
+GraphView
+
+View
+    enabled
+    draw
+    clear
+    _draw <- implement
+
+
+#TODO after zoom in/out, find similar does not work properly
 databox, connection using id instead
 
 use __init__ (w/o w id)
@@ -8,13 +23,18 @@ w/o => id ++
 1. possible to make graph_handler global to reduce passing of args
 2. make options easily configurable
 
-3. carry options
-4. choose from a list to add connections
-5. highlight connected
+Done 3. carry options
+Done 4. choose from a list to add connections
+Done 5. highlight connected
 
 #TODO
 window, <- Component?
 Component = {extend_layout
+
+#TODO
+hide lines / modify font
+generate connection file
+font size
 
 two layer?
 
@@ -36,7 +56,6 @@ init process to determine the layout -> dynamic layout by multiple processors
 call setup_edit_connections in init
 setup-edit-connection add_handler
 
-#TODO after zoom in/out, find similar does not work properly
 
 Make EventHandler protocol
 make EventChain an EventHandler

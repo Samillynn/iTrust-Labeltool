@@ -128,9 +128,9 @@ class Label(Rectangle):
 
         if isinstance(id_, int):
             self.id = id_
-            self.max_instance_id = max(self.max_instance_id, id_)
+            self.__class__.max_instance_id = max(self.max_instance_id, id_)
         else:
-            self.max_instance_id += 1
+            self.__class__.max_instance_id += 1
             self.id = self.max_instance_id
 
         self.databox: Label | None = None
@@ -163,16 +163,16 @@ class Label(Rectangle):
 
 class LabelSerializer(Serializer):
     def serialize(self, label: Label) -> dict:
-        result = {'name': label.name, 'category': label.category, 'flip': label.flip, 'rotation': label.rotation,
+        result = {'id': label.id, 'name': label.name, 'category': label.category, 'flip': label.flip, 'rotation': label.rotation,
                   'parent': label.parent, 'fullname': label.fullname, 'top_left': label.top_left,
                   'bottom_right': label.bottom_right}
 
         # save databox
         if label.databox:
-            result['databox'] = self.serialize(label.databox)
+            result['databox'] = label.databox.id
 
         # save connections
-        result['connections'] = [self.serialize(conn) for conn in label.connections]
+        result['connections'] = [conn.id for conn in label.connections]
 
         return result
 
@@ -180,16 +180,16 @@ class LabelSerializer(Serializer):
         result = Label(
             start=label_dict.get('top_left', None),
             end=label_dict.get('bottom_right', None),
-            id_=label_dict.get('id_')
+            id_=label_dict.get('id')
         )
         result.copy_basic_properties(label_dict)
 
-        if label_dict.get('databox'):
-            result.databox = self.deserialize(label_dict['databox'])
-
-        for conn_dict in label_dict['connections']:
-            print('connected', conn_dict)
-            result.add_connection(self.deserialize(conn_dict))
+        # if label_dict.get('databox'):
+        #     result.databox = self.deserialize(label_dict['databox'])
+        #
+        # for conn_dict in label_dict['connections']:
+        #     print('connected', conn_dict)
+        #     result.add_connection(self.deserialize(conn_dict))
 
         return result
 
@@ -202,23 +202,25 @@ class LabelListSerializer:
         self.label_serializer = label_serializer
 
     def serialize(self, labels: Collection[Label]) -> list[dict]:
-        labels = set(labels)
-        for label in labels.copy():
-            if label.databox:
-                labels.discard(label.databox)
-            for conn in label.connections:
-                labels.discard(conn)
+        # labels = set(labels)
+        # for label in labels.copy():
+        #     if label.databox:
+        #         labels.discard(label.databox)
+        #     for conn in label.connections:
+        #         labels.discard(conn)
 
         return [self.label_serializer.serialize(label) for label in labels]
 
     def deserialize(self, label_dicts: Collection[dict]) -> list[Label]:
-        result = []
+        result = {}
         for label_dict in label_dicts:
             label = self.label_serializer.deserialize(label_dict)
-            result.append(label)
-            if label.databox:
-                result.append(label.databox)
-            for conn in label.connections:
-                result.append(conn)
+            result[label.id] = label, label_dict
+            print(label.id)
+        for label, label_dict in result.values():
+            if (databox_id := label_dict.get('databox')) is not None:
+                label.databox = result[databox_id][0]
+            for conn_id in label_dict['connections']:
+                label.add_connection(result[conn_id][0])
 
-        return result
+        return [x[0] for x in result.values()]

@@ -69,7 +69,12 @@ class UpdateLabelHandler(ClickHandler):
         matches = relative_coord_crop_matching(self.graph_handler.image.to_nparray(), label, coord)
         matches = remove_close_rectangles(matches, self.graph_handler.labels, min(label.width, label.height))
         for rect in matches:
-            self.graph_handler.add_label(Label(rect.bottom_left, rect.top_right))
+            similar_label = Label(rect.bottom_left, rect.top_right)
+            similar_label.flip = label.flip
+            similar_label.category = label.category
+            similar_label.rotation = label.rotation
+
+            self.graph_handler.add_label(similar_label)
         self.graph_handler.notify_labels()
 
     def handle(self, position) -> bool:
