@@ -127,7 +127,7 @@ class LabelType(Enum):
 class Label(Rectangle):
     max_instance_id = 0
 
-    def __init__(self, start=(0, 0), end=(0, 0), name='', category='', flip=0, rotation=0.0, parent='', fullname='', id_=None):
+    def __init__(self, start=(0, 0), end=(0, 0), name='', category='', flip=0, rotation=0.0, parent='', fullname='', id_=None, _type=LabelType.COMPONENT):
         # advanced properties
         super().__init__(start, end)
 
@@ -138,7 +138,7 @@ class Label(Rectangle):
             self.__class__.max_instance_id += 1
             self.id = self.max_instance_id
 
-        self._type: LabelType = LabelType.COMPONENT
+        self._type: LabelType = _type
         self.databox: Label | None = None
         self.next = []
 
@@ -159,7 +159,6 @@ class Label(Rectangle):
         self.connections.remove(label)
 
     def copy_basic_properties(self, label_dict):
-        self._type = LabelType(label_dict.get('_type', LabelType.COMPONENT.value))
         self.name = label_dict.get('name', '')
         self.category = label_dict.get('category', '')
         self.fullname = label_dict.get('fullname', '')
@@ -170,7 +169,6 @@ class Label(Rectangle):
     @property
     def basic_properties(self):
         return {
-            "_type": self._type.value,
             "name": self.name,
             "fullname": self.fullname,
             "category": self.category,
@@ -186,6 +184,8 @@ class LabelSerializer(Serializer):
         #           'parent': label.parent, 'fullname': label.fullname, 'top_left': label.top_left,
         #           'bottom_right': label.bottom_right}
         result = label.basic_properties
+        result["_type"] = label._type.value
+        print('_type', result['_type'])
         result['id'] = label.id
         result['top_left'] = label.top_left
         result['bottom_right'] = label.bottom_right
@@ -203,7 +203,8 @@ class LabelSerializer(Serializer):
         result = Label(
             start=label_dict.get('top_left', None),
             end=label_dict.get('bottom_right', None),
-            id_=label_dict.get('id')
+            id_=label_dict.get('id'),
+            _type=LabelType(label_dict.get('_type', LabelType.COMPONENT.value))
         )
         result.copy_basic_properties(label_dict)
 
