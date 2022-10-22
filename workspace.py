@@ -87,6 +87,7 @@ class ProjectMenuEH(EventHandler):
 def export_eh(event, file_path):
     def to_export_label_dict(label: Label):
         result = label.basic_properties
+        result['coordinate'] = label.center
         if label.databox is not None:
             result['databox'] = list(label.databox.center)
         else:
