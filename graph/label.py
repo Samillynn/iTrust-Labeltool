@@ -185,7 +185,6 @@ class LabelSerializer(Serializer):
         #           'bottom_right': label.bottom_right}
         result = label.basic_properties
         result["_type"] = label._type.value
-        print('_type', result['_type'])
         result['id'] = label.id
         result['top_left'] = label.top_left
         result['bottom_right'] = label.bottom_right
@@ -243,6 +242,11 @@ class LabelListSerializer:
         for label, label_dict in result.values():
             if (databox_id := label_dict.get('databox')) is not None:
                 label.databox = result[databox_id][0]
+                # temporarily fix mismatch type
+                databox = label.databox
+                if databox._type != LabelType.DATABOX:
+                    print(f"Fix type of Label no.{databox.id} from {databox._type} to {LabelType.DATABOX}")
+                    label.databox._type = LabelType.DATABOX
             for conn_id in label_dict['connections']:
                 label.add_connection(result[conn_id][0])
 
