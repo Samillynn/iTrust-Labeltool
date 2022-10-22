@@ -1,4 +1,5 @@
 import PySimpleGUI as sg
+from config import config
 from flip_dict import FlipDict
 
 from .label import Label
@@ -10,10 +11,12 @@ class BaseDialog:
     flip_options = FlipDict(
         {'None': 0, 'flip around y axis': 1, 'flip around x axis': 2, 'flip around both x and y axis': 3})
 
-    categories = ['Big Tank', 'Small Tank', 'Dosing Tank', 'other types']
-
     def __init__(self, label=None):
         self.label = label if label else Label()
+
+    @property
+    def categories(self):
+        return config["categories"]
 
     def layout(self):
         return [
@@ -33,7 +36,8 @@ class BaseDialog:
         if layout is None:
             layout = self.layout()
 
-        event, value = sg.Window(title, layout).read(close=True)
+        window = sg.Window(title, layout, keep_on_top=True)
+        event, value = window.read(close=True)
         if 'rotation' in value:
             value['rotation'] = self.rotation_options.get(value['rotation'], 0)
         if 'flip' in value:

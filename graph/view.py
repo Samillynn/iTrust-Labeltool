@@ -2,6 +2,8 @@ import itertools
 from abc import ABC, abstractmethod
 from typing import Iterable
 
+import globl
+from config import config
 from graph.image import Image
 from graph.label import Label
 
@@ -19,16 +21,23 @@ class View(ABC):
     @enabled.setter
     def enabled(self, val):
         if val is True:
+            self._enabled = True
             self.draw()
         elif val is False:
             self.clear()
+            self._enabled = False
         else:
             raise ValueError(f"{self.__class__.__name__}.enabled can only be True or False, not {val}.")
 
     def draw(self):
         self.clear()
 
-        self.figure_ids = list(self._draw())
+        if self.enabled:
+            self.figure_ids = list(self._draw())
+        else:
+            # do nothing
+            ...
+
         print(f"{type(self).__name__}: draw {self.figure_ids}.")
         # try:
         #     figure_ids = iter(fid)
@@ -75,9 +84,13 @@ class RectangleView(AbstractLabelView):
 
 class LabelTextView(AbstractLabelView):
     def draw_one(self, label) -> list[int]:
-        return [self.graph.draw_text(f"{label.name}\n{label.category}\n{label.fullname}",
-                                     location=label.center,
-                                     color='black', font=("Courier New Bold", 10))]
+        font = config["display"]["font"]
+        text = font["format"].format(**label.basic_properties)
+        color = font["color"]
+        type_ = font["type"]
+        size = font["size"]
+
+        return [self.graph.draw_text(text, location=label.center, color=color, font=(type_, size))]
 
 
 class ConnectionView(AbstractLabelView):
@@ -116,6 +129,8 @@ class GraphView2:
             LabelTextView(self.graph),
             ConnectionView(self.graph),
         ]
+        globl.connection_view = self.label_views[2]
+
         self.image_view = ImageView(self.graph)
 
     @property

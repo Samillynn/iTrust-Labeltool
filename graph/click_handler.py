@@ -1,6 +1,9 @@
+import imp
+from platform import python_branch
 from typing import TYPE_CHECKING
 
 import PySimpleGUI as sg
+from pytesseract import pytesseract
 from .dialog import BaseDialog
 from .image import CoordinateTransfer
 from .label import Label
@@ -60,12 +63,13 @@ class UpdateLabelHandler(ClickHandler):
             layout += [[sg.B('Select Databox', key='Databox', button_color='blue')]]
 
         layout += [[sg.B('Edit Connections', key='Connection')]]
+        layout += [[sg.B('Try Recognize Text', key='OCR')]]
 
         return dialog.read('Update Label', layout)
 
     def find_similar_labels(self, label):
         coord = CoordinateTransfer(relative_bottom_left=(-1, -1), relative_top_right=(1, 1),
-                                   absolute_size=self.graph_handler.image.size)
+                                   absolute_size=self.graph_handler.image.original_size)
         matches = relative_coord_crop_matching(self.graph_handler.image.to_nparray(), label, coord)
         matches = remove_close_rectangles(matches, self.graph_handler.labels, min(label.width, label.height))
         for rect in matches:
@@ -98,6 +102,9 @@ class UpdateLabelHandler(ClickHandler):
         elif event == 'Connection':
             edit_connection = EditConnectionHandler(self.graph_handler, label)
             edit_connection.handle()
+        elif event == 'OCR':
+            pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
+            print('\n=============== TEXT:', pytesseract.image_to_string(self.graph_handler.image.crop(label)), '=========================')
         elif event in ['Cancel', None]:
             ...
         else:

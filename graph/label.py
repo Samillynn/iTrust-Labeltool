@@ -160,6 +160,17 @@ class Label(Rectangle):
         self.flip = label_dict.get('flip', 0)
         self.rotation = label_dict.get('rotation', 0)
 
+    @property
+    def basic_properties(self):
+        return {
+            "name": self.name,
+            "fullname": self.fullname,
+            "category": self.category,
+            "parent": self.parent,
+            "flip": self.flip,
+            "rotation": self.rotation
+        }
+
 
 class LabelSerializer(Serializer):
     def serialize(self, label: Label) -> dict:

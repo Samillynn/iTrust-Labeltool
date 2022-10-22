@@ -70,6 +70,7 @@ class WindowManager(HandlerChain):
                             callback(self.event.removeprefix(key), values)
 
                         except TypeError:
-                            callback(self.event)
-                        except TypeError:
-                            callback()
+                            try:
+                                callback(self.event)
+                            except TypeError:
+                                callback()

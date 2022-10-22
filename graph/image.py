@@ -4,6 +4,8 @@ import io
 import PIL.Image
 import cv2
 
+from graph.label import Rectangle
+
 
 class CoordinateTransfer:
     def __init__(self, relative_bottom_left, relative_top_right, absolute_size):
@@ -14,8 +16,10 @@ class CoordinateTransfer:
     def to_absolute(self, relative_position: tuple[float, float]):
         x_in, y_in = relative_position
 
-        scale_x = (self.absolute_size[0] - 0) / (self.top_right[0] - self.bottom_left[0])
-        scale_y = (0 - self.absolute_size[1]) / (self.top_right[1] - self.bottom_left[1])
+        scale_x = (self.absolute_size[0] - 0) / \
+            (self.top_right[0] - self.bottom_left[0])
+        scale_y = (0 - self.absolute_size[1]) / \
+            (self.top_right[1] - self.bottom_left[1])
 
         x_out = 0 + (x_in - self.bottom_left[0]) * scale_x
         y_out = self.absolute_size[1] + (y_in - self.bottom_left[1]) * scale_y
@@ -25,13 +29,21 @@ class CoordinateTransfer:
     def to_relative(self, absolute_position: tuple[int, int]):
         x_in, y_in = absolute_position
 
-        scale_x = (self.absolute_size[0] - 0) / (self.top_right[0] - self.bottom_left[0])
-        scale_y = (0 - self.absolute_size[1]) / (self.top_right[1] - self.bottom_left[1])
+        scale_x = (self.absolute_size[0] - 0) / \
+            (self.top_right[0] - self.bottom_left[0])
+        scale_y = (0 - self.absolute_size[1]) / \
+            (self.top_right[1] - self.bottom_left[1])
 
         x_out = x_in / scale_x + self.bottom_left[0]
         y_out = (y_in - self.absolute_size[1]) / scale_y + self.bottom_left[1]
 
         return x_out, y_out
+
+    def rect_to_absolute(self, rect: Rectangle) -> Rectangle:
+        return Rectangle(self.to_absolute(rect.top_left), self.to_absolute(rect.bottom_right))
+
+    def rect_to_relative(self, rect: Rectangle) -> Rectangle:
+        return Rectangle(self.to_relative(rect.top_left), self.to_relative(rect.bottom_right))
 
 
 class Image:
@@ -44,6 +56,17 @@ class Image:
 
     def to_nparray(self):
         return cv2.imread(self.path)
+
+    def crop(self, rect: Rectangle, coord=None):
+        if coord is None:
+            coord = CoordinateTransfer(relative_bottom_left=(-1, -1), relative_top_right=(1, 1),
+                                       absolute_size=self.original_size)
+
+        absolute_rect = coord.rect_to_absolute(rect)
+        left, top = absolute_rect.top_left
+        right, bottom = absolute_rect.bottom_right
+        return self.to_nparray()[bottom:top + 1, left:right + 1]
+
 
     @property
     def data(self) -> bytes:
@@ -67,6 +90,10 @@ class Image:
     def size(self) -> tuple[int, int]:
         width, height = get_image_size(self.path)
         return int(width * self.resize), int(height * self.resize)
+
+    @property
+    def original_size(self) -> tuple[int, int]:
+        return get_image_size(self.path)
 
 
 def convert_to_bytes(file_or_bytes, resize=None):
@@ -93,7 +120,8 @@ def convert_to_bytes(file_or_bytes, resize=None):
     if resize:
         new_width, new_height = resize
         scale = min(new_height / cur_height, new_width / cur_width)
-        img = img.resize((int(cur_width * scale), int(cur_height * scale)), PIL.Image.ANTIALIAS)
+        img = img.resize(
+            (int(cur_width * scale), int(cur_height * scale)), PIL.Image.ANTIALIAS)
     with io.BytesIO() as bio:
         img.save(bio, format="PNG")
         del img
