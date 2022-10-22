@@ -6,7 +6,7 @@ import PySimpleGUI as sg
 from pytesseract import pytesseract
 from .dialog import BaseDialog
 from .image import CoordinateTransfer
-from .label import Label
+from .label import Label, LabelType
 from .template_matching2 import relative_coord_crop_matching, remove_close_rectangles
 
 if TYPE_CHECKING:
@@ -23,7 +23,7 @@ class ClickHandler:
 
 class SelectDataboxHandler(ClickHandler):
     def handle(self, position) -> bool:
-        label = self.graph_handler.hovered_label(position)
+        label : Label = self.graph_handler.hovered_label(position)
         if not label or not self.graph_handler.label_to_select_databox:
             return False
 
@@ -31,6 +31,7 @@ class SelectDataboxHandler(ClickHandler):
         match event:
             case 'Confirm':
                 self.graph_handler.label_to_select_databox.databox = label
+                label._type = LabelType.DATABOX
                 self.graph_handler.notify_labels()
                 self.graph_handler.state = None
             case 'Select Again':

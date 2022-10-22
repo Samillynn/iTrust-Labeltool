@@ -1,3 +1,18 @@
+Image:crop -> Cv2Image
+parse text func:
+
+todo: make coord system configurable: dependency injection + config file
+
+#TODO
+done 1. fix resize+find similar bug
+done 2. make popup stay on top
+not-wroking 3. find a way to detect text
+
+
+should we do let whoever has access to the data control the behavior?
+for connection view - yes, absolutely? really?
+i do feel like i need a god class to know everything, or how can the high level window know the labels. even more how the window know the text
+
 font drawer, has property disabled
 label drawer
 image drawer

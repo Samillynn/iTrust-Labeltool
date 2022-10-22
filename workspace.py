@@ -1,3 +1,4 @@
+import imp
 import json
 import os
 import shutil
@@ -8,9 +9,10 @@ import modifier_key
 from base_classes import EventHandler
 from config import config
 from graph.graph_manager import GraphManager
-from graph.label import Rectangle
+from graph.label import LabelListSerializer, LabelType, Rectangle
 from utils import sg, current_milli_time
 from window_manager import WindowManager
+from graph.label import LabelListSerializer, Label
 
 
 class NewProjectEH(EventHandler):
@@ -61,26 +63,43 @@ class ProjectMenuEH(EventHandler):
         window_manager.run(close=True)
 
 
+# def export_eh(event, file_path):
+#     def convert_label(label_dict):
+#         top_left = label_dict.pop('top_left')
+#         bottom_right = label_dict.pop('bottom_right')
+#         rect = Rectangle(top_left, bottom_right)
+#         label_dict['coordinate'] = rect.center
+#         label_dict['width'] = rect.height
+#         label_dict['length'] = rect.width
+
+#         if label_dict.get('databox'):
+#             label_dict['databox'] = Rectangle(label_dict['databox']['top_left'],
+#                                               label_dict['databox']['bottom_right']).center
+#             print(label_dict)
+#         else:
+#             label_dict['databox'] = []
+
+#     labels = json.load(open('session.json', 'r'))['labels']
+#     for label in labels:
+#         convert_label(label)
+#     json.dump(labels, open(file_path, 'w+'), indent=2)
+
 def export_eh(event, file_path):
-    def convert_label(label_dict):
-        top_left = label_dict.pop('top_left')
-        bottom_right = label_dict.pop('bottom_right')
-        rect = Rectangle(top_left, bottom_right)
-        label_dict['coordinate'] = rect.center
-        label_dict['width'] = rect.height
-        label_dict['length'] = rect.width
-
-        if label_dict.get('databox'):
-            label_dict['databox'] = Rectangle(label_dict['databox']['top_left'],
-                                              label_dict['databox']['bottom_right']).center
-            print(label_dict)
+    def to_export_label_dict(label: Label):
+        result = label.basic_properties
+        if label.databox is not None:
+            result['databox'] = list(label.databox.center)
         else:
-            label_dict['databox'] = []
+            result['databox'] = []
 
-    labels = json.load(open('session.json', 'r'))['labels']
-    for label in labels:
-        convert_label(label)
-    json.dump(labels, open(file_path, 'w+'), indent=2)
+        return result
+
+    label_dicts = json.load(open('session.json', 'r'))['labels']
+    labels = LabelListSerializer().deserialize(label_dicts)
+    export_label_dicts = [
+        to_export_label_dict(label)  for label in labels if label._type == LabelType.COMPONENT
+    ]
+    json.dump(export_label_dicts, open(file_path, 'w+'), indent=2)
 
 
 class Workspace:
