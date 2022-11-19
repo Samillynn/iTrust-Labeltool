@@ -4,6 +4,11 @@ PySimpleGUI.py
 .vscode
 test-project
 
+PUB_Plant/
+design/
+
+.idea
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

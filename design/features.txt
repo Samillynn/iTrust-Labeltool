@@ -1,3 +1,20 @@
+bind to 
+
+make each selection a module
+a click always result in the change of the mapped input box -> window.update <- change of the underlying data -> change of label
+current label change after confirm
+
+layout add side by side
+
+1. define layout view
+2. define handler, insert into global handler
+3. define object (layout + handler), take in global window as args
+
+
+notify(key, value)
+window[key].update(value)
+label
+
 Image:crop -> Cv2Image
 parse text func:
 

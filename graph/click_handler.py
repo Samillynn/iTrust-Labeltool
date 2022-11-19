@@ -1,6 +1,5 @@
 import imp
-from platform import python_branch
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 import PySimpleGUI as sg
 from pytesseract import pytesseract
@@ -48,25 +47,35 @@ class SelectDataboxHandler(ClickHandler):
 
 
 class UpdateLabelHandler(ClickHandler):
-
     @staticmethod
-    def update_label_dialog(label: Label):
+    def select_list(title, choices):
+        return sg.Tab(title, [[sg.Listbox(choices, s=(40, 20), select_mode=sg.LISTBOX_SELECT_MODE_MULTIPLE, enable_events=True, key=f'list-{title}')]])
+
+    def update_label_dialog(self, label: Label):
         dialog = BaseDialog(label)
-        layout = dialog.layout()
-        layout += [
+        left_layout = dialog.layout()
+        left_layout += [
             [sg.B('Update'), sg.Cancel(), sg.B('Delete', button_color='red'), sg.B('Find Similar', key='Similar')]
         ]
 
         if label.databox:
             button_hint = f'{label.databox.name}. Reselect'
-            layout += [[sg.B(button_hint, key='Databox', button_color='blue'), sg.B('Remove Databox')]]
+            left_layout += [[sg.B(button_hint, key='Databox', button_color='blue'), sg.B('Remove Databox')]]
         else:
-            layout += [[sg.B('Select Databox', key='Databox', button_color='blue')]]
+            left_layout += [[sg.B('Select Databox', key='Databox', button_color='blue')]]
 
-        layout += [[sg.B('Edit Connections', key='Connection')]]
-        layout += [[sg.B('Try Recognize Text', key='OCR')]]
+        left_layout += [[sg.B('Edit Connections', key='Connection')]]
+        left_layout += [[sg.B('Try Recognize Text', key='OCR')]]
 
-        return dialog.read('Update Label', layout)
+        pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
+        print('Text Recognized:')
+        lst = list(filter(bool, pytesseract.image_to_string(self.graph_handler.image.crop(label)).split('\n')))
+        right_layout = [[sg.TabGroup([[self.select_list('fullname', lst), self.select_list('shortname', lst)]])]]
+
+        layout = [[sg.Column(left_layout), sg.VSep(), sg.Column(right_layout)]]
+
+        dialog.create('Update', layout)
+        return dialog
 
     def find_similar_labels(self, label):
         coord = CoordinateTransfer(relative_bottom_left=(-1, -1), relative_top_right=(1, 1),
@@ -87,29 +96,51 @@ class UpdateLabelHandler(ClickHandler):
         if not label or self.graph_handler.state is not None:
             return False
 
-        event, values = self.update_label_dialog(label)
-        if event in ['Delete']:
-            self.graph_handler.remove_label(label)
-        elif event in ['Update']:
-            print(values)
-            label.copy_basic_properties(values)
-        elif event == 'Databox':
-            self.graph_handler.state = 'select_databox'
-            self.graph_handler.label_to_select_databox = label
-        elif event == 'Remove Databox':
-            label.databox = None
-        elif event == 'Similar':
-            self.find_similar_labels(label)
-        elif event == 'Connection':
-            edit_connection = EditConnectionHandler(self.graph_handler, label)
-            edit_connection.handle()
-        elif event == 'OCR':
-            pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
-            print('\n=============== TEXT:', pytesseract.image_to_string(self.graph_handler.image.crop(label)), '=========================')
-        elif event in ['Cancel', None]:
-            ...
-        else:
-            raise AssertionError(event)
+        dialog = self.update_label_dialog(label)
+        while True:
+            event, values = dialog.read(close=False)
+            print(event, values)
+            if event in ['Delete']:
+                self.graph_handler.remove_label(label)
+                break
+            elif event in ['Update']:
+                print(values)
+                label.copy_basic_properties(values)
+                break
+            elif event == 'list-shortname':
+                val = values['list-shortname']
+                dialog.window['name'].update(' '.join(val))
+            elif event == 'list-fullname':
+                val = values['list-fullname']
+                dialog.window['fullname'].update(' '.join(val))
+
+            elif event == 'name':
+                dialog.window['list-shortname'].update(set_to_index=[])
+
+            elif event == 'fullname':
+                dialog.window['list-fullname'].update(set_to_index=[])
+                
+            elif event == 'Databox':
+                self.graph_handler.state = 'select_databox'
+                self.graph_handler.label_to_select_databox = label
+            elif event == 'Remove Databox':
+                label.databox = None
+            elif event == 'Similar':
+                self.find_similar_labels(label)
+            elif event == 'Connection':
+                edit_connection = EditConnectionHandler(self.graph_handler, label)
+                edit_connection.handle()
+            elif event == 'OCR':
+                pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
+                print('Text Recognized:')
+                print(pytesseract.image_to_string(self.graph_handler.image.crop(label)))
+            elif event in ['Cancel', None]:
+                break
+            else:
+                ...
+                # raise AssertionError(event)
+
+        dialog.close()
 
         self.graph_handler.notify_labels()
         return True
@@ -134,7 +165,7 @@ class AddConnectionHandler(ClickHandler):
         return True
 
     @staticmethod
-    def confirm_databox_dialog():
+    def confirm_databox_dialog() -> tuple[str, Any]:
         layout = [[sg.B('Confirm'), sg.B('Select Again'), sg.Cancel()]]
         return sg.Window('confirm connection?', layout).read(close=True)
 
@@ -181,7 +212,7 @@ class EditConnectionHandler:
 
     def handle(self) -> None:
 
-        self.window = sg.Window('Edit Connections', self.layout())
+        self.window = sg.Window('Edit Connections', self.layout(), keep_on_top=True)
         while True:
             event, values = self.window.read(close=False)
             print(event, values)

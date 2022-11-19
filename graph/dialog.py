@@ -13,16 +13,17 @@ class BaseDialog:
 
     def __init__(self, label=None):
         self.label = label if label else Label()
+        self.window = None
 
     @property
     def categories(self):
         return config["categories"]
 
-    def layout(self):
+    def layout(self, enable_event=True):
         return [
-            [sg.T('Name'), sg.I(self.label.name, key='name')],
+            [sg.T('Name'), sg.I(self.label.name, key='name', enable_events=enable_event)],
             [sg.T('Category'), sg.DD(self.categories, default_value=self.label.category, key='category')],
-            [sg.T('Fullname'), sg.I(self.label.fullname, key='fullname')],
+            [sg.T('Fullname'), sg.I(self.label.fullname, key='fullname', enable_events=enable_event)],
             [sg.T('Parent'), sg.I(self.label.parent, key='parent')],
             [sg.T('Rotation'),
              sg.DD(list(self.rotation_options.keys()), default_value=self.rotation_options.flip[self.label.rotation],
@@ -32,16 +33,29 @@ class BaseDialog:
                    key='flip')]
         ]
 
-    def read(self, title='', layout=None):
+    def create(self, title='', layout=None):
         if layout is None:
             layout = self.layout()
+        if self.window == None:
+            self.window = sg.Window(title, layout, keep_on_top=True)
 
-        window = sg.Window(title, layout, keep_on_top=True)
-        event, value = window.read(close=True)
+
+    def close(self):
+        self.window.close()
+        self.window = None
+
+    def read(self, title='', layout=None, close=True):
+        event, value = self.window.read(close=close)
+        if value is None:
+            print(f'=============={event}============')
+            return event, value
         if 'rotation' in value:
             value['rotation'] = self.rotation_options.get(value['rotation'], 0)
         if 'flip' in value:
             value['flip'] = self.flip_options.get(value['flip'], 0)
+
+        if close:
+            self.close()
 
         return event, value
 

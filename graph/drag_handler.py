@@ -79,9 +79,10 @@ class NewLabelHandler(DragHandler):
     @staticmethod
     def new_label_dialog():
         dialog = BaseDialog()
-        layout = dialog.layout()
+        layout = dialog.layout(enable_event=False)
         layout += [[sg.Submit(), sg.Exit()]]
-        return dialog.read('Create new label', layout)
+        dialog.create('Create new label', layout)
+        return dialog.read(close=True)
 
     def ask_label_info(self):
         event, values = self.new_label_dialog()

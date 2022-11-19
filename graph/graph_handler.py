@@ -1,5 +1,6 @@
 # noinspection PyPep8Naming
 import logging
+from typing import Any
 
 from handler_chain import HandlerChain
 from observer import Observable
@@ -31,10 +32,10 @@ class GraphHandler(Observable, HandlerChain):
         self.on_click = None
         self.init_on_click()
 
-        self.state = None
+        self.state :Any = None
         self.context = {}
 
-        self.label_to_select_databox = None
+        self.label_to_select_databox : Label | None = None
 
         self.add_handler(self.handle_cursor)
 
