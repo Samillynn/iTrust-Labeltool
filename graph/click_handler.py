@@ -123,8 +123,10 @@ class UpdateLabelHandler(ClickHandler):
             elif event == 'Databox':
                 self.graph_handler.state = 'select_databox'
                 self.graph_handler.label_to_select_databox = label
+                break
             elif event == 'Remove Databox':
                 label.databox = None
+                break
             elif event == 'Similar':
                 self.find_similar_labels(label)
             elif event == 'Connection':
