@@ -4,12 +4,12 @@ from typing import Any
 
 from handler_chain import HandlerChain
 from observer import Observable
-from .click_handler import UpdateLabelHandler, SelectDataboxHandler, AddConnectionHandler
+from .click_handler import AddPairHandler, UpdateLabelHandler, SelectDataboxHandler, AddConnectionHandler
 # TODO: make end_point/start_point None after each time
 from .cursor_handler import CursorHandler
 from .drag_handler import DragHandlerChain, DuplicateLabelHandler, NewLabelHandler, MoveVertexHandler, MoveLabelHandler
 from .image import Image
-from .label import Label
+from .label import Label, LabelType
 
 logging.basicConfig(level=logging.INFO)
 
@@ -39,6 +39,9 @@ class GraphHandler(Observable, HandlerChain):
 
         self.add_handler(self.handle_cursor)
 
+        self.pair_parent_name = ''
+        self.pair_type = LabelType.COMPONENT
+
     def init_on_drag(self):
         self.on_drag = DragHandlerChain()
         self.on_drag.add_handler(DuplicateLabelHandler(self))
@@ -51,6 +54,7 @@ class GraphHandler(Observable, HandlerChain):
         self.on_click.add_handler(UpdateLabelHandler(self))
         self.on_click.add_handler(AddConnectionHandler(self))
         self.on_click.add_handler(SelectDataboxHandler(self))
+        self.on_click.add_handler(AddPairHandler(self))
 
     def add_label(self, label: Label):
         self.labels.append(label)
@@ -112,7 +116,7 @@ class GraphHandler(Observable, HandlerChain):
 
     def change_cursor_shape_by_cursor_position(self):
         for label in self.labels:
-            if label.nearby_vertex(self.current_point):
+            if label.includes(self.current_point) and label.nearby_vertex(self.current_point):
                 self.graph.set_cursor("cross")
                 break
             elif label.includes(self.current_point):

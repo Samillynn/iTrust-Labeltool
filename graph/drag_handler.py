@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING
 
 import modifier_key
 from utils import sg
-from .dialog import base_dialog_layout, BaseDialog
+from .dialog import BaseDialog
 from .label import Label, LabelSerializer
 
 if TYPE_CHECKING:
@@ -56,7 +56,8 @@ class NewLabelHandler(DragHandler):
         super().__init__(graph_handler)
 
     def start(self, position):
-        if self.graph_handler.hovered_label(position) or self.graph_handler.nearby_vertex(position):
+        # if self.graph_handler.hovered_label(position) or self.graph_handler.nearby_vertex(position):
+        if self.graph_handler.hovered_label(position):
             return False
 
         self.label = Label(position, position)
@@ -70,6 +71,8 @@ class NewLabelHandler(DragHandler):
         self.graph_handler.notify_labels()
 
     def stop(self):
+        self.label.parent_component_name = self.graph_handler.pair_parent_name
+        self.label._type = self.graph_handler.pair_type
         self.ask_label_info()
         self.graph_handler.notify_labels()
         self.graph_handler.graph.set_cursor('arrow')
@@ -77,17 +80,16 @@ class NewLabelHandler(DragHandler):
         self.label = None
 
     @staticmethod
-    def new_label_dialog():
-        dialog = BaseDialog()
+    def new_label_dialog(self):
+        dialog = BaseDialog(self.label)
         layout = dialog.layout(enable_event=False)
         layout += [[sg.Submit(), sg.Exit()]]
         dialog.create('Create new label', layout)
         return dialog.read(close=True)
 
     def ask_label_info(self):
-        event, values = self.new_label_dialog()
+        event, values = self.new_label_dialog(self)
         if event in ['Submit']:
-            print(values)
             self.label.copy_basic_properties(values)
         elif event in ['Exit', None]:
             self.graph_handler.labels.remove(self.label)
@@ -120,9 +122,10 @@ class MoveVertexHandler(DragHandler):
         self.vertex_name = ''
 
     def start(self, position):
-        if nearby := self.graph_handler.nearby_vertex(position):
-            self.label, self.vertex_name = nearby
-            return True
+        if self.graph_handler.hovered_label(position):
+            if nearby := self.graph_handler.nearby_vertex(position):
+                self.label, self.vertex_name = nearby
+                return True
 
         return False
 

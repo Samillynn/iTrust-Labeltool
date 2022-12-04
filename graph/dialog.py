@@ -2,7 +2,7 @@ import PySimpleGUI as sg
 from config import config
 from flip_dict import FlipDict
 
-from .label import Label
+from .label import Label, LabelType
 
 
 class BaseDialog:
@@ -20,11 +20,19 @@ class BaseDialog:
         return config["categories"]
 
     def layout(self, enable_event=True):
+        print('layout', self.label._type)
+        if self.label._type == LabelType.COMPONENT:
+            default_type_str = 'Component'
+        elif self.label._type == LabelType.DATABOX:
+            default_type_str = 'Databox'
+        else:
+            raise ValueError(f'Type of label can\' be {self.label._type}')
         return [
             [sg.T('Name'), sg.I(self.label.name, key='name', enable_events=enable_event)],
+            [sg.T('Type'), sg.DD(['Component', 'Databox'], readonly=True, default_value=default_type_str, key='type')],
             [sg.T('Category'), sg.DD(self.categories, default_value=self.label.category, key='category')],
             [sg.T('Fullname'), sg.I(self.label.fullname, key='fullname', enable_events=enable_event)],
-            [sg.T('Parent'), sg.I(self.label.parent, key='parent')],
+            [sg.T('Parent'), sg.I(self.label.parent_component_name, key='parent_component_name')],
             [sg.T('Rotation'),
              sg.DD(list(self.rotation_options.keys()), default_value=self.rotation_options.flip[self.label.rotation],
                    readonly=True, key='rotation')],
@@ -47,32 +55,24 @@ class BaseDialog:
     def read(self, title='', layout=None, close=True):
         event, value = self.window.read(close=close)
         if value is None:
-            print(f'=============={event}============')
             return event, value
+
         if 'rotation' in value:
             value['rotation'] = self.rotation_options.get(value['rotation'], 0)
         if 'flip' in value:
             value['flip'] = self.flip_options.get(value['flip'], 0)
+        if value.get('type'):
+            _type = value['type']
+            if _type == 'Component':
+                value['type'] = 1
+            elif _type == 'Databox':
+                value['type'] = 2
+            else:
+                raise ValueError(f'Type of label can either be "Component" or "Databox", but not {_type}')
 
+        print(f'dialog.read: {value}')
         if close:
             self.close()
 
         return event, value
 
-
-def base_dialog_layout(label=None):
-    dialog_options = {
-        'category': ['big tank', 'small tank', 'pump', 'dosing pump', 'uv dechlorinator', 'filter', 'other types'],
-        'rotation': [None, 'clockwise 90 degrees', 'clockwise 180 degrees', 'clockwise 270 degrees'],
-        'flip': [None, 'flip around y axis', 'flip around x axis', 'flip around both x and y axis']
-    }
-
-    if label is None:
-        label = Label()
-    return [
-        [sg.T('Name'), sg.I(label.name, key='name')],
-        [sg.T('Type'), sg.DD(dialog_options['type'], default_value=label.category, key='type')],
-        [sg.T('Text'), sg.I(label.text, key='text')],
-        [sg.T('Rotation'), sg.DD(dialog_options['rotation'], default_value=label.rotation, key='rotation')],
-        [sg.T('Flip'), sg.DD(dialog_options['flip'], default_value=label.flip, key='flip')]
-    ]

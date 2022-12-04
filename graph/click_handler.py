@@ -22,7 +22,7 @@ class ClickHandler:
 
 class SelectDataboxHandler(ClickHandler):
     def handle(self, position) -> bool:
-        label : Label = self.graph_handler.hovered_label(position)
+        label: Label = self.graph_handler.hovered_label(position)
         if not label or not self.graph_handler.label_to_select_databox:
             return False
 
@@ -55,22 +55,27 @@ class UpdateLabelHandler(ClickHandler):
         dialog = BaseDialog(label)
         left_layout = dialog.layout()
         left_layout += [
-            [sg.B('Update'), sg.Cancel(), sg.B('Delete', button_color='red'), sg.B('Find Similar', key='Similar')]
+            [sg.B('Update'), sg.Cancel(), sg.B(
+                'Delete', button_color='red'), sg.B('Find Similar', key='Similar')]
         ]
 
         if label.databox:
             button_hint = f'{label.databox.name}. Reselect'
-            left_layout += [[sg.B(button_hint, key='Databox', button_color='blue'), sg.B('Remove Databox')]]
+            left_layout += [[sg.B(button_hint, key='Databox',
+                                  button_color='blue'), sg.B('Remove Databox')]]
         else:
-            left_layout += [[sg.B('Select Databox', key='Databox', button_color='blue')]]
+            left_layout += [[sg.B('Select Databox',
+                                  key='Databox', button_color='blue')]]
 
         left_layout += [[sg.B('Edit Connections', key='Connection')]]
         left_layout += [[sg.B('Try Recognize Text', key='OCR')]]
 
         pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
         print('Text Recognized:')
-        lst = list(filter(bool, pytesseract.image_to_string(self.graph_handler.image.crop(label)).split('\n')))
-        right_layout = [[sg.TabGroup([[self.select_list('fullname', lst), self.select_list('shortname', lst)]])]]
+        lst = list(filter(bool, pytesseract.image_to_string(
+            self.graph_handler.image.crop(label)).split('\n')))
+        right_layout = [[sg.TabGroup(
+            [[self.select_list('fullname', lst), self.select_list('shortname', lst)]])]]
 
         layout = [[sg.Column(left_layout), sg.VSep(), sg.Column(right_layout)]]
 
@@ -80,8 +85,10 @@ class UpdateLabelHandler(ClickHandler):
     def find_similar_labels(self, label):
         coord = CoordinateTransfer(relative_bottom_left=(-1, -1), relative_top_right=(1, 1),
                                    absolute_size=self.graph_handler.image.original_size)
-        matches = relative_coord_crop_matching(self.graph_handler.image.to_nparray(), label, coord)
-        matches = remove_close_rectangles(matches, self.graph_handler.labels, min(label.width, label.height))
+        matches = relative_coord_crop_matching(
+            self.graph_handler.image.to_nparray(), label, coord)
+        matches = remove_close_rectangles(
+            matches, self.graph_handler.labels, min(label.width, label.height))
         for rect in matches:
             similar_label = Label(rect.bottom_left, rect.top_right)
             similar_label.flip = label.flip
@@ -104,7 +111,6 @@ class UpdateLabelHandler(ClickHandler):
                 self.graph_handler.remove_label(label)
                 break
             elif event in ['Update']:
-                print(values)
                 label.copy_basic_properties(values)
                 break
             elif event == 'list-shortname':
@@ -119,7 +125,7 @@ class UpdateLabelHandler(ClickHandler):
 
             elif event == 'fullname':
                 dialog.window['list-fullname'].update(set_to_index=[])
-                
+
             elif event == 'Databox':
                 self.graph_handler.state = 'select_databox'
                 self.graph_handler.label_to_select_databox = label
@@ -129,13 +135,16 @@ class UpdateLabelHandler(ClickHandler):
                 break
             elif event == 'Similar':
                 self.find_similar_labels(label)
+                break
             elif event == 'Connection':
-                edit_connection = EditConnectionHandler(self.graph_handler, label)
+                edit_connection = EditConnectionHandler(
+                    self.graph_handler, label)
                 edit_connection.handle()
             elif event == 'OCR':
                 pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
                 print('Text Recognized:')
-                print(pytesseract.image_to_string(self.graph_handler.image.crop(label)))
+                print(pytesseract.image_to_string(
+                    self.graph_handler.image.crop(label)))
             elif event in ['Cancel', None]:
                 break
             else:
@@ -156,7 +165,8 @@ class AddConnectionHandler(ClickHandler):
 
         event, _ = self.confirm_databox_dialog()
         if event == 'Confirm':
-            self.graph_handler.context['label_to_add_connection'].add_connection(label)
+            self.graph_handler.context['label_to_add_connection'].add_connection(
+                label)
             self.graph_handler.notify_labels()
             self.graph_handler.state = None
         elif event == 'Select Again':
@@ -196,7 +206,8 @@ class EditConnectionHandler:
         self.update_unselected_ui()
 
     def update_unselected_ui(self):
-        self.window['unselected'].update(values=self.unselected_labels().keys())
+        self.window['unselected'].update(
+            values=self.unselected_labels().keys())
 
     def update_selected_ui(self):
         self.window['selected'].update(values=self.selected_labels().keys())
@@ -209,12 +220,14 @@ class EditConnectionHandler:
             [sg.T('Unselected Labels')],
             [sg.Listbox(values=list(self.unselected_labels().keys()), key='unselected', s=(30, 5),
                         enable_events=True)],
-            [sg.B('Add', key='add'), sg.B('Remove', key='remove'), sg.B('Back', key='back')]
+            [sg.B('Add', key='add'), sg.B('Remove', key='remove'),
+             sg.B('Back', key='back')]
         ]
 
     def handle(self) -> None:
 
-        self.window = sg.Window('Edit Connections', self.layout(), keep_on_top=True)
+        self.window = sg.Window(
+            'Edit Connections', self.layout(), keep_on_top=True)
         while True:
             event, values = self.window.read(close=False)
             print(event, values)
@@ -227,7 +240,6 @@ class EditConnectionHandler:
                 # break
 
             elif event == 'remove':
-                print(values)
                 hint = values['selected'][0]
                 self.label.remove_connections(self.selected_labels()[hint])
                 self.update_ui()
@@ -237,3 +249,26 @@ class EditConnectionHandler:
 
         print(self.label.connections)
         self.window.close()
+
+
+class AddPairHandler(ClickHandler):
+    def handle(self, position) -> bool:
+        super().handle(position)
+        layout = [[sg.T('Pair Name'), sg.I(key='pair_name', default_text=self.graph_handler.pair_parent_name)],
+                  [sg.B('Choose Component'), sg.B('Choose Databox'), sg.Cancel()]]
+        event, value = sg.Window('Choose Pair', layout=layout).read(close=True)
+        self.graph_handler.pair_parent_name = value['pair_name']
+        if event == 'Choose Component':
+            self.graph_handler.pair_type = LabelType.COMPONENT
+        elif event == 'Choose Databox':
+            self.graph_handler.pair_type = LabelType.DATABOX
+        elif event in ['Cancel']:
+            self.graph_handler.pair_type = LabelType.COMPONENT
+            self.graph_handler.pair_parent_name = ''
+        elif event in [None]:
+            pass
+        else:
+            raise AssertionError()
+
+        print(event, value)
+        return False

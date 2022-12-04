@@ -152,6 +152,8 @@ class Label(Rectangle):
 
         self.connections = []
 
+        self.parent_component_name = ''
+
     def add_connection(self, label: 'Label'):
         self.connections.append(label)
 
@@ -160,6 +162,10 @@ class Label(Rectangle):
 
     def copy_basic_properties(self, label_dict):
         self.name = label_dict.get('name', '')
+
+        self._type = LabelType(label_dict.get('type', 0))
+        self.parent_component_name = label_dict.get('parent_component_name', '')
+
         self.category = label_dict.get('category', '')
         self.fullname = label_dict.get('fullname', '')
         self.parent = label_dict.get('parent', '')
@@ -171,8 +177,10 @@ class Label(Rectangle):
         return {
             "name": self.name,
             "fullname": self.fullname,
+            "type": self._type.value,
             "category": self.category,
             "parent": self.parent,
+            "parent_component_name": self.parent_component_name,
             "flip": self.flip,
             "rotation": self.rotation
         }
@@ -184,7 +192,6 @@ class LabelSerializer(Serializer):
         #           'parent': label.parent, 'fullname': label.fullname, 'top_left': label.top_left,
         #           'bottom_right': label.bottom_right}
         result = label.basic_properties
-        result["_type"] = label._type.value
         result['id'] = label.id
         result['top_left'] = label.top_left
         result['bottom_right'] = label.bottom_right

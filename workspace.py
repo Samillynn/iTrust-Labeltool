@@ -85,22 +85,47 @@ class ProjectMenuEH(EventHandler):
 #     json.dump(labels, open(file_path, 'w+'), indent=2)
 
 def export_eh(event, file_path):
-    def to_export_label_dict(label: Label):
+    def to_export_label_dict(label: Label, result_dict):
+        valid = True
         result = label.basic_properties
         result['coordinate'] = label.center
-        if label.databox is not None:
-            result['databox'] = list(label.databox.center)
-        else:
-            result['databox'] = []
+        # if label.databox is not None:
+        #     result['databox'] = list(label.databox.center)
+        # else:
+        #     result['databox'] = []
 
-        return result
+        parent_name = result['parent_component_name']
+        print(f'calling to_eld, pn={parent_name}')
+        if parent_name not in result_dict:
+            result_dict[parent_name] = [result]
+            result_dict[parent_name] = {}
+        if result['type'] == 1:
+            result_type = 'component'
+        elif result['type'] == 2:
+            result_type = 'databox'
+        else:
+            raise AssertionError()
+        
+        if result_type not in result_dict[parent_name]:
+            result_dict[parent_name][result_type] = result
+        else:
+            prev_obj = result_dict[parent_name][result_type]
+            sg.popup(f'{prev_obj["name"]}/{prev_obj["fullname"]} has the same type with {result["name"]}/{result["fullname"]}', title='Repeated Parent Name')
+            valid = False
+
+        return valid
+            
 
     label_dicts = json.load(open('session.json', 'r'))['labels']
     labels = LabelListSerializer().deserialize(label_dicts)
-    export_label_dicts = [
-        to_export_label_dict(label)  for label in labels if label._type == LabelType.COMPONENT
-    ]
-    json.dump(export_label_dicts, open(file_path, 'w+'), indent=2)
+    # export_label_dicts = [
+    #     to_export_label_dict(label)  for label in labels if label._type == LabelType.COMPONENT
+    # ]
+    result = {}
+    for label in labels:
+        if not to_export_label_dict(label, result):
+            return
+    json.dump(result, open(file_path, 'w+'), indent=2)
 
 
 class Workspace:
