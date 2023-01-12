@@ -1,0 +1,105 @@
+{
+  "image_path": "screen_shot.jpg",
+  "labels": [
+    {
+      "name": "T-101",
+      "fullname": "Raw Water Tank",
+      "type": 1,
+      "category": "Big Tank",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 2,
+      "top_left": [
+        -0.4682291666666667,
+        0.3462962962962961
+      ],
+      "bottom_right": [
+        -0.33229166666666676,
+        -0.0092592592592593
+      ],
+      "connections": []
+    },
+    {
+      "name": "P-301",
+      "fullname": "UF Feed Water Tank",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 3,
+      "top_left": [
+        -0.0026041666666666297,
+        0.2685185185185186
+      ],
+      "bottom_right": [
+        0.12760416666666674,
+        -0.06481481481481477
+      ],
+      "connections": []
+    },
+    {
+      "name": "",
+      "fullname": "",
+      "type": 1,
+      "category": "",
+      "parent": "T-301",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 5,
+      "top_left": [
+        0.05208333333333326,
+        0.47777777777777786
+      ],
+      "bottom_right": [
+        0.18229166666666652,
+        0.3194444444444444
+      ],
+      "connections": []
+    },
+    {
+      "name": "",
+      "fullname": "",
+      "type": 1,
+      "category": "Small Tank",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 6,
+      "top_left": [
+        -0.475,
+        -0.3407407407407408
+      ],
+      "bottom_right": [
+        -0.35416666666666663,
+        -0.6296296296296297
+      ],
+      "connections": []
+    },
+    {
+      "name": "T-101",
+      "fullname": "Raw Water Tank",
+      "type": 1,
+      "category": "Big Tank",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 2,
+      "top_left": [
+        -0.8098958333333334,
+        0.412962962962963
+      ],
+      "bottom_right": [
+        -0.6739583333333334,
+        0.057407407407407574
+      ],
+      "connections": []
+    }
+  ]
+}

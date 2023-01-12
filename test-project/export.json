@@ -1,0 +1,80 @@
+{
+  "T-101": {
+    "component": {
+      "name": "T-101",
+      "fullname": "Raw Water Tank",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "T-101",
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.7451636904761905,
+        0.2244708994708995
+      ]
+    }
+  },
+  "LIT-101": {
+    "databox": {
+      "name": "UT-101",
+      "fullname": "Raw Water Level Meter",
+      "type": 2,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "LIT-101",
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.6733630952380952,
+        0.4998677248677249
+      ]
+    }
+  },
+  "P-101": {
+    "component": {
+      "name": "P-101",
+      "fullname": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "P-101",
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.5729166666666667,
+        0.287962962962963
+      ]
+    }
+  },
+  "T-201": {
+    "component": {
+      "name": "",
+      "fullname": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "T-201",
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.40997023809523814,
+        0.12671957671957668
+      ]
+    },
+    "databox": {
+      "name": "LIT-201",
+      "fullname": "",
+      "type": 2,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "T-201",
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.47872023809523806,
+        -0.016798941798941758
+      ]
+    }
+  }
+}

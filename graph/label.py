@@ -163,7 +163,7 @@ class Label(Rectangle):
     def copy_basic_properties(self, label_dict):
         self.name = label_dict.get('name', '')
 
-        self._type = LabelType(label_dict.get('type', 0))
+        self._type = LabelType(label_dict.get('type', 1))
         self.parent_component_name = label_dict.get('parent_component_name', '')
 
         self.category = label_dict.get('category', '')

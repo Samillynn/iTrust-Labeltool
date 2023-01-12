@@ -38,17 +38,9 @@ class View(ABC):
             # do nothing
             ...
 
-        print(f"{type(self).__name__}: draw {self.figure_ids}.")
-        # try:
-        #     figure_ids = iter(fid)
-        # except TypeError:
-        #     raise ValueError(
-        #         f"{type(self).__name__}.draw only takes int or Iterable[int], not {type(fid)}({fid}")
-
     def clear(self):
         for fid in self.figure_ids:
             self.graph.delete_figure(fid)
-        print(f"{type(self).__name__}: erased {self.figure_ids}.")
 
     @abstractmethod
     def _draw(self) -> Iterable[int]:

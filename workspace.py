@@ -13,18 +13,21 @@ from graph.label import LabelListSerializer, LabelType, Rectangle
 from utils import sg, current_milli_time
 from window_manager import WindowManager
 from graph.label import LabelListSerializer, Label
+from pair_property import create_new_pair, global_pair_property
 
 
 class NewProjectEH(EventHandler):
     layout = [
-        [sg.T('Location:'), sg.FolderBrowse(key='location', initial_folder=os.getcwd())],
+        [sg.T('Location:'), sg.FolderBrowse(
+            key='location', initial_folder=os.getcwd())],
         [sg.T('Project Name:'), sg.I(key='project_name')],
         [sg.T('Image to label'), sg.FileBrowse(key='image_path')],
         [sg.B('Create'), sg.B('Exit')]
     ]
 
     def handle(self):
-        event, values = sg.Window('Create New Project', self.layout).read(close=True)
+        event, values = sg.Window(
+            'Create New Project', self.layout).read(close=True)
         if event in ['Create']:
             project_path = Path(values['location'], values['project_name'])
             # TODO: delete exist_ok
@@ -44,7 +47,8 @@ class NewProjectEH(EventHandler):
 
 class OpenProjectEH(EventHandler):
     def handle(self):
-        path = sg.popup_get_folder('Select Project to Open', default_path=os.getcwd())
+        path = sg.popup_get_folder(
+            'Select Project to Open', default_path=os.getcwd())
         if path is not None:
             os.chdir(path)
             show_workspace()
@@ -105,16 +109,16 @@ def export_eh(event, file_path):
             result_type = 'databox'
         else:
             raise AssertionError()
-        
+
         if result_type not in result_dict[parent_name]:
             result_dict[parent_name][result_type] = result
         else:
             prev_obj = result_dict[parent_name][result_type]
-            sg.popup(f'{prev_obj["name"]}/{prev_obj["fullname"]} has the same type with {result["name"]}/{result["fullname"]}', title='Repeated Parent Name')
+            sg.popup(
+                f'{prev_obj["name"]}/{prev_obj["fullname"]} has the same type with {result["name"]}/{result["fullname"]}', title='Repeated Parent Name')
             valid = False
 
         return valid
-            
 
     label_dicts = json.load(open('session.json', 'r'))['labels']
     labels = LabelListSerializer().deserialize(label_dicts)
@@ -130,7 +134,8 @@ def export_eh(event, file_path):
 
 class Workspace:
     def __init__(self, root_path='.'):
-        self.window = sg.Window(layout=self.layout(), finalize=True, return_keyboard_events=True, resizable=True)
+        self.window = sg.Window(layout=self.layout(
+        ), finalize=True, return_keyboard_events=True, resizable=True)
         self.root_path = root_path
         self.bind_keys()
 
@@ -156,7 +161,7 @@ class Workspace:
             [sg.Text(key='info', size=(60, 1)), sg.I(visible=False, enable_events=True, key='export-filename'),
              sg.SaveAs('Export', key='-EXPORT-', file_types=(('JSON file', '*.json'),),
                        target='export-filename'),
-             sg.B('New', key='-NEW-'), sg.B('Open', key='-OPEN-'), sg.B('Show/Hide connections', key='connections')]
+             sg.B('New', key='-NEW-'), sg.B('Open', key='-OPEN-'), sg.B('Show/Hide connections', key='connections')],
         ]
 
 
@@ -181,7 +186,8 @@ def show_workspace(project_path=None):
             expand_x=False,
             expand_y=False)],
         [sg.Text(key='info', size=(0, 0)), sg.I(visible=False, enable_events=True, key='export-filename'),
-         sg.Text(key='info', size=(0, 0)), sg.I(visible=False, enable_events=True, key='export-conn-filename'),
+         sg.Text(key='info', size=(0, 0)), sg.I(visible=False,
+                                                enable_events=True, key='export-conn-filename'),
 
          sg.SaveAs('Export', key='-EXPORT-', file_types=(('JSON file', '*.json'),),
                    target='export-filename'),
@@ -189,12 +195,16 @@ def show_workspace(project_path=None):
          sg.SaveAs('Export Connections', key='-EXPORT-CONN-', file_types=(('JSON file', '*.json'),),
                    target='export-conn-filename'),
 
-         sg.B('New', key='-NEW-'), sg.B('Open', key='-OPEN-'), sg.B('Show/Hide Connections', key='-CONN-')]
+         sg.B('New', key='-NEW-'), sg.B('Open',
+                                        key='-OPEN-'), sg.B('Show/Hide Connections', key='-CONN-'),
+
+         sg.B('Create New', key='-CREATE-')]
     ]
 
     if project_path is not None:
         os.chdir(project_path)
-    window = sg.Window("Workplace", layout, finalize=True, return_keyboard_events=True, resizable=True)
+    window = sg.Window("Workplace", layout, finalize=True,
+                       return_keyboard_events=True, resizable=True)
     window.bind('<Key-Control_L>', 'KeyDown-Control')
     window.bind('<Key-Control_R>', 'KeyDown-Control')
 
@@ -211,7 +221,8 @@ def show_workspace(project_path=None):
             key_format = config["export"]["connection"]["key_format"]
             val_format = config["export"]["connection"]["val_format"]
             key = key_format.format(**label.basic_properties)
-            val = [val_format.format(**conn.basic_properties) for conn in label.connections]
+            val = [val_format.format(**conn.basic_properties)
+                   for conn in label.connections]
             result[key] = val
 
         print(file_path, result)
@@ -222,6 +233,7 @@ def show_workspace(project_path=None):
     window_manager.register_handler('export-filename', export_eh)
     window_manager.register_handler('-CONN-', toggle_connections)
     window_manager.register_handler('export-conn-filename', export_conn_eh)
+    window_manager.register_handler('-CREATE-', create_new_pair)
     window_manager.run()
 
 

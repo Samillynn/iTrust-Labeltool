@@ -2,6 +2,7 @@ import copy
 from typing import TYPE_CHECKING
 
 import modifier_key
+from pair_property import global_pair_property, create_new_pair, assign_current_choice
 from utils import sg
 from .dialog import BaseDialog
 from .label import Label, LabelSerializer
@@ -53,6 +54,7 @@ class DragHandlerChain:
 class NewLabelHandler(DragHandler):
     def __init__(self, graph_handler):
         self.label = None
+        self.dialog = None
         super().__init__(graph_handler)
 
     def start(self, position):
@@ -61,6 +63,7 @@ class NewLabelHandler(DragHandler):
             return False
 
         self.label = Label(position, position)
+        self.dialog = BaseDialog(self.label)
         self.graph_handler.add_label(self.label)
 
         self.graph_handler.graph.set_cursor("cross")
@@ -73,27 +76,75 @@ class NewLabelHandler(DragHandler):
     def stop(self):
         self.label.parent_component_name = self.graph_handler.pair_parent_name
         self.label._type = self.graph_handler.pair_type
+
         self.ask_label_info()
         self.graph_handler.notify_labels()
         self.graph_handler.graph.set_cursor('arrow')
 
         self.label = None
 
-    @staticmethod
+        if global_pair_property.current_choice is not None:
+             create_new_pair()
+
+    def component_layout(self):
+        base_dialog = BaseDialog()
+        layout = [
+            base_dialog.layout_flip(),
+            base_dialog.layout_rotation(),
+            [sg.T("Parent"), sg.I(key='parent', default_text=global_pair_property.name)],
+            [sg.T("Coordinate"), sg.T(
+                f"x: {self.label.center_x}; y: {self.label.center_y}")],
+            [sg.Submit(), sg.Exit()]
+        ]
+
+        return layout
+
+    def component_dialog(self):
+        self.dialog.create('Component', self.component_layout())
+        return self.dialog.read(close=True)
+
+    def databox_layout(self):
+        layout = [
+            [sg.T("Parent"), sg.I(key='parent', default_text=global_pair_property.name)],
+            [sg.T("Coordinate"), sg.T(
+                f"x: {self.label.center_x}; y: {self.label.center_y}")],
+            [sg.Submit(), sg.Exit()]
+        ]
+
+        return layout
+
+    def databox_dialog(self):
+        self.dialog.create('Databox', self.databox_layout())
+        return self.dialog.read(close=True)
+
     def new_label_dialog(self):
-        dialog = BaseDialog(self.label)
-        layout = dialog.layout(enable_event=False)
+        layout = self.dialog.layout(enable_event=False)
         layout += [[sg.Submit(), sg.Exit()]]
-        dialog.create('Create new label', layout)
-        return dialog.read(close=True)
+        self.dialog.create('Create new label', layout)
+        return self.dialog.read(close=True)
 
     def ask_label_info(self):
-        event, values = self.new_label_dialog(self)
+
+        # whether a component or a databox is currently labeled
+        current_choice = global_pair_property.current_choice
+
+        if current_choice is None:
+            event, values = self.new_label_dialog()
+        elif current_choice == 'Component':
+            event, values = self.component_dialog()
+        elif current_choice == "Databox":
+            event, values = self.databox_dialog()
+        else:
+            raise AssertionError
+
         if event in ['Submit']:
             self.label.copy_basic_properties(values)
+            if global_pair_property.current_choice is not None:
+                 assign_current_choice(self.label)
         elif event in ['Exit', None]:
             self.graph_handler.labels.remove(self.label)
-            pass
+            if global_pair_property.current_choice is not None:
+                assign_current_choice(None)
         else:
             raise AssertionError(event)
 

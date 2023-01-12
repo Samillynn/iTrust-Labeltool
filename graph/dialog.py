@@ -28,25 +28,38 @@ class BaseDialog:
         else:
             raise ValueError(f'Type of label can\' be {self.label._type}')
         return [
-            [sg.T('Name'), sg.I(self.label.name, key='name', enable_events=enable_event)],
-            [sg.T('Type'), sg.DD(['Component', 'Databox'], readonly=True, default_value=default_type_str, key='type')],
-            [sg.T('Category'), sg.DD(self.categories, default_value=self.label.category, key='category')],
-            [sg.T('Fullname'), sg.I(self.label.fullname, key='fullname', enable_events=enable_event)],
-            [sg.T('Parent'), sg.I(self.label.parent_component_name, key='parent_component_name')],
-            [sg.T('Rotation'),
-             sg.DD(list(self.rotation_options.keys()), default_value=self.rotation_options.flip[self.label.rotation],
-                   readonly=True, key='rotation')],
+            [sg.T('Name'), sg.I(self.label.name,
+                                key='name', enable_events=enable_event)],
+            [sg.T('Type'), sg.DD(['Component', 'Databox'], readonly=True,
+                                 default_value=default_type_str, key='type')],
+            [sg.T('Category'), sg.DD(self.categories,
+                                     default_value=self.label.category, key='category')],
+            [sg.T('Fullname'), sg.I(self.label.fullname,
+                                    key='fullname', enable_events=enable_event)],
+            [sg.T('Parent'), sg.I(self.label.parent_component_name,
+                                  key='parent_component_name')],
+            self.layout_rotation(),
+            self.layout_flip(),
             [sg.T('Flip'),
              sg.DD(list(self.flip_options.keys()), default_value=self.flip_options.flip[self.label.flip], readonly=True,
                    key='flip')]
         ]
+
+    def layout_flip(self):
+        return [sg.T('Flip'),
+         sg.DD(list(self.flip_options.keys()), default_value=self.flip_options.flip[self.label.flip], readonly=True,
+               key='flip')]
+
+    def layout_rotation(self):
+        return [sg.T('Rotation'),
+                sg.DD(list(self.rotation_options.keys()), default_value=self.rotation_options.flip[self.label.rotation],
+                      readonly=True, key='rotation')],
 
     def create(self, title='', layout=None):
         if layout is None:
             layout = self.layout()
         if self.window == None:
             self.window = sg.Window(title, layout, keep_on_top=True)
-
 
     def close(self):
         self.window.close()
@@ -68,11 +81,11 @@ class BaseDialog:
             elif _type == 'Databox':
                 value['type'] = 2
             else:
-                raise ValueError(f'Type of label can either be "Component" or "Databox", but not {_type}')
+                raise ValueError(
+                    f'Type of label can either be "Component" or "Databox", but not {_type}')
 
         print(f'dialog.read: {value}')
         if close:
             self.close()
 
         return event, value
-
