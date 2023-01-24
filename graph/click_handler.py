@@ -77,7 +77,11 @@ class UpdateLabelHandler(ClickHandler):
         right_layout = [[sg.TabGroup(
             [[self.select_list('fullname', lst), self.select_list('shortname', lst)]])]]
 
-        layout = [[sg.Column(left_layout), sg.VSep(), sg.Column(right_layout)]]
+        print(left_layout)
+        left_l = sg.Column(left_layout)
+        print(left_l)
+        layout = [[left_l, sg.VSep(), sg.Column(right_layout)]]
+        # layout = [[sg.Column(left_layout)]] + [[sg.VSep()]] + [[sg.Column(right_layout)]]
 
         dialog.create('Update', layout)
         return dialog

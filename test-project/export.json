@@ -1,80 +1,46 @@
-{
-  "T-101": {
+[
+  {
+    "name": "LIT-101",
+    "type": "LIT",
+    "description": "Raw Water Tank",
+    "status": "",
     "component": {
-      "name": "T-101",
-      "fullname": "Raw Water Tank",
-      "type": 1,
-      "category": "",
-      "parent": "",
-      "parent_component_name": "T-101",
       "flip": 0,
       "rotation": 0,
       "coordinate": [
-        -0.7451636904761905,
-        0.2244708994708995
-      ]
-    }
-  },
-  "LIT-101": {
-    "databox": {
-      "name": "UT-101",
-      "fullname": "Raw Water Level Meter",
-      "type": 2,
-      "category": "",
-      "parent": "",
-      "parent_component_name": "LIT-101",
-      "flip": 0,
-      "rotation": 0,
-      "coordinate": [
-        -0.6733630952380952,
-        0.4998677248677249
-      ]
-    }
-  },
-  "P-101": {
-    "component": {
-      "name": "P-101",
-      "fullname": "",
-      "type": 1,
-      "category": "",
-      "parent": "",
-      "parent_component_name": "P-101",
-      "flip": 0,
-      "rotation": 0,
-      "coordinate": [
-        -0.5729166666666667,
-        0.287962962962963
-      ]
-    }
-  },
-  "T-201": {
-    "component": {
-      "name": "",
-      "fullname": "",
-      "type": 1,
-      "category": "",
-      "parent": "",
-      "parent_component_name": "T-201",
-      "flip": 0,
-      "rotation": 0,
-      "coordinate": [
-        -0.40997023809523814,
-        0.12671957671957668
+        -0.7465277777777778,
+        0.2222222222222222
       ]
     },
     "databox": {
-      "name": "LIT-201",
-      "fullname": "",
-      "type": 2,
-      "category": "",
-      "parent": "",
-      "parent_component_name": "T-201",
       "flip": 0,
       "rotation": 0,
       "coordinate": [
-        -0.47872023809523806,
-        -0.016798941798941758
+        -0.6744791666666667,
+        0.5015432098765432
+      ]
+    }
+  },
+  {
+    "name": "T-301",
+    "type": "T",
+    "description": "UF Feed Water Tank",
+    "status": "",
+    "component": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        0.0625,
+        0.09876543209876543
+      ]
+    },
+    "databox": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        0.12413194444444442,
+        0.38888888888888895
       ]
     }
   }
-}
+]

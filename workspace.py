@@ -88,6 +88,46 @@ class ProjectMenuEH(EventHandler):
 #         convert_label(label)
 #     json.dump(labels, open(file_path, 'w+'), indent=2)
 
+def convert_json(result):
+    cleaned_result = []
+    for name,values in result.items():
+        component_value = values.get("component",None)
+        databox_value = values.get("databox",None)
+        
+        desc = component_value.get("desc","")
+        if desc == "":
+            desc = databox_value.get("desc","")
+            
+        if component_value is not None:
+            component_value = {
+                "flip":component_value["flip"],
+                "rotation":component_value["rotation"],
+                "coordinate":component_value["coordinate"]
+            }
+        else:
+            component_value = {}
+            
+        if databox_value is not None:
+            databox_value = {
+                "flip":databox_value["flip"],
+                "rotation":databox_value["rotation"],
+                "coordinate":databox_value["coordinate"]
+            }
+        else:
+            databox_value = {}
+            
+        new_obj = {
+            "name":name,
+            "type":"".join([c for c in name if c.isalpha()]),
+            "description":desc,
+            "status":"",
+            "component":component_value,
+            "databox":databox_value
+        }
+        cleaned_result.append(new_obj)
+            
+    return cleaned_result
+
 def export_eh(event, file_path):
     def to_export_label_dict(label: Label, result_dict):
         valid = True
@@ -98,24 +138,35 @@ def export_eh(event, file_path):
         # else:
         #     result['databox'] = []
 
-        parent_name = result['parent_component_name']
-        print(f'calling to_eld, pn={parent_name}')
-        if parent_name not in result_dict:
-            result_dict[parent_name] = [result]
-            result_dict[parent_name] = {}
+        # parent_name = result['parent_component_name']
+        # print(f'calling to_eld, pn={parent_name}')
+        # if parent_name not in result_dict:
+        #     result_dict[parent_name] = [result]
+        #     result_dict[parent_name] = {}
         if result['type'] == 1:
             result_type = 'component'
         elif result['type'] == 2:
             result_type = 'databox'
         else:
             raise AssertionError()
+        
+        result_name = result["parent"]
 
-        if result_type not in result_dict[parent_name]:
-            result_dict[parent_name][result_type] = result
+        if result_name not in result_dict:
+            result_dict[result_name] = {}
+            
+        required_properties = {
+            "desc":result["name"],
+            "flip":result["flip"],
+            "rotation":result["rotation"],
+            "coordinate":result["coordinate"]    
+        }
+        if result_type not in result_dict[result_name]:
+            result_dict[result_name][result_type] = required_properties
         else:
-            prev_obj = result_dict[parent_name][result_type]
+            prev_obj = result_dict[result_name][result_type]
             sg.popup(
-                f'{prev_obj["name"]}/{prev_obj["fullname"]} has the same type with {result["name"]}/{result["fullname"]}', title='Repeated Parent Name')
+                f'{prev_obj["name"]} has the same parent with {result["name"]}', title='Repeated Parent Name')
             valid = False
 
         return valid
@@ -129,7 +180,8 @@ def export_eh(event, file_path):
     for label in labels:
         if not to_export_label_dict(label, result):
             return
-    json.dump(result, open(file_path, 'w+'), indent=2)
+    cleaned_result = convert_json(result)
+    json.dump(cleaned_result, open(file_path, 'w+'), indent=2)
 
 
 class Workspace:

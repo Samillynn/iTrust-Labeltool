@@ -89,6 +89,7 @@ class NewLabelHandler(DragHandler):
     def component_layout(self):
         base_dialog = BaseDialog()
         layout = [
+            [sg.T("Name"), sg.I(key="name")],
             base_dialog.layout_flip(),
             base_dialog.layout_rotation(),
             [sg.T("Parent"), sg.I(key='parent', default_text=global_pair_property.name)],
@@ -132,8 +133,10 @@ class NewLabelHandler(DragHandler):
             event, values = self.new_label_dialog()
         elif current_choice == 'Component':
             event, values = self.component_dialog()
+            values["type"] = 1
         elif current_choice == "Databox":
             event, values = self.databox_dialog()
+            values["type"] = 2
         else:
             raise AssertionError
 

@@ -168,6 +168,7 @@ class Label(Rectangle):
 
         self.category = label_dict.get('category', '')
         self.fullname = label_dict.get('fullname', '')
+        self.status = label_dict.get('status', '')
         self.parent = label_dict.get('parent', '')
         self.flip = label_dict.get('flip', 0)
         self.rotation = label_dict.get('rotation', 0)

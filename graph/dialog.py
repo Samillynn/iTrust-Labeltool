@@ -53,7 +53,7 @@ class BaseDialog:
     def layout_rotation(self):
         return [sg.T('Rotation'),
                 sg.DD(list(self.rotation_options.keys()), default_value=self.rotation_options.flip[self.label.rotation],
-                      readonly=True, key='rotation')],
+                      readonly=True, key='rotation')]
 
     def create(self, title='', layout=None):
         if layout is None:
