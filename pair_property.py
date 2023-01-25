@@ -28,10 +28,7 @@ def create_new_pair():
         [sg.T("Additional info"), sg.I(key="additional_info", default_text=global_pair_property.additional_info)],
         [sg.B("Component", button_color=get_button_color("Component")), sg.B("Databox", button_color=get_button_color("Databox")), sg.Cancel(), sg.B("Done")]
     ]
-
-    print(111)
     event, values = sg.Window("Create New", layout).read(close=True)
-    print(222)
 
     if event in ['Component', 'Databox', 'Cancel', None]:
         global_pair_property.name = values["name"]
@@ -43,10 +40,9 @@ def create_new_pair():
         elif event == 'Databox':
             global_pair_property.current_choice = 'Databox'
         elif event in ['Cancel', None]:
-            pass
-            # global_pair_property.current_choice = None
-            # global_pair_property.component = None
-            # global_pair_property.databox = None
+            global_pair_property.current_choice = None
+            global_pair_property.component = None
+            global_pair_property.databox = None
     elif event == 'Done':
         global_pair_property.name = ""
         global_pair_property.category = ""

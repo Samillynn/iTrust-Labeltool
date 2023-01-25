@@ -3,6 +3,7 @@ from typing import TYPE_CHECKING, Any
 
 import PySimpleGUI as sg
 from pytesseract import pytesseract
+from pair_property import global_pair_property, create_new_pair, assign_current_choice
 from .dialog import BaseDialog
 from .image import CoordinateTransfer
 from .label import Label, LabelType
@@ -107,55 +108,62 @@ class UpdateLabelHandler(ClickHandler):
         if not label or self.graph_handler.state is not None:
             return False
 
-        dialog = self.update_label_dialog(label)
-        while True:
-            event, values = dialog.read(close=False)
-            print(event, values)
-            if event in ['Delete']:
-                self.graph_handler.remove_label(label)
-                break
-            elif event in ['Update']:
-                label.copy_basic_properties(values)
-                break
-            elif event == 'list-shortname':
-                val = values['list-shortname']
-                dialog.window['name'].update(' '.join(val))
-            elif event == 'list-fullname':
-                val = values['list-fullname']
-                dialog.window['fullname'].update(' '.join(val))
+        # check whether in create pair mode
+        if global_pair_property.current_choice is not None:
+            label.parent = global_pair_property.name
+            assign_current_choice(label)
+            create_new_pair()
 
-            elif event == 'name':
-                dialog.window['list-shortname'].update(set_to_index=[])
+        else:
+            dialog = self.update_label_dialog(label)
+            while True:
+                event, values = dialog.read(close=False)
+                print(event, values)
+                if event in ['Delete']:
+                    self.graph_handler.remove_label(label)
+                    break
+                elif event in ['Update']:
+                    label.copy_basic_properties(values)
+                    break
+                elif event == 'list-shortname':
+                    val = values['list-shortname']
+                    dialog.window['name'].update(' '.join(val))
+                elif event == 'list-fullname':
+                    val = values['list-fullname']
+                    dialog.window['fullname'].update(' '.join(val))
 
-            elif event == 'fullname':
-                dialog.window['list-fullname'].update(set_to_index=[])
+                elif event == 'name':
+                    dialog.window['list-shortname'].update(set_to_index=[])
 
-            elif event == 'Databox':
-                self.graph_handler.state = 'select_databox'
-                self.graph_handler.label_to_select_databox = label
-                break
-            elif event == 'Remove Databox':
-                label.databox = None
-                break
-            elif event == 'Similar':
-                self.find_similar_labels(label)
-                break
-            elif event == 'Connection':
-                edit_connection = EditConnectionHandler(
-                    self.graph_handler, label)
-                edit_connection.handle()
-            elif event == 'OCR':
-                pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
-                print('Text Recognized:')
-                print(pytesseract.image_to_string(
-                    self.graph_handler.image.crop(label)))
-            elif event in ['Cancel', None]:
-                break
-            else:
-                ...
-                # raise AssertionError(event)
+                elif event == 'fullname':
+                    dialog.window['list-fullname'].update(set_to_index=[])
 
-        dialog.close()
+                elif event == 'Databox':
+                    self.graph_handler.state = 'select_databox'
+                    self.graph_handler.label_to_select_databox = label
+                    break
+                elif event == 'Remove Databox':
+                    label.databox = None
+                    break
+                elif event == 'Similar':
+                    self.find_similar_labels(label)
+                    break
+                elif event == 'Connection':
+                    edit_connection = EditConnectionHandler(
+                        self.graph_handler, label)
+                    edit_connection.handle()
+                elif event == 'OCR':
+                    pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
+                    print('Text Recognized:')
+                    print(pytesseract.image_to_string(
+                        self.graph_handler.image.crop(label)))
+                elif event in ['Cancel', None]:
+                    break
+                else:
+                    ...
+                    # raise AssertionError(event)
+
+            dialog.close()
 
         self.graph_handler.notify_labels()
         return True

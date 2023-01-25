@@ -42,5 +42,71 @@
         0.38888888888888895
       ]
     }
+  },
+  {
+    "name": "T-401",
+    "type": "T",
+    "description": "RO",
+    "status": "",
+    "component": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        0.6371527777777777,
+        0.2391975308641976
+      ]
+    },
+    "databox": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        0.7213541666666666,
+        0.4922839506172839
+      ]
+    }
+  },
+  {
+    "name": "111",
+    "type": "",
+    "description": "1",
+    "status": "",
+    "component": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.21249999999999997,
+        0.12037037037037046
+      ]
+    },
+    "databox": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.1440972222222222,
+        0.42901234567901236
+      ]
+    }
+  },
+  {
+    "name": "123",
+    "type": "",
+    "description": "11",
+    "status": "",
+    "component": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.31354166666666666,
+        0.11851851851851847
+      ]
+    },
+    "databox": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.3897569444444445,
+        0.43981481481481477
+      ]
+    }
   }
 ]
