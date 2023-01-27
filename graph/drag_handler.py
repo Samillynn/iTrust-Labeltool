@@ -6,6 +6,7 @@ from pair_property import global_pair_property, create_new_pair, assign_current_
 from utils import sg
 from .dialog import BaseDialog
 from .label import Label, LabelSerializer
+from config import config
 
 if TYPE_CHECKING:
     from .graph_handler import GraphHandler
@@ -89,10 +90,11 @@ class NewLabelHandler(DragHandler):
     def component_layout(self):
         base_dialog = BaseDialog()
         layout = [
-            [sg.T("Name"), sg.I(key="name")],
+            [sg.T("Description"), sg.I(key="name")],
             base_dialog.layout_flip(),
             base_dialog.layout_rotation(),
-            [sg.T("Parent"), sg.I(key='parent', default_text=global_pair_property.name)],
+            [sg.T('Category'), sg.DD(config["categories"],key='category')],
+            [sg.T("Name"), sg.I(key='parent', default_text=global_pair_property.name)],
             [sg.T("Coordinate"), sg.T(
                 f"x: {self.label.center_x}; y: {self.label.center_y}")],
             [sg.Submit(), sg.Exit()]
@@ -106,7 +108,7 @@ class NewLabelHandler(DragHandler):
 
     def databox_layout(self):
         layout = [
-            [sg.T("Parent"), sg.I(key='parent', default_text=global_pair_property.name)],
+            [sg.T("Name"), sg.I(key='parent', default_text=global_pair_property.name)],
             [sg.T("Coordinate"), sg.T(
                 f"x: {self.label.center_x}; y: {self.label.center_y}")],
             [sg.Submit(), sg.Exit()]

@@ -1,6 +1,7 @@
 import itertools
 from abc import ABC, abstractmethod
 from typing import Iterable
+from .label import LabelType
 
 import globl
 from config import config
@@ -81,8 +82,18 @@ class LabelTextView(AbstractLabelView):
         color = font["color"]
         type_ = font["type"]
         size = font["size"]
+        
+        prefix = ""
+        if label.type == LabelType.COMPONENT:
+            prefix = "component"
+        else:
+            prefix = "databox"
+            
+        fulltext = ""
+        if text != "":
+            fulltext = text+" "+prefix
 
-        return [self.graph.draw_text(text, location=label.center, color=color, font=(type_, size))]
+        return [self.graph.draw_text(fulltext, location=label.center, color=color, font=(type_, size))]
 
 
 class ConnectionView(AbstractLabelView):

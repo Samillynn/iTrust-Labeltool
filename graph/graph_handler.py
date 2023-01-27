@@ -158,7 +158,7 @@ class GraphView:
         self.figures.append(figure_id)
         figure_id = self.graph.draw_text(f"{label.name}\n{label.category}\n{label.fullname}",
                                          location=label.center,
-                                         color='black', font=("Courier New Bold", 10))
+                                         color='yellow', font=("Courier New Bold", 10))
         self.figures.append(figure_id)
 
     def draw_line(self, label, conn):

@@ -71,7 +71,7 @@ class UpdateLabelHandler(ClickHandler):
         left_layout += [[sg.B('Edit Connections', key='Connection')]]
         left_layout += [[sg.B('Try Recognize Text', key='OCR')]]
 
-        pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
+        # pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
         print('Text Recognized:')
         lst = list(filter(bool, pytesseract.image_to_string(
             self.graph_handler.image.crop(label)).split('\n')))
@@ -153,7 +153,7 @@ class UpdateLabelHandler(ClickHandler):
                         self.graph_handler, label)
                     edit_connection.handle()
                 elif event == 'OCR':
-                    pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
+                    # pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
                     print('Text Recognized:')
                     print(pytesseract.image_to_string(
                         self.graph_handler.image.crop(label)))

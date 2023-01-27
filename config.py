@@ -1,8 +1,8 @@
 config = {
-    "categories": ['Big Tank', 'Small Tank', 'Dosing Tank', 'Pumps', 'Small Pump'],
+    "categories": ['Big Tank', 'Small Tank', 'Dosing Tank', 'Pumps', 'Small Pump', None],
     "display": {
         "font": {
-            "format": "{name}",
+            "format": "{parent}",
             "type": "Courier New Bold",
             "size": 10,
             "color": "red"

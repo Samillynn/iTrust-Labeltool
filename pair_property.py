@@ -3,9 +3,9 @@ import PySimpleGUI as sg
 from config import config
 
 PairProperty = recordclass("PairProperty",
-                          fields=["name", "status", "category",
+                          fields=["name", "status", 
                                        "additional_info", "current_choice", "component", "databox"],
-                          defaults=["", "", "", "", None, None, None])
+                          defaults=["", "", "", None, None, None])
 
 global_pair_property = PairProperty()
 
@@ -24,7 +24,7 @@ def create_new_pair():
     layout = [
         [sg.T("Name"), sg.I(key="name", default_text=global_pair_property.name)],
         [sg.T("Status"), sg.I(key="status", default_text=global_pair_property.status)],
-        [sg.T('Category'), sg.DD(config["categories"], key='category', default_value=global_pair_property.category)],
+        # [sg.T('Category'), sg.DD(config["categories"], key='category', default_value=global_pair_property.category)],
         [sg.T("Additional info"), sg.I(key="additional_info", default_text=global_pair_property.additional_info)],
         [sg.B("Component", button_color=get_button_color("Component")), sg.B("Databox", button_color=get_button_color("Databox")), sg.Cancel(), sg.B("Done")]
     ]
@@ -32,7 +32,7 @@ def create_new_pair():
 
     if event in ['Component', 'Databox', 'Cancel', None]:
         global_pair_property.name = values["name"]
-        global_pair_property.category = values["category"]
+        # global_pair_property.category = values["category"]
         global_pair_property.additional_info = values["additional_info"]
 
         if event == 'Component':
@@ -45,7 +45,7 @@ def create_new_pair():
             global_pair_property.databox = None
     elif event == 'Done':
         global_pair_property.name = ""
-        global_pair_property.category = ""
+        # global_pair_property.category = ""
         global_pair_property.additional_info = ""
         global_pair_property.current_choice = None
         global_pair_property.component = None

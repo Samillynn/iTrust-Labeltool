@@ -6,38 +6,18 @@
       "fullname": "",
       "type": 1,
       "category": "",
-      "parent": "LIT-101",
+      "parent": "T-101",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
-      "id": 29,
+      "id": 1,
       "top_left": [
-        -0.8020833333333334,
-        0.3858024691358024
+        -0.8145833333333333,
+        0.3999999999999999
       ],
       "bottom_right": [
-        -0.6909722222222222,
-        0.058641975308642014
-      ],
-      "connections": []
-    },
-    {
-      "name": "",
-      "fullname": "",
-      "type": 2,
-      "category": "",
-      "parent": "LIT-101",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 31,
-      "top_left": [
-        -0.7447916666666667,
-        0.5864197530864197
-      ],
-      "bottom_right": [
-        -0.6041666666666667,
-        0.41666666666666674
+        -0.68125,
+        0.06296296296296289
       ],
       "connections": []
     },
@@ -45,19 +25,19 @@
       "name": "UF Feed Water Tank",
       "fullname": "",
       "type": 1,
-      "category": "",
-      "parent": "T-301",
+      "category": "Big Tank",
+      "parent": "LIT-301",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
-      "id": 32,
+      "id": 2,
       "top_left": [
-        0.0,
-        0.25617283950617287
+        -0.008333333333333304,
+        0.288888888888889
       ],
       "bottom_right": [
-        0.125,
-        -0.058641975308642014
+        0.1333333333333333,
+        -0.059259259259259234
       ],
       "connections": []
     },
@@ -66,138 +46,18 @@
       "fullname": "",
       "type": 2,
       "category": "",
-      "parent": "T-301",
+      "parent": "LIT-301",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
-      "id": 34,
+      "id": 4,
       "top_left": [
-        0.05381944444444442,
-        0.45679012345679015
+        0.050000000000000044,
+        0.4481481481481482
       ],
       "bottom_right": [
-        0.19444444444444442,
-        0.32098765432098775
-      ],
-      "connections": []
-    },
-    {
-      "name": "RO",
-      "fullname": "",
-      "type": 1,
-      "category": "",
-      "parent": "T-401",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 35,
-      "top_left": [
-        0.5746527777777777,
-        0.4135802469135803
-      ],
-      "bottom_right": [
-        0.6996527777777777,
-        0.06481481481481488
-      ],
-      "connections": []
-    },
-    {
-      "name": "",
-      "fullname": "",
-      "type": 2,
-      "category": "",
-      "parent": "T-401",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 37,
-      "top_left": [
-        0.6493055555555556,
-        0.558641975308642
-      ],
-      "bottom_right": [
-        0.7934027777777777,
-        0.4259259259259258
-      ],
-      "connections": []
-    },
-    {
-      "name": "1",
-      "fullname": "",
-      "type": 1,
-      "category": "",
-      "parent": "111",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 42,
-      "top_left": [
-        -0.2583333333333333,
-        0.22222222222222232
-      ],
-      "bottom_right": [
-        -0.16666666666666663,
-        0.0185185185185186
-      ],
-      "connections": []
-    },
-    {
-      "name": "11",
-      "fullname": "",
-      "type": 1,
-      "category": "",
-      "parent": "123",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 44,
-      "top_left": [
-        -0.3583333333333333,
-        0.22592592592592586
-      ],
-      "bottom_right": [
-        -0.26875000000000004,
-        0.011111111111111072
-      ],
-      "connections": []
-    },
-    {
-      "name": "",
-      "fullname": "",
-      "type": 2,
-      "category": "",
-      "parent": "111",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 45,
-      "top_left": [
-        -0.2065972222222222,
-        0.48765432098765427
-      ],
-      "bottom_right": [
-        -0.08159722222222221,
-        0.37037037037037046
-      ],
-      "connections": []
-    },
-    {
-      "name": "",
-      "fullname": "",
-      "type": 2,
-      "category": "",
-      "parent": "123",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 46,
-      "top_left": [
-        -0.4461805555555556,
-        0.4907407407407407
-      ],
-      "bottom_right": [
-        -0.33333333333333337,
-        0.38888888888888884
+        0.2020833333333334,
+        0.3148148148148149
       ],
       "connections": []
     }
