@@ -31,7 +31,6 @@ def template_matching(image: Cv2Image, template: Cv2Image, method=None, threshol
 
     h, w, _ = template.shape
     image_grey = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    print(image.shape, template.shape)
     template_grey = cv2.cvtColor(template, cv2.COLOR_BGR2GRAY)
     matrix = cv2.matchTemplate(image_grey, template_grey, method)
     matches = np.where(threshold(matrix))

@@ -149,6 +149,8 @@ class Label(Rectangle):
         self.category = category
         self.parent = parent
         self.fullname = fullname
+        self.status = ""
+        self.desc = ""
 
         self.connections = []
 
@@ -161,8 +163,9 @@ class Label(Rectangle):
         self.connections.remove(label)
 
     def copy_basic_properties(self, label_dict):
-        print(label_dict)
+        # print(label_dict)
         self.name = label_dict.get('name', '')
+        self.desc = label_dict.get('desc', '')
 
         self._type = LabelType(label_dict.get('type', 1))
         self.parent_component_name = label_dict.get('parent_component_name', '')
@@ -180,7 +183,9 @@ class Label(Rectangle):
     def basic_properties(self):
         return {
             "name": self.name,
+            "desc": self.desc,
             "fullname": self.fullname,
+            "status": self.status,
             "type": self._type.value,
             "category": self.category,
             "parent": self.parent,

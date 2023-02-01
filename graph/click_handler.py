@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING, Any
 
 import PySimpleGUI as sg
 from pytesseract import pytesseract
-from pair_property import global_pair_property, create_new_pair, assign_current_choice
+from pair_property import global_pair_property, NewPairEH, assign_current_choice
 from .dialog import BaseDialog
 from .image import CoordinateTransfer
 from .label import Label, LabelType
@@ -76,11 +76,9 @@ class UpdateLabelHandler(ClickHandler):
         lst = list(filter(bool, pytesseract.image_to_string(
             self.graph_handler.image.crop(label)).split('\n')))
         right_layout = [[sg.TabGroup(
-            [[self.select_list('fullname', lst), self.select_list('shortname', lst)]])]]
+            [[self.select_list('name', lst), self.select_list('description', lst)]])]]
 
-        print(left_layout)
         left_l = sg.Column(left_layout)
-        print(left_l)
         layout = [[left_l, sg.VSep(), sg.Column(right_layout)]]
         # layout = [[sg.Column(left_layout)]] + [[sg.VSep()]] + [[sg.Column(right_layout)]]
 
@@ -111,32 +109,35 @@ class UpdateLabelHandler(ClickHandler):
         # check whether in create pair mode
         if global_pair_property.current_choice is not None:
             label.parent = global_pair_property.name
+            label.status = global_pair_property.status
+            label.desc = global_pair_property.desc
             assign_current_choice(label)
-            create_new_pair()
+            handler = NewPairEH(self.graph_handler)
+            handler.handle()
 
         else:
             dialog = self.update_label_dialog(label)
             while True:
                 event, values = dialog.read(close=False)
-                print(event, values)
+                # print(event, values)
                 if event in ['Delete']:
                     self.graph_handler.remove_label(label)
                     break
                 elif event in ['Update']:
                     label.copy_basic_properties(values)
                     break
-                elif event == 'list-shortname':
-                    val = values['list-shortname']
+                elif event == 'list-description':
+                    val = values['list-description']
                     dialog.window['name'].update(' '.join(val))
-                elif event == 'list-fullname':
-                    val = values['list-fullname']
-                    dialog.window['fullname'].update(' '.join(val))
+                elif event == 'list-name':
+                    val = values['list-name']
+                    dialog.window['parent'].update(' '.join(val))
 
                 elif event == 'name':
-                    dialog.window['list-shortname'].update(set_to_index=[])
+                    dialog.window['list-description'].update(set_to_index=[])
 
                 elif event == 'fullname':
-                    dialog.window['list-fullname'].update(set_to_index=[])
+                    dialog.window['list-name'].update(set_to_index=[])
 
                 elif event == 'Databox':
                     self.graph_handler.state = 'select_databox'
@@ -242,7 +243,7 @@ class EditConnectionHandler:
             'Edit Connections', self.layout(), keep_on_top=True)
         while True:
             event, values = self.window.read(close=False)
-            print(event, values)
+            # print(event, values)
             if event == 'add':
                 hint = values['unselected'][0]
                 self.label.add_connection(self.unselected_labels()[hint])
@@ -259,7 +260,7 @@ class EditConnectionHandler:
             elif event in ['back', sg.WINDOW_CLOSED]:
                 break
 
-        print(self.label.connections)
+        # print(self.label.connections)
         self.window.close()
 
 
@@ -282,5 +283,5 @@ class AddPairHandler(ClickHandler):
         else:
             raise AssertionError()
 
-        print(event, value)
+        # print(event, value)
         return False

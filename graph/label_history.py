@@ -29,7 +29,6 @@ class LabelHistory:
             return None
 
         self.current_index -= 1
-        print(self.current_index)
         return self.current_state
 
     @log_on_end(logging.INFO, 'redo: {result}')

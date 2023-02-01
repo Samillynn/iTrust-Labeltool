@@ -3,6 +3,7 @@ import logging
 from base_classes import EventHandler
 from handler_chain import HandlerChain
 from utils import sg
+from pair_property import global_pair_property, NewPairEH
 
 logging.basicConfig(level=logging.INFO)
 
@@ -40,6 +41,11 @@ class WindowManager(HandlerChain):
             # logging.info(f'event: {self.event}, values: {self.values}')
 
             self.handle(self.event, self.values)
+            
+            if global_pair_property.choosing:
+                self.window["-RETURN-"].update(visible=True)
+            else:
+                self.window["-RETURN-"].update(visible=False)
 
             if self.event in (sg.WIN_X_EVENT,):
                 if self.win_close_handler is None:
@@ -51,6 +57,7 @@ class WindowManager(HandlerChain):
 
             if self.event is None:
                 break
+            
             for key, key_handlers in self.handlers.items():
                 if self.event.startswith(key):
                     for handler in key_handlers:

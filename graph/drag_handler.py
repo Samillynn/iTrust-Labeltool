@@ -2,7 +2,7 @@ import copy
 from typing import TYPE_CHECKING
 
 import modifier_key
-from pair_property import global_pair_property, create_new_pair, assign_current_choice
+from pair_property import global_pair_property, NewPairEH, assign_current_choice
 from utils import sg
 from .dialog import BaseDialog
 from .label import Label, LabelSerializer
@@ -85,16 +85,22 @@ class NewLabelHandler(DragHandler):
         self.label = None
 
         if global_pair_property.current_choice is not None:
-             create_new_pair()
+            # self.graph_handler.image.add_shadow()
+            # self.graph_handler.notify_image()
+            handler = NewPairEH(self.graph_handler)
+            handler.handle()
+
 
     def component_layout(self):
         base_dialog = BaseDialog()
         layout = [
-            [sg.T("Description"), sg.I(key="name")],
+            [sg.T("Parent"), sg.I(key='parent', default_text=global_pair_property.name)],
+            [sg.T("Name"), sg.I(key='name', default_text=global_pair_property.name + " component")],
+            [sg.T("Description"), sg.I(key="desc", default_text=global_pair_property.desc)],
+            [sg.T("Status"), sg.I(key="status", default_text=global_pair_property.status)],
             base_dialog.layout_flip(),
             base_dialog.layout_rotation(),
-            [sg.T('Category'), sg.DD(config["categories"],key='category')],
-            [sg.T("Name"), sg.I(key='parent', default_text=global_pair_property.name)],
+            # [sg.T('Category'), sg.DD(config["categories"],key='category')],
             [sg.T("Coordinate"), sg.T(
                 f"x: {self.label.center_x}; y: {self.label.center_y}")],
             [sg.Submit(), sg.Exit()]
@@ -108,7 +114,10 @@ class NewLabelHandler(DragHandler):
 
     def databox_layout(self):
         layout = [
-            [sg.T("Name"), sg.I(key='parent', default_text=global_pair_property.name)],
+            [sg.T("Parent"), sg.I(key='parent', default_text=global_pair_property.name)],
+            [sg.T("Name"), sg.I(key='name', default_text=global_pair_property.name + " databox")],
+            [sg.T("Description"), sg.I(key="desc", default_text=global_pair_property.desc)],
+            [sg.T("Status"), sg.I(key="status", default_text=global_pair_property.status)],
             [sg.T("Coordinate"), sg.T(
                 f"x: {self.label.center_x}; y: {self.label.center_y}")],
             [sg.Submit(), sg.Exit()]

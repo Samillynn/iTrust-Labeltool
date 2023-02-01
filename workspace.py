@@ -13,7 +13,7 @@ from graph.label import LabelListSerializer, LabelType, Rectangle
 from utils import sg, current_milli_time
 from window_manager import WindowManager
 from graph.label import LabelListSerializer, Label
-from pair_property import create_new_pair, global_pair_property
+from pair_property import global_pair_property, NewPairEH
 
 
 class NewProjectEH(EventHandler):
@@ -93,10 +93,8 @@ def convert_json(result):
     for name,values in result.items():
         component_value = values.get("component",None)
         databox_value = values.get("databox",None)
-        
+        status = component_value.get("status")
         desc = component_value.get("desc","")
-        if desc == "":
-            desc = databox_value.get("desc","")
             
         if component_value is not None:
             component_value = {
@@ -120,7 +118,7 @@ def convert_json(result):
             "name":name,
             "type":"".join([c for c in name if c.isalpha()]),
             "description":desc,
-            "status":"",
+            "status":status,
             "component":component_value,
             "databox":databox_value
         }
@@ -154,9 +152,12 @@ def export_eh(event, file_path):
 
         if result_name not in result_dict:
             result_dict[result_name] = {}
-            
+                        
         required_properties = {
+            "name":result["parent"],
             "desc":result["name"],
+            "status":result["status"],
+            "type":result["type"],
             "flip":result["flip"],
             "rotation":result["rotation"],
             "coordinate":result["coordinate"]    
@@ -250,7 +251,9 @@ def show_workspace(project_path=None):
          sg.B('New', key='-NEW-'), sg.B('Open',
                                         key='-OPEN-'), sg.B('Show/Hide Connections', key='-CONN-'),
 
-         sg.B('Create New', key='-CREATE-')]
+         sg.B('Create New', key='-CREATE-'),
+         sg.B('Return', key='-RETURN-', visible=False),
+         ]
     ]
 
     if project_path is not None:
@@ -276,16 +279,22 @@ def show_workspace(project_path=None):
             val = [val_format.format(**conn.basic_properties)
                    for conn in label.connections]
             result[key] = val
-
-        print(file_path, result)
         json.dump(result, open(file_path, 'w+'), indent=2)
+    
+    def return_to_create_new(event):
+        if global_pair_property.current_choice is not None:
+            graph_manager.handler.image.remove_shadow()
+            graph_manager.handler.notify_image()
+            handler = NewPairEH(graph_manager.handler)
+            handler.handle()
 
     window_manager.register_handler('-NEW-', NewProjectEH())
     window_manager.register_handler('-OPEN-', OpenProjectEH())
     window_manager.register_handler('export-filename', export_eh)
     window_manager.register_handler('-CONN-', toggle_connections)
     window_manager.register_handler('export-conn-filename', export_conn_eh)
-    window_manager.register_handler('-CREATE-', create_new_pair)
+    window_manager.register_handler('-CREATE-', NewPairEH(graph_manager.handler))
+    window_manager.register_handler('-RETURN-', return_to_create_new)
     window_manager.run()
 
 

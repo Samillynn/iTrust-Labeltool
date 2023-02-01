@@ -2,6 +2,7 @@ import base64
 import io
 
 import PIL.Image
+import PIL.ImageEnhance
 import cv2
 
 from graph.label import Rectangle
@@ -50,6 +51,7 @@ class Image:
     def __init__(self, path: str = ''):
         self.path: str = path
         self._resize: float = 1
+        self.shadow = False
 
     def __repr__(self):
         return f'{type(self).__name__}({self.path})'
@@ -71,7 +73,7 @@ class Image:
     @property
     def data(self) -> bytes:
         if self.path:
-            return convert_to_bytes(self.path, self.size)
+            return convert_to_bytes(self.path, self.size, self.shadow)
         else:
             return b''
 
@@ -85,6 +87,12 @@ class Image:
             raise ValueError(f'Resize ratio should be positive: {value}')
         else:
             self._resize = value
+            
+    def add_shadow(self):
+        self.shadow = True
+        
+    def remove_shadow(self):
+        self.shadow = False
 
     @property
     def size(self) -> tuple[int, int]:
@@ -96,7 +104,7 @@ class Image:
         return get_image_size(self.path)
 
 
-def convert_to_bytes(file_or_bytes, resize=None):
+def convert_to_bytes(file_or_bytes, resize=None, shadow=False):
     '''
     Will convert into bytes and optionally resize an image that is a file or a base64 bytes object.
     Turns into  PNG format in the process so that can be displayed by tkinter
@@ -122,6 +130,9 @@ def convert_to_bytes(file_or_bytes, resize=None):
         scale = min(new_height / cur_height, new_width / cur_width)
         img = img.resize(
             (int(cur_width * scale), int(cur_height * scale)), PIL.Image.ANTIALIAS)
+    
+    if shadow:
+        img = PIL.ImageEnhance.Brightness(img).enhance(0.5)
     with io.BytesIO() as bio:
         img.save(bio, format="PNG")
         del img

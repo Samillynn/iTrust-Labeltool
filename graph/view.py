@@ -72,7 +72,13 @@ class AbstractLabelView(View, ABC):
 
 class RectangleView(AbstractLabelView):
     def draw_one(self, label) -> list[int]:
-        return [self.graph.draw_rectangle(label.top_left, label.bottom_right, line_color='black', line_width=3)]
+        # method 3: change border color
+        color = ""
+        if label.type == LabelType.COMPONENT:
+            color = "#cb21d1"
+        else:
+            color = "#d1c821"
+        return [self.graph.draw_rectangle(label.top_left, label.bottom_right, line_color=color, line_width=3)]
 
 
 class LabelTextView(AbstractLabelView):
@@ -83,6 +89,8 @@ class LabelTextView(AbstractLabelView):
         type_ = font["type"]
         size = font["size"]
         
+        
+        # method 1: use text
         prefix = ""
         if label.type == LabelType.COMPONENT:
             prefix = "component"
@@ -92,6 +100,18 @@ class LabelTextView(AbstractLabelView):
         fulltext = ""
         if text != "":
             fulltext = text+" "+prefix
+            
+        # method 2: use short name
+        prefix = ""
+        if label.type == LabelType.COMPONENT:
+            prefix = "C"
+        else:
+            prefix = "D"
+            
+        fulltext = ""
+        if text != "":
+            fulltext = text+" "+prefix
+        
 
         return [self.graph.draw_text(fulltext, location=label.center, color=color, font=(type_, size))]
 
