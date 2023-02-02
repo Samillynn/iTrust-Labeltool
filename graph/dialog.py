@@ -20,6 +20,9 @@ class BaseDialog:
         return config["categories"]
 
     def layout(self, enable_event=True):
+        name_str = self.label.parent + " " + self.label._type.name
+        if self.label.parent in ["", None]:
+            name_str = ""
         if self.label._type == LabelType.COMPONENT:
             default_type_str = 'Component'
         elif self.label._type == LabelType.DATABOX:
@@ -29,7 +32,7 @@ class BaseDialog:
         return [
             [sg.T('Parent'), sg.I(self.label.parent,
                                 key='parent', enable_events=enable_event)],
-            [sg.T('Name'), sg.I(self.label.parent + " " + self.label._type.name,
+            [sg.T('Name'), sg.I(name_str,
                                 key='name', enable_events=enable_event)],
             [sg.T('Description'), sg.I(self.label.name,
                                 key='desc', enable_events=enable_event)],

@@ -2,156 +2,46 @@
   "image_path": "screen_shot.jpg",
   "labels": [
     {
-      "name": "12 component",
-      "desc": "1234",
+      "name": "www component",
+      "desc": "woi",
       "fullname": "",
-      "status": "open",
+      "status": "sws",
       "type": 1,
       "category": "",
-      "parent": "12",
+      "parent": "www",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
-      "id": 17,
+      "id": 34,
       "top_left": [
-        -0.8020833333333334,
-        0.3734567901234569
+        -0.8041666666666667,
+        0.37037037037037046
       ],
       "bottom_right": [
-        -0.6909722222222222,
-        0.1141975308641976
+        -0.6895833333333333,
+        0.11481481481481493
       ],
       "connections": []
     },
     {
-      "name": "123 component",
-      "desc": "",
+      "name": "www databox",
+      "desc": "woi",
       "fullname": "",
-      "status": "123",
-      "type": 1,
-      "category": "",
-      "parent": "123",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 18,
-      "top_left": [
-        0.0078125,
-        0.2592592592592593
-      ],
-      "bottom_right": [
-        0.11979166666666674,
-        0.0009259259259258856
-      ],
-      "connections": []
-    },
-    {
-      "name": "111 component",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "type": 1,
-      "category": "",
-      "parent": "111",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 19,
-      "top_left": [
-        -0.2583333333333333,
-        0.22222222222222232
-      ],
-      "bottom_right": [
-        -0.17291666666666672,
-        0.03333333333333344
-      ],
-      "connections": []
-    },
-    {
-      "name": "1234 component",
-      "desc": "",
-      "fullname": "",
-      "status": "open",
-      "type": 1,
-      "category": "",
-      "parent": "1234",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 20,
-      "top_left": [
-        0.58125,
-        0.38148148148148153
-      ],
-      "bottom_right": [
-        0.6937500000000001,
-        0.12962962962962954
-      ],
-      "connections": []
-    },
-    {
-      "name": "120 databox",
-      "desc": "",
-      "fullname": "",
-      "status": "open",
+      "status": "sws",
       "type": 2,
       "category": "",
-      "parent": "120",
+      "parent": "www",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
-      "id": 22,
+      "id": 36,
       "top_left": [
-        0.49583333333333335,
-        -0.11111111111111116
+        -0.7375,
+        0.47777777777777786
       ],
       "bottom_right": [
-        0.5979166666666667,
-        -0.1703703703703704
-      ],
-      "connections": []
-    },
-    {
-      "name": "wuy component",
-      "desc": "",
-      "fullname": "",
-      "status": "open",
-      "type": 1,
-      "category": "",
-      "parent": "wuy",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 25,
-      "top_left": [
-        0.7958333333333332,
-        -0.15555555555555556
-      ],
-      "bottom_right": [
-        0.8291666666666668,
-        -0.2148148148148149
-      ],
-      "connections": []
-    },
-    {
-      "name": "1234 databox",
-      "desc": "wse",
-      "fullname": "",
-      "status": "open",
-      "type": 2,
-      "category": "",
-      "parent": "1234",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 26,
-      "top_left": [
-        0.8395833333333333,
-        -0.5
-      ],
-      "bottom_right": [
-        0.9624999999999999,
-        -0.5592592592592592
+        -0.6083333333333334,
+        0.4222222222222223
       ],
       "connections": []
     }

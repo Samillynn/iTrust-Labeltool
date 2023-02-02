@@ -1,3 +1,4 @@
+import time
 from recordclass import recordclass
 import PySimpleGUI as sg
 from base_classes import EventHandler
@@ -46,11 +47,13 @@ class NewPairEH(EventHandler):
             if event == 'Component':
                 global_pair_property.current_choice = 'Component'
                 global_pair_property.choosing = True
+                print(global_pair_property.choosing)
                 self.graph_handler.image.add_shadow()
                 self.graph_handler.notify_image()
             elif event == 'Databox':
                 global_pair_property.current_choice = 'Databox'
                 global_pair_property.choosing = True
+                print(global_pair_property.choosing)
                 self.graph_handler.image.add_shadow()
                 self.graph_handler.notify_image()
             elif event in ['Cancel', None]:

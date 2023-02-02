@@ -54,7 +54,7 @@ class GraphHandler(Observable, HandlerChain):
         self.on_click.add_handler(UpdateLabelHandler(self))
         self.on_click.add_handler(AddConnectionHandler(self))
         self.on_click.add_handler(SelectDataboxHandler(self))
-        self.on_click.add_handler(AddPairHandler(self))
+        # self.on_click.add_handler(AddPairHandler(self))
 
     def add_label(self, label: Label):
         self.labels.append(label)

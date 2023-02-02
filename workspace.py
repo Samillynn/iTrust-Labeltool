@@ -91,25 +91,25 @@ class ProjectMenuEH(EventHandler):
 def convert_json(result):
     cleaned_result = []
     for name,values in result.items():
-        component_value = values.get("component",None)
-        databox_value = values.get("databox",None)
-        status = component_value.get("status")
+        component_value = values.get("component",dict())
+        databox_value = values.get("databox",dict())
+        status = component_value.get("status","")
         desc = component_value.get("desc","")
             
         if component_value is not None:
             component_value = {
-                "flip":component_value["flip"],
-                "rotation":component_value["rotation"],
-                "coordinate":component_value["coordinate"]
+                "flip":component_value.get("flip",0),
+                "rotation":component_value.get("rotation",0),
+                "coordinate":component_value.get("coordinate",0)
             }
         else:
             component_value = {}
             
         if databox_value is not None:
             databox_value = {
-                "flip":databox_value["flip"],
-                "rotation":databox_value["rotation"],
-                "coordinate":databox_value["coordinate"]
+                "flip":databox_value.get("flip",0),
+                "rotation":databox_value.get("rotation",0),
+                "coordinate":databox_value.get("coordinate",0)
             }
         else:
             databox_value = {}
@@ -119,9 +119,13 @@ def convert_json(result):
             "type":"".join([c for c in name if c.isalpha()]),
             "description":desc,
             "status":status,
-            "component":component_value,
-            "databox":databox_value
         }
+        
+        if component_value.get("flip", None) is not None:
+            new_obj['component'] = component_value
+        if databox_value.get("flip", None) is not None:
+            new_obj['databox'] = databox_value
+            
         cleaned_result.append(new_obj)
             
     return cleaned_result
