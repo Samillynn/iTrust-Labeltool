@@ -2,13 +2,14 @@
   "image_path": "screen_shot.jpg",
   "labels": [
     {
-      "name": "www component",
-      "desc": "woi",
+      "name": "",
+      "desc": "desc",
       "fullname": "",
-      "status": "sws",
+      "status": "wsws",
+      "state": "sss",
       "type": 1,
       "category": "",
-      "parent": "www",
+      "parent": "p",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
@@ -24,24 +25,71 @@
       "connections": []
     },
     {
-      "name": "www databox",
-      "desc": "woi",
+      "name": "22 component",
+      "desc": "desc",
       "fullname": "",
-      "status": "sws",
-      "type": 2,
+      "status": "status",
+      "state": "",
+      "type": 1,
       "category": "",
-      "parent": "www",
+      "parent": "22",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
-      "id": 36,
+      "id": 41,
       "top_left": [
-        -0.7375,
-        0.47777777777777786
+        -0.4609375,
+        0.21759259259259256
       ],
       "bottom_right": [
-        -0.6083333333333334,
-        0.4222222222222223
+        -0.36458333333333337,
+        0.0185185185185186
+      ],
+      "connections": []
+    },
+    {
+      "name": "wss",
+      "desc": "ww",
+      "fullname": "",
+      "status": "sss",
+      "state": "",
+      "type": 3,
+      "category": "",
+      "parent": "ws",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 42,
+      "top_left": [
+        -0.6270833333333333,
+        0.3222222222222222
+      ],
+      "bottom_right": [
+        -0.5229166666666667,
+        0.25185185185185177
+      ],
+      "connections": []
+    },
+    {
+      "name": "ws databox",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 43,
+      "top_left": [
+        -0.2578125,
+        0.22222222222222232
+      ],
+      "bottom_right": [
+        -0.171875,
+        0.02777777777777768
       ],
       "connections": []
     }

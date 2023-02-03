@@ -76,8 +76,10 @@ class RectangleView(AbstractLabelView):
         color = ""
         if label.type == LabelType.COMPONENT:
             color = "#cb21d1"
-        else:
+        elif label.type == LabelType.DATABOX:
             color = "#d1c821"
+        else:
+            color = "#0b36d4"
         return [self.graph.draw_rectangle(label.top_left, label.bottom_right, line_color=color, line_width=3)]
 
 
@@ -105,8 +107,10 @@ class LabelTextView(AbstractLabelView):
         prefix = ""
         if label.type == LabelType.COMPONENT:
             prefix = "C"
-        else:
+        elif label.type == LabelType.DATABOX:
             prefix = "D"
+        else:
+            prefix = "B"
             
         fulltext = ""
         if text != "":

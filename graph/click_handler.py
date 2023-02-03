@@ -60,13 +60,13 @@ class UpdateLabelHandler(ClickHandler):
                 'Delete', button_color='red'), sg.B('Find Similar', key='Similar')]
         ]
 
-        if label.databox:
-            button_hint = f'{label.databox.name}. Reselect'
-            left_layout += [[sg.B(button_hint, key='Databox',
-                                  button_color='blue'), sg.B('Remove Databox')]]
-        else:
-            left_layout += [[sg.B('Select Databox',
-                                  key='Databox', button_color='blue')]]
+        # if label.databox:
+        #     button_hint = f'{label.databox.name}. Reselect'
+        #     left_layout += [[sg.B(button_hint, key='Databox',
+        #                           button_color='blue'), sg.B('Remove Databox')]]
+        # else:
+        #     left_layout += [[sg.B('Select Databox',
+        #                           key='Databox', button_color='blue')]]
 
         left_layout += [[sg.B('Edit Connections', key='Connection')]]
         left_layout += [[sg.B('Try Recognize Text', key='OCR')]]
@@ -268,13 +268,15 @@ class AddPairHandler(ClickHandler):
     def handle(self, position) -> bool:
         super().handle(position)
         layout = [[sg.T('Pair Name'), sg.I(key='pair_name', default_text=self.graph_handler.pair_parent_name)],
-                  [sg.B('Choose Component'), sg.B('Choose Databox'), sg.Cancel()]]
+                  [sg.B('Choose Component'), sg.B('Choose Databox'),sg.B('Choose Button'), sg.Cancel()]]
         event, value = sg.Window('Choose Pair', layout=layout).read(close=True)
         self.graph_handler.pair_parent_name = value['pair_name']
         if event == 'Choose Component':
             self.graph_handler.pair_type = LabelType.COMPONENT
         elif event == 'Choose Databox':
             self.graph_handler.pair_type = LabelType.DATABOX
+        elif event == 'Choose Button':
+            self.graph_handler.pair_type = LabelType.BUTTON
         elif event in ['Cancel']:
             self.graph_handler.pair_type = LabelType.COMPONENT
             self.graph_handler.pair_parent_name = ''

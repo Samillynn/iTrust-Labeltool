@@ -38,7 +38,6 @@ class WindowManager(HandlerChain):
 
     def run(self, close=False):
         while True:
-            print(global_pair_property.choosing)
             if global_pair_property.choosing:
                 self.window["-RETURN-"].update(visible=True)
             else:

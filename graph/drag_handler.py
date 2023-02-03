@@ -93,11 +93,15 @@ class NewLabelHandler(DragHandler):
 
     def component_layout(self):
         base_dialog = BaseDialog()
+        name_str = global_pair_property.name + " " + "component"
+        if global_pair_property.name in ["", None]:
+            name_str = ""
         layout = [
             [sg.T("Parent"), sg.I(key='parent', default_text=global_pair_property.name)],
-            [sg.T("Name"), sg.I(key='name', default_text=global_pair_property.name + " component")],
+            [sg.T("Name"), sg.I(key='name', default_text=name_str)],
             [sg.T("Description"), sg.I(key="desc", default_text=global_pair_property.desc)],
             [sg.T("Status"), sg.I(key="status", default_text=global_pair_property.status)],
+            [sg.T("State"), sg.I(key="state", default_text=global_pair_property.state)],
             base_dialog.layout_flip(),
             base_dialog.layout_rotation(),
             # [sg.T('Category'), sg.DD(config["categories"],key='category')],
@@ -113,11 +117,15 @@ class NewLabelHandler(DragHandler):
         return self.dialog.read(close=True)
 
     def databox_layout(self):
+        name_str = global_pair_property.name + " " + "databox"
+        if global_pair_property.name in ["", None]:
+            name_str = ""
         layout = [
             [sg.T("Parent"), sg.I(key='parent', default_text=global_pair_property.name)],
-            [sg.T("Name"), sg.I(key='name', default_text=global_pair_property.name + " databox")],
+            [sg.T("Name"), sg.I(key='name', default_text=name_str)],
             [sg.T("Description"), sg.I(key="desc", default_text=global_pair_property.desc)],
             [sg.T("Status"), sg.I(key="status", default_text=global_pair_property.status)],
+            [sg.T("State"), sg.I(key="state", default_text=global_pair_property.state)],
             [sg.T("Coordinate"), sg.T(
                 f"x: {self.label.center_x}; y: {self.label.center_y}")],
             [sg.Submit(), sg.Exit()]
@@ -128,7 +136,11 @@ class NewLabelHandler(DragHandler):
     def databox_dialog(self):
         self.dialog.create('Databox', self.databox_layout())
         return self.dialog.read(close=True)
-
+    
+    def button_dialog(self):
+        self.dialog.create('Button', self.databox_layout())
+        return self.dialog.read(close=True)
+    
     def new_label_dialog(self):
         layout = self.dialog.layout(enable_event=False)
         layout += [[sg.Submit(), sg.Exit()]]
@@ -147,6 +159,9 @@ class NewLabelHandler(DragHandler):
             values["type"] = 1
         elif current_choice == "Databox":
             event, values = self.databox_dialog()
+            values["type"] = 2
+        elif current_choice == "Button":
+            event, values = self.button_dialog()
             values["type"] = 2
         else:
             raise AssertionError

@@ -27,6 +27,8 @@ class BaseDialog:
             default_type_str = 'Component'
         elif self.label._type == LabelType.DATABOX:
             default_type_str = 'Databox'
+        elif self.label._type == LabelType.BUTTON:
+            default_type_str = 'Button'
         else:
             raise ValueError(f'Type of label can\' be {self.label._type}')
         return [
@@ -34,11 +36,13 @@ class BaseDialog:
                                 key='parent', enable_events=enable_event)],
             [sg.T('Name'), sg.I(name_str,
                                 key='name', enable_events=enable_event)],
-            [sg.T('Description'), sg.I(self.label.name,
+            [sg.T('Description'), sg.I(self.label.desc,
                                 key='desc', enable_events=enable_event)],
             [sg.T('Status'), sg.I(self.label.status,
                                 key='status', enable_events=enable_event)],
-            [sg.T('Type'), sg.DD(['Component', 'Databox'], readonly=True,
+            [sg.T('State'), sg.I(self.label.state,
+                                key='state', enable_events=enable_event)],
+            [sg.T('Type'), sg.DD(['Component', 'Databox', "Button"], readonly=True,
                                  default_value=default_type_str, key='type')],
             # [sg.T('Category'), sg.DD(self.categories,
             #                          default_value=self.label.category, key='category')],
@@ -85,9 +89,11 @@ class BaseDialog:
                 value['type'] = 1
             elif _type == 'Databox':
                 value['type'] = 2
+            elif _type == 'Button':
+                value['type'] = 3
             else:
                 raise ValueError(
-                    f'Type of label can either be "Component" or "Databox", but not {_type}')
+                    f'Type of label can either be "Component", "Databox" or "Button", but not {_type}')
 
         # print(f'dialog.read: {value}')
         if close:

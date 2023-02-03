@@ -1,21 +1,57 @@
 [
   {
-    "name": "www",
-    "type": "www",
-    "description": "www component",
-    "status": "sws",
+    "name": "p",
+    "type": "p",
+    "description": "desc",
+    "status": "wsws",
+    "state": "sss",
     "component": {
       "flip": 0,
       "rotation": 0,
       "coordinate": [
         -0.746875,
-        0.24444444444444435
+        0.2425925925925927
       ]
-    },
+    }
+  },
+  {
+    "name": "22",
+    "type": "",
+    "description": "desc",
+    "status": "status",
+    "state": "",
+    "component": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.4127604166666667,
+        0.11805555555555558
+      ]
+    }
+  },
+  {
+    "name": "ws",
+    "type": "ws",
+    "description": "ww",
+    "status": "sss",
+    "state": "",
     "databox": {
       "coordinate": [
-        -0.6729166666666667,
-        0.45000000000000007
+        -0.575,
+        0.287037037037037
+      ]
+    }
+  },
+  {
+    "name": "",
+    "type": "",
+    "description": "",
+    "status": "",
+    "state": "",
+    "databox": {
+      "coordinate": [
+        -0.21484375,
+        0.125
       ]
     }
   }

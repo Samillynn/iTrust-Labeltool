@@ -122,6 +122,7 @@ class Rectangle:
 class LabelType(Enum):
     COMPONENT = 1
     DATABOX = 2
+    BUTTON = 3
 
 
 class Label(Rectangle):
@@ -150,6 +151,7 @@ class Label(Rectangle):
         self.parent = parent
         self.fullname = fullname
         self.status = ""
+        self.state = ""
         self.desc = ""
 
         self.connections = []
@@ -175,6 +177,7 @@ class Label(Rectangle):
             self.category = ""
         self.fullname = label_dict.get('fullname', '')
         self.status = label_dict.get('status', '')
+        self.state = label_dict.get('state', '')
         self.parent = label_dict.get('parent', '')
         self.flip = label_dict.get('flip', 0)
         self.rotation = label_dict.get('rotation', 0)
@@ -186,6 +189,7 @@ class Label(Rectangle):
             "desc": self.desc,
             "fullname": self.fullname,
             "status": self.status,
+            "state":self.state,
             "type": self._type.value,
             "category": self.category,
             "parent": self.parent,

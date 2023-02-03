@@ -91,40 +91,60 @@ class ProjectMenuEH(EventHandler):
 def convert_json(result):
     cleaned_result = []
     for name,values in result.items():
-        component_value = values.get("component",dict())
-        databox_value = values.get("databox",dict())
-        status = component_value.get("status","")
-        desc = component_value.get("desc","")
+        component_value = values.get("component",None)
+        databox_value = values.get("databox",None)
+        button_value = values.get("button",None)
+        
+        status = ""
+        state = ""
+        desc = ""
+        
+        # check whether status and desc are assigned
+        flag = False
             
         if component_value is not None:
+            status = component_value.get("status","")
+            state = component_value.get("state","")
+            desc = component_value.get("desc","")
             component_value = {
-                "flip":component_value.get("flip",0),
-                "rotation":component_value.get("rotation",0),
-                "coordinate":component_value.get("coordinate",0)
+                "flip":component_value.get("flip"),
+                "rotation":component_value.get("rotation"),
+                "coordinate":component_value.get("coordinate")
             }
-        else:
-            component_value = {}
             
         if databox_value is not None:
+            if not flag:
+                status = databox_value.get("status","")
+                state = databox_value.get("state","")
+                desc = databox_value.get("desc","")
+                flag = True   
             databox_value = {
-                "flip":databox_value.get("flip",0),
-                "rotation":databox_value.get("rotation",0),
-                "coordinate":databox_value.get("coordinate",0)
+                "coordinate":databox_value.get("coordinate")
+            } 
+            
+        if button_value is not None:
+            if not flag:
+                status = button_value.get("status","")
+                state = button_value.get("state","")
+                desc = button_value.get("desc","")
+            button_value = {
+                "coordinate":button_value.get("coordinate")
             }
-        else:
-            databox_value = {}
             
         new_obj = {
             "name":name,
             "type":"".join([c for c in name if c.isalpha()]),
             "description":desc,
             "status":status,
+            "state":state,
         }
         
-        if component_value.get("flip", None) is not None:
+        if component_value is not None:
             new_obj['component'] = component_value
-        if databox_value.get("flip", None) is not None:
+        if databox_value is not None:
             new_obj['databox'] = databox_value
+        if button_value is not None:
+            new_obj['databox'] = button_value
             
         cleaned_result.append(new_obj)
             
@@ -149,6 +169,8 @@ def export_eh(event, file_path):
             result_type = 'component'
         elif result['type'] == 2:
             result_type = 'databox'
+        elif result['type'] == 3:
+            result_type = 'button'
         else:
             raise AssertionError()
         
@@ -158,9 +180,10 @@ def export_eh(event, file_path):
             result_dict[result_name] = {}
                         
         required_properties = {
-            "name":result["parent"],
-            "desc":result["name"],
+            "name":result["name"],
+            "desc":result["desc"],
             "status":result["status"],
+            "state":result["state"],
             "type":result["type"],
             "flip":result["flip"],
             "rotation":result["rotation"],
