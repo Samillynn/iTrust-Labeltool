@@ -141,10 +141,16 @@ def convert_json(result):
         
         if component_value is not None:
             new_obj['component'] = component_value
+        else:
+            new_obj['component'] = {}
         if databox_value is not None:
             new_obj['databox'] = databox_value
+        else:
+            new_obj['databox'] = {}
         if button_value is not None:
-            new_obj['databox'] = button_value
+            new_obj['button'] = button_value
+        else:
+            new_obj['button'] = {}
             
         cleaned_result.append(new_obj)
             
