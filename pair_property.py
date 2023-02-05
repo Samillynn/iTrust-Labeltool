@@ -5,9 +5,9 @@ from base_classes import EventHandler
 from config import config
 
 PairProperty = recordclass("PairProperty",
-                          fields=["name", "status", "desc", "state",
+                          fields=["name", "status", "desc", "state", "component_type",
                                        "additional_info", "current_choice", "component", "databox", "button", "choosing"],
-                          defaults=["", "", "", "", "", None, None, None, None, False])
+                          defaults=["", "", "", "", "", "", None, None, None, None, False])
 
 global_pair_property = PairProperty()
 
@@ -33,6 +33,7 @@ class NewPairEH(EventHandler):
 
         layout = [
             [sg.T("Name"), sg.I(key="name", default_text=global_pair_property.name)],
+            [sg.T("Type"), sg.I(key="component_type", default_text=global_pair_property.component_type)],
             [sg.T("Description"), sg.I(key="desc", default_text=global_pair_property.desc)],
             [sg.T("Status"), sg.I(key="status", default_text=global_pair_property.status)],
             [sg.T("State"), sg.I(key="state", default_text=global_pair_property.state)],
@@ -44,7 +45,9 @@ class NewPairEH(EventHandler):
 
         if event in ['Component', 'Databox', 'Button', 'Cancel', None]:
             global_pair_property.name = values["name"]
+            global_pair_property.component_type = values["component_type"]
             global_pair_property.status = values["status"]
+            global_pair_property.state = values["state"]
             global_pair_property.desc = values["desc"]
 
             if event == 'Component':
@@ -68,6 +71,7 @@ class NewPairEH(EventHandler):
                 global_pair_property.databox = None
         elif event == 'Done':
             global_pair_property.name = ""
+            global_pair_property.component_type = ""
             global_pair_property.status = ""
             global_pair_property.state = ""
             global_pair_property.desc = ""

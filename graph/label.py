@@ -148,6 +148,7 @@ class Label(Rectangle):
         self.flip = flip
         self.rotation = rotation
         self.category = category
+        self.component_type = ""
         self.parent = parent
         self.fullname = fullname
         self.status = ""
@@ -177,6 +178,7 @@ class Label(Rectangle):
             self.category = ""
         self.fullname = label_dict.get('fullname', '')
         self.status = label_dict.get('status', '')
+        self.component_type = label_dict.get('component_type', '')
         self.state = label_dict.get('state', '')
         self.parent = label_dict.get('parent', '')
         self.flip = label_dict.get('flip', 0)
@@ -189,6 +191,7 @@ class Label(Rectangle):
             "desc": self.desc,
             "fullname": self.fullname,
             "status": self.status,
+            "component_type": self.component_type,
             "state":self.state,
             "type": self._type.value,
             "category": self.category,

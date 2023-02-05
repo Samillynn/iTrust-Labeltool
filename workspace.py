@@ -16,6 +16,15 @@ from graph.label import LabelListSerializer, Label
 from pair_property import global_pair_property, NewPairEH
 
 
+def match_type(component_type):
+    type_list = config["type"]
+    cleaned_type = "".join(l for l in component_type if l.isalpha())
+    for i in range(len(cleaned_type)):
+        sub_cleaned_type = cleaned_type[:len(cleaned_type)-i]
+        if sub_cleaned_type in type_list:
+            return sub_cleaned_type
+    return "other"
+
 class NewProjectEH(EventHandler):
     layout = [
         [sg.T('Location:'), sg.FolderBrowse(
@@ -94,7 +103,8 @@ def convert_json(result):
         component_value = values.get("component",None)
         databox_value = values.get("databox",None)
         button_value = values.get("button",None)
-        
+
+        component_type = ""        
         status = ""
         state = ""
         desc = ""
@@ -105,6 +115,7 @@ def convert_json(result):
         if component_value is not None:
             status = component_value.get("status","")
             state = component_value.get("state","")
+            component_type = component_value.get("component_type","")
             desc = component_value.get("desc","")
             component_value = {
                 "flip":component_value.get("flip"),
@@ -116,6 +127,7 @@ def convert_json(result):
             if not flag:
                 status = databox_value.get("status","")
                 state = databox_value.get("state","")
+                component_type = databox_value.get("component_type","")
                 desc = databox_value.get("desc","")
                 flag = True   
             databox_value = {
@@ -126,14 +138,16 @@ def convert_json(result):
             if not flag:
                 status = button_value.get("status","")
                 state = button_value.get("state","")
+                component_type = button_value.get("component_type","")
                 desc = button_value.get("desc","")
             button_value = {
                 "coordinate":button_value.get("coordinate")
             }
-            
+        
+        matched_type = match_type(name)
         new_obj = {
             "name":name,
-            "type":"".join([c for c in name if c.isalpha()]),
+            "type":matched_type if component_type == "" else component_type,
             "description":desc,
             "status":status,
             "state":state,
@@ -190,7 +204,7 @@ def export_eh(event, file_path):
             "desc":result["desc"],
             "status":result["status"],
             "state":result["state"],
-            "type":result["type"],
+            "component_type":result["component_type"],
             "flip":result["flip"],
             "rotation":result["rotation"],
             "coordinate":result["coordinate"]    

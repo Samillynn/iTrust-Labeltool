@@ -1,7 +1,7 @@
 [
   {
-    "name": "p",
-    "type": "p",
+    "name": "LIT-101",
+    "type": "LIT",
     "description": "desc",
     "status": "wsws",
     "state": "sss",
@@ -12,11 +12,13 @@
         -0.746875,
         0.2425925925925927
       ]
-    }
+    },
+    "databox": {},
+    "button": {}
   },
   {
     "name": "22",
-    "type": "",
+    "type": "other",
     "description": "desc",
     "status": "status",
     "state": "",
@@ -27,15 +29,19 @@
         -0.4127604166666667,
         0.11805555555555558
       ]
-    }
+    },
+    "databox": {},
+    "button": {}
   },
   {
-    "name": "ws",
-    "type": "ws",
+    "name": "FIT-201",
+    "type": "FIT",
     "description": "ww",
     "status": "sss",
     "state": "",
-    "databox": {
+    "component": {},
+    "databox": {},
+    "button": {
       "coordinate": [
         -0.575,
         0.287037037037037
@@ -44,15 +50,39 @@
   },
   {
     "name": "",
-    "type": "",
+    "type": "other",
     "description": "",
     "status": "",
     "state": "",
+    "component": {},
     "databox": {
       "coordinate": [
         -0.21484375,
         0.125
       ]
-    }
+    },
+    "button": {}
+  },
+  {
+    "name": "wsws",
+    "type": "www",
+    "description": "ope",
+    "status": "sxd",
+    "state": "oedk",
+    "component": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        0.06380208333333337,
+        0.125
+      ]
+    },
+    "databox": {
+      "coordinate": [
+        0.23697916666666663,
+        0.01388888888888884
+      ]
+    },
+    "button": {}
   }
 ]

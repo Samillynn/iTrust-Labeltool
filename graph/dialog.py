@@ -34,6 +34,8 @@ class BaseDialog:
         return [
             [sg.T('Parent'), sg.I(self.label.parent,
                                 key='parent', enable_events=enable_event)],
+            [sg.T('Type'), sg.I(self.label.component_type,
+                                key='component_type', enable_events=enable_event)],
             [sg.T('Name'), sg.I(name_str,
                                 key='name', enable_events=enable_event)],
             [sg.T('Description'), sg.I(self.label.desc,

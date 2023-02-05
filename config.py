@@ -15,5 +15,6 @@ config = {
             "key_format": "{name}/{fullname}",
             "val_format": "{name}/{fullname}"
         }
-    }
+    },
+    "type": ["FIT", "LIT", "LITA", "AV", "P", "AIT", "CIT", "FIC", "UV", "AIC", "PIT", "PDI", "F", "FD", "PSH", "Button"]
 }

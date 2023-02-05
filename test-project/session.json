@@ -2,14 +2,15 @@
   "image_path": "screen_shot.jpg",
   "labels": [
     {
-      "name": "",
+      "name": "p COMPONENT",
       "desc": "desc",
       "fullname": "",
       "status": "wsws",
+      "component_type": "",
       "state": "sss",
       "type": 1,
       "category": "",
-      "parent": "p",
+      "parent": "LIT-101",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
@@ -29,6 +30,7 @@
       "desc": "desc",
       "fullname": "",
       "status": "status",
+      "component_type": "",
       "state": "",
       "type": 1,
       "category": "",
@@ -48,14 +50,15 @@
       "connections": []
     },
     {
-      "name": "wss",
+      "name": "ws BUTTON",
       "desc": "ww",
       "fullname": "",
       "status": "sss",
+      "component_type": "",
       "state": "",
       "type": 3,
       "category": "",
-      "parent": "ws",
+      "parent": "FIT-201",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
@@ -75,6 +78,7 @@
       "desc": "",
       "fullname": "",
       "status": "",
+      "component_type": "",
       "state": "",
       "type": 2,
       "category": "",
@@ -90,6 +94,54 @@
       "bottom_right": [
         -0.171875,
         0.02777777777777768
+      ],
+      "connections": []
+    },
+    {
+      "name": "wsws component",
+      "desc": "ope",
+      "fullname": "",
+      "status": "sxd",
+      "component_type": "www",
+      "state": "oedk",
+      "type": 1,
+      "category": "",
+      "parent": "wsws",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 45,
+      "top_left": [
+        0.0078125,
+        0.25
+      ],
+      "bottom_right": [
+        0.11979166666666674,
+        0.0
+      ],
+      "connections": []
+    },
+    {
+      "name": "wsws databox",
+      "desc": "ope",
+      "fullname": "",
+      "status": "sxd",
+      "component_type": "www",
+      "state": "oedk",
+      "type": 2,
+      "category": "",
+      "parent": "wsws",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 47,
+      "top_left": [
+        0.1875,
+        0.06018518518518512
+      ],
+      "bottom_right": [
+        0.28645833333333326,
+        -0.03240740740740744
       ],
       "connections": []
     }

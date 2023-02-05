@@ -98,6 +98,7 @@ class NewLabelHandler(DragHandler):
             name_str = ""
         layout = [
             [sg.T("Parent"), sg.I(key='parent', default_text=global_pair_property.name)],
+            [sg.T("Type"), sg.I(key='component_type', default_text=global_pair_property.component_type)],
             [sg.T("Name"), sg.I(key='name', default_text=name_str)],
             [sg.T("Description"), sg.I(key="desc", default_text=global_pair_property.desc)],
             [sg.T("Status"), sg.I(key="status", default_text=global_pair_property.status)],
@@ -122,6 +123,7 @@ class NewLabelHandler(DragHandler):
             name_str = ""
         layout = [
             [sg.T("Parent"), sg.I(key='parent', default_text=global_pair_property.name)],
+            [sg.T("Type"), sg.I(key='component_type', default_text=global_pair_property.component_type)],
             [sg.T("Name"), sg.I(key='name', default_text=name_str)],
             [sg.T("Description"), sg.I(key="desc", default_text=global_pair_property.desc)],
             [sg.T("Status"), sg.I(key="status", default_text=global_pair_property.status)],
@@ -162,12 +164,16 @@ class NewLabelHandler(DragHandler):
             values["type"] = 2
         elif current_choice == "Button":
             event, values = self.button_dialog()
-            values["type"] = 2
+            values["type"] = 3
         else:
             raise AssertionError
 
         if event in ['Submit']:
             self.label.copy_basic_properties(values)
+            global_pair_property.name = self.label.parent
+            global_pair_property.status = self.label.status
+            global_pair_property.state = self.label.state
+            global_pair_property.desc = self.label.desc
             if global_pair_property.current_choice is not None:
                  assign_current_choice(self.label)
         elif event in ['Exit', None]:
