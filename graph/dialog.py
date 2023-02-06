@@ -44,7 +44,7 @@ class BaseDialog:
                                 key='status', enable_events=enable_event)],
             [sg.T('State'), sg.I(self.label.state,
                                 key='state', enable_events=enable_event)],
-            [sg.T('Type'), sg.DD(['Component', 'Databox', "Button"], readonly=True,
+            [sg.T('Label Type'), sg.DD(['Component', 'Databox', "Button"], readonly=True,
                                  default_value=default_type_str, key='type')],
             # [sg.T('Category'), sg.DD(self.categories,
             #                          default_value=self.label.category, key='category')],

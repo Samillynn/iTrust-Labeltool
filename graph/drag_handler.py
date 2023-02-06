@@ -197,8 +197,9 @@ class MoveLabelHandler(DragHandler):
         return False
 
     def handle(self, displacement):
-        self.label.move(displacement)
-        self.graph_handler.notify_labels()
+        if global_pair_property.choosing == False:
+            self.label.move(displacement)
+            self.graph_handler.notify_labels()
 
 
 class MoveVertexHandler(DragHandler):
@@ -216,8 +217,9 @@ class MoveVertexHandler(DragHandler):
         return False
 
     def handle(self, displacement):
-        self.label.move_vertex(self.vertex_name, displacement)
-        self.graph_handler.notify_labels()
+        if global_pair_property.choosing == False:
+            self.label.move_vertex(self.vertex_name, displacement)
+            self.graph_handler.notify_labels()
 
 
 class DuplicateLabelHandler(DragHandler):
@@ -234,5 +236,6 @@ class DuplicateLabelHandler(DragHandler):
         return False
 
     def handle(self, displacement):
-        self.label.move(displacement)
-        self.graph_handler.notify_labels()
+        if global_pair_property.choosing == False:
+            self.label.move(displacement)
+            self.graph_handler.notify_labels()

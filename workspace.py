@@ -26,17 +26,16 @@ def match_type(component_type):
     return "other"
 
 class NewProjectEH(EventHandler):
-    layout = [
+    def handle(self):
+        layout = [
         [sg.T('Location:'), sg.FolderBrowse(
             key='location', initial_folder=os.getcwd())],
         [sg.T('Project Name:'), sg.I(key='project_name')],
         [sg.T('Image to label'), sg.FileBrowse(key='image_path')],
         [sg.B('Create'), sg.B('Exit')]
     ]
-
-    def handle(self):
         event, values = sg.Window(
-            'Create New Project', self.layout).read(close=True)
+            'Create New Project', layout).read(close=True)
         if event in ['Create']:
             project_path = Path(values['location'], values['project_name'])
             # TODO: delete exist_ok
@@ -58,7 +57,7 @@ class OpenProjectEH(EventHandler):
     def handle(self):
         path = sg.popup_get_folder(
             'Select Project to Open', default_path=os.getcwd())
-        if path is not None:
+        if path is not None and path != "":
             os.chdir(path)
             show_workspace()
 

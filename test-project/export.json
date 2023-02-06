@@ -17,8 +17,8 @@
     "button": {}
   },
   {
-    "name": "22",
-    "type": "other",
+    "name": "LIT300_A",
+    "type": "LITA",
     "description": "desc",
     "status": "status",
     "state": "",

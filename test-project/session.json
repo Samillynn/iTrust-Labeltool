@@ -26,7 +26,7 @@
       "connections": []
     },
     {
-      "name": "22 component",
+      "name": "22 COMPONENT",
       "desc": "desc",
       "fullname": "",
       "status": "status",
@@ -34,18 +34,18 @@
       "state": "",
       "type": 1,
       "category": "",
-      "parent": "22",
+      "parent": "LIT300_A",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
       "id": 41,
       "top_left": [
-        -0.4609375,
-        0.21759259259259256
+        -0.4588541666666667,
+        0.22499999999999987
       ],
       "bottom_right": [
-        -0.36458333333333337,
-        0.0185185185185186
+        -0.36250000000000004,
+        0.025925925925925908
       ],
       "connections": []
     },
@@ -142,6 +142,30 @@
       "bottom_right": [
         0.28645833333333326,
         -0.03240740740740744
+      ],
+      "connections": []
+    },
+    {
+      "name": "aaa",
+      "desc": "desc",
+      "fullname": "",
+      "status": "sws",
+      "component_type": "close",
+      "state": "hyj",
+      "type": 1,
+      "category": "",
+      "parent": "aaa",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 49,
+      "top_left": [
+        0.5833333333333333,
+        0.375
+      ],
+      "bottom_right": [
+        0.6901041666666665,
+        0.125
       ],
       "connections": []
     }

@@ -1,5 +1,5 @@
 import time
-from recordclass import recordclass
+from recordclass import recordclass, asdict
 import PySimpleGUI as sg
 from base_classes import EventHandler
 from config import config
@@ -16,7 +16,6 @@ class NewPairEH(EventHandler):
         self.graph_handler = graph_handler
     def handle(self):
         global_pair_property.choosing = False
-        print(global_pair_property.choosing)
         self.graph_handler.image.remove_shadow()
         self.graph_handler.notify_image()
         def get_button_color(button_name):
@@ -42,6 +41,10 @@ class NewPairEH(EventHandler):
             [sg.B("Component", button_color=get_button_color("Component")), sg.B("Databox", button_color=get_button_color("Databox")), sg.B("Button", button_color=get_button_color("Button")), sg.Cancel(), sg.B("Done")]
         ]
         event, values = sg.Window("Create New", layout).read(close=True)
+        
+        component = global_pair_property.component
+        databox = global_pair_property.databox
+        button = global_pair_property.button
 
         if event in ['Component', 'Databox', 'Button', 'Cancel', None]:
             global_pair_property.name = values["name"]
@@ -66,10 +69,32 @@ class NewPairEH(EventHandler):
                 self.graph_handler.image.add_shadow()
                 self.graph_handler.notify_image()
             elif event in ['Cancel', None]:
+                if component is not None:
+                    self.graph_handler.remove_label(component)
+                if databox is not None:
+                    self.graph_handler.remove_label(databox)
+                if button is not None:
+                    self.graph_handler.remove_label(button)
+                self.graph_handler.notify_labels()
                 global_pair_property.current_choice = None
                 global_pair_property.component = None
                 global_pair_property.databox = None
+                global_pair_property.button = None
         elif event == 'Done':
+            global_pair_property.name = values["name"]
+            global_pair_property.component_type = values["component_type"]
+            global_pair_property.status = values["status"]
+            global_pair_property.state = values["state"]
+            global_pair_property.desc = values["desc"]
+            label_dict = asdict(global_pair_property)
+            label_dict["parent"] = label_dict["name"]
+            if component is not None:
+                component.copy_basic_properties(label_dict)
+            if databox is not None:
+                databox.copy_basic_properties(label_dict)
+            if button is not None:
+                button.copy_basic_properties(label_dict)
+            self.graph_handler.notify_labels()
             global_pair_property.name = ""
             global_pair_property.component_type = ""
             global_pair_property.status = ""
@@ -79,6 +104,7 @@ class NewPairEH(EventHandler):
             global_pair_property.current_choice = None
             global_pair_property.component = None
             global_pair_property.databox = None
+            global_pair_property.button = None
         else:
             raise AssertionError
 
