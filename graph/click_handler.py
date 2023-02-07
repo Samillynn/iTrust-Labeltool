@@ -108,13 +108,23 @@ class UpdateLabelHandler(ClickHandler):
 
         # check whether in create pair mode
         if global_pair_property.current_choice is not None:
-            label.parent = global_pair_property.name
-            label.status = global_pair_property.status
-            label.state = global_pair_property.state
-            label.desc = global_pair_property.desc
-            assign_current_choice(label)
-            handler = NewPairEH(self.graph_handler)
-            handler.handle()
+            # label.parent = global_pair_property.name
+            # label.status = global_pair_property.status
+            # label.state = global_pair_property.state
+            # label.desc = global_pair_property.desc
+            label_type = label._type.name.lower()
+            if label_type == global_pair_property.current_choice.lower():
+                assign_current_choice(label)
+                if label_type == "component":
+                    global_pair_property.component_label = True
+                elif label_type == "databox":
+                    global_pair_property.databox_label = True
+                else:
+                    global_pair_property.button_label = True
+                handler = NewPairEH(self.graph_handler)
+                handler.handle()
+            else:
+                sg.popup(f"The label you choose is not a {label_type}")
 
         else:
             dialog = self.update_label_dialog(label)

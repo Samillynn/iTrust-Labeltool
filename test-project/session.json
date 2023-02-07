@@ -74,98 +74,98 @@
       "connections": []
     },
     {
-      "name": "ws databox",
+      "name": "ef",
       "desc": "",
       "fullname": "",
       "status": "",
-      "component_type": "",
+      "component_type": "rgtt",
       "state": "",
-      "type": 2,
+      "type": 1,
       "category": "",
-      "parent": "",
+      "parent": "ef",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
       "id": 43,
       "top_left": [
-        -0.2578125,
+        -0.26041666666666663,
         0.22222222222222232
       ],
       "bottom_right": [
-        -0.171875,
-        0.02777777777777768
+        -0.17291666666666672,
+        0.025925925925925908
       ],
       "connections": []
     },
     {
-      "name": "wsws component",
-      "desc": "ope",
+      "name": "wis",
+      "desc": "",
       "fullname": "",
-      "status": "sxd",
-      "component_type": "www",
-      "state": "oedk",
-      "type": 1,
-      "category": "",
-      "parent": "wsws",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 45,
-      "top_left": [
-        0.0078125,
-        0.25
-      ],
-      "bottom_right": [
-        0.11979166666666674,
-        0.0
-      ],
-      "connections": []
-    },
-    {
-      "name": "wsws databox",
-      "desc": "ope",
-      "fullname": "",
-      "status": "sxd",
-      "component_type": "www",
-      "state": "oedk",
+      "status": "",
+      "component_type": "wwsws",
+      "state": "",
       "type": 2,
       "category": "",
-      "parent": "wsws",
+      "parent": "wis",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
-      "id": 47,
+      "id": 46,
       "top_left": [
-        0.1875,
-        0.06018518518518512
+        -0.20138888888888884,
+        0.3240740740740742
       ],
       "bottom_right": [
-        0.28645833333333326,
-        -0.03240740740740744
+        -0.11805555555555558,
+        0.27160493827160503
       ],
       "connections": []
     },
     {
-      "name": "aaa",
-      "desc": "desc",
+      "name": "ws",
+      "desc": "ede",
       "fullname": "",
-      "status": "sws",
-      "component_type": "close",
-      "state": "hyj",
-      "type": 1,
+      "status": "sdw",
+      "component_type": "ooo",
+      "state": "thty",
+      "type": 3,
       "category": "",
-      "parent": "aaa",
+      "parent": "okok",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
       "id": 49,
       "top_left": [
-        0.5833333333333333,
-        0.375
+        -0.11493055555555554,
+        0.34259259259259256
       ],
       "bottom_right": [
-        0.6901041666666665,
-        0.125
+        -0.07152777777777786,
+        0.2685185185185186
+      ],
+      "connections": []
+    },
+    {
+      "name": "wsws",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "eded",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "wsws",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 54,
+      "top_left": [
+        0.0625,
+        0.38888888888888884
+      ],
+      "bottom_right": [
+        0.1875,
+        0.3296296296296297
       ],
       "connections": []
     }

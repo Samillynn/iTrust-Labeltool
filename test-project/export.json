@@ -26,8 +26,8 @@
       "flip": 0,
       "rotation": 0,
       "coordinate": [
-        -0.4127604166666667,
-        0.11805555555555558
+        -0.41067708333333336,
+        0.1254629629629629
       ]
     },
     "databox": {},
@@ -49,40 +49,67 @@
     }
   },
   {
-    "name": "",
-    "type": "other",
+    "name": "ef",
+    "type": "rgtt",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.21666666666666667,
+        0.12407407407407411
+      ]
+    },
+    "databox": {},
+    "button": {}
+  },
+  {
+    "name": "wis",
+    "type": "wwsws",
     "description": "",
     "status": "",
     "state": "",
     "component": {},
     "databox": {
       "coordinate": [
-        -0.21484375,
-        0.125
+        -0.1597222222222222,
+        0.2978395061728396
       ]
     },
     "button": {}
   },
   {
+    "name": "okok",
+    "type": "ooo",
+    "description": "ede",
+    "status": "sdw",
+    "state": "thty",
+    "component": {},
+    "databox": {},
+    "button": {
+      "coordinate": [
+        -0.0932291666666667,
+        0.3055555555555556
+      ]
+    }
+  },
+  {
     "name": "wsws",
-    "type": "www",
-    "description": "ope",
-    "status": "sxd",
-    "state": "oedk",
+    "type": "eded",
+    "description": "",
+    "status": "",
+    "state": "",
     "component": {
       "flip": 0,
       "rotation": 0,
       "coordinate": [
-        0.06380208333333337,
-        0.125
+        0.125,
+        0.3592592592592593
       ]
     },
-    "databox": {
-      "coordinate": [
-        0.23697916666666663,
-        0.01388888888888884
-      ]
-    },
+    "databox": {},
     "button": {}
   }
 ]

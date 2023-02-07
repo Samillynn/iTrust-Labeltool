@@ -171,6 +171,7 @@ class NewLabelHandler(DragHandler):
         if event in ['Submit']:
             self.label.copy_basic_properties(values)
             global_pair_property.name = self.label.parent
+            global_pair_property.component_type = self.label.component_type
             global_pair_property.status = self.label.status
             global_pair_property.state = self.label.state
             global_pair_property.desc = self.label.desc
