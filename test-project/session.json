@@ -2,170 +2,98 @@
   "image_path": "screen_shot.jpg",
   "labels": [
     {
-      "name": "p COMPONENT",
+      "name": "desc",
       "desc": "desc",
       "fullname": "",
-      "status": "wsws",
+      "status": "desc",
       "component_type": "",
-      "state": "sss",
+      "state": "desc",
       "type": 1,
+      "category": "",
+      "parent": "desc",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 55,
+      "top_left": [
+        -0.8020833333333334,
+        0.37037037037037046
+      ],
+      "bottom_right": [
+        -0.6916666666666667,
+        0.11851851851851847
+      ],
+      "connections": []
+    },
+    {
+      "name": "LIT-101 databox",
+      "desc": "Desc",
+      "fullname": "",
+      "status": "open",
+      "component_type": "",
+      "state": "state",
+      "type": 2,
       "category": "",
       "parent": "LIT-101",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
-      "id": 34,
+      "id": 57,
       "top_left": [
-        -0.8041666666666667,
-        0.37037037037037046
+        -0.7333333333333334,
+        0.4814814814814814
       ],
       "bottom_right": [
-        -0.6895833333333333,
-        0.11481481481481493
+        -0.6125,
+        0.4185185185185185
       ],
       "connections": []
     },
     {
-      "name": "22 COMPONENT",
-      "desc": "desc",
-      "fullname": "",
-      "status": "status",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "LIT300_A",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 41,
-      "top_left": [
-        -0.4588541666666667,
-        0.22499999999999987
-      ],
-      "bottom_right": [
-        -0.36250000000000004,
-        0.025925925925925908
-      ],
-      "connections": []
-    },
-    {
-      "name": "ws BUTTON",
-      "desc": "ww",
-      "fullname": "",
-      "status": "sss",
-      "component_type": "",
-      "state": "",
-      "type": 3,
-      "category": "",
-      "parent": "FIT-201",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 42,
-      "top_left": [
-        -0.6270833333333333,
-        0.3222222222222222
-      ],
-      "bottom_right": [
-        -0.5229166666666667,
-        0.25185185185185177
-      ],
-      "connections": []
-    },
-    {
-      "name": "ef",
+      "name": "wsw databox",
       "desc": "",
       "fullname": "",
       "status": "",
-      "component_type": "rgtt",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "ef",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 43,
-      "top_left": [
-        -0.26041666666666663,
-        0.22222222222222232
-      ],
-      "bottom_right": [
-        -0.17291666666666672,
-        0.025925925925925908
-      ],
-      "connections": []
-    },
-    {
-      "name": "wis",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "wwsws",
+      "component_type": "",
       "state": "",
       "type": 2,
       "category": "",
-      "parent": "wis",
+      "parent": "wsw",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
-      "id": 46,
+      "id": 60,
       "top_left": [
-        -0.20138888888888884,
-        0.3240740740740742
+        -0.4375,
+        0.4740740740740741
       ],
       "bottom_right": [
-        -0.11805555555555558,
-        0.27160493827160503
+        -0.3354166666666667,
+        0.4222222222222223
       ],
       "connections": []
     },
     {
-      "name": "ws",
-      "desc": "ede",
+      "name": "wsw",
+      "desc": "wq",
       "fullname": "",
-      "status": "sdw",
-      "component_type": "ooo",
-      "state": "thty",
-      "type": 3,
+      "status": "wse",
+      "component_type": "wd",
+      "state": "efff",
+      "type": 2,
       "category": "",
-      "parent": "okok",
+      "parent": "wsw",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
-      "id": 49,
+      "id": 62,
       "top_left": [
-        -0.11493055555555554,
-        0.34259259259259256
+        -0.1958333333333333,
+        0.4740740740740741
       ],
       "bottom_right": [
-        -0.07152777777777786,
-        0.2685185185185186
-      ],
-      "connections": []
-    },
-    {
-      "name": "wsws",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "eded",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "wsws",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 54,
-      "top_left": [
-        0.0625,
-        0.38888888888888884
-      ],
-      "bottom_right": [
-        0.1875,
-        0.3296296296296297
+        -0.09375,
+        0.4222222222222223
       ],
       "connections": []
     }

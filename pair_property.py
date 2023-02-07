@@ -57,16 +57,22 @@ class NewPairEH(EventHandler):
             global_pair_property.desc = values["desc"]
 
             if event == 'Component':
+                if component is not None and not global_pair_property.component_label:
+                    self.graph_handler.remove_label(component)
                 global_pair_property.current_choice = 'Component'
                 global_pair_property.choosing = True
                 self.graph_handler.image.add_shadow()
                 self.graph_handler.notify_image()
             elif event == 'Databox':
+                if databox is not None and not global_pair_property.databox_label:
+                    self.graph_handler.remove_label(databox)
                 global_pair_property.current_choice = 'Databox'
                 global_pair_property.choosing = True
                 self.graph_handler.image.add_shadow()
                 self.graph_handler.notify_image()
             elif event == 'Button':
+                if button is not None and not global_pair_property.button_label:
+                    self.graph_handler.remove_label(button)
                 global_pair_property.current_choice = 'Button'
                 global_pair_property.choosing = True
                 self.graph_handler.image.add_shadow()

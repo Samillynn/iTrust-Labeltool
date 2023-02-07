@@ -1,115 +1,34 @@
 [
   {
-    "name": "LIT-101",
-    "type": "LIT",
+    "name": "desc",
+    "type": "other",
     "description": "desc",
-    "status": "wsws",
-    "state": "sss",
+    "status": "desc",
+    "state": "desc",
     "component": {
       "flip": 0,
       "rotation": 0,
       "coordinate": [
         -0.746875,
-        0.2425925925925927
+        0.24444444444444446
       ]
     },
     "databox": {},
     "button": {}
   },
   {
-    "name": "LIT300_A",
-    "type": "LITA",
-    "description": "desc",
-    "status": "status",
-    "state": "",
-    "component": {
-      "flip": 0,
-      "rotation": 0,
-      "coordinate": [
-        -0.41067708333333336,
-        0.1254629629629629
-      ]
-    },
-    "databox": {},
-    "button": {}
-  },
-  {
-    "name": "FIT-201",
-    "type": "FIT",
-    "description": "ww",
-    "status": "sss",
-    "state": "",
-    "component": {},
-    "databox": {},
-    "button": {
-      "coordinate": [
-        -0.575,
-        0.287037037037037
-      ]
-    }
-  },
-  {
-    "name": "ef",
-    "type": "rgtt",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {
-      "flip": 0,
-      "rotation": 0,
-      "coordinate": [
-        -0.21666666666666667,
-        0.12407407407407411
-      ]
-    },
-    "databox": {},
-    "button": {}
-  },
-  {
-    "name": "wis",
-    "type": "wwsws",
-    "description": "",
-    "status": "",
-    "state": "",
+    "name": "LIT-101",
+    "type": "LIT",
+    "description": "Desc",
+    "status": "open",
+    "state": "state",
     "component": {},
     "databox": {
       "coordinate": [
-        -0.1597222222222222,
-        0.2978395061728396
+        -0.6729166666666667,
+        0.44999999999999996
       ]
     },
-    "button": {}
-  },
-  {
-    "name": "okok",
-    "type": "ooo",
-    "description": "ede",
-    "status": "sdw",
-    "state": "thty",
-    "component": {},
-    "databox": {},
-    "button": {
-      "coordinate": [
-        -0.0932291666666667,
-        0.3055555555555556
-      ]
-    }
-  },
-  {
-    "name": "wsws",
-    "type": "eded",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {
-      "flip": 0,
-      "rotation": 0,
-      "coordinate": [
-        0.125,
-        0.3592592592592593
-      ]
-    },
-    "databox": {},
     "button": {}
   }
 ]
