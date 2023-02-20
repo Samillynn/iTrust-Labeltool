@@ -2,30 +2,6 @@
   "image_path": "screen_shot.jpg",
   "labels": [
     {
-      "name": "desc",
-      "desc": "desc",
-      "fullname": "",
-      "status": "desc",
-      "component_type": "",
-      "state": "desc",
-      "type": 1,
-      "category": "",
-      "parent": "desc",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 55,
-      "top_left": [
-        -0.8020833333333334,
-        0.37037037037037046
-      ],
-      "bottom_right": [
-        -0.6916666666666667,
-        0.11851851851851847
-      ],
-      "connections": []
-    },
-    {
       "name": "LIT-101 databox",
       "desc": "Desc",
       "fullname": "",
@@ -44,13 +20,157 @@
         0.4814814814814814
       ],
       "bottom_right": [
-        -0.6125,
-        0.4185185185185185
+        -0.6145833333333334,
+        0.4259259259259258
       ],
       "connections": []
     },
     {
-      "name": "wsw databox",
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "T-101",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 60,
+      "top_left": [
+        -0.7979166666666667,
+        0.36851851851851847
+      ],
+      "bottom_right": [
+        -0.6916666666666667,
+        0.1166666666666667
+      ],
+      "connections": []
+    },
+    {
+      "name": "T-201 COMPONENT",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "T-201",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 75,
+      "top_left": [
+        -0.44895833333333346,
+        0.21111111111111103
+      ],
+      "bottom_right": [
+        -0.36875000000000013,
+        0.03703703703703698
+      ],
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "www",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 79,
+      "top_left": [
+        -0.5697916666666667,
+        0.4814814814814814
+      ],
+      "bottom_right": [
+        -0.4666666666666667,
+        0.4259259259259258
+      ],
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "NaOcl",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 110,
+      "top_left": [
+        -0.26041666666666663,
+        0.22962962962962963
+      ],
+      "bottom_right": [
+        -0.17083333333333328,
+        0.03333333333333344
+      ],
+      "connections": []
+    },
+    {
+      "name": "123",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "123",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 113,
+      "top_left": [
+        0.01388888888888884,
+        0.2592592592592593
+      ],
+      "bottom_right": [
+        0.12152777777777768,
+        -0.01851851851851849
+      ],
+      "connections": []
+    },
+    {
+      "name": "LIT-301",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "LIT-301",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 118,
+      "top_left": [
+        0.05989583333333326,
+        0.4537037037037037
+      ],
+      "bottom_right": [
+        0.19270833333333326,
+        0.3194444444444444
+      ],
+      "connections": []
+    },
+    {
+      "name": "LIT-301",
       "desc": "",
       "fullname": "",
       "status": "",
@@ -58,42 +178,42 @@
       "state": "",
       "type": 2,
       "category": "",
-      "parent": "wsw",
+      "parent": "LIT-301",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
-      "id": 60,
+      "id": 120,
       "top_left": [
-        -0.4375,
-        0.4740740740740741
+        -0.06510416666666663,
+        0.47685185185185186
       ],
       "bottom_right": [
-        -0.3354166666666667,
-        0.4222222222222223
+        0.03645833333333326,
+        0.375
       ],
       "connections": []
     },
     {
-      "name": "wsw",
-      "desc": "wq",
+      "name": "",
+      "desc": "",
       "fullname": "",
-      "status": "wse",
-      "component_type": "wd",
-      "state": "efff",
-      "type": 2,
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
       "category": "",
-      "parent": "wsw",
+      "parent": "",
       "parent_component_name": "",
       "flip": 0,
-      "rotation": 0,
-      "id": 62,
+      "rotation": 0.0,
+      "id": 122,
       "top_left": [
-        -0.1958333333333333,
-        0.4740740740740741
+        0.23697916666666674,
+        0.3842592592592593
       ],
       "bottom_right": [
-        -0.09375,
-        0.4222222222222223
+        0.34635416666666674,
+        0.27314814814814814
       ],
       "connections": []
     }

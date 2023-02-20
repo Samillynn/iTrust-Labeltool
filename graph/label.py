@@ -11,7 +11,7 @@ def near(p1, p2, threshold):
 
 
 class Rectangle:
-    MAX_NEAR_DISTANCE = 0.05
+    MAX_NEAR_DISTANCE = 0.02
 
     VERTEX_NAMES = 'top_left', 'top_right', 'bottom_left', 'bottom_right'
 

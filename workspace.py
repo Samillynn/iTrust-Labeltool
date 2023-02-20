@@ -10,7 +10,7 @@ from base_classes import EventHandler
 from config import config
 from graph.graph_manager import GraphManager
 from graph.label import LabelListSerializer, LabelType, Rectangle
-from utils import sg, current_milli_time
+from utils import sg, current_milli_time, align_center
 from window_manager import WindowManager
 from graph.label import LabelListSerializer, Label
 from pair_property import global_pair_property, NewPairEH
@@ -75,29 +75,14 @@ class ProjectMenuEH(EventHandler):
         window_manager.run(close=True)
 
 
-# def export_eh(event, file_path):
-#     def convert_label(label_dict):
-#         top_left = label_dict.pop('top_left')
-#         bottom_right = label_dict.pop('bottom_right')
-#         rect = Rectangle(top_left, bottom_right)
-#         label_dict['coordinate'] = rect.center
-#         label_dict['width'] = rect.height
-#         label_dict['length'] = rect.width
-
-#         if label_dict.get('databox'):
-#             label_dict['databox'] = Rectangle(label_dict['databox']['top_left'],
-#                                               label_dict['databox']['bottom_right']).center
-#             print(label_dict)
-#         else:
-#             label_dict['databox'] = []
-
-#     labels = json.load(open('session.json', 'r'))['labels']
-#     for label in labels:
-#         convert_label(label)
-#     json.dump(labels, open(file_path, 'w+'), indent=2)
-
 def convert_json(result):
     cleaned_result = []
+    x_set_component = []
+    y_set_component = []
+    x_set_databox = []
+    y_set_databox = []
+    x_set_button = []
+    y_set_button = []
     for name,values in result.items():
         component_value = values.get("component",None)
         databox_value = values.get("databox",None)
@@ -119,7 +104,7 @@ def convert_json(result):
             component_value = {
                 "flip":component_value.get("flip"),
                 "rotation":component_value.get("rotation"),
-                "coordinate":component_value.get("coordinate")
+                "coordinate":align_center(component_value.get("coordinate"), x_set_component, y_set_component)
             }
             
         if databox_value is not None:
@@ -130,7 +115,7 @@ def convert_json(result):
                 desc = databox_value.get("desc","")
                 flag = True   
             databox_value = {
-                "coordinate":databox_value.get("coordinate")
+                "coordinate": align_center(databox_value.get("coordinate"), x_set_databox, y_set_databox)
             } 
             
         if button_value is not None:
@@ -140,7 +125,7 @@ def convert_json(result):
                 component_type = button_value.get("component_type","")
                 desc = button_value.get("desc","")
             button_value = {
-                "coordinate":button_value.get("coordinate")
+                "coordinate": align_center(button_value.get("coordinate"), x_set_button, y_set_button)
             }
         
         matched_type = match_type(name)
@@ -174,16 +159,6 @@ def export_eh(event, file_path):
         valid = True
         result = label.basic_properties
         result['coordinate'] = label.center
-        # if label.databox is not None:
-        #     result['databox'] = list(label.databox.center)
-        # else:
-        #     result['databox'] = []
-
-        # parent_name = result['parent_component_name']
-        # print(f'calling to_eld, pn={parent_name}')
-        # if parent_name not in result_dict:
-        #     result_dict[parent_name] = [result]
-        #     result_dict[parent_name] = {}
         if result['type'] == 1:
             result_type = 'component'
         elif result['type'] == 2:

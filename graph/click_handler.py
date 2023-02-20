@@ -8,6 +8,8 @@ from .dialog import BaseDialog
 from .image import CoordinateTransfer
 from .label import Label, LabelType
 from .template_matching2 import relative_coord_crop_matching, remove_close_rectangles
+from utils import preprocess
+from config import config
 
 if TYPE_CHECKING:
     from .graph_handler import GraphHandler
@@ -73,8 +75,14 @@ class UpdateLabelHandler(ClickHandler):
 
         # pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
         print('Text Recognized:')
+        
+        # cropped img
+        cropped_img = self.graph_handler.image.crop_for_ocr(label)
+        # process img
+        img = preprocess(cropped_img)
+        
         lst = list(filter(bool, pytesseract.image_to_string(
-            self.graph_handler.image.crop(label)).split('\n')))
+            img, config=config["tesseract_config"]).split('\n')))
         right_layout = [[sg.TabGroup(
             [[self.select_list('name', lst), self.select_list('description', lst)]])]]
 
@@ -142,6 +150,7 @@ class UpdateLabelHandler(ClickHandler):
                     dialog.window['name'].update(' '.join(val))
                 elif event == 'list-name':
                     val = values['list-name']
+                    print(dialog.window['parent'])
                     dialog.window['parent'].update(' '.join(val))
 
                 elif event == 'name':
@@ -167,8 +176,12 @@ class UpdateLabelHandler(ClickHandler):
                 elif event == 'OCR':
                     # pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
                     print('Text Recognized:')
+                    # cropped img
+                    cropped_img = self.graph_handler.image.crop_for_ocr(label)
+                    # process img
+                    img = preprocess(cropped_img)
                     print(pytesseract.image_to_string(
-                        self.graph_handler.image.crop(label)))
+                        img, config=config["tesseract_config"]))
                 elif event in ['Cancel', None]:
                     break
                 else:

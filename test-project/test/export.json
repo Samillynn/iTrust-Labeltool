@@ -1,0 +1,609 @@
+[
+  {
+    "name": "AV300-1",
+    "type": "AV",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.6774193548387097,
+        0.29074074074074074
+      ]
+    },
+    "databox": {
+      "coordinate": [
+        -0.6847034339229969,
+        0.36111111111111116
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "UV300-1",
+    "type": "UV",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.48491155046826223,
+        0.11851851851851858
+      ]
+    },
+    "databox": {
+      "coordinate": [
+        -0.48491155046826223,
+        0.31851851851851853
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "AV301-1",
+    "type": "AV",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.2892819979188345,
+        0.29074074074074074
+      ]
+    },
+    "databox": {
+      "coordinate": [
+        -0.2944849115504683,
+        0.36111111111111116
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "UV300-2",
+    "type": "UV",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.48491155046826223,
+        -0.2851851851851852
+      ]
+    },
+    "databox": {
+      "coordinate": [
+        -0.48491155046826223,
+        -0.07777777777777783
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "AV300-2",
+    "type": "AV",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.6774193548387097,
+        -0.10555555555555557
+      ]
+    },
+    "databox": {
+      "coordinate": [
+        -0.6847034339229969,
+        -0.04259259259259257
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "AV301-2",
+    "type": "AV",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.2892819979188345,
+        -0.11296296296296299
+      ]
+    },
+    "databox": {
+      "coordinate": [
+        -0.29864724245577523,
+        -0.04259259259259257
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "UV300-3",
+    "type": "UV",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.48491155046826223,
+        -0.6851851851851851
+      ]
+    },
+    "databox": {
+      "coordinate": [
+        -0.48491155046826223,
+        -0.48518518518518516
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "AV300-3",
+    "type": "AV",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.6774193548387097,
+        -0.512962962962963
+      ]
+    },
+    "databox": {
+      "coordinate": [
+        -0.6847034339229969,
+        -0.4444444444444444
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "AV301-3",
+    "type": "AV",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.2892819979188345,
+        -0.512962962962963
+      ]
+    },
+    "databox": {
+      "coordinate": [
+        -0.2944849115504683,
+        -0.4444444444444444
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "AIT307-1",
+    "type": "AIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.16441207075962538,
+        -0.674074074074074
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "A307-2",
+    "type": "other",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.030176899063475593,
+        -0.674074074074074
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "AIC-307",
+    "type": "AIC",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.10613943808532778,
+        -0.674074074074074
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "LIT300",
+    "type": "LIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        0.06971904266389178,
+        -0.23333333333333334
+      ]
+    },
+    "databox": {
+      "coordinate": [
+        -0.030176899063475593,
+        0.01481481481481478
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "AIT204",
+    "type": "AIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.8314255983350677,
+        0.5944444444444444
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "CIT206",
+    "type": "CIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.6742976066597295,
+        0.5944444444444444
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "FIC300C",
+    "type": "FIC",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.4890738813735691,
+        0.5944444444444444
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "LIT300-A",
+    "type": "LITA",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.10613943808532778,
+        0.01481481481481478
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "FIT303",
+    "type": "FIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.10613943808532778,
+        0.22222222222222232
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "AIT300-1",
+    "type": "AIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.08012486992715917,
+        0.5944444444444444
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "AIT300-2",
+    "type": "AIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.2164412070759626,
+        0.5944444444444444
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "AIT302",
+    "type": "AIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.4901144640998959,
+        0.5944444444444444
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "AT306",
+    "type": "other",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.631633714880333,
+        0.5944444444444444
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "P300-4",
+    "type": "P",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        0.40894901144641005,
+        0.30740740740740746
+      ]
+    },
+    "databox": {
+      "coordinate": [
+        0.3902185223725285,
+        0.3851851851851852
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "P300-3",
+    "type": "P",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        0.40894901144641005,
+        0.08333333333333337
+      ]
+    },
+    "databox": {
+      "coordinate": [
+        0.3902185223725285,
+        0.16296296296296298
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "P300-2",
+    "type": "P",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        0.40894901144641005,
+        -0.1388888888888889
+      ]
+    },
+    "databox": {
+      "coordinate": [
+        0.3902185223725285,
+        -0.06296296296296294
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "P300-1",
+    "type": "P",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        0.40894901144641005,
+        -0.3537037037037037
+      ]
+    },
+    "databox": {
+      "coordinate": [
+        0.3902185223725285,
+        -0.2777777777777778
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "P301",
+    "type": "P",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        0.40894901144641005,
+        -0.5685185185185184
+      ]
+    },
+    "databox": {
+      "coordinate": [
+        0.3902185223725285,
+        -0.4962962962962963
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "FIT304",
+    "type": "FIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.5972944849115505,
+        -0.5907407407407407
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "AV302",
+    "type": "AV",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        0.6774193548387096,
+        -0.37777777777777777
+      ]
+    },
+    "databox": {
+      "coordinate": [
+        0.623309053069719,
+        -0.2833333333333333
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "FIC302",
+    "type": "FIC",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.6129032258064516,
+        0.0888888888888889
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "FIT302",
+    "type": "FIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.6129032258064516,
+        -0.04999999999999999
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "AIT303",
+    "type": "AIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.6576482830385016,
+        0.31851851851851853
+      ]
+    },
+    "button": {}
+  },
+  {
+    "name": "AIT301",
+    "type": "AIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.3548387096774194,
+        0.5944444444444444
+      ]
+    },
+    "button": {}
+  }
+]

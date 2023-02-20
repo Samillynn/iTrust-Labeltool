@@ -69,6 +69,16 @@ class Image:
         right, bottom = absolute_rect.bottom_right
         return self.to_nparray()[bottom:top + 1, left:right + 1]
 
+    def crop_for_ocr(self, rect: Rectangle, coord=None):
+        if coord is None:
+            coord = CoordinateTransfer(relative_bottom_left=(-1, -1), relative_top_right=(1, 1),
+                                       absolute_size=self.original_size)
+
+        absolute_rect = coord.rect_to_absolute(rect)
+        left, top = absolute_rect.top_left
+        right, bottom = absolute_rect.bottom_right
+        print(bottom, right)
+        return self.to_nparray()[bottom-20:top + 41, left-20:right + 21]
 
     @property
     def data(self) -> bytes:
@@ -117,6 +127,10 @@ def convert_to_bytes(file_or_bytes, resize=None, shadow=False):
     '''
     if isinstance(file_or_bytes, str):
         img = PIL.Image.open(file_or_bytes)
+        dpi = img.info["dpi"]
+        if dpi[0] < 290:
+            img.save(file_or_bytes,"PNG",dpi=(300,300))
+            img = PIL.Image.open(file_or_bytes)
     else:
         try:
             img = PIL.Image.open(io.BytesIO(base64.b64decode(file_or_bytes)))
