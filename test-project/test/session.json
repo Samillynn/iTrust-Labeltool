@@ -1,8 +1,8 @@
 {
-  "image_path": "1675933677882-1675932993122-169.png",
+  "image_path": "1677750384725-1675932993122-169.png",
   "labels": [
     {
-      "name": "",
+      "name": "AV300-1",
       "desc": "",
       "fullname": "",
       "status": "",
@@ -14,854 +14,14 @@
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
-      "id": 58,
+      "id": 172,
       "top_left": [
-        -0.7023933402705516,
-        0.3296296296296297
+        -0.7044745057232049,
+        0.33333333333333326
       ],
       "bottom_right": [
-        -0.6524453694068679,
-        0.25185185185185177
-      ],
-      "connections": []
-    },
-    {
-      "name": "UV300-1",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "UV300-1",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 60,
-      "top_left": [
-        -0.6129032258064516,
-        0.2333333333333334
-      ],
-      "bottom_right": [
-        -0.35691987513007284,
-        0.0037037037037037646
-      ],
-      "connections": []
-    },
-    {
-      "name": "UV300-1",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "UV300-1",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 62,
-      "top_left": [
-        -0.5421436004162331,
-        0.37037037037037046
-      ],
-      "bottom_right": [
-        -0.42767950052029136,
-        0.2666666666666666
-      ],
-      "connections": []
-    },
-    {
-      "name": "AV301-1",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "AV301-1",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 63,
-      "top_left": [
-        -0.31529656607700307,
-        0.337037037037037
-      ],
-      "bottom_right": [
-        -0.26326742976066597,
-        0.25185185185185177
-      ],
-      "connections": []
-    },
-    {
-      "name": "UV300-2",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "UV300-2",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 65,
-      "top_left": [
-        -0.6129032258064517,
-        -0.1703703703703704
-      ],
-      "bottom_right": [
-        -0.3590010405827263,
-        -0.4
-      ],
-      "connections": []
-    },
-    {
-      "name": "UV300-2",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "UV300-2",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 67,
-      "top_left": [
-        -0.5442247658688866,
-        -0.029629629629629672
-      ],
-      "bottom_right": [
-        -0.42767950052029136,
-        -0.125925925925926
-      ],
-      "connections": []
-    },
-    {
-      "name": "AV300-2",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "AV300-2",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 68,
-      "top_left": [
-        -0.700312174817898,
-        -0.06666666666666665
-      ],
-      "bottom_right": [
-        -0.6566077003121747,
-        -0.1444444444444445
-      ],
-      "connections": []
-    },
-    {
-      "name": "AV301-2",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "AV301-2",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 70,
-      "top_left": [
-        -0.31529656607700307,
-        -0.07407407407407407
-      ],
-      "bottom_right": [
-        -0.26534859521331944,
-        -0.1518518518518519
-      ],
-      "connections": []
-    },
-    {
-      "name": "UV300-3",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "UV300-3",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 72,
-      "top_left": [
-        -0.6149843912591051,
-        -0.5740740740740741
-      ],
-      "bottom_right": [
-        -0.3548387096774194,
-        -0.7962962962962963
-      ],
-      "connections": []
-    },
-    {
-      "name": "UV300-3",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "UV300-3",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 74,
-      "top_left": [
-        -0.5400624349635796,
-        -0.437037037037037
-      ],
-      "bottom_right": [
-        -0.4255983350676379,
-        -0.5333333333333333
-      ],
-      "connections": []
-    },
-    {
-      "name": "AV300-3",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "AV300-3",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 75,
-      "top_left": [
-        -0.7023933402705516,
-        -0.4740740740740741
-      ],
-      "bottom_right": [
-        -0.6545265348595213,
-        -0.5518518518518518
-      ],
-      "connections": []
-    },
-    {
-      "name": "AV301-3",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "AV301-3",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 77,
-      "top_left": [
-        -0.31113423517169614,
-        -0.47777777777777775
-      ],
-      "bottom_right": [
-        -0.2674297606659729,
-        -0.5555555555555556
-      ],
-      "connections": []
-    },
-    {
-      "name": "AIT307-1",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "AIT307-1",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 79,
-      "top_left": [
-        -0.2216441207075962,
-        -0.6222222222222222
-      ],
-      "bottom_right": [
-        -0.10718002081165456,
-        -0.7259259259259259
-      ],
-      "connections": []
-    },
-    {
-      "name": "A307-2",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "A307-2",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 80,
-      "top_left": [
-        -0.08636836628511968,
-        -0.6222222222222222
-      ],
-      "bottom_right": [
-        0.026014568158168494,
-        -0.7259259259259259
-      ],
-      "connections": []
-    },
-    {
-      "name": "AIC-307",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "AIC-307",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 81,
-      "top_left": [
-        0.048907388137356955,
-        -0.6222222222222222
-      ],
-      "bottom_right": [
-        0.1633714880332986,
-        -0.7296296296296296
-      ],
-      "connections": []
-    },
-    {
-      "name": "LIT300",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "LIT300",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 82,
-      "top_left": [
-        -0.09053069719042661,
-        -0.09259259259259256
-      ],
-      "bottom_right": [
-        0.22996878251821018,
-        -0.3740740740740741
-      ],
-      "connections": []
-    },
-    {
-      "name": "LIT300",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "LIT300",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 84,
-      "top_left": [
-        -0.08636836628511968,
-        0.06666666666666665
-      ],
-      "bottom_right": [
-        0.03017689906347565,
-        -0.03703703703703709
-      ],
-      "connections": []
-    },
-    {
-      "name": "AIT204",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "AIT204",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 85,
-      "top_left": [
-        -0.8896982310093653,
-        0.6481481481481481
-      ],
-      "bottom_right": [
-        -0.7731529656607701,
-        0.5407407407407407
-      ],
-      "connections": []
-    },
-    {
-      "name": "CIT206",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "CIT206",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 86,
-      "top_left": [
-        -0.7315296566077003,
-        0.6481481481481481
-      ],
-      "bottom_right": [
-        -0.6170655567117587,
-        0.5407407407407407
-      ],
-      "connections": []
-    },
-    {
-      "name": "FIC300C",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "FIC300C",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 87,
-      "top_left": [
-        -0.5483870967741935,
-        0.6481481481481481
-      ],
-      "bottom_right": [
-        -0.4297606659729447,
-        0.540740740740741
-      ],
-      "connections": []
-    },
-    {
-      "name": "LIT300-A",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "LIT300-A",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 88,
-      "top_left": [
-        0.04682622268470338,
-        0.07037037037037042
-      ],
-      "bottom_right": [
-        0.16129032258064524,
-        -0.033333333333333326
-      ],
-      "connections": []
-    },
-    {
-      "name": "FIT303",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "FIT303",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 89,
-      "top_left": [
-        0.048907388137356955,
-        0.27407407407407414
-      ],
-      "bottom_right": [
-        0.16129032258064502,
-        0.1703703703703705
-      ],
-      "connections": []
-    },
-    {
-      "name": "AIT300-1",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "AIT300-1",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 90,
-      "top_left": [
-        0.026014568158168494,
-        0.6444444444444444
-      ],
-      "bottom_right": [
-        0.13423517169614985,
-        0.5444444444444445
-      ],
-      "connections": []
-    },
-    {
-      "name": "AIT300-2",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "AIT300-2",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 91,
-      "top_left": [
-        0.16129032258064524,
-        0.6444444444444446
-      ],
-      "bottom_right": [
-        0.27159209157127995,
-        0.5444444444444445
-      ],
-      "connections": []
-    },
-    {
-      "name": "AIT302",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "AIT302",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 92,
-      "top_left": [
-        0.4318418314255983,
-        0.6444444444444444
-      ],
-      "bottom_right": [
-        0.5483870967741935,
-        0.5407407407407407
-      ],
-      "connections": []
-    },
-    {
-      "name": "AT306",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "AT306",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 93,
-      "top_left": [
-        0.5754422476586889,
-        0.6444444444444444
-      ],
-      "bottom_right": [
-        0.6878251821019772,
-        0.5407407407407407
-      ],
-      "connections": []
-    },
-    {
-      "name": "P300-4",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "P300-4",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 94,
-      "top_left": [
-        0.3735691987513008,
-        0.3555555555555556
-      ],
-      "bottom_right": [
-        0.4443288241415193,
-        0.2592592592592593
-      ],
-      "connections": []
-    },
-    {
-      "name": "P300-3",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "P300-3",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 96,
-      "top_left": [
-        0.3735691987513008,
-        0.125925925925926
-      ],
-      "bottom_right": [
-        0.44224765868886573,
-        0.040740740740740744
-      ],
-      "connections": []
-    },
-    {
-      "name": "P300-2",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "P300-2",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 98,
-      "top_left": [
-        0.3735691987513008,
-        -0.09259259259259256
-      ],
-      "bottom_right": [
-        0.4443288241415193,
-        -0.18518518518518523
-      ],
-      "connections": []
-    },
-    {
-      "name": "P300-1",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "P300-1",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 100,
-      "top_left": [
-        0.3735691987513008,
-        -0.3037037037037037
-      ],
-      "bottom_right": [
-        0.44640998959417266,
-        -0.4037037037037037
-      ],
-      "connections": []
-    },
-    {
-      "name": "P301",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "P301",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 102,
-      "top_left": [
-        0.3735691987513008,
-        -0.5222222222222221
-      ],
-      "bottom_right": [
-        0.4443288241415193,
-        -0.6148148148148148
-      ],
-      "connections": []
-    },
-    {
-      "name": "FIT304",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "FIT304",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 104,
-      "top_left": [
-        0.5379812695109261,
-        -0.537037037037037
-      ],
-      "bottom_right": [
-        0.6566077003121749,
-        -0.6444444444444444
-      ],
-      "connections": []
-    },
-    {
-      "name": "AV302",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "AV302",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 105,
-      "top_left": [
-        0.6524453694068679,
-        -0.337037037037037
-      ],
-      "bottom_right": [
-        0.7023933402705513,
-        -0.4185185185185185
-      ],
-      "connections": []
-    },
-    {
-      "name": "FIC302",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "FIC302",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 107,
-      "top_left": [
-        0.5567117585848076,
-        0.14074074074074083
-      ],
-      "bottom_right": [
-        0.6690946930280957,
-        0.03703703703703698
-      ],
-      "connections": []
-    },
-    {
-      "name": "FIT302",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "FIT302",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 108,
-      "top_left": [
-        0.554630593132154,
-        0.0
-      ],
-      "bottom_right": [
-        0.6711758584807492,
-        -0.09999999999999998
-      ],
-      "connections": []
-    },
-    {
-      "name": "AIT303",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "AIT303",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 109,
-      "top_left": [
-        0.6024973985431843,
-        0.374074074074074
-      ],
-      "bottom_right": [
-        0.712799167533819,
-        0.2666666666666666
+        -0.6503642039542143,
+        0.24814814814814823
       ],
       "connections": []
     },
@@ -878,67 +38,19 @@
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
-      "id": 110,
-      "top_left": [
-        -0.7294484911550468,
-        0.38148148148148153
-      ],
-      "bottom_right": [
-        -0.6399583766909469,
-        0.3407407407407408
-      ],
-      "connections": []
-    },
-    {
-      "name": "AV301-1",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "AV301-1",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 111,
-      "top_left": [
-        -0.340270551508845,
-        0.38148148148148153
-      ],
-      "bottom_right": [
-        -0.2486992715920916,
-        0.3407407407407408
-      ],
-      "connections": []
-    },
-    {
-      "name": "",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "AV300-2",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 112,
+      "id": 174,
       "top_left": [
         -0.7315296566077003,
-        -0.025925925925925908
+        0.38148148148148153
       ],
       "bottom_right": [
-        -0.6420395421436005,
-        -0.059259259259259234
+        -0.6378772112382934,
+        0.34444444444444455
       ],
       "connections": []
     },
     {
-      "name": "",
+      "name": "AIT204",
       "desc": "",
       "fullname": "",
       "status": "",
@@ -946,90 +58,42 @@
       "state": "",
       "type": 2,
       "category": "",
-      "parent": "AV301-2",
+      "parent": "AIT204",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
-      "id": 113,
+      "id": 175,
       "top_left": [
-        -0.34235171696149846,
-        -0.025925925925925908
+        -0.8896982310093653,
+        0.6518518518518519
       ],
       "bottom_right": [
-        -0.254942767950052,
-        -0.062962962962963
+        -0.7731529656607701,
+        0.5444444444444445
       ],
       "connections": []
     },
     {
-      "name": "",
+      "name": "P300-4",
       "desc": "",
       "fullname": "",
       "status": "",
       "component_type": "",
       "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "AV300-3",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 114,
-      "top_left": [
-        -0.7294484911550468,
-        -0.42592592592592593
-      ],
-      "bottom_right": [
-        -0.6420395421436005,
-        -0.4629629629629629
-      ],
-      "connections": []
-    },
-    {
-      "name": "",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "AV301-3",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 115,
-      "top_left": [
-        -0.340270551508845,
-        -0.4296296296296296
-      ],
-      "bottom_right": [
-        -0.25286160249739853,
-        -0.4629629629629629
-      ],
-      "connections": []
-    },
-    {
-      "name": "",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
+      "type": 1,
       "category": "",
       "parent": "P300-4",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
-      "id": 116,
+      "id": 176,
       "top_left": [
-        0.3444328824141518,
-        0.4037037037037037
+        0.36940686784599386,
+        0.35925925925925917
       ],
       "bottom_right": [
-        0.4360041623309052,
-        0.3666666666666667
+        0.44640998959417266,
+        0.2592592592592593
       ],
       "connections": []
     },
@@ -1040,20 +104,20 @@
       "status": "",
       "component_type": "",
       "state": "",
-      "type": 2,
+      "type": 1,
       "category": "",
-      "parent": "P300-3",
+      "parent": "",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
-      "id": 117,
+      "id": 178,
       "top_left": [
-        0.3444328824141518,
-        0.18518518518518512
+        0.36836628511966696,
+        0.13703703703703707
       ],
       "bottom_right": [
-        0.4360041623309052,
-        0.14074074074074083
+        0.44640998959417266,
+        0.03518518518518521
       ],
       "connections": []
     },
@@ -1064,44 +128,20 @@
       "status": "",
       "component_type": "",
       "state": "",
-      "type": 2,
+      "type": 1,
       "category": "",
-      "parent": "P300-2",
+      "parent": "",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
-      "id": 118,
+      "id": 179,
       "top_left": [
-        0.3444328824141518,
-        -0.0444444444444444
+        0.36940686784599386,
+        -0.08333333333333337
       ],
       "bottom_right": [
-        0.4380853277835588,
-        -0.08148148148148149
-      ],
-      "connections": []
-    },
-    {
-      "name": "P300-1 COMPONENT",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "P300-1",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 119,
-      "top_left": [
-        0.3465140478668054,
-        -0.2592592592592593
-      ],
-      "bottom_right": [
-        0.4360041623309052,
-        -0.2962962962962963
+        0.44745057232049956,
+        -0.18518518518518523
       ],
       "connections": []
     },
@@ -1112,20 +152,20 @@
       "status": "",
       "component_type": "",
       "state": "",
-      "type": 2,
+      "type": 1,
       "category": "",
-      "parent": "P301",
+      "parent": "",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
-      "id": 120,
+      "id": 180,
       "top_left": [
-        0.3444328824141518,
-        -0.47777777777777775
+        0.36836628511966696,
+        -0.3018518518518518
       ],
       "bottom_right": [
-        0.4380853277835588,
-        -0.5148148148148148
+        0.44640998959417266,
+        -0.4037037037037037
       ],
       "connections": []
     },
@@ -1136,44 +176,20 @@
       "status": "",
       "component_type": "",
       "state": "",
-      "type": 2,
+      "type": 1,
       "category": "",
-      "parent": "AV302",
+      "parent": "",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
-      "id": 121,
+      "id": 181,
       "top_left": [
-        0.5775234131113423,
-        -0.26296296296296295
+        0.36940686784599386,
+        -0.5185185185185186
       ],
       "bottom_right": [
-        0.6690946930280957,
-        -0.3037037037037037
-      ],
-      "connections": []
-    },
-    {
-      "name": "",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "AIT301",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 122,
-      "top_left": [
-        0.29864724245577534,
-        0.6444444444444444
-      ],
-      "bottom_right": [
-        0.4110301768990634,
-        0.5407407407407407
+        0.44745057232049956,
+        -0.6203703703703703
       ],
       "connections": []
     }

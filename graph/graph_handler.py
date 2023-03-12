@@ -4,7 +4,7 @@ from typing import Any
 
 from handler_chain import HandlerChain
 from observer import Observable
-from .click_handler import AddPairHandler, UpdateLabelHandler, SelectDataboxHandler, AddConnectionHandler
+from .click_handler import SelectLabelHandler, UpdateLabelHandler, SelectDataboxHandler, AddConnectionHandler
 # TODO: make end_point/start_point None after each time
 from .cursor_handler import CursorHandler
 from .drag_handler import DragHandlerChain, DuplicateLabelHandler, NewLabelHandler, MoveVertexHandler, MoveLabelHandler
@@ -31,6 +31,9 @@ class GraphHandler(Observable, HandlerChain):
 
         self.on_click = None
         self.init_on_click()
+        
+        self.on_select = None
+        self.init_on_select()
 
         self.state :Any = None
         self.context = {}
@@ -55,6 +58,10 @@ class GraphHandler(Observable, HandlerChain):
         self.on_click.add_handler(AddConnectionHandler(self))
         self.on_click.add_handler(SelectDataboxHandler(self))
         # self.on_click.add_handler(AddPairHandler(self))
+
+    def init_on_select(self):
+        self.on_select = HandlerChain()
+        self.on_select.add_handler(SelectLabelHandler(self))
 
     def add_label(self, label: Label):
         self.labels.append(label)
@@ -101,6 +108,8 @@ class GraphHandler(Observable, HandlerChain):
             self.on_drag.handle((x - self.last_point[0], y - self.last_point[1]))
         elif event_type == CursorHandler.DRAG_STOP:
             self.on_drag.stop()
+        elif event_type == CursorHandler.SELECT:
+            self.on_select.handle(self.current_point)
         else:
             raise AssertionError(f'Unsupported cursor event type: {event_type}')
 

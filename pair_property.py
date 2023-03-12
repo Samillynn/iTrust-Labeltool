@@ -6,8 +6,8 @@ from config import config
 
 PairProperty = recordclass("PairProperty",
                           fields=["name", "status", "desc", "state", "component_type",
-                                       "additional_info", "current_choice", "component", "databox", "button", "choosing", "component_label", "databox_label", "button_label"],
-                          defaults=["", "", "", "", "", "", None, None, None, None, False, False, False, False])
+                                       "additional_info", "current_choice", "component", "databox", "button", "choosing", "component_label", "databox_label", "button_label", "selected"],
+                          defaults=["", "", "", "", "", "", None, None, None, None, False, False, False, False, None])
 
 global_pair_property = PairProperty()
 
@@ -114,7 +114,6 @@ class NewPairEH(EventHandler):
                 label_type = databox._type
                 databox.copy_basic_properties(label_dict)
                 databox._type = label_type
-                print(databox._type)
             if button is not None:                
                 label_type = button._type
                 button.copy_basic_properties(label_dict)

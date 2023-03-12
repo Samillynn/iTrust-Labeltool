@@ -1,32 +1,8 @@
 {
-  "image_path": "screen_shot.jpg",
+  "image_path": "1677676120175-1675932993122-169.png",
   "labels": [
     {
-      "name": "LIT-101 databox",
-      "desc": "Desc",
-      "fullname": "",
-      "status": "open",
-      "component_type": "",
-      "state": "state",
-      "type": 2,
-      "category": "",
-      "parent": "LIT-101",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 57,
-      "top_left": [
-        -0.7333333333333334,
-        0.4814814814814814
-      ],
-      "bottom_right": [
-        -0.6145833333333334,
-        0.4259259259259258
-      ],
-      "connections": []
-    },
-    {
-      "name": "",
+      "name": "AV300-1",
       "desc": "",
       "fullname": "",
       "status": "",
@@ -34,143 +10,23 @@
       "state": "",
       "type": 1,
       "category": "",
-      "parent": "T-101",
+      "parent": "AV300-1",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
-      "id": 60,
+      "id": 167,
       "top_left": [
-        -0.7979166666666667,
-        0.36851851851851847
+        -0.7023933402705516,
+        0.33333333333333326
       ],
       "bottom_right": [
-        -0.6916666666666667,
-        0.1166666666666667
+        -0.6545265348595213,
+        0.25185185185185177
       ],
       "connections": []
     },
     {
-      "name": "T-201 COMPONENT",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "T-201",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 75,
-      "top_left": [
-        -0.44895833333333346,
-        0.21111111111111103
-      ],
-      "bottom_right": [
-        -0.36875000000000013,
-        0.03703703703703698
-      ],
-      "connections": []
-    },
-    {
-      "name": "",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "www",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 79,
-      "top_left": [
-        -0.5697916666666667,
-        0.4814814814814814
-      ],
-      "bottom_right": [
-        -0.4666666666666667,
-        0.4259259259259258
-      ],
-      "connections": []
-    },
-    {
-      "name": "",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "NaOcl",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 110,
-      "top_left": [
-        -0.26041666666666663,
-        0.22962962962962963
-      ],
-      "bottom_right": [
-        -0.17083333333333328,
-        0.03333333333333344
-      ],
-      "connections": []
-    },
-    {
-      "name": "123",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "123",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 113,
-      "top_left": [
-        0.01388888888888884,
-        0.2592592592592593
-      ],
-      "bottom_right": [
-        0.12152777777777768,
-        -0.01851851851851849
-      ],
-      "connections": []
-    },
-    {
-      "name": "LIT-301",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "LIT-301",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 118,
-      "top_left": [
-        0.05989583333333326,
-        0.4537037037037037
-      ],
-      "bottom_right": [
-        0.19270833333333326,
-        0.3194444444444444
-      ],
-      "connections": []
-    },
-    {
-      "name": "LIT-301",
+      "name": "AV300-1",
       "desc": "",
       "fullname": "",
       "status": "",
@@ -178,18 +34,114 @@
       "state": "",
       "type": 2,
       "category": "",
-      "parent": "LIT-301",
+      "parent": "AV300-1",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
-      "id": 120,
+      "id": 169,
       "top_left": [
-        -0.06510416666666663,
-        0.47685185185185186
+        -0.7336108220603538,
+        0.38148148148148153
       ],
       "bottom_right": [
-        0.03645833333333326,
-        0.375
+        -0.6378772112382934,
+        0.337037037037037
+      ],
+      "connections": []
+    },
+    {
+      "name": "AIT204",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "AIT204",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 171,
+      "top_left": [
+        -0.8886576482830386,
+        0.6481481481481484
+      ],
+      "bottom_right": [
+        -0.7752341311134235,
+        0.542592592592593
+      ],
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 174,
+      "top_left": [
+        0.5515088449531738,
+        0.14074074074074083
+      ],
+      "bottom_right": [
+        0.6784599375650364,
+        0.031481481481481444
+      ],
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 175,
+      "top_left": [
+        0.5515088449531738,
+        0.005555555555555536
+      ],
+      "bottom_right": [
+        0.6784599375650364,
+        -0.10370370370370374
+      ],
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 177,
+      "top_left": [
+        0.36940686784599386,
+        0.35925925925925917
+      ],
+      "bottom_right": [
+        0.44640998959417266,
+        0.25555555555555554
       ],
       "connections": []
     },
@@ -206,14 +158,110 @@
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0.0,
-      "id": 122,
+      "id": 178,
       "top_left": [
-        0.23697916666666674,
-        0.3842592592592593
+        19.269510926118627,
+        20.65
       ],
       "bottom_right": [
-        0.34635416666666674,
-        0.27314814814814814
+        19.383975026014568,
+        20.55
+      ],
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0.0,
+      "id": 179,
+      "top_left": [
+        19.266389177939647,
+        20.646296296296295
+      ],
+      "bottom_right": [
+        19.380853277835588,
+        20.546296296296294
+      ],
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0.0,
+      "id": 180,
+      "top_left": [
+        4.266389177939646,
+        5.6462962962962955
+      ],
+      "bottom_right": [
+        4.3808532778355875,
+        5.546296296296296
+      ],
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 184,
+      "top_left": [
+        -0.732570239334027,
+        0.6481481481481481
+      ],
+      "bottom_right": [
+        -0.6139438085327784,
+        0.548148148148148
+      ],
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "id": 186,
+      "top_left": [
+        -0.5473465140478668,
+        0.6499999999999999
+      ],
+      "bottom_right": [
+        -0.42872008324661814,
+        0.55
       ],
       "connections": []
     }

@@ -235,7 +235,7 @@ class Workspace:
             [sg.Text(key='info', size=(60, 1)), sg.I(visible=False, enable_events=True, key='export-filename'),
              sg.SaveAs('Export', key='-EXPORT-', file_types=(('JSON file', '*.json'),),
                        target='export-filename'),
-             sg.B('New', key='-NEW-'), sg.B('Open', key='-OPEN-'), sg.B('Show/Hide connections', key='connections')],
+             sg.B('New Project', key='-NEW-'), sg.B('Open Existing Project', key='-OPEN-'), sg.B('Show/Hide connections', key='connections', visible=False)],
         ]
 
 
@@ -263,17 +263,17 @@ def show_workspace(project_path=None):
          sg.Text(key='info', size=(0, 0)), sg.I(visible=False,
                                                 enable_events=True, key='export-conn-filename'),
 
+         sg.SaveAs('Export Connections', key='-EXPORT-CONN-', file_types=(('JSON file', '*.json'),),
+                   target='export-conn-filename', visible=False),
+
+         sg.B('New Project', key='-NEW-'), sg.B('Open Existing Project',
+                                        key='-OPEN-'), sg.B('Show/Hide Connections', key='-CONN-', visible=False),
+
+         sg.B('Label', key='-CREATE-'),
          sg.SaveAs('Export', key='-EXPORT-', file_types=(('JSON file', '*.json'),),
                    target='export-filename'),
-
-         sg.SaveAs('Export Connections', key='-EXPORT-CONN-', file_types=(('JSON file', '*.json'),),
-                   target='export-conn-filename'),
-
-         sg.B('New', key='-NEW-'), sg.B('Open',
-                                        key='-OPEN-'), sg.B('Show/Hide Connections', key='-CONN-'),
-
-         sg.B('Create New', key='-CREATE-'),
          sg.B('Return', key='-RETURN-', visible=False),
+         
          ]
     ]
 

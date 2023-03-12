@@ -142,6 +142,8 @@ class Label(Rectangle):
         self._type: LabelType = _type
         self.databox: Label | None = None
         self.next = []
+        
+        self.selected = False
 
         # basic properties
         self.name = name
@@ -272,7 +274,7 @@ class LabelListSerializer:
                 # temporarily fix mismatch type
                 databox = label.databox
                 if databox._type != LabelType.DATABOX:
-                    print(f"Fix type of Label no.{databox.id} from {databox._type} to {LabelType.DATABOX}")
+                    # print(f"Fix type of Label no.{databox.id} from {databox._type} to {LabelType.DATABOX}")
                     label.databox._type = LabelType.DATABOX
             for conn_id in label_dict['connections']:
                 label.add_connection(result[conn_id][0])

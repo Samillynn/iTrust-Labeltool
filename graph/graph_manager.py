@@ -1,8 +1,10 @@
+from graph.label import Label
 import modifier_key
 from graph.graph_handler import GraphHandler, GraphView
 from graph.label_history import LabelHistory
 from graph.view import GraphView2
 from session_storage import JsonSessionStorage
+from pair_property import global_pair_property
 
 
 class GraphManager:
@@ -17,6 +19,12 @@ class GraphManager:
 
         # window resize
         self.handler.add_handler(self.handle_resize_window)
+        
+        # duplicating
+        self.handler.add_handler(self.handle_deplicate)
+        
+        # delete
+        self.handler.add_handler(self.handle_delete)
 
         # undo/redo
         self.init_label_history()
@@ -64,6 +72,38 @@ class GraphManager:
                     self.handler.notify_image()
                 return True
         return False
+    
+    def handle_deplicate(self, event, values):
+        if modifier_key.ctrl:
+            print(event)
+            if event.startswith('v') or event == 'v':
+                selected_label = global_pair_property.selected
+                if selected_label != None:
+                    self.create_new_label(selected_label)
+                print(selected_label)
+    
+    def handle_delete(self, event, values):
+        if event.startswith("Delete"):
+            selected_label = global_pair_property.selected
+            if selected_label != None:
+                global_pair_property.selected = None
+                self.handler.remove_label(selected_label)
+                self.handler.notify_labels()
+    
+    def create_new_label(self, label):
+        left = label.left
+        top = label.top
+        right = label.right
+        bottom = label.bottom
+        _type = label._type
+        component_type = label.component_type
+        shift_h = 0.05
+        shift_v = 0.03
+        new_label = Label((left+shift_h, top+shift_v), (right+shift_h, bottom+shift_v))
+        new_label.component_type = component_type
+        new_label._type = _type
+        self.handler.add_label(new_label)
+        self.handler.notify_labels()
 
     def update_view(self, event, values):
         if event == 'labels':

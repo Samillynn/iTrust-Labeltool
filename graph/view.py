@@ -80,6 +80,8 @@ class RectangleView(AbstractLabelView):
             color = "#d1c821"
         else:
             color = "#0b36d4"
+        if label.selected:
+            color = "#34eb67"
         return [self.graph.draw_rectangle(label.top_left, label.bottom_right, line_color=color, line_width=3)]
 
 

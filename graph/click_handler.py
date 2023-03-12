@@ -49,6 +49,22 @@ class SelectDataboxHandler(ClickHandler):
         return sg.Window('confirm Databox?', layout).read(close=True)
 
 
+class SelectLabelHandler(ClickHandler):
+    def handle(self, position) -> bool:
+        label: Label | None = self.graph_handler.hovered_label(position)
+        if not label or self.graph_handler.state is not None:
+            return False
+
+        prev_label = global_pair_property.selected
+        if prev_label is not None:
+            prev_label.selected = False
+        global_pair_property.selected = label
+        # todo: change color here
+        label.selected = True
+        self.graph_handler.notify_labels()
+        return True
+
+
 class UpdateLabelHandler(ClickHandler):
     @staticmethod
     def select_list(title, choices):
@@ -62,19 +78,8 @@ class UpdateLabelHandler(ClickHandler):
                 'Delete', button_color='red'), sg.B('Find Similar', key='Similar')]
         ]
 
-        # if label.databox:
-        #     button_hint = f'{label.databox.name}. Reselect'
-        #     left_layout += [[sg.B(button_hint, key='Databox',
-        #                           button_color='blue'), sg.B('Remove Databox')]]
-        # else:
-        #     left_layout += [[sg.B('Select Databox',
-        #                           key='Databox', button_color='blue')]]
-
         left_layout += [[sg.B('Edit Connections', key='Connection')]]
         left_layout += [[sg.B('Try Recognize Text', key='OCR')]]
-
-        # pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
-        print('Text Recognized:')
         
         # cropped img
         cropped_img = self.graph_handler.image.crop_for_ocr(label)
@@ -88,7 +93,6 @@ class UpdateLabelHandler(ClickHandler):
 
         left_l = sg.Column(left_layout)
         layout = [[left_l, sg.VSep(), sg.Column(right_layout)]]
-        # layout = [[sg.Column(left_layout)]] + [[sg.VSep()]] + [[sg.Column(right_layout)]]
 
         dialog.create('Update', layout)
         return dialog
@@ -116,10 +120,6 @@ class UpdateLabelHandler(ClickHandler):
 
         # check whether in create pair mode
         if global_pair_property.current_choice is not None:
-            # label.parent = global_pair_property.name
-            # label.status = global_pair_property.status
-            # label.state = global_pair_property.state
-            # label.desc = global_pair_property.desc
             label_type = label._type.name.lower()
             if label_type == global_pair_property.current_choice.lower():
                 assign_current_choice(label)
@@ -150,7 +150,6 @@ class UpdateLabelHandler(ClickHandler):
                     dialog.window['name'].update(' '.join(val))
                 elif event == 'list-name':
                     val = values['list-name']
-                    print(dialog.window['parent'])
                     dialog.window['parent'].update(' '.join(val))
 
                 elif event == 'name':
@@ -174,14 +173,10 @@ class UpdateLabelHandler(ClickHandler):
                         self.graph_handler, label)
                     edit_connection.handle()
                 elif event == 'OCR':
-                    # pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
-                    print('Text Recognized:')
                     # cropped img
                     cropped_img = self.graph_handler.image.crop_for_ocr(label)
                     # process img
                     img = preprocess(cropped_img)
-                    print(pytesseract.image_to_string(
-                        img, config=config["tesseract_config"]))
                 elif event in ['Cancel', None]:
                     break
                 else:

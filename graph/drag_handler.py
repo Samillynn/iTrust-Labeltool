@@ -84,7 +84,6 @@ class NewLabelHandler(DragHandler):
         self.label.parent_component_name = self.graph_handler.pair_parent_name
         self.label._type = self.graph_handler.pair_type
 
-        print("stop")
         self.ask_label_info()
         self.graph_handler.notify_labels()
         self.graph_handler.graph.set_cursor('arrow')
@@ -177,7 +176,6 @@ class NewLabelHandler(DragHandler):
             event, values = self.component_dialog()
             values["type"] = 1
         elif current_choice == "Databox":
-            print(2)
             event, values = self.databox_dialog()
             values["type"] = 2
         elif current_choice == "Button":
@@ -186,7 +184,6 @@ class NewLabelHandler(DragHandler):
         else:
             raise AssertionError
         
-        print(values)
         while True:
             if current_choice == 'Component':
                 values["type"] = 1
@@ -195,7 +192,6 @@ class NewLabelHandler(DragHandler):
             elif current_choice == "Button":
                 values["type"] = 3
             if event in ['Submit']:
-                print("yes")
                 self.label.copy_basic_properties(values)
                 if global_pair_property.choosing:
                     global_pair_property.name = self.label.parent
