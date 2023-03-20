@@ -52,9 +52,16 @@ class BaseDialog:
             #                         key='fullname', enable_events=enable_event)],
             # [sg.T('Parent'), sg.I(self.label.parent,
             #                       key='parent')],
+            self.layout_level(),
             self.layout_rotation(),
             self.layout_flip(),
         ]
+        
+    def layout_level(self):
+        return [sg.T('Level'),
+         sg.Checkbox('L', default=self.label.l, key='l'),
+          sg.Checkbox('LL', default=self.label.ll, key='ll'),
+          sg.Checkbox('H', default=self.label.h, key='h'),]
 
     def layout_flip(self):
         return [sg.T('Flip'),

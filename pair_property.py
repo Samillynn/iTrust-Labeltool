@@ -5,9 +5,9 @@ from base_classes import EventHandler
 from config import config
 
 PairProperty = recordclass("PairProperty",
-                          fields=["name", "status", "desc", "state", "component_type",
+                          fields=["name", "status", "desc", "state", "component_type","l","ll","h", "flip", "rotation",
                                        "additional_info", "current_choice", "component", "databox", "button", "choosing", "component_label", "databox_label", "button_label", "selected"],
-                          defaults=["", "", "", "", "", "", None, None, None, None, False, False, False, False, None])
+                          defaults=["", "", "", "", "", False, False, False, 0, 0, "", None, None, None, None, False, False, False, False, None])
 
 global_pair_property = PairProperty()
 
@@ -97,6 +97,11 @@ class NewPairEH(EventHandler):
                 global_pair_property.component_label = False
                 global_pair_property.databox_label = False
                 global_pair_property.button_label = False
+                global_pair_property.l = False
+                global_pair_property.ll = False
+                global_pair_property.h = False
+                global_pair_property.flip = 0
+                global_pair_property.rotation = 0
                 
         elif event == 'Done':
             global_pair_property.name = values["name"]
@@ -136,6 +141,11 @@ class NewPairEH(EventHandler):
             global_pair_property.component_label = False
             global_pair_property.databox_label = False
             global_pair_property.button_label = False
+            global_pair_property.l = False
+            global_pair_property.ll = False
+            global_pair_property.h = False
+            global_pair_property.flip = 0
+            global_pair_property.rotation = 0
             
         else:
             raise AssertionError

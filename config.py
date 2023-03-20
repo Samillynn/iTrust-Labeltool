@@ -17,5 +17,5 @@ config = {
         }
     },
     "type": ["FIT", "LIT", "LITA", "AV", "P", "AIT", "CIT", "FIC", "UV", "AIC", "PIT", "PDI", "F", "FD", "PSH", "Button"],
-    "tesseract_config": "--psm 6"
+    "tesseract_config": "--psm 6",
 }

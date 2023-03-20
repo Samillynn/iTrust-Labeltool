@@ -1,0 +1,121 @@
+{
+  "image_path": "1679149459386-screen_shot.jpg",
+  "labels": [
+    {
+      "name": "ccc",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "ccc",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "id": 1,
+      "top_left": [
+        -0.45625000000000004,
+        0.22592592592592586
+      ],
+      "bottom_right": [
+        -0.3666666666666667,
+        0.03703703703703698
+      ],
+      "width": 86.00000000000001,
+      "height": 102.0,
+      "connections": []
+    },
+    {
+      "name": "chief",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "chief",
+      "parent_component_name": "",
+      "flip": 1,
+      "rotation": 180.0,
+      "l": true,
+      "ll": true,
+      "h": true,
+      "id": 2,
+      "top_left": [
+        -0.26041666666666663,
+        0.21759259259259256
+      ],
+      "bottom_right": [
+        -0.171875,
+        0.02777777777777768
+      ],
+      "width": 84.99999999999997,
+      "height": 102.50000000000003,
+      "connections": []
+    },
+    {
+      "name": "wdwdwdc",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "ss",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "wdwdwdc",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "id": 5,
+      "top_left": [
+        -0.06666666666666665,
+        0.4814814814814814
+      ],
+      "bottom_right": [
+        0.043749999999999956,
+        0.4222222222222223
+      ],
+      "width": 105.99999999999994,
+      "height": 31.999999999999925,
+      "connections": []
+    },
+    {
+      "name": "sdw",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "wd",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "wdd",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": true,
+      "ll": true,
+      "h": true,
+      "id": 6,
+      "top_left": [
+        -0.8020833333333334,
+        0.4111111111111112
+      ],
+      "bottom_right": [
+        -0.6916666666666667,
+        0.11851851851851847
+      ],
+      "width": 106.00000000000006,
+      "height": 158.00000000000009,
+      "connections": []
+    }
+  ]
+}

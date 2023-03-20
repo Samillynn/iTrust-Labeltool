@@ -1,0 +1,80 @@
+[
+  {
+    "name": "ccc",
+    "type": "other",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "level": [],
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.41145833333333337,
+        0.13148148148148142
+      ],
+      "width": 86.00000000000001,
+      "height": 102.0
+    },
+    "databox": {},
+    "button": {}
+  },
+  {
+    "name": "chief",
+    "type": "other",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "level": [
+        "L",
+        "LL",
+        "H"
+      ],
+      "flip": 1,
+      "rotation": 180.0,
+      "coordinate": [
+        -0.21614583333333331,
+        0.12268518518518512
+      ],
+      "width": 84.99999999999997,
+      "height": 102.50000000000003
+    },
+    "databox": {},
+    "button": {}
+  },
+  {
+    "name": "wdwdwdc",
+    "type": "ss",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.011458333333333348,
+        0.45185185185185184
+      ],
+      "width": 105.99999999999994,
+      "height": 31.999999999999925
+    },
+    "button": {}
+  },
+  {
+    "name": "wdd",
+    "type": "wd",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.746875,
+        0.26481481481481484
+      ],
+      "width": 106.00000000000006,
+      "height": 158.00000000000009
+    },
+    "button": {}
+  }
+]

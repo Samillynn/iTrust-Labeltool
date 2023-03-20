@@ -2,150 +2,6 @@
   "image_path": "1677676120175-1675932993122-169.png",
   "labels": [
     {
-      "name": "AV300-1",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "AV300-1",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 167,
-      "top_left": [
-        -0.7023933402705516,
-        0.33333333333333326
-      ],
-      "bottom_right": [
-        -0.6545265348595213,
-        0.25185185185185177
-      ],
-      "connections": []
-    },
-    {
-      "name": "AV300-1",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "AV300-1",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 169,
-      "top_left": [
-        -0.7336108220603538,
-        0.38148148148148153
-      ],
-      "bottom_right": [
-        -0.6378772112382934,
-        0.337037037037037
-      ],
-      "connections": []
-    },
-    {
-      "name": "AIT204",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "AIT204",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 171,
-      "top_left": [
-        -0.8886576482830386,
-        0.6481481481481484
-      ],
-      "bottom_right": [
-        -0.7752341311134235,
-        0.542592592592593
-      ],
-      "connections": []
-    },
-    {
-      "name": "",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 174,
-      "top_left": [
-        0.5515088449531738,
-        0.14074074074074083
-      ],
-      "bottom_right": [
-        0.6784599375650364,
-        0.031481481481481444
-      ],
-      "connections": []
-    },
-    {
-      "name": "",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 175,
-      "top_left": [
-        0.5515088449531738,
-        0.005555555555555536
-      ],
-      "bottom_right": [
-        0.6784599375650364,
-        -0.10370370370370374
-      ],
-      "connections": []
-    },
-    {
-      "name": "",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 177,
-      "top_left": [
-        0.36940686784599386,
-        0.35925925925925917
-      ],
-      "bottom_right": [
-        0.44640998959417266,
-        0.25555555555555554
-      ],
-      "connections": []
-    },
-    {
       "name": "",
       "desc": "",
       "fullname": "",
@@ -158,6 +14,9 @@
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0.0,
+      "l": false,
+      "ll": false,
+      "h": false,
       "id": 178,
       "top_left": [
         19.269510926118627,
@@ -167,6 +26,8 @@
         19.383975026014568,
         20.55
       ],
+      "width": 109.8855359001027,
+      "height": 53.99999999999885,
       "connections": []
     },
     {
@@ -182,6 +43,9 @@
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0.0,
+      "l": false,
+      "ll": false,
+      "h": false,
       "id": 179,
       "top_left": [
         19.266389177939647,
@@ -191,6 +55,8 @@
         19.380853277835588,
         20.546296296296294
       ],
+      "width": 109.8855359001027,
+      "height": 54.00000000000077,
       "connections": []
     },
     {
@@ -206,6 +72,9 @@
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0.0,
+      "l": false,
+      "ll": false,
+      "h": false,
       "id": 180,
       "top_left": [
         4.266389177939646,
@@ -215,6 +84,8 @@
         4.3808532778355875,
         5.546296296296296
       ],
+      "width": 109.88553590010355,
+      "height": 53.99999999999981,
       "connections": []
     },
     {
@@ -226,43 +97,24 @@
       "state": "",
       "type": 1,
       "category": "",
-      "parent": "",
+      "parent": "111",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
-      "id": 184,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "id": 189,
       "top_left": [
-        -0.732570239334027,
+        -0.890738813735692,
         0.6481481481481481
       ],
       "bottom_right": [
-        -0.6139438085327784,
+        -0.7710718002081165,
         0.548148148148148
       ],
-      "connections": []
-    },
-    {
-      "name": "",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "id": 186,
-      "top_left": [
-        -0.5473465140478668,
-        0.6499999999999999
-      ],
-      "bottom_right": [
-        -0.42872008324661814,
-        0.55
-      ],
+      "width": 114.88033298647245,
+      "height": 54.00000000000005,
       "connections": []
     }
   ]

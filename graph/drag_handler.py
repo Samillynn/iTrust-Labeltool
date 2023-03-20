@@ -109,6 +109,7 @@ class NewLabelHandler(DragHandler):
             [sg.T("Description"), sg.I(key="desc", default_text=global_pair_property.desc)],
             [sg.T("Status"), sg.I(key="status", default_text=global_pair_property.status)],
             [sg.T("State"), sg.I(key="state", default_text=global_pair_property.state)],
+            base_dialog.layout_level(),
             base_dialog.layout_flip(),
             base_dialog.layout_rotation(),
             # [sg.T('Category'), sg.DD(config["categories"],key='category')],
@@ -192,6 +193,7 @@ class NewLabelHandler(DragHandler):
             elif current_choice == "Button":
                 values["type"] = 3
             if event in ['Submit']:
+                print(values)
                 self.label.copy_basic_properties(values)
                 if global_pair_property.choosing:
                     global_pair_property.name = self.label.parent
@@ -199,6 +201,12 @@ class NewLabelHandler(DragHandler):
                     global_pair_property.status = self.label.status
                     global_pair_property.state = self.label.state
                     global_pair_property.desc = self.label.desc
+                    if self.label.type == 1:
+                        global_pair_property.l = values["l"]
+                        global_pair_property.ll = values["ll"]
+                        global_pair_property.h = values["h"]
+                        global_pair_property.flip = values["flip"]
+                        global_pair_property.rotation = values["rotation"]
                 if global_pair_property.current_choice is not None:
                     assign_current_choice(self.label)
                 break

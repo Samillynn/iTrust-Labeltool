@@ -63,11 +63,19 @@ class Rectangle:
 
     @property
     def width(self):
-        return self.right - self.left
+        return (self.right - self.left)/2
 
     @property
     def height(self):
-        return self.top - self.bottom
+        return (self.top - self.bottom)/2
+    
+    @property
+    def abs_width(self):
+        return (self.right - self.left)/2*1920
+
+    @property
+    def abs_height(self):
+        return (self.top - self.bottom)/2*1080
 
     @property
     def top_left(self):
@@ -156,6 +164,9 @@ class Label(Rectangle):
         self.status = ""
         self.state = ""
         self.desc = ""
+        self.l = False
+        self.ll = False
+        self.h = False
 
         self.connections = []
 
@@ -185,6 +196,9 @@ class Label(Rectangle):
         self.parent = label_dict.get('parent', '')
         self.flip = label_dict.get('flip', 0)
         self.rotation = label_dict.get('rotation', 0)
+        self.l = label_dict.get('l', False)
+        self.ll = label_dict.get('ll', False)
+        self.h = label_dict.get('h', False)
 
     @property
     def basic_properties(self):
@@ -200,7 +214,10 @@ class Label(Rectangle):
             "parent": self.parent,
             "parent_component_name": self.parent_component_name,
             "flip": self.flip,
-            "rotation": self.rotation
+            "rotation": self.rotation,
+            "l": self.l,
+            "ll": self.ll,
+            "h": self.h,
         }
         
     @property
@@ -217,6 +234,9 @@ class LabelSerializer(Serializer):
         result['id'] = label.id
         result['top_left'] = label.top_left
         result['bottom_right'] = label.bottom_right
+        result["width"] = label.abs_width
+        result["height"] = label.abs_height
+        
 
         # save databox
         if label.databox:

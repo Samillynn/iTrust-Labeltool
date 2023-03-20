@@ -102,9 +102,12 @@ def convert_json(result):
             component_type = component_value.get("component_type","")
             desc = component_value.get("desc","")
             component_value = {
+                "level":component_value.get("level"),
                 "flip":component_value.get("flip"),
                 "rotation":component_value.get("rotation"),
-                "coordinate":align_center(component_value.get("coordinate"), x_set_component, y_set_component)
+                "coordinate":align_center(component_value.get("coordinate"), x_set_component, y_set_component),
+                "width":component_value.get("width"),
+                "height":component_value.get("height"),
             }
             
         if databox_value is not None:
@@ -115,7 +118,9 @@ def convert_json(result):
                 desc = databox_value.get("desc","")
                 flag = True   
             databox_value = {
-                "coordinate": align_center(databox_value.get("coordinate"), x_set_databox, y_set_databox)
+                "coordinate": align_center(databox_value.get("coordinate"), x_set_databox, y_set_databox),
+                "width":databox_value.get("width"),
+                "height":databox_value.get("height"),                
             } 
             
         if button_value is not None:
@@ -125,7 +130,9 @@ def convert_json(result):
                 component_type = button_value.get("component_type","")
                 desc = button_value.get("desc","")
             button_value = {
-                "coordinate": align_center(button_value.get("coordinate"), x_set_button, y_set_button)
+                "coordinate": align_center(button_value.get("coordinate"), x_set_button, y_set_button),
+                "width":button_value.get("width"),
+                "height":button_value.get("height"), 
             }
         
         matched_type = match_type(name)
@@ -159,6 +166,8 @@ def export_eh(event, file_path):
         valid = True
         result = label.basic_properties
         result['coordinate'] = label.center
+        result['width'] = label.abs_width
+        result['height'] = label.abs_height
         if result['type'] == 1:
             result_type = 'component'
         elif result['type'] == 2:
@@ -169,6 +178,14 @@ def export_eh(event, file_path):
             raise AssertionError()
         
         result_name = result["parent"]
+        
+        level = []
+        if result["l"]:
+            level.append("L")
+        if result["ll"]:
+            level.append("LL")
+        if result["h"]:
+            level.append("H")
 
         if result_name not in result_dict:
             result_dict[result_name] = {}
@@ -181,8 +198,12 @@ def export_eh(event, file_path):
             "component_type":result["component_type"],
             "flip":result["flip"],
             "rotation":result["rotation"],
-            "coordinate":result["coordinate"]    
+            "coordinate":result["coordinate"],
+            "width":result["width"],
+            "height":result["height"],
+            "level":level,
         }
+        
         if result_type not in result_dict[result_name]:
             result_dict[result_name][result_type] = required_properties
         else:
