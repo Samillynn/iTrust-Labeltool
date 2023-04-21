@@ -6,8 +6,8 @@ from config import config
 
 PairProperty = recordclass("PairProperty",
                           fields=["name", "status", "desc", "state", "component_type","l","ll","h", "flip", "rotation",
-                                       "additional_info", "current_choice", "component", "databox", "button", "choosing", "component_label", "databox_label", "button_label", "selected"],
-                          defaults=["", "", "", "", "", False, False, False, 0, 0, "", None, None, None, None, False, False, False, False, None])
+                                       "additional_info", "current_choice", "component", "databox", "button", "choosing", "component_label", "databox_label", "button_label", "selected", "header"],
+                          defaults=["", "", "", "", "", False, False, False, 0, 0, "", None, None, None, None, False, False, False, False, None, False])
 
 global_pair_property = PairProperty()
 
@@ -19,6 +19,7 @@ class NewPairEH(EventHandler):
         
     def handle(self):
         global_pair_property.choosing = False
+        global_pair_property.header = False
         self.graph_handler.image.remove_shadow()
         self.graph_handler.notify_image()
         def get_button_color(button_name):

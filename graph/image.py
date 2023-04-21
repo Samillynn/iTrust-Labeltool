@@ -50,7 +50,7 @@ class CoordinateTransfer:
 class Image:
     def __init__(self, path: str = ''):
         self.path: str = path
-        self._resize: float = 1
+        self._resize: float = 0.53
         self.shadow = False
 
     def __repr__(self):
@@ -127,10 +127,10 @@ def convert_to_bytes(file_or_bytes, resize=None, shadow=False):
     '''
     if isinstance(file_or_bytes, str):
         img = PIL.Image.open(file_or_bytes)
-        dpi = img.info["dpi"]
-        if dpi[0] < 290:
-            img.save(file_or_bytes,"PNG",dpi=(300,300))
-            img = PIL.Image.open(file_or_bytes)
+        # dpi = img.info["dpi"]
+        # if dpi[0] < 290:
+        #     img.save(file_or_bytes,"PNG",dpi=(300,300))
+        #     img = PIL.Image.open(file_or_bytes)
     else:
         try:
             img = PIL.Image.open(io.BytesIO(base64.b64decode(file_or_bytes)))
@@ -143,8 +143,8 @@ def convert_to_bytes(file_or_bytes, resize=None, shadow=False):
         new_width, new_height = resize
         scale = min(new_height / cur_height, new_width / cur_width)
         img = img.resize(
-            (int(cur_width * scale), int(cur_height * scale)), PIL.Image.ANTIALIAS)
-    
+            (int(960*1.13), int(540*1.13)), PIL.Image.LANCZOS)
+            
     if shadow:
         img = PIL.ImageEnhance.Brightness(img).enhance(0.5)
     with io.BytesIO() as bio:

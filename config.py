@@ -4,7 +4,7 @@ config = {
         "font": {
             "format": "{parent}",
             "type": "Courier New Bold",
-            "size": 10,
+            "size": 8,
             "color": "red"
         }
     },

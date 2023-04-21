@@ -1,123 +1,55 @@
 [
   {
-    "name": "GW1",
-    "type": "GW",
+    "name": "FIT103",
+    "type": "FIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.8564500484966053,
+        -0.16206896551724137
+      ],
+      "width": 74.49078564500485,
+      "height": 18.620689655172452
+    },
+    "button": {}
+  },
+  {
+    "name": "FCV101",
+    "type": "FCV",
     "description": "",
     "status": "",
     "state": "",
     "component": {
+      "level": [],
       "flip": 0,
-      "rotation": 0,
+      "rotation": 90.0,
       "coordinate": [
-        -0.872093023255814,
-        -0.41924398625429554
-      ]
+        -0.9000969932104752,
+        -0.21379310344827585
+      ],
+      "width": 42.83220174587779,
+      "height": 40.965517241379274
     },
     "databox": {},
     "button": {}
   },
   {
-    "name": "GW2",
-    "type": "GW",
+    "name": "FIT101",
+    "type": "FIT",
     "description": "",
     "status": "",
     "state": "",
-    "component": {
-      "flip": 0,
-      "rotation": 0,
-      "coordinate": [
-        -0.7271317829457363,
-        -0.41924398625429554
-      ]
-    },
-    "databox": {},
-    "button": {}
-  },
-  {
-    "name": "MCV101",
-    "type": "other",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {
-      "flip": 0,
-      "rotation": 90.0,
-      "coordinate": [
-        -0.8624031007751938,
-        0.017182130584192434
-      ]
-    },
+    "component": {},
     "databox": {
       "coordinate": [
-        -0.7877906976744187,
-        0.01718213058419249
-      ]
-    },
-    "button": {}
-  },
-  {
-    "name": "MCV403",
-    "type": "MCV403",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {
-      "flip": 0,
-      "rotation": 90.0,
-      "coordinate": [
-        0.5094430992736078,
-        0.4235395189003436
-      ]
-    },
-    "databox": {
-      "coordinate": [
-        0.5852713178294574,
-        0.4243986254295532
-      ]
-    },
-    "button": {}
-  },
-  {
-    "name": "MCV201",
-    "type": "MCV",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {
-      "flip": 0,
-      "rotation": 90.0,
-      "coordinate": [
-        0.025181598062954058,
-        -0.04037800687285226
-      ]
-    },
-    "databox": {
-      "coordinate": [
-        0.09980620155038766,
-        -0.041237113402061876
-      ]
-    },
-    "button": {}
-  },
-  {
-    "name": "MCV102",
-    "type": "MCV",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {
-      "flip": 0,
-      "rotation": 90.0,
-      "coordinate": [
-        -0.711627906976744,
-        0.017182130584192434
-      ]
-    },
-    "databox": {
-      "coordinate": [
-        -0.6370155038759691,
-        0.01718213058419249
-      ]
+        -0.8564500484966053,
+        -0.31724137931034485
+      ],
+      "width": 76.35305528612996,
+      "height": 22.344827586206883
     },
     "button": {}
   },
@@ -130,9 +62,105 @@
     "component": {},
     "databox": {
       "coordinate": [
-        -0.7984496124031008,
-        -0.14604810996563572
-      ]
+        -0.8564500484966053,
+        -0.396551724137931
+      ],
+      "width": 72.62851600387975,
+      "height": 22.344827586206883
+    },
+    "button": {}
+  },
+  {
+    "name": "Well_1",
+    "type": "Well",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "level": [],
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.9088263821532493,
+        -0.5982758620689654
+      ],
+      "width": 85.66440349175558,
+      "height": 184.34482758620692
+    },
+    "databox": {},
+    "button": {}
+  },
+  {
+    "name": "Well_2",
+    "type": "Well",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "level": [],
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.7657129000969931,
+        -0.5982758620689654
+      ],
+      "width": 85.66440349175558,
+      "height": 184.34482758620692
+    },
+    "databox": {},
+    "button": {}
+  },
+  {
+    "name": "FIT104",
+    "type": "FIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.7123666343355964,
+        -0.1562068965517241
+      ],
+      "width": 76.35305528612996,
+      "height": 22.344827586206883
+    },
+    "button": {}
+  },
+  {
+    "name": "FCV102",
+    "type": "FCV",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "level": [],
+      "flip": 0,
+      "rotation": 90.0,
+      "coordinate": [
+        -0.7589233753637246,
+        -0.21379310344827585
+      ],
+      "width": 42.83220174587779,
+      "height": 40.96551724137926
+    },
+    "databox": {},
+    "button": {}
+  },
+  {
+    "name": "FIT102",
+    "type": "FIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.7123666343355964,
+        -0.3113793103448275
+      ],
+      "width": 76.35305528612996,
+      "height": 22.344827586206883
     },
     "button": {}
   },
@@ -145,14 +173,16 @@
     "component": {},
     "databox": {
       "coordinate": [
-        -0.6434108527131782,
-        -0.14604810996563572
-      ]
+        -0.7123666343355964,
+        -0.396551724137931
+      ],
+      "width": 72.62851600387975,
+      "height": 22.344827586206883
     },
     "button": {}
   },
   {
-    "name": "FIT101",
+    "name": "FIT105",
     "type": "FIT",
     "description": "",
     "status": "",
@@ -160,31 +190,11 @@
     "component": {},
     "databox": {
       "coordinate": [
-        -0.688953488372093,
-        0.3573883161512028
-      ]
-    },
-    "button": {}
-  },
-  {
-    "name": "MCV103",
-    "type": "MCV",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {
-      "flip": 0,
-      "rotation": 0,
-      "coordinate": [
-        -0.6065891472868217,
-        0.19072164948453607
-      ]
-    },
-    "databox": {
-      "coordinate": [
-        -0.6056201550387597,
-        0.26460481099656363
-      ]
+        -0.7123666343355964,
+        0.0324137931034483
+      ],
+      "width": 76.35305528612996,
+      "height": 22.344827586206883
     },
     "button": {}
   },
@@ -197,14 +207,16 @@
     "component": {},
     "databox": {
       "coordinate": [
-        -0.5339147286821705,
-        0.5034364261168385
-      ]
+        -0.6235693501454896,
+        0.15310344827586225
+      ],
+      "width": 72.62851600387975,
+      "height": 22.344827586206883
     },
     "button": {}
   },
   {
-    "name": "FIT102",
+    "name": "FIT106",
     "type": "FIT",
     "description": "",
     "status": "",
@@ -212,115 +224,76 @@
     "component": {},
     "databox": {
       "coordinate": [
-        -0.46317829457364346,
-        0.3573883161512028
-      ]
+        -0.5658098933074682,
+        0.0324137931034483
+      ],
+      "width": 76.35305528612996,
+      "height": 22.344827586206883
     },
     "button": {}
   },
   {
-    "name": "MCV202",
-    "type": "MCV",
+    "name": "FCV103",
+    "type": "FCV",
     "description": "",
     "status": "",
     "state": "",
     "component": {
+      "level": [],
       "flip": 0,
       "rotation": 0,
       "coordinate": [
-        -0.14825581395348836,
-        0.43470790378006874
-      ]
-    },
-    "databox": {
-      "coordinate": [
-        -0.14825581395348836,
-        0.5034364261168385
-      ]
-    },
-    "button": {}
-  },
-  {
-    "name": "TP201",
-    "type": "TP",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {},
-    "databox": {
-      "coordinate": [
-        -0.3517441860465116,
-        0.11855670103092786
-      ]
-    },
-    "button": {}
-  },
-  {
-    "name": "SP201",
-    "type": "SP",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {},
-    "databox": {
-      "coordinate": [
-        -0.10988372093023252,
-        0.1141924398625431
-      ]
-    },
-    "button": {}
-  },
-  {
-    "name": "SCB1",
-    "type": "SCB",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {
-      "flip": 0,
-      "rotation": 0,
-      "coordinate": [
-        -0.22965116279069764,
-        0.1701030927835051
-      ]
+        -0.6526673132880698,
+        -0.06758620689655186
+      ],
+      "width": 42.83220174587779,
+      "height": 40.96551724137926
     },
     "databox": {},
     "button": {}
   },
   {
-    "name": "ST1",
-    "type": "ST",
+    "name": "PCV103",
+    "type": "PCV",
     "description": "",
     "status": "",
     "state": "",
     "component": {
+      "level": [],
       "flip": 0,
       "rotation": 0,
       "coordinate": [
-        -0.22965116279069764,
-        0.04982817869415812
-      ]
+        -0.5425315227934044,
+        -0.06758620689655186
+      ],
+      "width": 42.83220174587779,
+      "height": 40.96551724137926
     },
     "databox": {},
     "button": {}
   },
   {
-    "name": "PIT201",
-    "type": "PIT",
+    "name": "SRV101",
+    "type": "SRV",
     "description": "",
     "status": "",
     "state": "",
-    "component": {},
-    "databox": {
+    "component": {
+      "level": [],
+      "flip": 0,
+      "rotation": 0,
       "coordinate": [
-        -0.3517441860465116,
-        0.0068728522336769515
-      ]
+        -0.47914645974781767,
+        -0.04827586206896556
+      ],
+      "width": 39.10766246362748,
+      "height": 63.31034482758616
     },
+    "databox": {},
     "button": {}
   },
   {
-    "name": "FIT201",
+    "name": "FIT107",
     "type": "FIT",
     "description": "",
     "status": "",
@@ -328,76 +301,16 @@
     "component": {},
     "databox": {
       "coordinate": [
-        -0.10988372093023252,
-        0.0068728522336769515
-      ]
+        -0.44597478176527616,
+        0.0324137931034483
+      ],
+      "width": 76.3530552861299,
+      "height": 22.344827586206883
     },
     "button": {}
   },
   {
-    "name": "IC1",
-    "type": "IC",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {
-      "flip": 0,
-      "rotation": 0,
-      "coordinate": [
-        -0.22965116279069764,
-        -0.05841924398625431
-      ]
-    },
-    "databox": {},
-    "button": {}
-  },
-  {
-    "name": "TP202",
-    "type": "TP",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {},
-    "databox": {
-      "coordinate": [
-        -0.3517441860465116,
-        -0.1185567010309278
-      ]
-    },
-    "button": {}
-  },
-  {
-    "name": "TP203",
-    "type": "TP",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {},
-    "databox": {
-      "coordinate": [
-        -0.3517441860465116,
-        -0.23539518900343642
-      ]
-    },
-    "button": {}
-  },
-  {
-    "name": "SP202",
-    "type": "SP",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {},
-    "databox": {
-      "coordinate": [
-        -0.10988372093023252,
-        -0.23539518900343642
-      ]
-    },
-    "button": {}
-  },
-  {
-    "name": "PIT202",
+    "name": "PIT104",
     "type": "PIT",
     "description": "",
     "status": "",
@@ -405,14 +318,50 @@
     "component": {},
     "databox": {
       "coordinate": [
-        -0.3517441860465116,
-        -0.34536082474226804
-      ]
+        -0.38734238603297744,
+        0.15310344827586225
+      ],
+      "width": 72.62851600387975,
+      "height": 22.344827586206883
     },
     "button": {}
   },
   {
-    "name": "FIT202",
+    "name": "PIT205",
+    "type": "PIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.2752667313288067,
+        0.30965517241379326
+      ],
+      "width": 72.62851600387975,
+      "height": 22.344827586206883
+    },
+    "button": {}
+  },
+  {
+    "name": "PIT206",
+    "type": "PIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.1127546071774973,
+        0.3051724137931037
+      ],
+      "width": 72.62851600387975,
+      "height": 22.344827586206883
+    },
+    "button": {}
+  },
+  {
+    "name": "FIT206",
     "type": "FIT",
     "description": "",
     "status": "",
@@ -420,112 +369,16 @@
     "component": {},
     "databox": {
       "coordinate": [
-        -0.10988372093023252,
-        -0.34536082474226804
-      ]
+        -0.2369059165858388,
+        0.22241379310344817
+      ],
+      "width": 76.3530552861299,
+      "height": 22.344827586206883
     },
     "button": {}
   },
   {
-    "name": "ST2",
-    "type": "ST",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {
-      "flip": 0,
-      "rotation": 0,
-      "coordinate": [
-        -0.22965116279069764,
-        -0.3058419243986254
-      ]
-    },
-    "databox": {},
-    "button": {}
-  },
-  {
-    "name": "TP204",
-    "type": "TP",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {},
-    "databox": {
-      "coordinate": [
-        -0.3517441860465116,
-        -0.4536082474226804
-      ]
-    },
-    "button": {}
-  },
-  {
-    "name": "IC2",
-    "type": "IC",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {
-      "flip": 0,
-      "rotation": 0,
-      "coordinate": [
-        -0.22965116279069764,
-        -0.41924398625429554
-      ]
-    },
-    "databox": {},
-    "button": {}
-  },
-  {
-    "name": "ST3",
-    "type": "ST",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {
-      "flip": 0,
-      "rotation": 0,
-      "coordinate": [
-        -0.22965116279069764,
-        -0.6168384879725086
-      ]
-    },
-    "databox": {},
-    "button": {}
-  },
-  {
-    "name": "IC3",
-    "type": "IC",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {
-      "flip": 0,
-      "rotation": 0,
-      "coordinate": [
-        -0.2248062015503876,
-        -0.7164948453608248
-      ]
-    },
-    "databox": {},
-    "button": {}
-  },
-  {
-    "name": "SP203",
-    "type": "SP",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {},
-    "databox": {
-      "coordinate": [
-        -0.10562015503875966,
-        -0.5532646048109966
-      ]
-    },
-    "button": {}
-  },
-  {
-    "name": "FIT203",
+    "name": "FIT207",
     "type": "FIT",
     "description": "",
     "status": "",
@@ -533,59 +386,16 @@
     "component": {},
     "databox": {
       "coordinate": [
-        -0.10988372093023252,
-        -0.6632302405498283
-      ]
+        -0.153928225024248,
+        0.22241379310344817
+      ],
+      "width": 76.3530552861299,
+      "height": 22.344827586206897
     },
     "button": {}
   },
   {
-    "name": "TP205",
-    "type": "TP",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {},
-    "databox": {
-      "coordinate": [
-        -0.3517441860465116,
-        -0.5532646048109966
-      ]
-    },
-    "button": {}
-  },
-  {
-    "name": "PIT203",
-    "type": "PIT",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {},
-    "databox": {
-      "coordinate": [
-        -0.3517441860465116,
-        -0.6632302405498283
-      ]
-    },
-    "button": {}
-  },
-  {
-    "name": "TP206",
-    "type": "TP",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {},
-    "databox": {
-      "coordinate": [
-        -0.3517441860465116,
-        -0.7731958762886597
-      ]
-    },
-    "button": {}
-  },
-  {
-    "name": "FIT204",
+    "name": "FIT208",
     "type": "FIT",
     "description": "",
     "status": "",
@@ -593,14 +403,16 @@
     "component": {},
     "databox": {
       "coordinate": [
-        0.09399224806201556,
-        -0.3075601374570447
-      ]
+        0.010523763336566717,
+        0.22241379310344817
+      ],
+      "width": 76.35305528612992,
+      "height": 22.34482758620691
     },
     "button": {}
   },
   {
-    "name": "PIT204",
+    "name": "PIT207",
     "type": "PIT",
     "description": "",
     "status": "",
@@ -608,80 +420,256 @@
     "component": {},
     "databox": {
       "coordinate": [
-        0.09399224806201556,
-        -0.5738831615120275
-      ]
+        0.061396702230844216,
+        0.14206896551724174
+      ],
+      "width": 72.62851600387975,
+      "height": 22.344827586206883
     },
     "button": {}
   },
   {
-    "name": "MCV301",
-    "type": "MCV",
+    "name": "FCV202",
+    "type": "FCV",
     "description": "",
     "status": "",
     "state": "",
     "component": {
+      "level": [],
       "flip": 0,
       "rotation": 0,
       "coordinate": [
-        0.2160852713178294,
-        0.19072164948453607
-      ]
+        -0.19141610087293887,
+        0.11758620689655157
+      ],
+      "width": 42.83220174587779,
+      "height": 40.96551724137926
     },
-    "databox": {
-      "coordinate": [
-        0.2160852713178295,
-        0.2594501718213058
-      ]
-    },
+    "databox": {},
     "button": {}
   },
   {
-    "name": "MCV302",
-    "type": "MCV",
+    "name": "FCV203",
+    "type": "FCV",
     "description": "",
     "status": "",
     "state": "",
     "component": {
+      "level": [],
       "flip": 0,
       "rotation": 0,
       "coordinate": [
-        0.31589147286821706,
-        0.19072164948453607
-      ]
+        -0.0327837051406401,
+        0.11310344827586184
+      ],
+      "width": 42.8322017458778,
+      "height": 40.96551724137926
     },
-    "databox": {
-      "coordinate": [
-        0.31492248062015504,
-        0.2594501718213058
-      ]
-    },
+    "databox": {},
     "button": {}
   },
   {
-    "name": "MCV401",
-    "type": "MCV",
+    "name": "FCV201",
+    "type": "FCV",
     "description": "",
     "status": "",
     "state": "",
     "component": {
+      "level": [],
       "flip": 0,
       "rotation": 0,
       "coordinate": [
-        0.4428294573643411,
-        0.19072164948453607
-      ]
+        -0.0327837051406401,
+        -0.07413793103448287
+      ],
+      "width": 42.8322017458778,
+      "height": 40.96551724137926
     },
-    "databox": {
-      "coordinate": [
-        0.4428294573643411,
-        0.2594501718213058
-      ]
-    },
+    "databox": {},
     "button": {}
   },
   {
-    "name": "FIT403",
+    "name": "FCV301",
+    "type": "FCV",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "level": [],
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        0.19136760426770133,
+        -0.06758620689655186
+      ],
+      "width": 42.83220174587782,
+      "height": 40.96551724137926
+    },
+    "databox": {},
+    "button": {}
+  },
+  {
+    "name": "FCV302",
+    "type": "FCV",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "level": [],
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        0.33254122211445214,
+        -0.06758620689655186
+      ],
+      "width": 42.83220174587779,
+      "height": 40.96551724137926
+    },
+    "databox": {},
+    "button": {}
+  },
+  {
+    "name": "FCV401",
+    "type": "FCV",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "level": [],
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        0.4931134820562563,
+        -0.07413793103448287
+      ],
+      "width": 42.83220174587779,
+      "height": 40.96551724137926
+    },
+    "databox": {},
+    "button": {}
+  },
+  {
+    "name": "FCV402",
+    "type": "FCV",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "level": [],
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        0.8884093113482059,
+        -0.06758620689655186
+      ],
+      "width": 42.83220174587779,
+      "height": 40.96551724137926
+    },
+    "databox": {},
+    "button": {}
+  },
+  {
+    "name": "FCV404",
+    "type": "FCV",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "level": [],
+      "flip": 0,
+      "rotation": 270.0,
+      "coordinate": [
+        0.9228903976721632,
+        0.3517241379310345
+      ],
+      "width": 42.83220174587779,
+      "height": 40.965517241379246
+    },
+    "databox": {},
+    "button": {}
+  },
+  {
+    "name": "FCV405",
+    "type": "FCV",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "level": [],
+      "flip": 0,
+      "rotation": 270.0,
+      "coordinate": [
+        0.9228903976721632,
+        -0.5631034482758621
+      ],
+      "width": 42.83220174587779,
+      "height": 40.96551724137921
+    },
+    "databox": {},
+    "button": {}
+  },
+  {
+    "name": "SRV301",
+    "type": "SRV",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "level": [],
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        0.2633850630455868,
+        -0.04827586206896556
+      ],
+      "width": 39.10766246362748,
+      "height": 63.31034482758616
+    },
+    "databox": {},
+    "button": {}
+  },
+  {
+    "name": "SRV402",
+    "type": "SRV",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "level": [],
+      "flip": 0,
+      "rotation": 270.0,
+      "coordinate": [
+        0.9107662463627546,
+        0.27068965517241383
+      ],
+      "width": 67.04170708050455,
+      "height": 31.655172413793107
+    },
+    "databox": {},
+    "button": {}
+  },
+  {
+    "name": "SRV401",
+    "type": "SRV",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "level": [],
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        0.9107662463627546,
+        -0.4751724137931034
+      ],
+      "width": 67.04170708050455,
+      "height": 31.655172413793107
+    },
+    "databox": {},
+    "button": {}
+  },
+  {
+    "name": "FIT301",
     "type": "FIT",
     "description": "",
     "status": "",
@@ -689,54 +677,45 @@
     "component": {},
     "databox": {
       "coordinate": [
-        0.5939922480620156,
-        0.7147766323024055
-      ]
+        0.14393792434529606,
+        0.0324137931034483
+      ],
+      "width": 76.35305528612992,
+      "height": 22.344827586206925
     },
     "button": {}
   },
   {
-    "name": "PIT403",
-    "type": "PIT",
+    "name": "FIT302",
+    "type": "FIT",
     "description": "",
     "status": "",
     "state": "",
     "component": {},
     "databox": {
       "coordinate": [
-        0.5939922480620156,
-        0.5652920962199313
-      ]
+        0.23855480116391886,
+        0.0324137931034483
+      ],
+      "width": 76.35305528612993,
+      "height": 22.344827586206925
     },
     "button": {}
   },
   {
-    "name": "PIT401",
-    "type": "PIT",
+    "name": "FIT303",
+    "type": "FIT",
     "description": "",
     "status": "",
     "state": "",
     "component": {},
     "databox": {
       "coordinate": [
-        0.5939922480620156,
-        0.1141924398625431
-      ]
-    },
-    "button": {}
-  },
-  {
-    "name": "PIT402",
-    "type": "PIT",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {},
-    "databox": {
-      "coordinate": [
-        0.742248062015504,
-        0.0068728522336769515
-      ]
+        0.35645004849660566,
+        0.0324137931034483
+      ],
+      "width": 76.3530552861299,
+      "height": 22.344827586206925
     },
     "button": {}
   },
@@ -749,24 +728,249 @@
     "component": {},
     "databox": {
       "coordinate": [
-        0.5939922480620156,
-        -0.034364261168384924
-      ]
+        0.44524733268671224,
+        0.0324137931034483
+      ],
+      "width": 76.3530552861299,
+      "height": 22.344827586206925
     },
     "button": {}
   },
   {
-    "name": "TP401",
-    "type": "other",
+    "name": "FIT407",
+    "type": "FIT",
     "description": "",
     "status": "",
     "state": "",
     "component": {},
     "databox": {
       "coordinate": [
-        0.6676356589147286,
-        -0.20962199312714774
-      ]
+        0.7881668283220178,
+        0.40137931034482777
+      ],
+      "width": 76.35305528612986,
+      "height": 22.34482758620694
+    },
+    "button": {}
+  },
+  {
+    "name": "TP401",
+    "type": "TP",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.5315227934044616,
+        0.0324137931034483
+      ],
+      "width": 76.35305528612996,
+      "height": 22.34482758620694
+    },
+    "button": {}
+  },
+  {
+    "name": "TP402",
+    "type": "TP",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.7774490785645006,
+        0.08172413793103447
+      ],
+      "width": 76.35305528612996,
+      "height": 22.34482758620694
+    },
+    "button": {}
+  },
+  {
+    "name": "TP403",
+    "type": "TP",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.8623666343355968,
+        0.08172413793103447
+      ],
+      "width": 76.35305528612996,
+      "height": 22.34482758620694
+    },
+    "button": {}
+  },
+  {
+    "name": "TP201",
+    "type": "TP",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.5599903006789523,
+        -0.5375862068965519
+      ],
+      "width": 76.35305528612996,
+      "height": 22.34482758620694
+    },
+    "button": {}
+  },
+  {
+    "name": "TP202",
+    "type": "TP",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.44597478176527616,
+        -0.5420689655172415
+      ],
+      "width": 76.3530552861299,
+      "height": 22.34482758620694
+    },
+    "button": {}
+  },
+  {
+    "name": "TP203",
+    "type": "TP",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.3571774975751695,
+        -0.5375862068965519
+      ],
+      "width": 76.3530552861299,
+      "height": 22.34482758620694
+    },
+    "button": {}
+  },
+  {
+    "name": "TP204",
+    "type": "TP",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.25286129970902005,
+        -0.5375862068965519
+      ],
+      "width": 76.3530552861299,
+      "height": 22.34482758620694
+    },
+    "button": {}
+  },
+  {
+    "name": "TP205",
+    "type": "TP",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.16794374393792408,
+        -0.5420689655172415
+      ],
+      "width": 76.3530552861299,
+      "height": 22.34482758620694
+    },
+    "button": {}
+  },
+  {
+    "name": "TP206",
+    "type": "TP",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.05392822502424812,
+        -0.5375862068965519
+      ],
+      "width": 76.35305528612992,
+      "height": 22.34482758620694
+    },
+    "button": {}
+  },
+  {
+    "name": "TP207",
+    "type": "TP",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.03292919495635321,
+        -0.5375862068965519
+      ],
+      "width": 76.35305528612992,
+      "height": 22.34482758620694
+    },
+    "button": {}
+  },
+  {
+    "name": "FIT204",
+    "type": "FIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.06168768186226926,
+        -0.19448275862068987
+      ],
+      "width": 76.35305528612992,
+      "height": 22.344827586206925
+    },
+    "button": {}
+  },
+  {
+    "name": "FIT205",
+    "type": "FIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.03292919495635321,
+        -0.19448275862068987
+      ],
+      "width": 76.35305528612992,
+      "height": 22.344827586206925
+    },
+    "button": {}
+  },
+  {
+    "name": "FIT406",
+    "type": "FIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.7881668283220178,
+        0.23448275862068932
+      ],
+      "width": 76.35305528612986,
+      "height": 22.34482758620691
     },
     "button": {}
   },
@@ -779,9 +983,317 @@
     "component": {},
     "databox": {
       "coordinate": [
-        0.8023255813953488,
-        -0.20962199312714774
-      ]
+        0.8545586808923378,
+        -0.24931034482758657
+      ],
+      "width": 76.35305528612975,
+      "height": 22.344827586206883
+    },
+    "button": {}
+  },
+  {
+    "name": "FIT404",
+    "type": "FIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.7881668283220178,
+        -0.4089655172413797
+      ],
+      "width": 76.35305528612975,
+      "height": 22.344827586206883
+    },
+    "button": {}
+  },
+  {
+    "name": "FIT405",
+    "type": "FIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.7774490785645006,
+        -0.5975862068965521
+      ],
+      "width": 76.35305528612986,
+      "height": 22.344827586206883
+    },
+    "button": {}
+  },
+  {
+    "name": "SP201",
+    "type": "SP",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.5024248302618817,
+        -0.6206896551724137
+      ],
+      "width": 72.62851600387975,
+      "height": 22.344827586206883
+    },
+    "button": {}
+  },
+  {
+    "name": "SP202",
+    "type": "SP",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.3108147429679922,
+        -0.6251724137931034
+      ],
+      "width": 72.62851600387975,
+      "height": 22.344827586206883
+    },
+    "button": {}
+  },
+  {
+    "name": "SP203",
+    "type": "SP",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.1127546071774973,
+        -0.6206896551724137
+      ],
+      "width": 72.62851600387975,
+      "height": 22.344827586206883
+    },
+    "button": {}
+  },
+  {
+    "name": "FIT403",
+    "type": "FIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.8909796314258005,
+        -0.3113793103448275
+      ],
+      "width": 76.35305528612975,
+      "height": 22.344827586206883
+    },
+    "button": {}
+  },
+  {
+    "name": "FIT203",
+    "type": "FIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.10717749757516934,
+        -0.7034482758620693
+      ],
+      "width": 76.3530552861299,
+      "height": 22.34482758620694
+    },
+    "button": {}
+  },
+  {
+    "name": "FIT202",
+    "type": "FIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.3108147429679922,
+        -0.707931034482759
+      ],
+      "width": 76.3530552861299,
+      "height": 22.34482758620694
+    },
+    "button": {}
+  },
+  {
+    "name": "FIT201",
+    "type": "FIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.5024248302618817,
+        -0.6986206896551728
+      ],
+      "width": 76.35305528612986,
+      "height": 22.34482758620694
+    },
+    "button": {}
+  },
+  {
+    "name": "PIT201",
+    "type": "PIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.5024248302618817,
+        -0.7775862068965518
+      ],
+      "width": 74.49078564500485,
+      "height": 24.206896551724128
+    },
+    "button": {}
+  },
+  {
+    "name": "PIT202",
+    "type": "PIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.3108147429679922,
+        -0.7855172413793104
+      ],
+      "width": 74.49078564500485,
+      "height": 24.206896551724128
+    },
+    "button": {}
+  },
+  {
+    "name": "PIT203",
+    "type": "PIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.10717749757516934,
+        -0.7775862068965518
+      ],
+      "width": 74.49078564500485,
+      "height": 24.206896551724128
+    },
+    "button": {}
+  },
+  {
+    "name": "PIT204",
+    "type": "PIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        -0.1127546071774973,
+        -0.28068965517241395
+      ],
+      "width": 74.49078564500486,
+      "height": 24.206896551724128
+    },
+    "button": {}
+  },
+  {
+    "name": "PIT401",
+    "type": "PIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.4822502424830262,
+        -0.22655172413793123
+      ],
+      "width": 74.49078564500485,
+      "height": 24.20689655172411
+    },
+    "button": {}
+  },
+  {
+    "name": "PIT402",
+    "type": "PIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.8154704170708051,
+        -0.17586206896551754
+      ],
+      "width": 74.49078564500496,
+      "height": 24.20689655172411
+    },
+    "button": {}
+  },
+  {
+    "name": "PIT403",
+    "type": "PIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.7277400581959266,
+        -0.3251724137931038
+      ],
+      "width": 74.49078564500496,
+      "height": 24.206896551724096
+    },
+    "button": {}
+  },
+  {
+    "name": "PIT404",
+    "type": "PIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.7277400581959266,
+        -0.684827586206897
+      ],
+      "width": 74.49078564500496,
+      "height": 24.206896551724128
+    },
+    "button": {}
+  },
+  {
+    "name": "PIT405",
+    "type": "PIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.7277400581959266,
+        0.17620689655172372
+      ],
+      "width": 74.49078564500496,
+      "height": 24.206896551724128
     },
     "button": {}
   },
@@ -794,49 +1306,243 @@
     "component": {},
     "databox": {
       "coordinate": [
-        0.6676356589147286,
-        -0.5343642611683849
-      ]
+        0.6582444228903976,
+        0.09000000000000025
+      ],
+      "width": 72.62851600387975,
+      "height": 22.344827586206883
     },
     "button": {}
   },
   {
-    "name": "CO2",
+    "name": "PIT406",
+    "type": "PIT",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.7322502424830266,
+        0.4820689655172411
+      ],
+      "width": 74.49078564500496,
+      "height": 24.206896551724128
+    },
+    "button": {}
+  },
+  {
+    "name": "r_demand",
+    "type": "demand",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.8545586808923378,
+        0.5103448275862069
+      ],
+      "width": 83.80213385063037,
+      "height": 18.620689655172452
+    },
+    "button": {}
+  },
+  {
+    "name": "i_demand",
+    "type": "demand",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {},
+    "databox": {
+      "coordinate": [
+        0.8686226964112512,
+        -0.7855172413793104
+      ],
+      "width": 83.80213385063037,
+      "height": 18.620689655172452
+    },
+    "button": {}
+  },
+  {
+    "name": "CO401",
     "type": "CO",
     "description": "",
     "status": "",
     "state": "",
     "component": {
+      "level": [],
       "flip": 0,
       "rotation": 0,
       "coordinate": [
-        0.5193798449612403,
-        -0.37800687285223367
-      ]
+        0.6605237633365664,
+        -0.06758620689655186
+      ],
+      "width": 126.63433559650827,
+      "height": 94.96551724137926
     },
     "databox": {},
     "button": {}
   },
   {
-    "name": "MCV402",
-    "type": "MCV",
+    "name": "CL203",
+    "type": "CL",
     "description": "",
     "status": "",
     "state": "",
     "component": {
+      "level": [],
       "flip": 0,
       "rotation": 0,
       "coordinate": [
-        0.8401162790697674,
-        -0.38831615120274915
-      ]
+        -0.020368574199806033,
+        -0.3793103448275862
+      ],
+      "width": 44.694471387002785,
+      "height": 44.689655172413765
     },
-    "databox": {
+    "databox": {},
+    "button": {}
+  },
+  {
+    "name": "CL401",
+    "type": "CL",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "level": [],
+      "flip": 0,
+      "rotation": 0,
       "coordinate": [
-        0.8381782945736435,
-        -0.31615120274914094
-      ]
+        0.8133365664403491,
+        -0.08034482758620676
+      ],
+      "width": 44.694471387002785,
+      "height": 44.689655172413765
     },
+    "databox": {},
+    "button": {}
+  },
+  {
+    "name": "CL202",
+    "type": "CL",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "level": [],
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.21867119301648885,
+        -0.3793103448275862
+      ],
+      "width": 44.694471387002785,
+      "height": 44.689655172413765
+    },
+    "databox": {},
+    "button": {}
+  },
+  {
+    "name": "CL201",
+    "type": "CL",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "level": [],
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.4053346265761398,
+        -0.3793103448275862
+      ],
+      "width": 44.694471387002785,
+      "height": 44.689655172413765
+    },
+    "databox": {},
+    "button": {}
+  },
+  {
+    "name": "CO201",
+    "type": "CO",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "level": [],
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.24345295829291952,
+        -0.08965517241379306
+      ],
+      "width": 212.29873908826374,
+      "height": 134.0689655172414
+    },
+    "databox": {},
+    "button": {}
+  },
+  {
+    "name": "ST201_1",
+    "type": "ST",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "level": [],
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.49951503394762364,
+        -0.3793103448275862
+      ],
+      "width": 67.04170708050434,
+      "height": 46.55172413793101
+    },
+    "databox": {},
+    "button": {}
+  },
+  {
+    "name": "ST201_2",
+    "type": "ST",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "level": [],
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.3117846750727448,
+        -0.3793103448275862
+      ],
+      "width": 67.04170708050434,
+      "height": 46.55172413793101
+    },
+    "databox": {},
+    "button": {}
+  },
+  {
+    "name": "ST201_3",
+    "type": "ST",
+    "description": "",
+    "status": "",
+    "state": "",
+    "component": {
+      "level": [],
+      "flip": 0,
+      "rotation": 0,
+      "coordinate": [
+        -0.11629485935984474,
+        -0.3793103448275862
+      ],
+      "width": 67.04170708050434,
+      "height": 46.55172413793101
+    },
+    "databox": {},
     "button": {}
   }
 ]

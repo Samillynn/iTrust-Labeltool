@@ -75,7 +75,7 @@ class ProjectMenuEH(EventHandler):
         window_manager.run(close=True)
 
 
-def convert_json(result):
+def convert_json(result, headers):
     cleaned_result = []
     x_set_component = []
     y_set_component = []
@@ -159,12 +159,17 @@ def convert_json(result):
             
         cleaned_result.append(new_obj)
             
-    return cleaned_result
+    return {
+        "label": cleaned_result,
+        "header": headers
+    }
 
 def export_eh(event, file_path):
-    def to_export_label_dict(label: Label, result_dict):
+    print(file_path)
+    def to_export_label_dict(label: Label, result_dict, headers):
         valid = True
         result = label.basic_properties
+        
         result['coordinate'] = label.center
         result['width'] = label.abs_width
         result['height'] = label.abs_height
@@ -174,8 +179,21 @@ def export_eh(event, file_path):
             result_type = 'databox'
         elif result['type'] == 3:
             result_type = 'button'
+        elif result['type'] == 4:
+            result_type = 4
         else:
             raise AssertionError()
+        
+        if result_type == 4:
+            required_properties = {
+                "name": result["name"],
+                "coordinate":result["coordinate"],
+                "width":result["width"],
+                "height":result["height"],
+                "isButton":result["isButton"]
+            }
+            headers.append(required_properties)
+            return valid
         
         result_name = result["parent"]
         
@@ -220,10 +238,11 @@ def export_eh(event, file_path):
     #     to_export_label_dict(label)  for label in labels if label._type == LabelType.COMPONENT
     # ]
     result = {}
+    headers = []
     for label in labels:
-        if not to_export_label_dict(label, result):
+        if not to_export_label_dict(label, result, headers):
             return
-    cleaned_result = convert_json(result)
+    cleaned_result = convert_json(result, headers)
     json.dump(cleaned_result, open(file_path, 'w+'), indent=2)
 
 
@@ -290,9 +309,10 @@ def show_workspace(project_path=None):
          sg.B('New Project', key='-NEW-'), sg.B('Open Existing Project',
                                         key='-OPEN-'), sg.B('Show/Hide Connections', key='-CONN-', visible=False),
 
-         sg.B('Label', key='-CREATE-'),
+         sg.B('Label Pair', key='-CREATE-'),
          sg.SaveAs('Export', key='-EXPORT-', file_types=(('JSON file', '*.json'),),
                    target='export-filename'),
+         sg.B('Label Header', key='-HEADER-'),
          sg.B('Return', key='-RETURN-', visible=False),
          
          ]
@@ -301,7 +321,9 @@ def show_workspace(project_path=None):
     if project_path is not None:
         os.chdir(project_path)
     window = sg.Window("Workplace", layout, finalize=True,
-                       return_keyboard_events=True, resizable=True)
+                       return_keyboard_events=True, resizable=True,
+                       location=(0,0))
+
     window.bind('<Key-Control_L>', 'KeyDown-Control')
     window.bind('<Key-Control_R>', 'KeyDown-Control')
 
@@ -329,6 +351,12 @@ def show_workspace(project_path=None):
             graph_manager.handler.notify_image()
             handler = NewPairEH(graph_manager.handler)
             handler.handle()
+            
+    def label_header(event):
+        if global_pair_property.header == True:
+            global_pair_property.header = False
+        else:
+            global_pair_property.header = True
 
     window_manager.register_handler('-NEW-', NewProjectEH())
     window_manager.register_handler('-OPEN-', OpenProjectEH())
@@ -336,6 +364,7 @@ def show_workspace(project_path=None):
     window_manager.register_handler('-CONN-', toggle_connections)
     window_manager.register_handler('export-conn-filename', export_conn_eh)
     window_manager.register_handler('-CREATE-', NewPairEH(graph_manager.handler))
+    window_manager.register_handler('-HEADER-', label_header)
     window_manager.register_handler('-RETURN-', return_to_create_new)
     window_manager.run()
 

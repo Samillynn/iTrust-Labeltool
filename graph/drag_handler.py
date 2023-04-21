@@ -134,6 +134,16 @@ class NewLabelHandler(DragHandler):
     def component_dialog(self):
         self.dialog.create('Component', self.component_layout())
         return self.dialog.read(close=False)
+    
+    def header_layout(self):
+        layout = [
+            [sg.T("Name"), sg.I(key='name', default_text="")],
+            [sg.Checkbox('isButton', key='isButton')],
+            [sg.T("Coordinate"), sg.T(
+                f"x: {self.label.center_x}; y: {self.label.center_y}")],
+            [sg.Submit(), sg.Exit()]
+        ]
+        return layout
 
     def databox_layout(self):
         name_str = global_pair_property.name + " " + "databox"
@@ -152,6 +162,10 @@ class NewLabelHandler(DragHandler):
         ]
 
         return layout
+    
+    def header_dialog(self):
+        self.dialog.create("Header", self.header_layout())
+        return self.dialog.read(close=False)
 
     def databox_dialog(self):
         self.dialog.create('Databox', self.databox_layout())
@@ -171,8 +185,13 @@ class NewLabelHandler(DragHandler):
 
         # whether a component or a databox is currently labeled
         current_choice = global_pair_property.current_choice
+        labeling_header = global_pair_property.header
         if current_choice is None:
-            event, values = self.new_label_dialog()
+            if not labeling_header:
+                event, values = self.new_label_dialog()
+            else:
+                event, values = self.header_dialog()
+                values["type"] = 4
         elif current_choice == 'Component':
             event, values = self.component_dialog()
             values["type"] = 1
@@ -193,7 +212,6 @@ class NewLabelHandler(DragHandler):
             elif current_choice == "Button":
                 values["type"] = 3
             if event in ['Submit']:
-                print(values)
                 self.label.copy_basic_properties(values)
                 if global_pair_property.choosing:
                     global_pair_property.name = self.label.parent

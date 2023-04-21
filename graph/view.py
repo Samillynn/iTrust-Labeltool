@@ -7,6 +7,7 @@ import globl
 from config import config
 from graph.image import Image
 from graph.label import Label
+from pair_property import global_pair_property
 
 
 class View(ABC):
@@ -78,8 +79,10 @@ class RectangleView(AbstractLabelView):
             color = "#cb21d1"
         elif label.type == LabelType.DATABOX:
             color = "#d1c821"
-        else:
+        elif label.type == LabelType.BUTTON:
             color = "#0b36d4"
+        elif label.type == LabelType.HEADER:
+            color = "#34c0eb"
         if label.selected:
             color = "#34eb67"
         return [self.graph.draw_rectangle(label.top_left, label.bottom_right, line_color=color, line_width=3)]
@@ -116,7 +119,8 @@ class LabelTextView(AbstractLabelView):
             
         fulltext = ""
         if text != "":
-            fulltext = text+" "+prefix
+            # fulltext = text+" "+prefix
+            fulltext = text
         
 
         return [self.graph.draw_text(fulltext, location=label.center, color=color, font=(type_, size))]
@@ -143,7 +147,7 @@ class ImageView(View):
         self.draw()
 
     def _draw(self) -> Iterable[int]:
-        self.graph.set_size(self.image.size)
+        self.graph.set_size((int(960*1.13), int(540*1.13)))
         return [self.graph.draw_image(data=self.image.data, location=(-1, 1))]
 
 

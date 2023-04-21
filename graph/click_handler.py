@@ -72,6 +72,14 @@ class UpdateLabelHandler(ClickHandler):
 
     def update_label_dialog(self, label: Label):
         dialog = BaseDialog(label)
+        if label.type == LabelType.HEADER:
+            layout = dialog.layout()
+            layout += [
+            [sg.B('Update'), sg.Cancel(), sg.B(
+                'Delete', button_color='red')]
+        ]
+            dialog.create('Update', layout = layout)
+            return dialog
         left_layout = dialog.layout()
         left_layout += [
             [sg.B('Update'), sg.Cancel(), sg.B(
@@ -144,6 +152,8 @@ class UpdateLabelHandler(ClickHandler):
                     break
                 elif event in ['Update']:
                     label.copy_basic_properties(values)
+                    if values.get("type", None) == None:
+                        label._type = LabelType.HEADER
                     break
                 elif event == 'list-description':
                     val = values['list-description']

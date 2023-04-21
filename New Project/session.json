@@ -1,4 +1,63 @@
 {
-  "image_path": "1666463800495-image_2022-10-16_10-24-09.png",
-  "labels": []
+  "image_path": "1680869733583-1666463800495-image_2022-10-16_10-24-09.png",
+  "labels": [
+    {
+      "name": "P300-4",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "P300-4",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "id": 1,
+      "top_left": [
+        0.3745387453874538,
+        0.35737704918032787
+      ],
+      "bottom_right": [
+        0.44280442804428044,
+        0.25901639344262306
+      ],
+      "width": 65.53505535055358,
+      "height": 53.11475409836059,
+      "connections": []
+    },
+    {
+      "name": "P300-4",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "P300-4",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "id": 3,
+      "top_left": [
+        0.3468634686346863,
+        0.40327868852459026
+      ],
+      "bottom_right": [
+        0.4372693726937269,
+        0.3639344262295081
+      ],
+      "width": 86.78966789667896,
+      "height": 21.245901639344357,
+      "connections": []
+    }
+  ]
 }

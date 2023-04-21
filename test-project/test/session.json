@@ -14,6 +14,9 @@
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
       "id": 172,
       "top_left": [
         -0.7044745057232049,
@@ -23,6 +26,8 @@
         -0.6503642039542143,
         0.24814814814814823
       ],
+      "width": 51.94588969823094,
+      "height": 45.999999999999915,
       "connections": []
     },
     {
@@ -38,6 +43,9 @@
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
       "id": 174,
       "top_left": [
         -0.7315296566077003,
@@ -47,6 +55,8 @@
         -0.6378772112382934,
         0.34444444444444455
       ],
+      "width": 89.9063475546306,
+      "height": 19.999999999999968,
       "connections": []
     },
     {
@@ -62,6 +72,9 @@
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
       "id": 175,
       "top_left": [
         -0.8896982310093653,
@@ -71,6 +84,8 @@
         -0.7731529656607701,
         0.5444444444444445
       ],
+      "width": 111.88345473465141,
+      "height": 57.99999999999999,
       "connections": []
     },
     {
@@ -86,6 +101,9 @@
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
       "id": 176,
       "top_left": [
         0.36940686784599386,
@@ -95,6 +113,8 @@
         0.44640998959417266,
         0.2592592592592593
       ],
+      "width": 73.92299687825165,
+      "height": 53.99999999999993,
       "connections": []
     },
     {
@@ -110,6 +130,9 @@
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
       "id": 178,
       "top_left": [
         0.36836628511966696,
@@ -119,6 +142,8 @@
         0.44640998959417266,
         0.03518518518518521
       ],
+      "width": 74.92195629552548,
+      "height": 55.00000000000001,
       "connections": []
     },
     {
@@ -134,6 +159,9 @@
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
       "id": 179,
       "top_left": [
         0.36940686784599386,
@@ -143,6 +171,8 @@
         0.44745057232049956,
         -0.18518518518518523
       ],
+      "width": 74.92195629552548,
+      "height": 55.00000000000001,
       "connections": []
     },
     {
@@ -158,6 +188,9 @@
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
       "id": 180,
       "top_left": [
         0.36836628511966696,
@@ -167,6 +200,8 @@
         0.44640998959417266,
         -0.4037037037037037
       ],
+      "width": 74.92195629552548,
+      "height": 55.00000000000001,
       "connections": []
     },
     {
@@ -182,6 +217,9 @@
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
       "id": 181,
       "top_left": [
         0.36940686784599386,
@@ -191,6 +229,153 @@
         0.44745057232049956,
         -0.6203703703703703
       ],
+      "width": 74.92195629552548,
+      "height": 54.99999999999994,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "id": 366,
+      "top_left": [
+        -0.31737773152965665,
+        0.3314814814814815
+      ],
+      "bottom_right": [
+        -0.2622268470343392,
+        0.24444444444444446
+      ],
+      "width": 52.944849115504766,
+      "height": 46.99999999999999,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "id": 367,
+      "top_left": [
+        -0.7055150884495318,
+        -0.06851851851851853
+      ],
+      "bottom_right": [
+        -0.6503642039542143,
+        -0.15555555555555556
+      ],
+      "width": 52.944849115504766,
+      "height": 46.99999999999999,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "id": 368,
+      "top_left": [
+        -0.31737773152965665,
+        -0.07037037037037042
+      ],
+      "bottom_right": [
+        -0.2622268470343392,
+        -0.15740740740740744
+      ],
+      "width": 52.944849115504766,
+      "height": 46.99999999999999,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "id": 369,
+      "top_left": [
+        -0.7065556711758585,
+        -0.4722222222222222
+      ],
+      "bottom_right": [
+        -0.651404786680541,
+        -0.5592592592592592
+      ],
+      "width": 52.944849115504766,
+      "height": 46.99999999999999,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "id": 370,
+      "top_left": [
+        -0.3184183142559833,
+        -0.4740740740740741
+      ],
+      "bottom_right": [
+        -0.26326742976066597,
+        -0.5611111111111111
+      ],
+      "width": 52.94484911550466,
+      "height": 46.99999999999999,
       "connections": []
     }
   ]

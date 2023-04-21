@@ -63,12 +63,12 @@ class GraphManager:
     def handle_resize_window(self, event, values):
         if modifier_key.ctrl:
             if event.startswith('equal') or event == '=':
-                self.handler.image.resize += 0.1
+                self.handler.image.resize += 0.03
                 self.handler.notify_image()
                 return True
             elif event.startswith('minus') or event == '-':
                 if self.handler.image.resize >= 0.1:
-                    self.handler.image.resize -= 0.1
+                    self.handler.image.resize -= 0.03
                     self.handler.notify_image()
                 return True
         return False
@@ -102,6 +102,7 @@ class GraphManager:
         new_label = Label((left+shift_h, top+shift_v), (right+shift_h, bottom+shift_v))
         new_label.component_type = component_type
         new_label._type = _type
+        new_label.parent = label.parent
         self.handler.add_label(new_label)
         self.handler.notify_labels()
 

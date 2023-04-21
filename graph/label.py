@@ -131,6 +131,7 @@ class LabelType(Enum):
     COMPONENT = 1
     DATABOX = 2
     BUTTON = 3
+    HEADER = 4
 
 
 class Label(Rectangle):
@@ -167,6 +168,7 @@ class Label(Rectangle):
         self.l = False
         self.ll = False
         self.h = False
+        self.isButton = False
 
         self.connections = []
 
@@ -199,6 +201,7 @@ class Label(Rectangle):
         self.l = label_dict.get('l', False)
         self.ll = label_dict.get('ll', False)
         self.h = label_dict.get('h', False)
+        self.isButton = label_dict.get('isButton', False)
 
     @property
     def basic_properties(self):
@@ -218,6 +221,7 @@ class Label(Rectangle):
             "l": self.l,
             "ll": self.ll,
             "h": self.h,
+            "isButton": self.isButton
         }
         
     @property

@@ -29,8 +29,16 @@ class BaseDialog:
             default_type_str = 'Databox'
         elif self.label._type == LabelType.BUTTON:
             default_type_str = 'Button'
+        elif self.label._type == LabelType.HEADER:
+            default_type_str = 'Header'
         else:
             raise ValueError(f'Type of label can\' be {self.label._type}')
+        if self.label._type == LabelType.HEADER:
+            return [
+                [sg.T('Name'), sg.I(self.label.name,
+                                key='name', enable_events=enable_event)],
+                [sg.Checkbox('isButton', key='isButton',default=self.label.isButton, enable_events=enable_event)]
+            ]
         return [
             [sg.T('Parent'), sg.I(self.label.parent,
                                 key='parent', enable_events=enable_event)],

@@ -1,0 +1,46 @@
+{
+  "label": [
+    {
+      "name": "PIT205",
+      "type": "PIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.27214022140221406,
+          0.32622950819672125
+        ],
+        "width": 86.78966789667896,
+        "height": 54.88524590163938
+      },
+      "databox": {},
+      "button": {}
+    }
+  ],
+  "header": [
+    {
+      "name": "ssss",
+      "coordinate": [
+        -0.02767527675276754,
+        0.8
+      ],
+      "width": 209.00369003690042,
+      "height": 35.40983606557381,
+      "isButton": true
+    },
+    {
+      "name": "System Overview",
+      "coordinate": [
+        -0.470479704797048,
+        0.7967213114754098
+      ],
+      "width": 212.5461254612546,
+      "height": 35.40983606557369,
+      "isButton": true
+    }
+  ]
+}
