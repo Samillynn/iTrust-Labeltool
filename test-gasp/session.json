@@ -80,15 +80,45 @@
       "isButton": true,
       "id": 8,
       "top_left": [
-        -0.5811808118081181,
-        0.8295081967213114
+        -0.5848708487084872,
+        0.8360655737704916
       ],
       "bottom_right": [
-        -0.35977859778597787,
-        0.7639344262295082
+        -0.36346863468634694,
+        0.7704918032786885
       ],
       "width": 212.5461254612546,
       "height": 35.40983606557369,
+      "connections": []
+    },
+    {
+      "name": "cCCC",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 4,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": true,
+      "id": 9,
+      "top_left": [
+        0.088560885608856,
+        0.8327868852459015
+      ],
+      "bottom_right": [
+        0.30073800738007384,
+        0.7639344262295082
+      ],
+      "width": 203.69003690036914,
+      "height": 37.18032786885236,
       "connections": []
     }
   ]

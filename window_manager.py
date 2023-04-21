@@ -42,6 +42,12 @@ class WindowManager(HandlerChain):
                 self.window["-RETURN-"].update(visible=True)
             else:
                 self.window["-RETURN-"].update(visible=False)
+            if global_pair_property.header:
+                self.window['-HEADER-'].update(button_color=('white', 'green'))
+            else:
+                self.window['-HEADER-'].update(button_color=sg.theme_button_color())
+                
+
             self.event, self.values = self.window.read(close=close)
             # logging.info(f'event: {self.event}, values: {self.values}')
 

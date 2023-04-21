@@ -16,7 +16,6 @@ class NewPairEH(EventHandler):
         self.graph_handler = graph_handler
     # def cancel_activity(self, label):
         
-        
     def handle(self):
         global_pair_property.choosing = False
         global_pair_property.header = False
