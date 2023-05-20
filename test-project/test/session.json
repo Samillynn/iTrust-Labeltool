@@ -17,6 +17,7 @@
       "l": false,
       "ll": false,
       "h": false,
+      "isButton": false,
       "id": 172,
       "top_left": [
         -0.7044745057232049,
@@ -46,6 +47,7 @@
       "l": false,
       "ll": false,
       "h": false,
+      "isButton": false,
       "id": 174,
       "top_left": [
         -0.7315296566077003,
@@ -57,35 +59,6 @@
       ],
       "width": 89.9063475546306,
       "height": 19.999999999999968,
-      "connections": []
-    },
-    {
-      "name": "AIT204",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 2,
-      "category": "",
-      "parent": "AIT204",
-      "parent_component_name": "",
-      "flip": 0,
-      "rotation": 0,
-      "l": false,
-      "ll": false,
-      "h": false,
-      "id": 175,
-      "top_left": [
-        -0.8896982310093653,
-        0.6518518518518519
-      ],
-      "bottom_right": [
-        -0.7731529656607701,
-        0.5444444444444445
-      ],
-      "width": 111.88345473465141,
-      "height": 57.99999999999999,
       "connections": []
     },
     {
@@ -104,6 +77,7 @@
       "l": false,
       "ll": false,
       "h": false,
+      "isButton": false,
       "id": 176,
       "top_left": [
         0.36940686784599386,
@@ -133,6 +107,7 @@
       "l": false,
       "ll": false,
       "h": false,
+      "isButton": false,
       "id": 178,
       "top_left": [
         0.36836628511966696,
@@ -162,6 +137,7 @@
       "l": false,
       "ll": false,
       "h": false,
+      "isButton": false,
       "id": 179,
       "top_left": [
         0.36940686784599386,
@@ -191,6 +167,7 @@
       "l": false,
       "ll": false,
       "h": false,
+      "isButton": false,
       "id": 180,
       "top_left": [
         0.36836628511966696,
@@ -220,6 +197,7 @@
       "l": false,
       "ll": false,
       "h": false,
+      "isButton": false,
       "id": 181,
       "top_left": [
         0.36940686784599386,
@@ -249,6 +227,7 @@
       "l": false,
       "ll": false,
       "h": false,
+      "isButton": false,
       "id": 366,
       "top_left": [
         -0.31737773152965665,
@@ -278,6 +257,7 @@
       "l": false,
       "ll": false,
       "h": false,
+      "isButton": false,
       "id": 367,
       "top_left": [
         -0.7055150884495318,
@@ -307,6 +287,7 @@
       "l": false,
       "ll": false,
       "h": false,
+      "isButton": false,
       "id": 368,
       "top_left": [
         -0.31737773152965665,
@@ -336,6 +317,7 @@
       "l": false,
       "ll": false,
       "h": false,
+      "isButton": false,
       "id": 369,
       "top_left": [
         -0.7065556711758585,
@@ -365,6 +347,7 @@
       "l": false,
       "ll": false,
       "h": false,
+      "isButton": false,
       "id": 370,
       "top_left": [
         -0.3184183142559833,
@@ -376,6 +359,846 @@
       ],
       "width": 52.94484911550466,
       "height": 46.99999999999999,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 394,
+      "top_left": [
+        0.3468634686346863,
+        0.3999999999999999
+      ],
+      "bottom_right": [
+        0.4391143911439115,
+        0.3639344262295081
+      ],
+      "width": 88.56088560885617,
+      "height": 19.475409836065573,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 411,
+      "top_left": [
+        -0.8929889298892989,
+        0.6524590163934427
+      ],
+      "bottom_right": [
+        -0.7749077490774907,
+        0.5540983606557377
+      ],
+      "width": 113.35793357933585,
+      "height": 53.11475409836071,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 430,
+      "top_left": [
+        -0.3426430801248699,
+        0.3825925925925926
+      ],
+      "bottom_right": [
+        -0.24795005202913634,
+        0.3455555555555556
+      ],
+      "width": 90.9053069719042,
+      "height": 19.999999999999968,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 431,
+      "top_left": [
+        -0.730780437044745,
+        -0.02111111111111108
+      ],
+      "bottom_right": [
+        -0.6360874089490114,
+        -0.05814814814814806
+      ],
+      "width": 90.90530697190431,
+      "height": 19.999999999999968,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 432,
+      "top_left": [
+        -0.3426430801248699,
+        -0.02111111111111108
+      ],
+      "bottom_right": [
+        -0.24795005202913634,
+        -0.05814814814814806
+      ],
+      "width": 90.9053069719042,
+      "height": 19.999999999999968,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 433,
+      "top_left": [
+        0.5800216564080314,
+        -0.2618518518518518
+      ],
+      "bottom_right": [
+        0.6747146845037648,
+        -0.29888888888888887
+      ],
+      "width": 90.9053069719041,
+      "height": 20.00000000000003,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 434,
+      "top_left": [
+        -0.7318210197710717,
+        -0.42481481481481476
+      ],
+      "bottom_right": [
+        -0.6371279916753382,
+        -0.46185185185185185
+      ],
+      "width": 90.9053069719042,
+      "height": 20.00000000000003,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 435,
+      "top_left": [
+        -0.3416024973985432,
+        -0.42481481481481476
+      ],
+      "bottom_right": [
+        -0.24690946930280955,
+        -0.46185185185185185
+      ],
+      "width": 90.90530697190431,
+      "height": 20.00000000000003,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 437,
+      "top_left": [
+        0.3474297606659731,
+        0.17888888888888888
+      ],
+      "bottom_right": [
+        0.44004162330905316,
+        0.1418518518518519
+      ],
+      "width": 88.90738813735688,
+      "height": 19.999999999999968,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 438,
+      "top_left": [
+        0.3463891779396464,
+        -0.045185185185185106
+      ],
+      "bottom_right": [
+        0.4390010405827265,
+        -0.0822222222222222
+      ],
+      "width": 88.90738813735688,
+      "height": 20.00000000000003,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 439,
+      "top_left": [
+        0.3463891779396464,
+        -0.26370370370370366
+      ],
+      "bottom_right": [
+        0.4390010405827265,
+        -0.30074074074074075
+      ],
+      "width": 88.90738813735688,
+      "height": 20.00000000000003,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0.0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 440,
+      "top_left": [
+        0.34841869823484933,
+        -0.4730479659987856
+      ],
+      "bottom_right": [
+        0.4410305608779294,
+        -0.5100850030358227
+      ],
+      "width": 88.90738813735688,
+      "height": 20.00000000000003,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 441,
+      "top_left": [
+        -0.7338189386056191,
+        0.6561481481481479
+      ],
+      "bottom_right": [
+        -0.6141519250780436,
+        0.5561481481481481
+      ],
+      "width": 114.88033298647245,
+      "height": 53.99999999999993,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 442,
+      "top_left": [
+        -0.5548387096774193,
+        0.6542962962962962
+      ],
+      "bottom_right": [
+        -0.43517169614984397,
+        0.5542962962962963
+      ],
+      "width": 114.88033298647235,
+      "height": 53.99999999999993,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 443,
+      "top_left": [
+        0.29427679500520276,
+        0.6487407407407406
+      ],
+      "bottom_right": [
+        0.41394380853277823,
+        0.5487407407407405
+      ],
+      "width": 114.88033298647245,
+      "height": 54.00000000000005,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 444,
+      "top_left": [
+        0.43267429760665976,
+        0.6487407407407406
+      ],
+      "bottom_right": [
+        0.552341311134235,
+        0.5487407407407405
+      ],
+      "width": 114.88033298647224,
+      "height": 54.00000000000005,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 445,
+      "top_left": [
+        0.5710718002081165,
+        0.6487407407407406
+      ],
+      "bottom_right": [
+        0.690738813735692,
+        0.5487407407407405
+      ],
+      "width": 114.88033298647245,
+      "height": 54.00000000000005,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 446,
+      "top_left": [
+        0.016441207075962527,
+        0.6468888888888888
+      ],
+      "bottom_right": [
+        0.136108220603538,
+        0.5468888888888888
+      ],
+      "width": 114.88033298647245,
+      "height": 54.00000000000005,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 447,
+      "top_left": [
+        0.5950052029136317,
+        0.37837037037037025
+      ],
+      "bottom_right": [
+        0.7146722164412069,
+        0.27837037037037016
+      ],
+      "width": 114.88033298647224,
+      "height": 54.00000000000005,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 448,
+      "top_left": [
+        0.041415192507804344,
+        0.27837037037037016
+      ],
+      "bottom_right": [
+        0.16108220603537982,
+        0.1783703703703703
+      ],
+      "width": 114.88033298647245,
+      "height": 53.99999999999993,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 449,
+      "top_left": [
+        0.5544224765868886,
+        0.14503703703703685
+      ],
+      "bottom_right": [
+        0.6740894901144641,
+        0.04503703703703699
+      ],
+      "width": 114.88033298647245,
+      "height": 53.99999999999993,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 450,
+      "top_left": [
+        -0.09073881373569204,
+        0.07281481481481467
+      ],
+      "bottom_right": [
+        0.028928199791883324,
+        -0.027185185185185312
+      ],
+      "width": 114.88033298647235,
+      "height": 53.999999999999986,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 451,
+      "top_left": [
+        0.03725286160249741,
+        0.07281481481481467
+      ],
+      "bottom_right": [
+        0.15691987513007288,
+        -0.027185185185185312
+      ],
+      "width": 114.88033298647245,
+      "height": 53.999999999999986,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 452,
+      "top_left": [
+        0.5544224765868886,
+        0.009851851851852
+      ],
+      "bottom_right": [
+        0.6740894901144641,
+        -0.09014814814814809
+      ],
+      "width": 114.88033298647245,
+      "height": 54.00000000000005,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 453,
+      "top_left": [
+        0.5336108220603537,
+        -0.5364444444444443
+      ],
+      "bottom_right": [
+        0.6532778355879292,
+        -0.6364444444444444
+      ],
+      "width": 114.88033298647245,
+      "height": 54.00000000000005,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 454,
+      "top_left": [
+        -0.23121748178980228,
+        -0.6142222222222221
+      ],
+      "bottom_right": [
+        -0.11155046826222692,
+        -0.7142222222222221
+      ],
+      "width": 114.88033298647235,
+      "height": 53.999999999999986,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 455,
+      "top_left": [
+        0.0445369406867846,
+        -0.6142222222222221
+      ],
+      "bottom_right": [
+        0.16420395421436007,
+        -0.7142222222222221
+      ],
+      "width": 114.88033298647245,
+      "height": 53.999999999999986,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "id": 456,
+      "top_left": [
+        -0.09698231009365255,
+        -0.616074074074074
+      ],
+      "bottom_right": [
+        0.022684703433923037,
+        -0.716074074074074
+      ],
+      "width": 114.88033298647255,
+      "height": 53.999999999999986,
       "connections": []
     }
   ]

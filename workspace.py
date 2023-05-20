@@ -158,7 +158,66 @@ def convert_json(result, headers):
             new_obj['button'] = {}
             
         cleaned_result.append(new_obj)
-            
+        
+    # process header
+    def auto_align(value, template, threshold=0.05, isCoord=False): 
+        for t in template:
+            if not isCoord:
+                if abs(value-t)/t<threshold:
+                    return t
+            else:
+                if abs(value-t)<0.03:
+                    return t
+        template.append(value)
+        return value
+    
+    template_witdh = []
+    template_height = []
+    template_center_x = []
+    template_center_y = []
+    for header in headers:
+        coord = header["coordinate"]
+        w = header["width"]
+        h = header["height"]
+        x = coord[0]
+        y = coord[1]
+        w = auto_align(w, template_witdh, threshold=0.05)
+        h = auto_align(h, template_height, threshold=0.1)
+        x = auto_align(x, template_center_x, isCoord=True)
+        y = auto_align(y, template_center_y, isCoord=True)
+        header["width"] = w
+        header["height"] = h
+        coord = [x,y]
+        header["coordinate"] = coord       
+    
+    # ensure same amount of distance between buttons
+    template_distance_x = []
+    headers.sort(key = lambda x:(x["coordinate"][1], x["coordinate"][0]))
+    for i in range(len(headers)-1):
+        if (headers[i+1]["coordinate"][1] == headers[i]["coordinate"][1]):
+            d = headers[i+1]["coordinate"][0] - headers[i]["coordinate"][0]
+            adjusted_d = auto_align(d, template_distance_x, threshold=0.05, isCoord=True)
+            headers[i+1]["coordinate"][0] = headers[i]["coordinate"][0] + adjusted_d
+    
+    template_witdh = []
+    template_height = []
+    template_center_x = []
+    template_center_y = []
+    for header in headers:
+        coord = header["coordinate"]
+        w = header["width"]
+        h = header["height"]
+        x = coord[0]
+        y = coord[1]
+        w = auto_align(w, template_witdh, threshold=0.05)
+        h = auto_align(h, template_height, threshold=0.1)
+        x = auto_align(x, template_center_x, isCoord=True)
+        y = auto_align(y, template_center_y, isCoord=True)
+        header["width"] = w
+        header["height"] = h
+        coord = [x,y]
+        header["coordinate"] = coord  
+    
     return {
         "label": cleaned_result,
         "header": headers

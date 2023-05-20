@@ -163,7 +163,9 @@ class UpdateLabelHandler(ClickHandler):
                     dialog.window['parent'].update(' '.join(val))
 
                 elif event == 'name':
-                    dialog.window['list-description'].update(set_to_index=[])
+                    if label.type != LabelType.HEADER:
+                        dialog.window['list-description'].update(set_to_index=[])
+
 
                 elif event == 'fullname':
                     dialog.window['list-name'].update(set_to_index=[])

@@ -23,24 +23,94 @@
   ],
   "header": [
     {
-      "name": "ssss",
+      "name": "System",
       "coordinate": [
-        -0.02767527675276754,
+        -0.47416974169741694,
         0.8
       ],
-      "width": 209.00369003690042,
+      "width": 212.5461254612546,
       "height": 35.40983606557381,
       "isButton": true
     },
     {
-      "name": "System Overview",
+      "name": "Gas Input",
       "coordinate": [
-        -0.470479704797048,
-        0.7967213114754098
+        -0.25,
+        0.8
       ],
       "width": 212.5461254612546,
-      "height": 35.40983606557369,
+      "height": 35.40983606557381,
       "isButton": true
+    },
+    {
+      "name": "Compressor",
+      "coordinate": [
+        -0.025830258302583065,
+        0.8
+      ],
+      "width": 212.5461254612546,
+      "height": 35.40983606557381,
+      "isButton": true
+    },
+    {
+      "name": "Compressor Stage",
+      "coordinate": [
+        0.19833948339483387,
+        0.8
+      ],
+      "width": 212.5461254612546,
+      "height": 35.40983606557381,
+      "isButton": true
+    },
+    {
+      "name": "Transmission",
+      "coordinate": [
+        0.4225092250922508,
+        0.8
+      ],
+      "width": 212.5461254612546,
+      "height": 35.40983606557381,
+      "isButton": true
+    },
+    {
+      "name": "Distribution",
+      "coordinate": [
+        0.6466789667896677,
+        0.8
+      ],
+      "width": 212.5461254612546,
+      "height": 35.40983606557381,
+      "isButton": true
+    },
+    {
+      "name": "Legend",
+      "coordinate": [
+        0.8708487084870846,
+        0.8
+      ],
+      "width": 212.5461254612546,
+      "height": 35.40983606557381,
+      "isButton": true
+    },
+    {
+      "name": "HMI X",
+      "coordinate": [
+        0.8708487084870846,
+        0.8770491803278688
+      ],
+      "width": 212.5461254612546,
+      "height": 35.40983606557381,
+      "isButton": true
+    },
+    {
+      "name": "IP: 1111",
+      "coordinate": [
+        0.8708487084870846,
+        0.9524590163934427
+      ],
+      "width": 212.5461254612546,
+      "height": 35.40983606557381,
+      "isButton": false
     }
   ]
 }
