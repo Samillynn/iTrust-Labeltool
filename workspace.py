@@ -249,7 +249,8 @@ def export_eh(event, file_path):
                 "coordinate":result["coordinate"],
                 "width":result["width"],
                 "height":result["height"],
-                "isButton":result["isButton"]
+                "isButton":result["isButton"],
+                "isTime":result["isTime"],
             }
             headers.append(required_properties)
             return valid

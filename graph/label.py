@@ -169,6 +169,7 @@ class Label(Rectangle):
         self.ll = False
         self.h = False
         self.isButton = False
+        self.isTime = False
 
         self.connections = []
 
@@ -202,6 +203,7 @@ class Label(Rectangle):
         self.ll = label_dict.get('ll', False)
         self.h = label_dict.get('h', False)
         self.isButton = label_dict.get('isButton', False)
+        self.isTime = label_dict.get('isTime', False)
 
     @property
     def basic_properties(self):
@@ -221,7 +223,8 @@ class Label(Rectangle):
             "l": self.l,
             "ll": self.ll,
             "h": self.h,
-            "isButton": self.isButton
+            "isButton": self.isButton,
+            "isTime": self.isTime
         }
         
     @property
@@ -259,13 +262,6 @@ class LabelSerializer(Serializer):
             _type=LabelType(label_dict.get('_type', LabelType.COMPONENT.value))
         )
         result.copy_basic_properties(label_dict)
-
-        # if label_dict.get('databox'):
-        #     result.databox = self.deserialize(label_dict['databox'])
-        #
-        # for conn_dict in label_dict['connections']:
-        #     print('connected', conn_dict)
-        #     result.add_connection(self.deserialize(conn_dict))
 
         return result
 

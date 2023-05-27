@@ -139,6 +139,7 @@ class NewLabelHandler(DragHandler):
         layout = [
             [sg.T("Name"), sg.I(key='name', default_text="")],
             [sg.Checkbox('isButton', key='isButton')],
+            [sg.Checkbox('isTime', key='isTime')],
             [sg.T("Coordinate"), sg.T(
                 f"x: {self.label.center_x}; y: {self.label.center_y}")],
             [sg.Submit(), sg.Exit()]

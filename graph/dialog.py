@@ -37,7 +37,8 @@ class BaseDialog:
             return [
                 [sg.T('Name'), sg.I(self.label.name,
                                 key='name', enable_events=enable_event)],
-                [sg.Checkbox('isButton', key='isButton',default=self.label.isButton, enable_events=enable_event)]
+                [sg.Checkbox('isButton', key='isButton',default=self.label.isButton, enable_events=enable_event)],
+                [sg.Checkbox('isTime', key='isTime',default=self.label.isTime, enable_events=enable_event)]
             ]
         return [
             [sg.T('Parent'), sg.I(self.label.parent,

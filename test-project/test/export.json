@@ -1,39 +1,136 @@
-[
-  {
-    "name": "AV300-1",
-    "type": "AV",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {
-      "flip": 0,
-      "rotation": 0,
+{
+  "label": [
+    {
+      "name": "PIT205",
+      "type": "PIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.27214022140221406,
+          0.32622950819672125
+        ],
+        "width": 86.78966789667896,
+        "height": 54.88524590163938
+      },
+      "databox": {},
+      "button": {}
+    }
+  ],
+  "header": [
+    {
+      "name": "20/12/2022 08:20:30 AM",
       "coordinate": [
-        -0.6774193548387096,
-        0.29074074074074074
-      ]
+        0.8634686346863467,
+        0.719672131147541
+      ],
+      "width": 212.5461254612546,
+      "height": 35.40983606557381,
+      "isButton": false,
+      "isTime": true
     },
-    "databox": {
+    {
+      "name": "System",
       "coordinate": [
-        -0.6847034339229969,
-        0.36296296296296304
-      ]
+        -0.47416974169741694,
+        0.8
+      ],
+      "width": 212.5461254612546,
+      "height": 35.40983606557381,
+      "isButton": true,
+      "isTime": false
     },
-    "button": {}
-  },
-  {
-    "name": "AIT204",
-    "type": "AIT",
-    "description": "",
-    "status": "",
-    "state": "",
-    "component": {},
-    "databox": {
+    {
+      "name": "Gas Input",
       "coordinate": [
-        -0.8314255983350677,
-        0.5981481481481482
-      ]
+        -0.25,
+        0.8
+      ],
+      "width": 212.5461254612546,
+      "height": 35.40983606557381,
+      "isButton": true,
+      "isTime": false
     },
-    "button": {}
-  }
-]
+    {
+      "name": "Compressor",
+      "coordinate": [
+        -0.025830258302583065,
+        0.8
+      ],
+      "width": 212.5461254612546,
+      "height": 35.40983606557381,
+      "isButton": true,
+      "isTime": false
+    },
+    {
+      "name": "Compressor Stage",
+      "coordinate": [
+        0.19833948339483387,
+        0.8
+      ],
+      "width": 212.5461254612546,
+      "height": 35.40983606557381,
+      "isButton": true,
+      "isTime": false
+    },
+    {
+      "name": "Transmission",
+      "coordinate": [
+        0.4225092250922508,
+        0.8
+      ],
+      "width": 212.5461254612546,
+      "height": 35.40983606557381,
+      "isButton": true,
+      "isTime": false
+    },
+    {
+      "name": "Distribution",
+      "coordinate": [
+        0.6466789667896677,
+        0.8
+      ],
+      "width": 212.5461254612546,
+      "height": 35.40983606557381,
+      "isButton": true,
+      "isTime": false
+    },
+    {
+      "name": "Legend",
+      "coordinate": [
+        0.8634686346863467,
+        0.8
+      ],
+      "width": 212.5461254612546,
+      "height": 35.40983606557381,
+      "isButton": true,
+      "isTime": false
+    },
+    {
+      "name": "HMI X",
+      "coordinate": [
+        0.8634686346863467,
+        0.8770491803278688
+      ],
+      "width": 212.5461254612546,
+      "height": 35.40983606557381,
+      "isButton": true,
+      "isTime": false
+    },
+    {
+      "name": "IP: 1111",
+      "coordinate": [
+        0.8634686346863467,
+        0.9524590163934427
+      ],
+      "width": 212.5461254612546,
+      "height": 35.40983606557381,
+      "isButton": false,
+      "isTime": false
+    }
+  ]
+}

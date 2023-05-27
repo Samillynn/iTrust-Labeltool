@@ -18,6 +18,7 @@
       "ll": false,
       "h": false,
       "isButton": false,
+      "isTime": false,
       "id": 1,
       "top_left": [
         -0.31734317343173435,
@@ -48,6 +49,7 @@
       "ll": false,
       "h": false,
       "isButton": true,
+      "isTime": false,
       "id": 266,
       "top_left": [
         -0.584870848708487,
@@ -78,6 +80,7 @@
       "ll": false,
       "h": false,
       "isButton": true,
+      "isTime": false,
       "id": 267,
       "top_left": [
         -0.3579335793357934,
@@ -108,6 +111,7 @@
       "ll": false,
       "h": false,
       "isButton": true,
+      "isTime": false,
       "id": 270,
       "top_left": [
         0.0907749077490775,
@@ -138,6 +142,7 @@
       "ll": false,
       "h": false,
       "isButton": true,
+      "isTime": false,
       "id": 271,
       "top_left": [
         0.3105166051660516,
@@ -168,6 +173,7 @@
       "ll": false,
       "h": false,
       "isButton": true,
+      "isTime": false,
       "id": 272,
       "top_left": [
         0.5339483394833946,
@@ -198,6 +204,7 @@
       "ll": false,
       "h": false,
       "isButton": true,
+      "isTime": false,
       "id": 273,
       "top_left": [
         0.7555350553505533,
@@ -228,6 +235,7 @@
       "ll": false,
       "h": false,
       "isButton": false,
+      "isTime": false,
       "id": 274,
       "top_left": [
         0.7564575645756457,
@@ -258,6 +266,7 @@
       "ll": false,
       "h": false,
       "isButton": true,
+      "isTime": false,
       "id": 275,
       "top_left": [
         0.7564575645756457,
@@ -288,6 +297,7 @@
       "ll": false,
       "h": false,
       "isButton": true,
+      "isTime": false,
       "id": 277,
       "top_left": [
         -0.13653136531365317,
@@ -299,6 +309,37 @@
       ],
       "width": 209.00369003690042,
       "height": 38.950819672131146,
+      "connections": []
+    },
+    {
+      "name": "20/12/2022 08:20:30 AM",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 4,
+      "category": "",
+      "parent": "",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": true,
+      "id": 278,
+      "top_left": [
+        0.7601476014760147,
+        0.7508196721311475
+      ],
+      "bottom_right": [
+        0.9723247232472325,
+        0.6885245901639345
+      ],
+      "width": 203.69003690036914,
+      "height": 33.639344262295026,
       "connections": []
     }
   ]
