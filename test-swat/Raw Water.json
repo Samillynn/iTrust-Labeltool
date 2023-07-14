@@ -1,0 +1,126 @@
+{
+  "label": [
+    {
+      "name": "LIT-101",
+      "type": "LIT",
+      "description": "Raw Water Level Meter",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.26199261992619927,
+          -0.3508196721311475
+        ],
+        "width": 155.86715867158674,
+        "height": 205.37704918032784
+      },
+      "databox": {
+        "coordinate": [
+          -0.17343173431734316,
+          -0.07540983606557378
+        ],
+        "width": 131.07011070110696,
+        "height": 31.868852459016416
+      },
+      "button": {}
+    },
+    {
+      "name": "P101",
+      "type": "P",
+      "description": "Raw Water Pump1",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.161439114391144,
+          -0.27540983606557373
+        ],
+        "width": 104.50184501845015,
+        "height": 60.19672131147544
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "P102",
+      "type": "P",
+      "description": "Raw Water Pump2",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.161439114391144,
+          -0.6126229508196721
+        ],
+        "width": 104.50184501845015,
+        "height": 60.19672131147544
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "FIT-201",
+      "type": "FIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.6771217712177122,
+          -0.34098360655737703
+        ],
+        "width": 46.05166051660518,
+        "height": 49.57377049180326
+      },
+      "databox": {
+        "coordinate": [
+          0.6752767527675276,
+          -0.2360655737704918
+        ],
+        "width": 127.52767527675275,
+        "height": 31.868852459016416
+      },
+      "button": {}
+    },
+    {
+      "name": "FIT-101",
+      "type": "FIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.6743542435424354,
+          0.07049180327868854
+        ],
+        "width": 44.280442804428084,
+        "height": 51.344262295082046
+      },
+      "databox": {
+        "coordinate": [
+          -0.6752767527675276,
+          0.19016393442622948
+        ],
+        "width": 127.52767527675275,
+        "height": 28.327868852459023
+      },
+      "button": {}
+    }
+  ],
+  "header": []
+}

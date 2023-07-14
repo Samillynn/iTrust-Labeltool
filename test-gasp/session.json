@@ -22,14 +22,14 @@
       "id": 1,
       "top_left": [
         -0.31734317343173435,
-        0.3770491803278688
+        0.3278688524590163
       ],
       "bottom_right": [
-        -0.22693726937269376,
+        -0.2324723247232473,
         0.2754098360655737
       ],
-      "width": 86.78966789667896,
-      "height": 54.88524590163938,
+      "width": 81.47601476014756,
+      "height": 28.327868852459023,
       "connections": []
     },
     {
@@ -340,6 +340,99 @@
       ],
       "width": 203.69003690036914,
       "height": 33.639344262295026,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "FCV201",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 279,
+      "top_left": [
+        -0.05535055350553508,
+        -0.032786885245901676
+      ],
+      "bottom_right": [
+        -0.0073800738007380184,
+        -0.11475409836065575
+      ],
+      "width": 46.05166051660518,
+      "height": 44.2622950819672,
+      "connections": []
+    },
+    {
+      "name": "FCV201 COMPONENT",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "FCV203",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 280,
+      "top_left": [
+        -0.05516605166051673,
+        0.1644262295081966
+      ],
+      "bottom_right": [
+        -0.007195571955719668,
+        0.07918032786885218
+      ],
+      "width": 46.05166051660518,
+      "height": 46.03278688524599,
+      "connections": []
+    },
+    {
+      "name": "FCV201 COMPONENT",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "FCV301",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 281,
+      "top_left": [
+        0.16642066420664228,
+        -0.03180327868852467
+      ],
+      "bottom_right": [
+        0.21439114391143935,
+        -0.12032786885245922
+      ],
+      "width": 46.05166051660518,
+      "height": 47.80327868852466,
       "connections": []
     }
   ]

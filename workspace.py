@@ -83,6 +83,7 @@ def convert_json(result, headers):
     y_set_databox = []
     x_set_button = []
     y_set_button = []
+    
     for name,values in result.items():
         component_value = values.get("component",None)
         databox_value = values.get("databox",None)
@@ -158,6 +159,50 @@ def convert_json(result, headers):
             new_obj['button'] = {}
             
         cleaned_result.append(new_obj)
+        
+    # ajust size
+    def ajust_size(cleaned_result):
+        dic = {}
+        num_count = {}
+        threshold = 0.1
+        for cleaned_r in cleaned_result:
+            if len(cleaned_r["component"]) != 0:
+                component = cleaned_r["component"]
+                w_r = component["width"]
+                h_r = component["height"]
+                _type = cleaned_r["type"]
+                if _type not in dic:
+                    dic[_type] = (w_r, h_r, 1)
+                    component["size_type"] = _type
+                    num_count[_type] = 1
+                else:
+                    # is in and width height about the same
+                    w = dic[_type][0]
+                    h = dic[_type][1]
+                    times = dic[_type][2]
+                    if (abs(w-w_r)/w<threshold and abs(h-h_r)/h<threshold):
+                        # update the size dict
+                        new_tuple = ((w*times+w_r)/(times+1), (h*times+h_r)/(times+1), times+1)
+                        dic[_type] = new_tuple
+                        component["size_type"] = _type
+                    # width height not the same: create a new string e.g. LIT_1
+                    else:
+                        num_count[_type] += 1
+                        new_size_type = _type + str(num_count[_type])
+                        new_tuple = (w_r, h_r, 1)
+                        dic[new_size_type] = new_tuple
+                        component["size_type"] = new_size_type
+
+        for cleaned_r in cleaned_result:
+            if len(cleaned_r["component"]) != 0:
+                component = cleaned_r["component"]
+                _type = component["size_type"]
+                component["width"] = dic[_type][0]
+                component["height"] = dic[_type][1]
+        
+        print(dic)        
+        
+    ajust_size(cleaned_result)
         
     # process header
     def auto_align(value, template, threshold=0.05, isCoord=False): 

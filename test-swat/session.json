@@ -1,120 +1,252 @@
 {
-  "image_path": "1679149459386-screen_shot.jpg",
+  "image_path": "1686056482368-WeChat Image_20230606210003.png",
   "labels": [
     {
-      "name": "ccc",
-      "desc": "",
+      "name": "",
+      "desc": "Raw Water Tank",
       "fullname": "",
       "status": "",
-      "component_type": "",
+      "component_type": "LIT",
       "state": "",
       "type": 1,
       "category": "",
-      "parent": "ccc",
+      "parent": "LIT-101",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
       "l": false,
       "ll": false,
       "h": false,
-      "id": 1,
+      "isButton": false,
+      "isTime": false,
+      "id": 279,
       "top_left": [
-        -0.45625000000000004,
-        0.22592592592592586
+        -0.34317343173431736,
+        -0.16065573770491803
       ],
       "bottom_right": [
-        -0.3666666666666667,
-        0.03703703703703698
+        -0.18081180811808117,
+        -0.540983606557377
       ],
-      "width": 86.00000000000001,
-      "height": 102.0,
+      "width": 155.86715867158674,
+      "height": 205.37704918032784,
       "connections": []
     },
     {
-      "name": "chief",
-      "desc": "",
+      "name": "",
+      "desc": "Raw Water Level Meter",
       "fullname": "",
       "status": "",
-      "component_type": "",
-      "state": "",
-      "type": 1,
-      "category": "",
-      "parent": "chief",
-      "parent_component_name": "",
-      "flip": 1,
-      "rotation": 180.0,
-      "l": true,
-      "ll": true,
-      "h": true,
-      "id": 2,
-      "top_left": [
-        -0.26041666666666663,
-        0.21759259259259256
-      ],
-      "bottom_right": [
-        -0.171875,
-        0.02777777777777768
-      ],
-      "width": 84.99999999999997,
-      "height": 102.50000000000003,
-      "connections": []
-    },
-    {
-      "name": "wdwdwdc",
-      "desc": "",
-      "fullname": "",
-      "status": "",
-      "component_type": "ss",
+      "component_type": "LIT",
       "state": "",
       "type": 2,
       "category": "",
-      "parent": "wdwdwdc",
+      "parent": "LIT-101",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
       "l": false,
       "ll": false,
       "h": false,
-      "id": 5,
+      "isButton": false,
+      "isTime": false,
+      "id": 280,
       "top_left": [
-        -0.06666666666666665,
-        0.4814814814814814
+        -0.2416974169741697,
+        -0.04590163934426228
       ],
       "bottom_right": [
-        0.043749999999999956,
-        0.4222222222222223
+        -0.10516605166051662,
+        -0.10491803278688527
       ],
-      "width": 105.99999999999994,
-      "height": 31.999999999999925,
+      "width": 131.07011070110696,
+      "height": 31.868852459016416,
       "connections": []
     },
     {
-      "name": "sdw",
-      "desc": "",
+      "name": "",
+      "desc": "Raw Water Pump1",
       "fullname": "",
       "status": "",
-      "component_type": "wd",
+      "component_type": "P",
       "state": "",
-      "type": 2,
+      "type": 1,
       "category": "",
-      "parent": "wdd",
+      "parent": "P101",
       "parent_component_name": "",
       "flip": 0,
       "rotation": 0,
-      "l": true,
-      "ll": true,
-      "h": true,
-      "id": 6,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 281,
       "top_left": [
-        -0.8020833333333334,
-        0.4111111111111112
+        0.10701107011070121,
+        -0.21967213114754092
       ],
       "bottom_right": [
-        -0.6916666666666667,
-        0.11851851851851847
+        0.2158671586715868,
+        -0.33114754098360655
       ],
-      "width": 106.00000000000006,
-      "height": 158.00000000000009,
+      "width": 104.50184501845015,
+      "height": 60.19672131147544,
+      "connections": []
+    },
+    {
+      "name": "P102 COMPONENT",
+      "desc": "Raw Water Pump2",
+      "fullname": "",
+      "status": "",
+      "component_type": "P",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "P102",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 282,
+      "top_left": [
+        0.10719557195571955,
+        -0.5568852459016393
+      ],
+      "bottom_right": [
+        0.21605166051660513,
+        -0.668360655737705
+      ],
+      "width": 104.50184501845015,
+      "height": 60.19672131147544,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "Raw Water Outlet Flow Meter",
+      "fullname": "",
+      "status": "",
+      "component_type": "FIT",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "FIT-201",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 283,
+      "top_left": [
+        0.6531365313653137,
+        -0.29508196721311475
+      ],
+      "bottom_right": [
+        0.7011070110701108,
+        -0.3868852459016393
+      ],
+      "width": 46.05166051660518,
+      "height": 49.57377049180326,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "FIT",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "FIT-201",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 284,
+      "top_left": [
+        0.6088560885608856,
+        -0.2065573770491803
+      ],
+      "bottom_right": [
+        0.7416974169741697,
+        -0.2655737704918033
+      ],
+      "width": 127.52767527675275,
+      "height": 31.868852459016416,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "Raw Water Inlet Flow Meter",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "FIT-101",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 285,
+      "top_left": [
+        -0.6974169741697417,
+        0.11803278688524599
+      ],
+      "bottom_right": [
+        -0.6512915129151291,
+        0.022950819672131084
+      ],
+      "width": 44.280442804428084,
+      "height": 51.344262295082046,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "FIT-101",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 286,
+      "top_left": [
+        -0.7416974169741697,
+        0.2163934426229508
+      ],
+      "bottom_right": [
+        -0.6088560885608856,
+        0.16393442622950816
+      ],
+      "width": 127.52767527675275,
+      "height": 28.327868852459023,
       "connections": []
     }
   ]
