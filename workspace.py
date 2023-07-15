@@ -177,16 +177,21 @@ def convert_json(result, headers):
                     num_count[_type] = 1
                 else:
                     # is in and width height about the same
-                    w = dic[_type][0]
-                    h = dic[_type][1]
-                    times = dic[_type][2]
-                    if (abs(w-w_r)/w<threshold and abs(h-h_r)/h<threshold):
-                        # update the size dict
-                        new_tuple = ((w*times+w_r)/(times+1), (h*times+h_r)/(times+1), times+1)
-                        dic[_type] = new_tuple
-                        component["size_type"] = _type
-                    # width height not the same: create a new string e.g. LIT_1
-                    else:
+                    flag = True
+                    for all_type in dic:
+                        if all_type.startswith(_type):
+                            w = dic[all_type][0]
+                            h = dic[all_type][1]
+                            times = dic[_type][2]
+                            if (abs(w-w_r)/w<threshold and abs(h-h_r)/h<threshold):
+                                # update the size dict
+                                new_tuple = ((w*times+w_r)/(times+1), (h*times+h_r)/(times+1), times+1)
+                                dic[all_type] = new_tuple
+                                component["size_type"] = all_type
+                                flag = False
+                                break
+                            # width height not the same: create a new string e.g. LIT_1
+                    if flag:
                         num_count[_type] += 1
                         new_size_type = _type + str(num_count[_type])
                         new_tuple = (w_r, h_r, 1)

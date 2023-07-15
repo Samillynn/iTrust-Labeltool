@@ -1,0 +1,284 @@
+{
+  "image_path": "1689404463204-WeChat Image_20230606210003.png",
+  "labels": [
+    {
+      "name": "LIT-101",
+      "desc": "Raw Water Tank",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "LIT-101",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 283,
+      "top_left": [
+        -0.3394833948339483,
+        -0.12786885245901636
+      ],
+      "bottom_right": [
+        -0.18081180811808117,
+        -0.5377049180327869
+      ],
+      "width": 152.32472324723244,
+      "height": 221.31147540983608,
+      "connections": []
+    },
+    {
+      "name": "LIT-101",
+      "desc": "Raw Water Tank",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "LIT-101",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 285,
+      "top_left": [
+        -0.2416974169741697,
+        -0.04590163934426228
+      ],
+      "bottom_right": [
+        -0.10332103321033215,
+        -0.10491803278688527
+      ],
+      "width": 132.84132841328403,
+      "height": 31.868852459016416,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "Raw Water Pump1",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "P-101",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 286,
+      "top_left": [
+        0.10516605166051662,
+        -0.22295081967213115
+      ],
+      "bottom_right": [
+        0.21402214022140198,
+        -0.33114754098360655
+      ],
+      "width": 104.50184501844994,
+      "height": 58.42622950819671,
+      "connections": []
+    },
+    {
+      "name": "P-101 COMPONENT",
+      "desc": "Raw Water Pump 2",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "P-102",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 287,
+      "top_left": [
+        0.10535055350553518,
+        -0.5667213114754098
+      ],
+      "bottom_right": [
+        0.21420664206642054,
+        -0.6749180327868852
+      ],
+      "width": 104.50184501844994,
+      "height": 58.42622950819671,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "Raw Water Inlet Valve",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "MV-101",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 288,
+      "top_left": [
+        -0.45018450184501846,
+        0.12459016393442623
+      ],
+      "bottom_right": [
+        -0.4022140221402214,
+        0.022950819672131084
+      ],
+      "width": 46.05166051660518,
+      "height": 54.88524590163938,
+      "connections": []
+    },
+    {
+      "name": "FIT-101",
+      "desc": "Raw Water Inlet Flow Meter",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "FIT-101",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 289,
+      "top_left": [
+        -0.6992619926199262,
+        0.12131147540983611
+      ],
+      "bottom_right": [
+        -0.6512915129151291,
+        0.022950819672131084
+      ],
+      "width": 46.05166051660518,
+      "height": 53.11475409836071,
+      "connections": []
+    },
+    {
+      "name": "FIT-101",
+      "desc": "Raw Water Inlet Flow Meter",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "FIT-101",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 291,
+      "top_left": [
+        -0.7398523985239853,
+        0.2163934426229508
+      ],
+      "bottom_right": [
+        -0.6070110701107011,
+        0.1573770491803279
+      ],
+      "width": 127.52767527675286,
+      "height": 31.868852459016356,
+      "connections": []
+    },
+    {
+      "name": "FIT-201",
+      "desc": "Raw Water Outlet Flow Meter",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "FIT-201",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 292,
+      "top_left": [
+        0.6512915129151291,
+        -0.2885245901639344
+      ],
+      "bottom_right": [
+        0.6992619926199262,
+        -0.3967213114754099
+      ],
+      "width": 46.05166051660518,
+      "height": 58.426229508196776,
+      "connections": []
+    },
+    {
+      "name": "FIT-201",
+      "desc": "Raw Water Outlet Flow Meter",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "FIT-201",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 294,
+      "top_left": [
+        0.6107011070110702,
+        -0.2065573770491803
+      ],
+      "bottom_right": [
+        0.7435424354243543,
+        -0.2622950819672131
+      ],
+      "width": 127.52767527675275,
+      "height": 30.09836065573769,
+      "connections": []
+    }
+  ]
+}

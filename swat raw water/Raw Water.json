@@ -1,0 +1,152 @@
+{
+  "label": [
+    {
+      "name": "LIT-101",
+      "type": "LIT",
+      "description": "Raw Water Tank",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.26014760147601473,
+          -0.3327868852459016
+        ],
+        "width": 152.32472324723244,
+        "height": 221.31147540983608,
+        "size_type": "LIT"
+      },
+      "databox": {
+        "coordinate": [
+          -0.17250922509225092,
+          -0.07540983606557378
+        ],
+        "width": 132.84132841328403,
+        "height": 31.868852459016416
+      },
+      "button": {}
+    },
+    {
+      "name": "P-101",
+      "type": "P",
+      "description": "Raw Water Pump1",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.1595940959409593,
+          -0.27704918032786885
+        ],
+        "width": 104.50184501844994,
+        "height": 58.42622950819671,
+        "size_type": "P"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "P-102",
+      "type": "P",
+      "description": "Raw Water Pump 2",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.1595940959409593,
+          -0.6208196721311475
+        ],
+        "width": 104.50184501844994,
+        "height": 58.42622950819671,
+        "size_type": "P"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "MV-101",
+      "type": "other",
+      "description": "Raw Water Inlet Valve",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.4261992619926199,
+          0.07377049180327866
+        ],
+        "width": 46.05166051660518,
+        "height": 54.88524590163938,
+        "size_type": "other"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "FIT-101",
+      "type": "FIT",
+      "description": "Raw Water Inlet Flow Meter",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.6752767527675276,
+          0.07377049180327866
+        ],
+        "width": 46.05166051660518,
+        "height": 55.770491803278745,
+        "size_type": "FIT"
+      },
+      "databox": {
+        "coordinate": [
+          -0.6734317343173433,
+          0.18688524590163935
+        ],
+        "width": 127.52767527675286,
+        "height": 31.868852459016356
+      },
+      "button": {}
+    },
+    {
+      "name": "FIT-201",
+      "type": "FIT",
+      "description": "Raw Water Outlet Flow Meter",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.6752767527675276,
+          -0.34262295081967215
+        ],
+        "width": 46.05166051660518,
+        "height": 55.770491803278745,
+        "size_type": "FIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.6771217712177122,
+          -0.2344262295081967
+        ],
+        "width": 127.52767527675275,
+        "height": 30.09836065573769
+      },
+      "button": {}
+    }
+  ],
+  "header": []
+}
