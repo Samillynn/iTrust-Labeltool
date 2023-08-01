@@ -1,7 +1,812 @@
 {
   "label": [
     {
-      "name": "PIT205",
+      "name": "LIT101",
+      "type": "LIT",
+      "description": "Raw Water Level Meter",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.7444649446494465,
+          0.260655737704918
+        ],
+        "width": 104.50184501845017,
+        "height": 150.49180327868848,
+        "size_type": "LIT"
+      },
+      "databox": {
+        "coordinate": [
+          -0.6752767527675276,
+          0.4557377049180328
+        ],
+        "width": 116.90036900369006,
+        "height": 24.78688524590169
+      },
+      "button": {}
+    },
+    {
+      "name": "LIT301",
+      "type": "LIT",
+      "description": "UF Feed Level Meter",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.06199261992619931,
+          0.1431147540983605
+        ],
+        "width": 104.50184501845017,
+        "height": 150.49180327868848,
+        "size_type": "LIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.12453874538745391,
+          0.35409836065573763
+        ],
+        "width": 118.67158671586715,
+        "height": 28.327868852459023
+      },
+      "button": {}
+    },
+    {
+      "name": "LIT401",
+      "type": "LIT",
+      "description": "RO Feed Level Meter",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.6359778597785979,
+          0.27147540983606555
+        ],
+        "width": 104.50184501845017,
+        "height": 150.49180327868848,
+        "size_type": "LIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.7232472324723247,
+          0.4557377049180328
+        ],
+        "width": 116.90036900368995,
+        "height": 24.78688524590169
+      },
+      "button": {}
+    },
+    {
+      "name": "FIT201",
+      "type": "FIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.4664206642066422,
+          0.3124590163934431
+        ],
+        "width": 30.897908979089802,
+        "height": 27.934426229508155,
+        "size_type": "FIT"
+      },
+      "databox": {
+        "coordinate": [
+          -0.518450184501845,
+          0.4557377049180328
+        ],
+        "width": 106.27306273062736,
+        "height": 26.557377049180356
+      },
+      "button": {}
+    },
+    {
+      "name": "AIT201",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.4348708487084872,
+          0.3124590163934431
+        ],
+        "width": 32.17712177121771,
+        "height": 29.065573770491763,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          -0.3874538745387454,
+          0.4557377049180328
+        ],
+        "width": 99.18819188191887,
+        "height": 24.78688524590169
+      },
+      "button": {}
+    },
+    {
+      "name": "P101",
+      "type": "P",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.5728782287822878,
+          0.2967213114754099
+        ],
+        "width": 94.76014760147612,
+        "height": 53.822950819672144,
+        "size_type": "P"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "P102",
+      "type": "P",
+      "description": "Raw Water Pumps",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.5728782287822878,
+          0.13655737704918036
+        ],
+        "width": 94.76014760147612,
+        "height": 53.822950819672144,
+        "size_type": "P"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "P301",
+      "type": "P",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.23929889298892984,
+          0.17311475409836083
+        ],
+        "width": 94.76014760147612,
+        "height": 53.822950819672144,
+        "size_type": "P"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "P302",
+      "type": "P",
+      "description": "UF Feed Pumps",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.23929889298892984,
+          0.022786885245901833
+        ],
+        "width": 94.76014760147612,
+        "height": 53.822950819672144,
+        "size_type": "P"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "P601",
+      "type": "P",
+      "description": "RO Permeate Pump",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 1,
+        "rotation": 0,
+        "coordinate": [
+          -0.5276752767527673,
+          -0.5008196721311473
+        ],
+        "width": 94.76014760147612,
+        "height": 53.822950819672144,
+        "size_type": "P"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "P401",
+      "type": "P",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.8114391143911438,
+          0.3124590163934431
+        ],
+        "width": 94.76014760147612,
+        "height": 53.822950819672144,
+        "size_type": "P"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "P402",
+      "type": "P",
+      "description": "RO Feed Pumps",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.8114391143911438,
+          0.1478688524590165
+        ],
+        "width": 94.76014760147612,
+        "height": 53.822950819672144,
+        "size_type": "P"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "AIT202",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.09575645756457579,
+          0.3124590163934431
+        ],
+        "width": 32.17712177121771,
+        "height": 29.065573770491763,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          -0.14575645756457561,
+          0.4508196721311476
+        ],
+        "width": 99.18819188191887,
+        "height": 26.557377049180356
+      },
+      "button": {}
+    },
+    {
+      "name": "AIT203",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.06623616236162383,
+          0.3124590163934431
+        ],
+        "width": 32.17712177121771,
+        "height": 29.065573770491763,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          -0.01660516605166057,
+          0.4557377049180328
+        ],
+        "width": 102.73062730627305,
+        "height": 24.78688524590169
+      },
+      "button": {}
+    },
+    {
+      "name": "FIT301",
+      "type": "FIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.3376383763837637,
+          0.1311475409836067
+        ],
+        "width": 30.897908979089802,
+        "height": 27.934426229508155,
+        "size_type": "FIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.2878228782287823,
+          0.3590163934426229
+        ],
+        "width": 99.18819188191897,
+        "height": 26.55737704918024
+      },
+      "button": {}
+    },
+    {
+      "name": "AIT301",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.5415129151291513,
+          0.43934426229508194
+        ],
+        "width": 32.17712177121771,
+        "height": 29.065573770491763,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.3487084870848709,
+          0.5737704918032787
+        ],
+        "width": 99.18819188191875,
+        "height": 24.786885245901573
+      },
+      "button": {}
+    },
+    {
+      "name": "AIT302",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.571217712177122,
+          0.43934426229508194
+        ],
+        "width": 32.17712177121771,
+        "height": 29.065573770491763,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.4714022140221402,
+          0.5737704918032787
+        ],
+        "width": 100.95940959409596,
+        "height": 28.327868852459023
+      },
+      "button": {}
+    },
+    {
+      "name": "AIT303",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.6046125461254614,
+          0.43934426229508194
+        ],
+        "width": 32.17712177121771,
+        "height": 29.065573770491763,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.5876383763837639,
+          0.5737704918032787
+        ],
+        "width": 100.95940959409596,
+        "height": 28.327868852459023
+      },
+      "button": {}
+    },
+    {
+      "name": "FIT401",
+      "type": "FIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.9147601476014764,
+          0.29000000000000015
+        ],
+        "width": 30.897908979089802,
+        "height": 27.934426229508155,
+        "size_type": "FIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.9123616236162362,
+          0.4557377049180328
+        ],
+        "width": 97.41697416974176,
+        "height": 24.78688524590169
+      },
+      "button": {}
+    },
+    {
+      "name": "AIT401",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.9147601476014764,
+          0.23475409836065586
+        ],
+        "width": 32.17712177121771,
+        "height": 29.065573770491763,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.879151291512915,
+          -0.05737704918032788
+        ],
+        "width": 100.95940959409596,
+        "height": 30.09836065573775
+      },
+      "button": {}
+    },
+    {
+      "name": "MV-301",
+      "type": "other",
+      "description": "UF Backwash Valve",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.40867158671586723,
+          0.43934426229508194
+        ],
+        "width": 35.42435424354249,
+        "height": 33.28524590163933,
+        "size_type": "other"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "DPIT301",
+      "type": "other",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.4335793357933586,
+          0.2516393442622952
+        ],
+        "width": 35.42435424354249,
+        "height": 33.28524590163933,
+        "size_type": "other"
+      },
+      "databox": {
+        "coordinate": [
+          0.43265682656826565,
+          0.003278688524590123
+        ],
+        "width": 100.95940959409596,
+        "height": 24.786885245901573
+      },
+      "button": {}
+    },
+    {
+      "name": "FIT101",
+      "type": "FIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.9199261992619927,
+          0.41836065573770553
+        ],
+        "width": 30.897908979089802,
+        "height": 27.934426229508155,
+        "size_type": "FIT"
+      },
+      "databox": {
+        "coordinate": [
+          -0.9215867158671587,
+          0.5737704918032787
+        ],
+        "width": 93.87453874538735,
+        "height": 23.016393442622906
+      },
+      "button": {}
+    },
+    {
+      "name": "MV101",
+      "type": "other",
+      "description": "Raw Water Inlet Valve",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.8487084870848709,
+          0.43934426229508194
+        ],
+        "width": 35.42435424354249,
+        "height": 33.28524590163933,
+        "size_type": "other"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "FIT501",
+      "type": "FIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.5470479704797048,
+          -0.32786885245901637
+        ],
+        "width": 30.897908979089802,
+        "height": 27.934426229508155,
+        "size_type": "FIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.5433579335793358,
+          -0.13442622950819672
+        ],
+        "width": 100.95940959409596,
+        "height": 28.327868852459023
+      },
+      "button": {}
+    },
+    {
+      "name": "AIT501",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.5470479704797048,
+          -0.37213114754098353
+        ],
+        "width": 32.17712177121771,
+        "height": 29.065573770491763,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.6439114391143912,
+          -0.44426229508196724
+        ],
+        "width": 99.18819188191875,
+        "height": 30.09836065573769
+      },
+      "button": {}
+    },
+    {
+      "name": "AIT502",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.5470479704797048,
+          -0.42131147540983604
+        ],
+        "width": 32.17712177121771,
+        "height": 29.065573770491763,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.6439114391143912,
+          -0.559016393442623
+        ],
+        "width": 100.95940959409596,
+        "height": 30.09836065573769
+      },
+      "button": {}
+    },
+    {
+      "name": "AIT503",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.5470479704797048,
+          -0.4737704918032787
+        ],
+        "width": 32.17712177121771,
+        "height": 29.065573770491763,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.6439114391143912,
+          -0.6704918032786885
+        ],
+        "width": 99.18819188191897,
+        "height": 30.09836065573769
+      },
+      "button": {}
+    },
+    {
+      "name": "AIT402",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.8114391143911438,
+          -0.18688524590163935
+        ],
+        "width": 32.17712177121771,
+        "height": 29.065573770491763,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.7444649446494466,
+          -0.05737704918032788
+        ],
+        "width": 100.95940959409596,
+        "height": 31.868852459016416
+      },
+      "button": {}
+    },
+    {
+      "name": "FIT504",
+      "type": "FIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.46863468634686345,
+          -0.6967213114754098
+        ],
+        "width": 30.897908979089802,
+        "height": 27.934426229508155,
+        "size_type": "FIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.4714022140221402,
+          -0.8213114754098361
+        ],
+        "width": 97.41697416974176,
+        "height": 30.09836065573769
+      },
+      "button": {}
+    },
+    {
+      "name": "FIT503",
+      "type": "FIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.047970479704797064,
+          -0.6491803278688525
+        ],
+        "width": 30.897908979089802,
+        "height": 27.934426229508155,
+        "size_type": "FIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.011992619926199322,
+          -0.8147540983606558
+        ],
+        "width": 100.95940959409606,
+        "height": 33.63934426229508
+      },
+      "button": {}
+    },
+    {
+      "name": "PIT503",
       "type": "PIT",
       "description": "",
       "status": "",
@@ -11,20 +816,27 @@
         "flip": 0,
         "rotation": 0,
         "coordinate": [
-          -0.27214022140221406,
-          0.32622950819672125
+          0.047970479704797064,
+          -0.7016393442622951
         ],
-        "width": 86.78966789667896,
-        "height": 54.88524590163938,
+        "width": 28.339483394833888,
+        "height": 28.327868852459005,
         "size_type": "PIT"
       },
-      "databox": {},
+      "databox": {
+        "coordinate": [
+          0.13099630996309963,
+          -0.8147540983606558
+        ],
+        "width": 99.18819188191897,
+        "height": 31.868852459016416
+      },
       "button": {}
     },
     {
-      "name": "FCV201",
-      "type": "F",
-      "description": "",
+      "name": "MV-502",
+      "type": "other",
+      "description": "Backwash Valve",
       "status": "",
       "state": "",
       "component": {
@@ -32,40 +844,40 @@
         "flip": 0,
         "rotation": 0,
         "coordinate": [
-          -0.03136531365313655,
-          -0.07377049180327871
+          -0.09575645756457579,
+          -0.6786885245901639
         ],
-        "width": 46.05166051660518,
-        "height": 46.03278688524595,
-        "size_type": "F"
+        "width": 35.42435424354249,
+        "height": 33.28524590163933,
+        "size_type": "other"
       },
       "databox": {},
       "button": {}
     },
     {
-      "name": "FCV203",
-      "type": "F",
-      "description": "",
+      "name": "MV503",
+      "type": "other",
+      "description": "Permeate Reject Valve",
       "status": "",
       "state": "",
       "component": {
         "level": [],
-        "flip": 0,
-        "rotation": 0,
+        "flip": 1,
+        "rotation": 270.0,
         "coordinate": [
-          -0.03136531365313655,
-          0.12180327868852439
+          -0.18634686346863466,
+          -0.5229508196721311
         ],
-        "width": 46.05166051660518,
-        "height": 46.03278688524595,
-        "size_type": "F"
+        "width": 35.42435424354249,
+        "height": 33.28524590163933,
+        "size_type": "other"
       },
       "databox": {},
       "button": {}
     },
     {
-      "name": "FCV301",
-      "type": "F",
+      "name": "FIT601",
+      "type": "FIT",
       "description": "",
       "status": "",
       "state": "",
@@ -74,12 +886,406 @@
         "flip": 0,
         "rotation": 0,
         "coordinate": [
-          0.19594095940959413,
-          -0.07377049180327871
+          -0.7638376383763837,
+          -0.6147540983606558
         ],
-        "width": 46.05166051660518,
-        "height": 46.03278688524595,
-        "size_type": "F"
+        "width": 30.897908979089802,
+        "height": 27.934426229508155,
+        "size_type": "FIT"
+      },
+      "databox": {
+        "coordinate": [
+          -0.8856088560885609,
+          -0.5672131147540983
+        ],
+        "width": 99.18819188191875,
+        "height": 28.327868852459023
+      },
+      "button": {}
+    },
+    {
+      "name": "FIT502",
+      "type": "FIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.21309963099630996,
+          -0.4098360655737705
+        ],
+        "width": 30.897908979089802,
+        "height": 27.934426229508155,
+        "size_type": "FIT"
+      },
+      "databox": {
+        "coordinate": [
+          -0.2896678966789668,
+          -0.2114754098360656
+        ],
+        "width": 99.18819188191887,
+        "height": 30.09836065573769
+      },
+      "button": {}
+    },
+    {
+      "name": "AIT504",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.1466789667896679,
+          -0.4098360655737705
+        ],
+        "width": 32.17712177121771,
+        "height": 29.065573770491763,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          -0.1752767527675277,
+          -0.2114754098360656
+        ],
+        "width": 99.18819188191887,
+        "height": 31.868852459016356
+      },
+      "button": {}
+    },
+    {
+      "name": "PIT502",
+      "type": "PIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.06088560885608857,
+          -0.4098360655737705
+        ],
+        "width": 28.339483394833888,
+        "height": 28.327868852459005,
+        "size_type": "PIT"
+      },
+      "databox": {
+        "coordinate": [
+          -0.0581180811808118,
+          -0.2114754098360656
+        ],
+        "width": 97.41697416974165,
+        "height": 28.327868852459023
+      },
+      "button": {}
+    },
+    {
+      "name": "PIT501",
+      "type": "PIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.27121771217712176,
+          -0.2114754098360656
+        ],
+        "width": 28.339483394833888,
+        "height": 28.327868852459005,
+        "size_type": "PIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.2749077490774907,
+          -0.40491803278688526
+        ],
+        "width": 99.18819188191875,
+        "height": 33.63934426229508
+      },
+      "button": {}
+    },
+    {
+      "name": "MV201",
+      "type": "other",
+      "description": "Chem Dosing Valve",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.03321033210332103,
+          0.32131147540983607
+        ],
+        "width": 31.881918819188186,
+        "height": 42.49180327868848,
+        "size_type": "other2"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "UV401",
+      "type": "UV",
+      "description": "UV Dechlorinator",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.9003690036900369,
+          -0.28524590163934427
+        ],
+        "width": 162.95202952029513,
+        "height": 77.90163934426229,
+        "size_type": "UV"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "LIT402",
+      "type": "LIT",
+      "description": "NaHSO3 Tank",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [
+          "L"
+        ],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.7739852398523985,
+          -0.4737704918032787
+        ],
+        "width": 82.48443265682651,
+        "height": 99.79072745901638,
+        "size_type": "LIT2"
+      },
+      "databox": {
+        "coordinate": [
+          0.9012915129151292,
+          -0.5295081967213114
+        ],
+        "width": 118.67158671586715,
+        "height": 30.09836065573769
+      },
+      "button": {}
+    },
+    {
+      "name": "LIT201",
+      "type": "LIT",
+      "description": "NaCL Tank",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.4095940959409594,
+          0.1262295081967213
+        ],
+        "width": 82.48443265682651,
+        "height": 99.79072745901638,
+        "size_type": "LIT2"
+      },
+      "databox": {
+        "coordinate": [
+          -0.47693726937269376,
+          -0.03442622950819668
+        ],
+        "width": 118.67158671586715,
+        "height": 33.63934426229508
+      },
+      "button": {}
+    },
+    {
+      "name": "LIT202",
+      "type": "LIT",
+      "description": "HCL Tank",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.3127306273062731,
+          0.1311475409836067
+        ],
+        "width": 82.48443265682651,
+        "height": 99.79072745901638,
+        "size_type": "LIT2"
+      },
+      "databox": {
+        "coordinate": [
+          -0.3118081180811808,
+          -0.03442622950819668
+        ],
+        "width": 120.44280442804435,
+        "height": 28.327868852459023
+      },
+      "button": {}
+    },
+    {
+      "name": "LIT203",
+      "type": "LIT",
+      "description": "NaOCL Tank",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.21309963099630996,
+          0.1262295081967213
+        ],
+        "width": 82.48443265682651,
+        "height": 99.79072745901638,
+        "size_type": "LIT2"
+      },
+      "databox": {
+        "coordinate": [
+          -0.14575645756457561,
+          -0.03442622950819668
+        ],
+        "width": 120.44280442804435,
+        "height": 28.327868852459023
+      },
+      "button": {}
+    },
+    {
+      "name": "LIT601",
+      "type": "LIT",
+      "description": "RO Permeate Tank",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.41789667896678967,
+          -0.460655737704918
+        ],
+        "width": 82.48443265682651,
+        "height": 99.79072745901638,
+        "size_type": "LIT2"
+      },
+      "databox": {
+        "coordinate": [
+          -0.41697416974169743,
+          -0.28032786885245903
+        ],
+        "width": 120.44280442804435,
+        "height": 30.09836065573775
+      },
+      "button": {}
+    },
+    {
+      "name": "LIT602",
+      "type": "LIT",
+      "description": "UF Backwash Tank",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.6780442804428044,
+          -0.7377049180327868
+        ],
+        "width": 82.48443265682651,
+        "height": 99.79072745901638,
+        "size_type": "LIT2"
+      },
+      "databox": {
+        "coordinate": [
+          -0.6752767527675276,
+          -0.5672131147540983
+        ],
+        "width": 120.44280442804435,
+        "height": 30.09836065573775
+      },
+      "button": {}
+    },
+    {
+      "name": "P501",
+      "type": "P",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 1,
+        "rotation": 0,
+        "coordinate": [
+          0.3948339483394835,
+          -0.2278688524590164
+        ],
+        "width": 94.76014760147612,
+        "height": 53.822950819672144,
+        "size_type": "P"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "P502",
+      "type": "P",
+      "description": "RO Pumps",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 1,
+        "rotation": 0,
+        "coordinate": [
+          0.3948339483394835,
+          -0.38524590163934425
+        ],
+        "width": 94.76014760147612,
+        "height": 53.822950819672144,
+        "size_type": "P"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "P602",
+      "type": "P",
+      "description": "UF Backwash Pump",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.7915129151291513,
+          -0.7819672131147541
+        ],
+        "width": 94.76014760147612,
+        "height": 53.822950819672144,
+        "size_type": "P"
       },
       "databox": {},
       "button": {}
@@ -87,114 +1293,145 @@
   ],
   "header": [
     {
-      "name": "20/12/2022 08:20:30 AM",
+      "name": "System Architecture",
       "coordinate": [
-        0.8634686346863467,
+        -0.47785977859778594,
         0.719672131147541
       ],
-      "width": 212.5461254612546,
+      "width": 205.4612546125461,
       "height": 35.40983606557381,
-      "isButton": false,
-      "isTime": true
+      "isButton": true
     },
     {
-      "name": "System",
+      "name": "Trends",
       "coordinate": [
-        -0.47416974169741694,
-        0.8
+        -0.25184501845018453,
+        0.719672131147541
       ],
-      "width": 212.5461254612546,
-      "height": 35.40983606557381,
-      "isButton": true,
-      "isTime": false
+      "width": 205.4612546125461,
+      "height": 30.09836065573769,
+      "isButton": true
     },
     {
-      "name": "Gas Input",
+      "name": "Events",
       "coordinate": [
-        -0.25,
-        0.8
+        -0.02583025830258312,
+        0.719672131147541
       ],
-      "width": 212.5461254612546,
-      "height": 35.40983606557381,
-      "isButton": true,
-      "isTime": false
+      "width": 205.4612546125461,
+      "height": 30.09836065573769,
+      "isButton": true
     },
     {
-      "name": "Compressor",
+      "name": "Summary",
       "coordinate": [
-        -0.025830258302583065,
-        0.8
+        0.2001845018450183,
+        0.719672131147541
       ],
-      "width": 212.5461254612546,
+      "width": 205.4612546125461,
       "height": 35.40983606557381,
-      "isButton": true,
-      "isTime": false
-    },
-    {
-      "name": "Compressor Stage",
-      "coordinate": [
-        0.19833948339483387,
-        0.8
-      ],
-      "width": 212.5461254612546,
-      "height": 35.40983606557381,
-      "isButton": true,
-      "isTime": false
-    },
-    {
-      "name": "Transmission",
-      "coordinate": [
-        0.4225092250922508,
-        0.8
-      ],
-      "width": 212.5461254612546,
-      "height": 35.40983606557381,
-      "isButton": true,
-      "isTime": false
-    },
-    {
-      "name": "Distribution",
-      "coordinate": [
-        0.6466789667896677,
-        0.8
-      ],
-      "width": 212.5461254612546,
-      "height": 35.40983606557381,
-      "isButton": true,
-      "isTime": false
+      "isButton": true
     },
     {
       "name": "Legend",
       "coordinate": [
-        0.8634686346863467,
+        0.4261992619926197,
+        0.719672131147541
+      ],
+      "width": 205.4612546125461,
+      "height": 30.09836065573769,
+      "isButton": true
+    },
+    {
+      "name": "Detectors",
+      "coordinate": [
+        0.6522140221402211,
+        0.719672131147541
+      ],
+      "width": 205.4612546125461,
+      "height": 35.40983606557381,
+      "isButton": true
+    },
+    {
+      "name": "Thu Feb 03 2022 T08:25:43Z",
+      "coordinate": [
+        0.8782287822878225,
+        0.719672131147541
+      ],
+      "width": 205.4612546125461,
+      "height": 30.09836065573769,
+      "isButton": false
+    },
+    {
+
+      "name": "System Overview",
+      "coordinate": [
+        -0.47785977859778594,
         0.8
       ],
-      "width": 212.5461254612546,
+      "width": 205.4612546125461,
       "height": 35.40983606557381,
-      "isButton": true,
-      "isTime": false
+      "isButton": true
     },
     {
-      "name": "HMI X",
+      "name": "Raw Water",
       "coordinate": [
-        0.8634686346863467,
-        0.8770491803278688
+        -0.25184501845018453,
+        0.8
       ],
-      "width": 212.5461254612546,
+      "width": 205.4612546125461,
       "height": 35.40983606557381,
-      "isButton": true,
-      "isTime": false
+      "isButton": true
     },
     {
-      "name": "IP: 1111",
+      "name": "Pre-Treatment",
       "coordinate": [
-        0.8634686346863467,
-        0.9524590163934427
+        -0.02583025830258312,
+        0.8
       ],
-      "width": 212.5461254612546,
+      "width": 205.4612546125461,
+      "height": 30.09836065573769,
+      "isButton": true
+    },
+    {
+      "name": "Ultra-Filtration",
+      "coordinate": [
+        0.2001845018450183,
+        0.8
+      ],
+      "width": 205.4612546125461,
       "height": 35.40983606557381,
-      "isButton": false,
-      "isTime": false
+      "isButton": true
+    },
+    {
+      "name": "De-Chlorination",
+      "coordinate": [
+        0.4261992619926197,
+        0.8
+      ],
+      "width": 205.4612546125461,
+      "height": 35.40983606557381,
+      "isButton": true
+    },
+    {
+      "name": "Reverse-Osmosis",
+      "coordinate": [
+        0.6522140221402211,
+        0.8
+      ],
+      "width": 205.4612546125461,
+      "height": 35.40983606557381,
+      "isButton": true
+    },
+    {
+      "name": "RO Product",
+      "coordinate": [
+        0.8782287822878225,
+        0.8
+      ],
+      "width": 205.4612546125461,
+      "height": 35.40983606557381,
+      "isButton": true
     }
   ]
 }

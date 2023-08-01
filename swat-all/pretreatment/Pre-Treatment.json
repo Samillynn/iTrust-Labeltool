@@ -1,0 +1,201 @@
+{
+  "label": [
+    {
+      "name": "AIT201",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.7435424354243543,
+          0.32622950819672136
+        ],
+        "width": 33.06273062730636,
+        "height": 31.8688524590164,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          -0.7435424354243543,
+          0.4098360655737704
+        ],
+        "width": 127.52767527675275,
+        "height": 28.327868852459023
+      },
+      "button": {}
+    },
+    {
+      "name": "AIT202",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.08394833948339486,
+          0.32622950819672136
+        ],
+        "width": 33.06273062730636,
+        "height": 31.8688524590164,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.08302583025830268,
+          0.4098360655737704
+        ],
+        "width": 127.52767527675275,
+        "height": 31.868852459016477
+      },
+      "button": {}
+    },
+    {
+      "name": "AIT203",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.29059040590405916,
+          0.32622950819672136
+        ],
+        "width": 33.06273062730636,
+        "height": 31.8688524590164,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.28874538745387457,
+          0.4147540983606557
+        ],
+        "width": 132.84132841328415,
+        "height": 30.098360655737572
+      },
+      "button": {}
+    },
+    {
+      "name": "MV201",
+      "type": "other",
+      "description": "Chemical Dosing Value",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.6503690036900369,
+          0.3508196721311475
+        ],
+        "width": 44.28044280442819,
+        "height": 46.032786885245926,
+        "size_type": "other"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "LIT201",
+      "type": "LIT",
+      "description": "NaCl Tank",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [
+          "L"
+        ],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.7435424354243543,
+          -0.6
+        ],
+        "width": 127.52767527675276,
+        "height": 180.00000000000003,
+        "size_type": "LIT"
+      },
+      "databox": {
+        "coordinate": [
+          -0.5654981549815499,
+          -0.7000000000000001
+        ],
+        "width": 129.29889298892985,
+        "height": 30.09836065573769
+      },
+      "button": {}
+    },
+    {
+      "name": "LIT202",
+      "type": "LIT",
+      "description": "HCl Tank",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [
+          "L"
+        ],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.08653136531365302,
+          -0.6
+        ],
+        "width": 127.52767527675276,
+        "height": 180.00000000000003,
+        "size_type": "LIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.09225092250922506,
+          -0.7000000000000001
+        ],
+        "width": 131.07011070110696,
+        "height": 30.09836065573769
+      },
+      "button": {}
+    },
+    {
+      "name": "LIT203",
+      "type": "LIT",
+      "description": "NaOCl Tank",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [
+          "L",
+          "LL"
+        ],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.36162361623616235,
+          -0.6049180327868853
+        ],
+        "width": 127.52767527675276,
+        "height": 180.00000000000003,
+        "size_type": "LIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.6881918819188192,
+          -0.7000000000000001
+        ],
+        "width": 131.07011070110696,
+        "height": 31.868852459016356
+      },
+      "button": {}
+    }
+  ],
+  "header": []
+}

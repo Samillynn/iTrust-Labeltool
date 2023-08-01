@@ -1,0 +1,408 @@
+{
+  "image_path": "1690878428319-51ce4cecd0baa8321377d0d7c21034f.png",
+  "labels": [
+    {
+      "name": "AIT201",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "AIT201",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 282,
+      "top_left": [
+        -0.7601476014760148,
+        0.35409836065573774
+      ],
+      "bottom_right": [
+        -0.7269372693726937,
+        0.298360655737705
+      ],
+      "width": 31.881918819188293,
+      "height": 30.09836065573769,
+      "connections": []
+    },
+    {
+      "name": "AIT201",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "AIT201",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 284,
+      "top_left": [
+        -0.8099630996309963,
+        0.4360655737704917
+      ],
+      "bottom_right": [
+        -0.6771217712177122,
+        0.3836065573770491
+      ],
+      "width": 127.52767527675275,
+      "height": 28.327868852459023,
+      "connections": []
+    },
+    {
+      "name": "AIT202",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "AIT202",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 285,
+      "top_left": [
+        0.06642066420664205,
+        0.35737704918032787
+      ],
+      "bottom_right": [
+        0.10147601476014767,
+        0.29508196721311486
+      ],
+      "width": 33.65313653136539,
+      "height": 33.639344262295026,
+      "connections": []
+    },
+    {
+      "name": "AIT202",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "AIT202",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 287,
+      "top_left": [
+        0.016605166051660625,
+        0.4426229508196722
+      ],
+      "bottom_right": [
+        0.14944649446494473,
+        0.3836065573770491
+      ],
+      "width": 127.52767527675275,
+      "height": 31.868852459016477,
+      "connections": []
+    },
+    {
+      "name": "AIT-203 COMPONENT",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "AIT203",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 288,
+      "top_left": [
+        0.27306273062730635,
+        0.35737704918032787
+      ],
+      "bottom_right": [
+        0.30811808118081196,
+        0.29836065573770476
+      ],
+      "width": 33.65313653136539,
+      "height": 31.868852459016477,
+      "connections": []
+    },
+    {
+      "name": "AIT-203 DATABOX",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "AIT203",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 290,
+      "top_left": [
+        0.21955719557195574,
+        0.44262295081967196
+      ],
+      "bottom_right": [
+        0.3579335793357934,
+        0.3868852459016394
+      ],
+      "width": 132.84132841328415,
+      "height": 30.098360655737572,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "Chemical Dosing Value",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "MV201",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 291,
+      "top_left": [
+        0.6273062730627306,
+        0.39344262295081966
+      ],
+      "bottom_right": [
+        0.6734317343173433,
+        0.30819672131147535
+      ],
+      "width": 44.28044280442819,
+      "height": 46.032786885245926,
+      "connections": []
+    },
+    {
+      "name": "LIT201 COMPONENT",
+      "desc": "NaCl Tank",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "LIT201",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": true,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 292,
+      "top_left": [
+        -0.8118081180811807,
+        -0.4327868852459016
+      ],
+      "bottom_right": [
+        -0.6752767527675276,
+        -0.7672131147540984
+      ],
+      "width": 131.07011070110696,
+      "height": 180.59016393442627,
+      "connections": []
+    },
+    {
+      "name": "LIT201 DATABOX",
+      "desc": "NaCl Tank",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "LIT201",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 293,
+      "top_left": [
+        -0.6328413284132841,
+        -0.6721311475409837
+      ],
+      "bottom_right": [
+        -0.4981549815498155,
+        -0.7278688524590164
+      ],
+      "width": 129.29889298892985,
+      "height": 30.09836065573769,
+      "connections": []
+    },
+    {
+      "name": "LIT202 COMPONENT",
+      "desc": "HCl Tank",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "LIT202",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": true,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 294,
+      "top_left": [
+        -0.15479704797047955,
+        -0.43557377049180324
+      ],
+      "bottom_right": [
+        -0.018265682656826487,
+        -0.77
+      ],
+      "width": 131.07011070110696,
+      "height": 180.59016393442627,
+      "connections": []
+    },
+    {
+      "name": "LIT202 DATABOX",
+      "desc": "HCl Tank",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "LIT202",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 295,
+      "top_left": [
+        0.023985239852398532,
+        -0.6688524590163935
+      ],
+      "bottom_right": [
+        0.1605166051660516,
+        -0.7245901639344262
+      ],
+      "width": 131.07011070110696,
+      "height": 30.09836065573769,
+      "connections": []
+    },
+    {
+      "name": "LIT203 COMPONENT",
+      "desc": "NaOCl Tank",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "LIT203",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": true,
+      "ll": true,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 296,
+      "top_left": [
+        0.29889298892988925,
+        -0.43934426229508194
+      ],
+      "bottom_right": [
+        0.42435424354243545,
+        -0.7704918032786886
+      ],
+      "width": 120.44280442804435,
+      "height": 178.8196721311476,
+      "connections": []
+    },
+    {
+      "name": "LIT203 DATABOX",
+      "desc": "NaOCl Tank",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "LIT203",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 297,
+      "top_left": [
+        0.6199261992619927,
+        -0.6721311475409837
+      ],
+      "bottom_right": [
+        0.7564575645756457,
+        -0.7311475409836066
+      ],
+      "width": 131.07011070110696,
+      "height": 31.868852459016356,
+      "connections": []
+    }
+  ]
+}

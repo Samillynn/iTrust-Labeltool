@@ -1,0 +1,625 @@
+{
+  "image_path": "1690876325000-259e3f00672c6b8404d8831466e2ad5.png",
+  "labels": [
+    {
+      "name": "AIT501",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "AIT501",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 282,
+      "top_left": [
+        -0.6642066420664207,
+        0.003278688524590234
+      ],
+      "bottom_right": [
+        -0.6346863468634686,
+        -0.05245901639344264
+      ],
+      "width": 28.33948339483399,
+      "height": 30.09836065573775,
+      "connections": []
+    },
+    {
+      "name": "AIT501",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "AIT501",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 284,
+      "top_left": [
+        -0.8745387453874539,
+        -0.22622950819672127
+      ],
+      "bottom_right": [
+        -0.7453874538745388,
+        -0.2754098360655738
+      ],
+      "width": 123.98523985239855,
+      "height": 26.557377049180356,
+      "connections": []
+    },
+    {
+      "name": "AIT502",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "AIT502",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 285,
+      "top_left": [
+        -0.6328413284132841,
+        0.003278688524590123
+      ],
+      "bottom_right": [
+        -0.6014760147601477,
+        -0.05573770491803276
+      ],
+      "width": 30.110701107010982,
+      "height": 31.868852459016356,
+      "connections": []
+    },
+    {
+      "name": "AIT502",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "AIT502",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 287,
+      "top_left": [
+        -0.7269372693726937,
+        -0.2295081967213115
+      ],
+      "bottom_right": [
+        -0.5940959409594095,
+        -0.28196721311475414
+      ],
+      "width": 127.52767527675275,
+      "height": 28.327868852459023,
+      "connections": []
+    },
+    {
+      "name": "AIT503",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "AIT503",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 288,
+      "top_left": [
+        -0.5977859778597786,
+        0.006557377049180246
+      ],
+      "bottom_right": [
+        -0.566420664206642,
+        -0.05245901639344264
+      ],
+      "width": 30.11070110701109,
+      "height": 31.868852459016356,
+      "connections": []
+    },
+    {
+      "name": "AIT503",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "AIT503",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 290,
+      "top_left": [
+        -0.5793357933579335,
+        -0.22622950819672127
+      ],
+      "bottom_right": [
+        -0.4464944649446494,
+        -0.28196721311475414
+      ],
+      "width": 127.52767527675275,
+      "height": 30.09836065573775,
+      "connections": []
+    },
+    {
+      "name": "FIT501",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "FIT501",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 291,
+      "top_left": [
+        -0.540590405904059,
+        0.05245901639344264
+      ],
+      "bottom_right": [
+        -0.49630996309963094,
+        -0.04590163934426228
+      ],
+      "width": 42.509225092250986,
+      "height": 53.114754098360656,
+      "connections": []
+    },
+    {
+      "name": "FIT501",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "FIT501",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 293,
+      "top_left": [
+        -0.584870848708487,
+        0.14098360655737707
+      ],
+      "bottom_right": [
+        -0.448339483394834,
+        0.08524590163934431
+      ],
+      "width": 131.07011070110696,
+      "height": 30.09836065573769,
+      "connections": []
+    },
+    {
+      "name": "P501 COMPONENT",
+      "desc": "RO High Pressure Pump1",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "P501",
+      "parent_component_name": "",
+      "flip": 1,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 294,
+      "top_left": [
+        -0.2601476014760148,
+        0.14098360655737707
+      ],
+      "bottom_right": [
+        -0.15867158671586712,
+        0.0360655737704918
+      ],
+      "width": 97.41697416974176,
+      "height": 56.655737704918046,
+      "connections": []
+    },
+    {
+      "name": "P502 COMPONENT",
+      "desc": "RO High Pressure Pump2",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "P502",
+      "parent_component_name": "",
+      "flip": 1,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 295,
+      "top_left": [
+        -0.26180811808118093,
+        -0.19622950819672139
+      ],
+      "bottom_right": [
+        -0.16033210332103326,
+        -0.30114754098360663
+      ],
+      "width": 97.41697416974176,
+      "height": 56.65573770491803,
+      "connections": []
+    },
+    {
+      "name": "FIT504 COMPONENT",
+      "desc": "RO Recirculation Flow Meter",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "FIT504",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 296,
+      "top_left": [
+        -0.3321033210332104,
+        -0.619672131147541
+      ],
+      "bottom_right": [
+        -0.2841328413284132,
+        -0.7213114754098361
+      ],
+      "width": 46.05166051660529,
+      "height": 54.88524590163932,
+      "connections": []
+    },
+    {
+      "name": "FIT504",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "FIT504",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 298,
+      "top_left": [
+        -0.3745387453874539,
+        -0.5344262295081967
+      ],
+      "bottom_right": [
+        -0.2416974169741697,
+        -0.5868852459016394
+      ],
+      "width": 127.52767527675286,
+      "height": 28.327868852459023,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "RO Permeate Valve",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "MV501",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 299,
+      "top_left": [
+        0.8173431734317342,
+        0.2491803278688527
+      ],
+      "bottom_right": [
+        0.8597785977859778,
+        0.1573770491803279
+      ],
+      "width": 40.73800738007378,
+      "height": 49.57377049180338,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "Permeate Reject Valve",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "MV503",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 90.0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 300,
+      "top_left": [
+        0.7675276752767528,
+        -0.05245901639344264
+      ],
+      "bottom_right": [
+        0.8210332103321034,
+        -0.13770491803278684
+      ],
+      "width": 51.36531365313658,
+      "height": 46.03278688524587,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "Backwash Valve",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "MV502",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 301,
+      "top_left": [
+        0.7158671586715868,
+        -0.3737704918032786
+      ],
+      "bottom_right": [
+        0.7601476014760149,
+        -0.46229508196721303
+      ],
+      "width": 42.509225092250986,
+      "height": 47.80327868852459,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "RO Reject Valve",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "MV504",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 302,
+      "top_left": [
+        0.7158671586715866,
+        -0.6295081967213114
+      ],
+      "bottom_right": [
+        0.7619926199261993,
+        -0.7180327868852459
+      ],
+      "width": 44.28044280442819,
+      "height": 47.80327868852459,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "RO Reject Flow Meter",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "FIT503",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 90.0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 303,
+      "top_left": [
+        0.3118081180811809,
+        -0.5016393442622951
+      ],
+      "bottom_right": [
+        0.37269372693726943,
+        -0.580327868852459
+      ],
+      "width": 58.45018450184497,
+      "height": 42.491803278688536,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "FIT503",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 304,
+      "top_left": [
+        0.42250922509225086,
+        -0.4426229508196722
+      ],
+      "bottom_right": [
+        0.555350553505535,
+        -0.49836065573770494
+      ],
+      "width": 127.52767527675275,
+      "height": 30.09836065573769,
+      "connections": []
+    },
+    {
+      "name": "AIT504",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "AIT504",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 305,
+      "top_left": [
+        0.4889298892988929,
+        0.20655737704918042
+      ],
+      "bottom_right": [
+        0.5202952029520296,
+        0.15081967213114744
+      ],
+      "width": 30.110701107011195,
+      "height": 30.09836065573781,
+      "connections": []
+    },
+    {
+      "name": "AIT504",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "AIT504",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 307,
+      "top_left": [
+        0.43542435424354253,
+        0.36721311475409846
+      ],
+      "bottom_right": [
+        0.5682656826568266,
+        0.30819672131147535
+      ],
+      "width": 127.52767527675275,
+      "height": 31.868852459016477,
+      "connections": []
+    }
+  ]
+}

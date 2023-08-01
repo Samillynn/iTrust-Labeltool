@@ -1,0 +1,137 @@
+{
+  "label": [
+    {
+      "name": "LIT601",
+      "type": "LIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [
+          "L",
+          "H"
+        ],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.757380073800738,
+          -0.10983606557377046
+        ],
+        "width": 132.84132841328403,
+        "height": 185.90163934426238,
+        "size_type": "LIT"
+      },
+      "databox": {
+        "coordinate": [
+          -0.6771217712177122,
+          0.10655737704918034
+        ],
+        "width": 131.07011070110704,
+        "height": 30.09836065573781
+      },
+      "button": {}
+    },
+    {
+      "name": "P601",
+      "type": "P",
+      "description": "RO Permeate Pump",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 1,
+        "rotation": 0,
+        "coordinate": [
+          -0.4732472324723247,
+          -0.21803278688524586
+        ],
+        "width": 104.50184501845013,
+        "height": 58.426229508196705,
+        "size_type": "P"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "LIT602",
+      "type": "LIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [
+          "L",
+          "H"
+        ],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.17619926199261993,
+          -0.10983606557377046
+        ],
+        "width": 132.84132841328403,
+        "height": 185.90163934426238,
+        "size_type": "LIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.2592250922509226,
+          0.11147540983606563
+        ],
+        "width": 129.29889298892994,
+        "height": 31.868852459016356
+      },
+      "button": {}
+    },
+    {
+      "name": "P602",
+      "type": "P",
+      "description": "UF Backwash Pump",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 1,
+        "rotation": 0,
+        "coordinate": [
+          0.46051660516605164,
+          -0.21098360655737702
+        ],
+        "width": 104.50184501845013,
+        "height": 58.426229508196705,
+        "size_type": "P"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "FIT601",
+      "type": "FIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.801660516605166,
+          -0.10327868852459016
+        ],
+        "width": 44.28044280442819,
+        "height": 54.88524590163932,
+        "size_type": "FIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.8016605166051661,
+          0.001639344262295117
+        ],
+        "width": 129.29889298892994,
+        "height": 30.09836065573775
+      },
+      "button": {}
+    }
+  ],
+  "header": []
+}

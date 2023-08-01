@@ -1,0 +1,253 @@
+{
+  "image_path": "1690877913928-1acd2f49cbdfbd6571aa235ae741292.png",
+  "labels": [
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "LIT601",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 283,
+      "top_left": [
+        -0.7453874538745388,
+        0.13442622950819683
+      ],
+      "bottom_right": [
+        -0.6088560885608856,
+        0.07868852459016384
+      ],
+      "width": 131.07011070110704,
+      "height": 30.09836065573781,
+      "connections": []
+    },
+    {
+      "name": "P601 COMPONENT",
+      "desc": "RO Permeate Pump",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "P601",
+      "parent_component_name": "",
+      "flip": 1,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 284,
+      "top_left": [
+        -0.5276752767527675,
+        -0.16393442622950816
+      ],
+      "bottom_right": [
+        -0.4188191881918819,
+        -0.27213114754098355
+      ],
+      "width": 104.50184501845015,
+      "height": 58.42622950819671,
+      "connections": []
+    },
+    {
+      "name": "LIT602 COMPONENT",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "LIT602",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 286,
+      "top_left": [
+        0.19188191881918826,
+        0.14098360655737707
+      ],
+      "bottom_right": [
+        0.32656826568265696,
+        0.08196721311475419
+      ],
+      "width": 129.29889298892994,
+      "height": 31.868852459016356,
+      "connections": []
+    },
+    {
+      "name": "P601 COMPONENT",
+      "desc": "UF Backwash Pump",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "P602",
+      "parent_component_name": "",
+      "flip": 1,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 287,
+      "top_left": [
+        0.4060885608856089,
+        -0.15688524590163935
+      ],
+      "bottom_right": [
+        0.5149446494464944,
+        -0.2650819672131147
+      ],
+      "width": 104.5018450184501,
+      "height": 58.4262295081967,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "UF Backwash Flow Meter",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "FIT601",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 288,
+      "top_left": [
+        0.7785977859778597,
+        -0.05245901639344264
+      ],
+      "bottom_right": [
+        0.8247232472324724,
+        -0.15409836065573768
+      ],
+      "width": 44.28044280442819,
+      "height": 54.88524590163932,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "FIT601",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 289,
+      "top_left": [
+        0.7343173431734318,
+        0.029508196721311553
+      ],
+      "bottom_right": [
+        0.8690036900369005,
+        -0.02622950819672132
+      ],
+      "width": 129.29889298892994,
+      "height": 30.09836065573775,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "RO Permeate Tank",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "LIT601",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": true,
+      "ll": false,
+      "h": true,
+      "isButton": false,
+      "isTime": false,
+      "id": 291,
+      "top_left": [
+        -0.8265682656826568,
+        0.06229508196721323
+      ],
+      "bottom_right": [
+        -0.6881918819188192,
+        -0.28196721311475414
+      ],
+      "width": 132.84132841328415,
+      "height": 185.90163934426238,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "UF Backwash Tank",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "LIT602",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": true,
+      "ll": false,
+      "h": true,
+      "isButton": false,
+      "isTime": false,
+      "id": 292,
+      "top_left": [
+        0.10701107011070121,
+        0.06557377049180346
+      ],
+      "bottom_right": [
+        0.24538745387453864,
+        -0.2786885245901639
+      ],
+      "width": 132.84132841328392,
+      "height": 185.90163934426238,
+      "connections": []
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "label": [
+    {
+      "name": "LIT401",
+      "type": "LIT",
+      "description": "RO Feed Water Level Meter",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.7158671586715868,
+          -0.3885245901639344
+        ],
+        "width": 148.78228782287823,
+        "height": 217.77049180327867,
+        "size_type": "LIT"
+      },
+      "databox": {
+        "coordinate": [
+          -0.6319188191881919,
+          -0.13278688524590165
+        ],
+        "width": 125.75645756457564,
+        "height": 30.09836065573769
+      },
+      "button": {}
+    },
+    {
+      "name": "P401",
+      "type": "P",
+      "description": "UF Feed Pump1",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 1,
+        "rotation": 0,
+        "coordinate": [
+          -0.3911439114391144,
+          -0.31803278688524583
+        ],
+        "width": 102.73062730627316,
+        "height": 56.655737704918046,
+        "size_type": "P"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "P402",
+      "type": "P",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 1,
+        "rotation": 0,
+        "coordinate": [
+          -0.3911439114391144,
+          -0.6486885245901639
+        ],
+        "width": 102.73062730627316,
+        "height": 56.655737704918046,
+        "size_type": "P"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "LIT402",
+      "type": "LIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.35147601476014767,
+          0.03934426229508192
+        ],
+        "width": 132.84132841328415,
+        "height": 173.50819672131146,
+        "size_type": "LIT2"
+      },
+      "databox": {
+        "coordinate": [
+          0.5249077490774908,
+          -0.05245901639344264
+        ],
+        "width": 125.75645756457554,
+        "height": 31.868852459016356
+      },
+      "button": {}
+    },
+    {
+      "name": "AIT401",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.0036900369003690092,
+          -0.6655737704918032
+        ],
+        "width": 30.99630996309953,
+        "height": 30.09836065573772,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.09870848708487079,
+          -0.6655737704918032
+        ],
+        "width": 129.29889298892994,
+        "height": 28.327868852458906
+      },
+      "button": {}
+    },
+    {
+      "name": "FIT401",
+      "type": "FIT",
+      "description": "RO Feed Flow Meter",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.08763837638376382,
+          -0.39672131147540984
+        ],
+        "width": 47.82287822878217,
+        "height": 53.114754098360656,
+        "size_type": "FIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.08763837638376382,
+          -0.2803278688524591
+        ],
+        "width": 129.29889298892974,
+        "height": 30.09836065573769
+      },
+      "button": {}
+    },
+    {
+      "name": "UV401",
+      "type": "UV",
+      "description": "Ultraviolet Dechlorinator",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.36070110701107017,
+          -0.5459016393442624
+        ],
+        "width": 203.6900369003689,
+        "height": 100.91803278688525,
+        "size_type": "UV"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "AIT402",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.5987084870848709,
+          -0.42950819672131146
+        ],
+        "width": 30.99630996309953,
+        "height": 30.09836065573772,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.5968634686346863,
+          -0.2803278688524591
+        ],
+        "width": 132.84132841328415,
+        "height": 33.63934426229508
+      },
+      "button": {}
+    }
+  ],
+  "header": []
+}

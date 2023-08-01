@@ -1,0 +1,327 @@
+{
+  "label": [
+    {
+      "name": "AIT501",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.6494464944649446,
+          -0.0245901639344262
+        ],
+        "width": 29.667896678966816,
+        "height": 30.983606557377065,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          -0.8099630996309963,
+          -0.25081967213114753
+        ],
+        "width": 123.98523985239855,
+        "height": 26.557377049180356
+      },
+      "button": {}
+    },
+    {
+      "name": "AIT502",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.6171586715867159,
+          -0.0245901639344262
+        ],
+        "width": 29.667896678966816,
+        "height": 30.983606557377065,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          -0.6605166051660516,
+          -0.2557377049180328
+        ],
+        "width": 127.52767527675275,
+        "height": 28.327868852459023
+      },
+      "button": {}
+    },
+    {
+      "name": "AIT503",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.5821033210332103,
+          -0.0245901639344262
+        ],
+        "width": 29.667896678966816,
+        "height": 30.983606557377065,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          -0.5129151291512914,
+          -0.25081967213114753
+        ],
+        "width": 127.52767527675275,
+        "height": 30.09836065573775
+      },
+      "button": {}
+    },
+    {
+      "name": "FIT501",
+      "type": "FIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.518450184501845,
+          0.0032786885245901787
+        ],
+        "width": 44.280442804428134,
+        "height": 53.999999999999986,
+        "size_type": "FIT"
+      },
+      "databox": {
+        "coordinate": [
+          -0.5129151291512914,
+          0.11311475409836069
+        ],
+        "width": 131.07011070110696,
+        "height": 30.09836065573769
+      },
+      "button": {}
+    },
+    {
+      "name": "P501",
+      "type": "P",
+      "description": "RO High Pressure Pump1",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 1,
+        "rotation": 0,
+        "coordinate": [
+          -0.20940959409594095,
+          0.08852459016393444
+        ],
+        "width": 97.41697416974176,
+        "height": 56.65573770491804,
+        "size_type": "P"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "P502",
+      "type": "P",
+      "description": "RO High Pressure Pump2",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 1,
+        "rotation": 0,
+        "coordinate": [
+          -0.20940959409594095,
+          -0.248688524590164
+        ],
+        "width": 97.41697416974176,
+        "height": 56.65573770491804,
+        "size_type": "P"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "FIT504",
+      "type": "FIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.3081180811808118,
+          -0.6704918032786886
+        ],
+        "width": 44.280442804428134,
+        "height": 53.999999999999986,
+        "size_type": "FIT"
+      },
+      "databox": {
+        "coordinate": [
+          -0.3081180811808118,
+          -0.5606557377049181
+        ],
+        "width": 127.52767527675286,
+        "height": 28.327868852459023
+      },
+      "button": {}
+    },
+    {
+      "name": "MV501",
+      "type": "other",
+      "description": "RO Permeate Valve",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.838560885608856,
+          0.2032786885245903
+        ],
+        "width": 42.509225092250986,
+        "height": 48.39344262295086,
+        "size_type": "other"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "MV503",
+      "type": "other",
+      "description": "Permeate Reject Valve",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 90.0,
+        "coordinate": [
+          0.7942804428044281,
+          -0.09508196721311474
+        ],
+        "width": 51.36531365313658,
+        "height": 46.03278688524587,
+        "size_type": "other2"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "MV502",
+      "type": "other",
+      "description": "Backwash Valve",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.7380073800738008,
+          -0.4180327868852458
+        ],
+        "width": 42.509225092250986,
+        "height": 48.39344262295086,
+        "size_type": "other"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "MV504",
+      "type": "other",
+      "description": "RO Reject Valve",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.7380073800738008,
+          -0.6704918032786886
+        ],
+        "width": 42.509225092250986,
+        "height": 48.39344262295086,
+        "size_type": "other"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "FIT503",
+      "type": "FIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 90.0,
+        "coordinate": [
+          0.3422509225092252,
+          -0.540983606557377
+        ],
+        "width": 58.45018450184497,
+        "height": 42.491803278688536,
+        "size_type": "FIT2"
+      },
+      "databox": {
+        "coordinate": [
+          0.4889298892988929,
+          -0.47049180327868856
+        ],
+        "width": 127.52767527675275,
+        "height": 30.09836065573769
+      },
+      "button": {}
+    },
+    {
+      "name": "AIT504",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.5046125461254612,
+          0.17868852459016393
+        ],
+        "width": 29.667896678966816,
+        "height": 30.983606557377065,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.5018450184501846,
+          0.3377049180327869
+        ],
+        "width": 127.52767527675275,
+        "height": 31.868852459016477
+      },
+      "button": {}
+    }
+  ],
+  "header": []
+}

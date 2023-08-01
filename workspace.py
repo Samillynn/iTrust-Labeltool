@@ -164,7 +164,7 @@ def convert_json(result, headers):
     def ajust_size(cleaned_result):
         dic = {}
         num_count = {}
-        threshold = 0.1
+        threshold = 0.2
         for cleaned_r in cleaned_result:
             if len(cleaned_r["component"]) != 0:
                 component = cleaned_r["component"]

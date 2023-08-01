@@ -1,0 +1,271 @@
+{
+  "label": [
+    {
+      "name": "LIT301",
+      "type": "LIT",
+      "description": "UF Feed Water Tank",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          -0.7075645756457565,
+          -0.4180327868852459
+        ],
+        "width": 150.55350553505522,
+        "height": 217.77049180327873,
+        "size_type": "LIT"
+      },
+      "databox": {
+        "coordinate": [
+          -0.6199261992619927,
+          -0.15901639344262297
+        ],
+        "width": 127.52767527675275,
+        "height": 30.09836065573769
+      },
+      "button": {}
+    },
+    {
+      "name": "P301",
+      "type": "P",
+      "description": "UF Feed Pump1",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 1,
+        "rotation": 0,
+        "coordinate": [
+          -0.3505535055350554,
+          -0.34098360655737714
+        ],
+        "width": 106.27306273062736,
+        "height": 56.655737704918046,
+        "size_type": "P"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "P302",
+      "type": "P",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 1,
+        "rotation": 0,
+        "coordinate": [
+          -0.3505535055350554,
+          -0.6716393442622951
+        ],
+        "width": 106.27306273062736,
+        "height": 56.655737704918046,
+        "size_type": "P"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "MV301",
+      "type": "other",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.03136531365313655,
+          0.4737704918032787
+        ],
+        "width": 43.837638376383836,
+        "height": 48.688524590163894,
+        "size_type": "other"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "FIT301",
+      "type": "FIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.10516605166051662,
+          -0.3918032786885246
+        ],
+        "width": 42.50922509225077,
+        "height": 54.88524590163938,
+        "size_type": "FIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.1060885608856088,
+          -0.2754098360655738
+        ],
+        "width": 125.75645756457575,
+        "height": 28.327868852459023
+      },
+      "button": {}
+    },
+    {
+      "name": "AIT301",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.8081180811808117,
+          0.4475409836065575
+        ],
+        "width": 28.33948339483399,
+        "height": 30.09836065573761,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.3210332103321033,
+          0.5229508196721312
+        ],
+        "width": 131.07011070110696,
+        "height": 33.639344262295026
+      },
+      "button": {}
+    },
+    {
+      "name": "AIT302",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.8394833948339482,
+          0.4475409836065575
+        ],
+        "width": 28.33948339483399,
+        "height": 30.09836065573761,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.4732472324723247,
+          0.5229508196721312
+        ],
+        "width": 132.84132841328415,
+        "height": 33.639344262295026
+      },
+      "button": {}
+    },
+    {
+      "name": "AIT303",
+      "type": "AIT",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.8747232472324724,
+          0.4475409836065575
+        ],
+        "width": 28.33948339483399,
+        "height": 30.09836065573761,
+        "size_type": "AIT"
+      },
+      "databox": {
+        "coordinate": [
+          0.6236162361623617,
+          0.5229508196721312
+        ],
+        "width": 131.07011070110696,
+        "height": 31.868852459016356
+      },
+      "button": {}
+    },
+    {
+      "name": "MV302",
+      "type": "other",
+      "description": "RO Feed Water Valve",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.742619926199262,
+          0.4737704918032787
+        ],
+        "width": 43.837638376383836,
+        "height": 48.688524590163894,
+        "size_type": "other"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "MV304",
+      "type": "other",
+      "description": "UF Drain Valve",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.7675276752767527,
+          -5.551115123125783e-17
+        ],
+        "width": 43.837638376383836,
+        "height": 48.688524590163894,
+        "size_type": "other"
+      },
+      "databox": {},
+      "button": {}
+    },
+    {
+      "name": "MV303",
+      "type": "other",
+      "description": "",
+      "status": "",
+      "state": "",
+      "component": {
+        "level": [],
+        "flip": 0,
+        "rotation": 0,
+        "coordinate": [
+          0.7972324723247232,
+          -0.5372131147540984
+        ],
+        "width": 43.837638376383836,
+        "height": 48.688524590163894,
+        "size_type": "other"
+      },
+      "databox": {},
+      "button": {}
+    }
+  ],
+  "header": []
+}

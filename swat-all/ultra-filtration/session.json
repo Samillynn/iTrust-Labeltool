@@ -1,0 +1,501 @@
+{
+  "image_path": "1690872955265-ea292b0971ba36291617abb38160410.png",
+  "labels": [
+    {
+      "name": "LIT-301 COMPONENT",
+      "desc": "UF Feed Water Tank",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "LIT301",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 282,
+      "top_left": [
+        -0.7859778597785977,
+        -0.2163934426229508
+      ],
+      "bottom_right": [
+        -0.6291512915129152,
+        -0.619672131147541
+      ],
+      "width": 150.55350553505522,
+      "height": 217.77049180327873,
+      "connections": []
+    },
+    {
+      "name": "LIT-301 DATABOX",
+      "desc": "UF Feed Water Tank",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "LIT301",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 284,
+      "top_left": [
+        -0.6863468634686347,
+        -0.1311475409836066
+      ],
+      "bottom_right": [
+        -0.5535055350553506,
+        -0.18688524590163935
+      ],
+      "width": 127.52767527675275,
+      "height": 30.09836065573769,
+      "connections": []
+    },
+    {
+      "name": "P-301 COMPONENT",
+      "desc": "UF Feed Pump1",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "P301",
+      "parent_component_name": "",
+      "flip": 1,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 285,
+      "top_left": [
+        -0.40590405904059046,
+        -0.2885245901639345
+      ],
+      "bottom_right": [
+        -0.2952029520295203,
+        -0.3934426229508198
+      ],
+      "width": 106.27306273062736,
+      "height": 56.655737704918046,
+      "connections": []
+    },
+    {
+      "name": "P302 COMPONENT",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "P302",
+      "parent_component_name": "",
+      "flip": 1,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 286,
+      "top_left": [
+        -0.405719557195572,
+        -0.6191803278688525
+      ],
+      "bottom_right": [
+        -0.29501845018450185,
+        -0.7240983606557377
+      ],
+      "width": 106.27306273062736,
+      "height": 56.655737704918046,
+      "connections": []
+    },
+    {
+      "name": "MV301 COMPONENT",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "MV301",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 287,
+      "top_left": [
+        0.007380073800737907,
+        0.521311475409836
+      ],
+      "bottom_right": [
+        0.055350553505535194,
+        0.42622950819672134
+      ],
+      "width": 46.051660516605395,
+      "height": 51.344262295081926,
+      "connections": []
+    },
+    {
+      "name": "FIT-301 COMPONENT",
+      "desc": "UF Feed Flow Meter",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "FIT301",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 288,
+      "top_left": [
+        0.08302583025830268,
+        -0.34098360655737703
+      ],
+      "bottom_right": [
+        0.12730627306273057,
+        -0.4426229508196722
+      ],
+      "width": 42.50922509225077,
+      "height": 54.88524590163938,
+      "connections": []
+    },
+    {
+      "name": "AIT-301 DATABOX",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "AIT301",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 289,
+      "top_left": [
+        0.25276752767527677,
+        0.5540983606557377
+      ],
+      "bottom_right": [
+        0.38929889298892983,
+        0.4918032786885247
+      ],
+      "width": 131.07011070110696,
+      "height": 33.639344262295026,
+      "connections": []
+    },
+    {
+      "name": "AIT-301 COMPONENT",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "AIT301",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 290,
+      "top_left": [
+        0.7933579335793357,
+        0.47540983606557385
+      ],
+      "bottom_right": [
+        0.8228782287822878,
+        0.4196721311475411
+      ],
+      "width": 28.33948339483399,
+      "height": 30.09836065573769,
+      "connections": []
+    },
+    {
+      "name": "AIT-302 COMPONENT",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "AIT302",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 291,
+      "top_left": [
+        0.8247232472324721,
+        0.47540983606557363
+      ],
+      "bottom_right": [
+        0.8542435424354242,
+        0.4196721311475411
+      ],
+      "width": 28.33948339483399,
+      "height": 30.098360655737572,
+      "connections": []
+    },
+    {
+      "name": "AIT-303 COMPONENT",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "AIT303",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 292,
+      "top_left": [
+        0.8599630996309964,
+        0.47918032786885245
+      ],
+      "bottom_right": [
+        0.8894833948339484,
+        0.4234426229508199
+      ],
+      "width": 28.33948339483399,
+      "height": 30.098360655737572,
+      "connections": []
+    },
+    {
+      "name": "AIT-302 DATABOX",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "AIT302",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 293,
+      "top_left": [
+        0.40405904059040587,
+        0.5540983606557377
+      ],
+      "bottom_right": [
+        0.5424354243542435,
+        0.4918032786885247
+      ],
+      "width": 132.84132841328415,
+      "height": 33.639344262295026,
+      "connections": []
+    },
+    {
+      "name": "AIT-303 DATABOX",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "AIT303",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 294,
+      "top_left": [
+        0.5553505535055352,
+        0.5508196721311476
+      ],
+      "bottom_right": [
+        0.6918819188191883,
+        0.4918032786885247
+      ],
+      "width": 131.07011070110696,
+      "height": 31.868852459016356,
+      "connections": []
+    },
+    {
+      "name": "MV-302 COMPONENT",
+      "desc": "RO Feed Water Valve",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "MV302",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 295,
+      "top_left": [
+        0.7195571955719557,
+        0.521311475409836
+      ],
+      "bottom_right": [
+        0.7656826568265682,
+        0.42622950819672134
+      ],
+      "width": 44.28044280442798,
+      "height": 51.344262295081926,
+      "connections": []
+    },
+    {
+      "name": "MV-304 COMPONENT",
+      "desc": "UF Drain Valve",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "MV304",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 296,
+      "top_left": [
+        0.7453874538745386,
+        0.042622950819672045
+      ],
+      "bottom_right": [
+        0.7896678966789668,
+        -0.042622950819672156
+      ],
+      "width": 42.509225092250986,
+      "height": 46.03278688524587,
+      "connections": []
+    },
+    {
+      "name": "MV-303 COMPONENT",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "MV303",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 297,
+      "top_left": [
+        0.7750922509225091,
+        -0.49459016393442634
+      ],
+      "bottom_right": [
+        0.8193726937269372,
+        -0.5798360655737705
+      ],
+      "width": 42.509225092250986,
+      "height": 46.03278688524587,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "FIT301",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 308,
+      "top_left": [
+        0.040590405904058935,
+        -0.24918032786885247
+      ],
+      "bottom_right": [
+        0.17158671586715868,
+        -0.3016393442622951
+      ],
+      "width": 125.75645756457575,
+      "height": 28.327868852459023,
+      "connections": []
+    }
+  ]
+}

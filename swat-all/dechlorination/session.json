@@ -1,0 +1,408 @@
+{
+  "image_path": "1690873877872-4cd3320de0314fc42751e854a947faa.png",
+  "labels": [
+    {
+      "name": "T401 COMPONENT",
+      "desc": "RO Feed Tank",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "LIT401",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 282,
+      "top_left": [
+        -0.7933579335793358,
+        -0.18688524590163935
+      ],
+      "bottom_right": [
+        -0.6383763837638377,
+        -0.5901639344262295
+      ],
+      "width": 148.78228782287823,
+      "height": 217.77049180327867,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "RO Feed Water Level Meter",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "LIT401",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 283,
+      "top_left": [
+        -0.6974169741697417,
+        -0.10491803278688527
+      ],
+      "bottom_right": [
+        -0.566420664206642,
+        -0.16065573770491803
+      ],
+      "width": 125.75645756457564,
+      "height": 30.09836065573769,
+      "connections": []
+    },
+    {
+      "name": "P401 COMPONENT",
+      "desc": "UF Feed Pump1",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "P401",
+      "parent_component_name": "",
+      "flip": 1,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 284,
+      "top_left": [
+        -0.44464944649446503,
+        -0.2655737704918032
+      ],
+      "bottom_right": [
+        -0.3376383763837638,
+        -0.37049180327868847
+      ],
+      "width": 102.73062730627316,
+      "height": 56.655737704918046,
+      "connections": []
+    },
+    {
+      "name": "P401 COMPONENT",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "P402",
+      "parent_component_name": "",
+      "flip": 1,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 285,
+      "top_left": [
+        -0.4444649446494466,
+        -0.5962295081967213
+      ],
+      "bottom_right": [
+        -0.33745387453874537,
+        -0.7011475409836065
+      ],
+      "width": 102.73062730627316,
+      "height": 56.655737704918046,
+      "connections": []
+    },
+    {
+      "name": "T402 COMPONENT",
+      "desc": "NaHSO3 Tank",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "LIT402",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 286,
+      "top_left": [
+        0.28228782287822884,
+        0.19999999999999996
+      ],
+      "bottom_right": [
+        0.4206642066420665,
+        -0.12131147540983611
+      ],
+      "width": 132.84132841328415,
+      "height": 173.50819672131146,
+      "connections": []
+    },
+    {
+      "name": "LIT-402 DATABOX",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "LIT402",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 287,
+      "top_left": [
+        0.45940959409594107,
+        -0.022950819672131195
+      ],
+      "bottom_right": [
+        0.5904059040590406,
+        -0.08196721311475408
+      ],
+      "width": 125.75645756457554,
+      "height": 31.868852459016356,
+      "connections": []
+    },
+    {
+      "name": "AIT401",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "AIT401",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 288,
+      "top_left": [
+        -0.020295202952029467,
+        -0.6360655737704918
+      ],
+      "bottom_right": [
+        0.012915129151291449,
+        -0.6950819672131148
+      ],
+      "width": 31.88191881918808,
+      "height": 31.868852459016416,
+      "connections": []
+    },
+    {
+      "name": "AIT401",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "AIT401",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 290,
+      "top_left": [
+        0.03136531365313644,
+        -0.639344262295082
+      ],
+      "bottom_right": [
+        0.16605166051660514,
+        -0.6918032786885244
+      ],
+      "width": 129.29889298892994,
+      "height": 28.327868852458906,
+      "connections": []
+    },
+    {
+      "name": "FIT401",
+      "desc": "RO Feed Flow Meter",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "FIT401",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 291,
+      "top_left": [
+        0.0627306273062731,
+        -0.3475409836065574
+      ],
+      "bottom_right": [
+        0.11254612546125453,
+        -0.4459016393442623
+      ],
+      "width": 47.82287822878217,
+      "height": 53.114754098360656,
+      "connections": []
+    },
+    {
+      "name": "FIT401",
+      "desc": "RO Feed Flow Meter",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "FIT401",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 293,
+      "top_left": [
+        0.02029520295202958,
+        -0.2524590163934427
+      ],
+      "bottom_right": [
+        0.15498154981549805,
+        -0.30819672131147546
+      ],
+      "width": 129.29889298892974,
+      "height": 30.09836065573769,
+      "connections": []
+    },
+    {
+      "name": "",
+      "desc": "Ultraviolet Dechlorinator",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "UV401",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 294,
+      "top_left": [
+        0.25461254612546136,
+        -0.45245901639344266
+      ],
+      "bottom_right": [
+        0.466789667896679,
+        -0.639344262295082
+      ],
+      "width": 203.6900369003689,
+      "height": 100.91803278688525,
+      "connections": []
+    },
+    {
+      "name": "AIT402",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 1,
+      "category": "",
+      "parent": "AIT402",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 295,
+      "top_left": [
+        0.5830258302583027,
+        -0.40327868852459015
+      ],
+      "bottom_right": [
+        0.6143911439114391,
+        -0.4557377049180328
+      ],
+      "width": 30.110701107010982,
+      "height": 28.327868852459023,
+      "connections": []
+    },
+    {
+      "name": "AIT402",
+      "desc": "",
+      "fullname": "",
+      "status": "",
+      "component_type": "",
+      "state": "",
+      "type": 2,
+      "category": "",
+      "parent": "AIT402",
+      "parent_component_name": "",
+      "flip": 0,
+      "rotation": 0,
+      "l": false,
+      "ll": false,
+      "h": false,
+      "isButton": false,
+      "isTime": false,
+      "id": 297,
+      "top_left": [
+        0.5276752767527675,
+        -0.24918032786885247
+      ],
+      "bottom_right": [
+        0.6660516605166051,
+        -0.3114754098360656
+      ],
+      "width": 132.84132841328415,
+      "height": 33.63934426229508,
+      "connections": []
+    }
+  ]
+}
